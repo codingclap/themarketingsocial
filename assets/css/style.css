@@ -4,7 +4,11 @@
   font-style: 300;
   src: url(../fonts/Gotham-Light.otf) format('opentype');
 }
-
+@font-face {
+  font-family: 'Gotham-Book';
+  font-style: 500;
+  src: url(../fonts/Gotham-Book.otf) format('opentype');
+}
 @font-face {
   font-family: 'Gotham-Medium';
   font-style: 500;
@@ -22,7 +26,11 @@
   font-style: 700;
   src: url(../fonts/playfair/PlayfairDisplay-Regular.ttf) format('opentype');
 }
-
+@font-face {
+  font-family: 'Playfair-Italic';
+  font-style: 700;
+  src: url(../fonts/playfair/PlayfairDisplay-Italic.ttf) format('opentype');
+}
 @font-face {
   font-family: 'Playfair-Medium';
   font-style: 700;

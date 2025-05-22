@@ -1,7 +1,11 @@
+/****************** Main Header ****************/
 .header .header-title {
      color: var(--color-muted);
 }
 
+.extra-padding {
+     padding: 0 80px;
+}
 
 .header .header-image {
      width: 100%;
@@ -16,8 +20,9 @@
      }
 }
 
+/****************** Main Header ****************/
 
-/* Scroller Section */
+/****************** Scroller Section ****************/
 .scroller-section {
      width: 100%;
      overflow: hidden;
@@ -32,9 +37,210 @@
 }
 
 .marquee-text {
-     font-size: 10vw;
+     font-size: 14vw;
      font-family: 'Anton-Regular', sans-serif;
      color: #E3E3E3;
      font-weight: 400;
      white-space: nowrap;
+}
+
+/****************** Scroller Section ****************/
+
+/****************** Video Section ****************/
+.video-section {
+     position: relative;
+     background-color: black;
+}
+
+.video-section .down-arrow {
+     position: absolute;
+     top: 0;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 120px;
+     height: 120px;
+     background-color: #6d2732;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+
+}
+
+.video-section .down-arrow .down-arrow-img {
+     width: 35px;
+     transform: scale(0.90) rotate(0deg);
+     transition: transform 0.4s cubic-bezier(0.32, 1.5, 0.36, 1.4);
+     /* "Break" effect */
+}
+
+.video-section .down-arrow:hover .down-arrow-img {
+     transform: scale(1.1) rotate(35deg);
+}
+
+/****************** Video Section ****************/
+
+
+/****************** Conversation Section ****************/
+.conversation-supertitle {
+     color: #404040;
+     font-family: 'Gotham-Medium';
+     font-size: 24px;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 90%;
+     /* 21.6px */
+     letter-spacing: -0.48px;
+     text-transform: uppercase;
+}
+
+.conversation-section {
+     width: 100vw;
+     min-height: 1040px;
+     background: url('../images/home-page/conversation-bg.svg') center center/cover no-repeat;
+     position: relative;
+     padding-left: 0;
+     padding-right: 0;
+     color: #fff;
+     display: flex;
+     align-items: center;
+}
+
+.conversation-content {
+     position: absolute;
+     left: 0;
+     top: 45%
+}
+
+.conversation-title {
+     font-family: "Playfair-Italic";
+     font-size: 11vw;
+     font-style: italic;
+     font-weight: 500;
+     line-height: 90%;
+     letter-spacing: -3.9px;
+     text-transform: capitalize;
+     margin-bottom: 1rem;
+     text-align: left;
+     mix-blend-mode: difference;
+     color: #9F9F9F;
+}
+
+.conversation-text {
+     color: #030404;
+     font-family: 'Gotham-Book';
+     font-size: 20px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 140%;
+     letter-spacing: -0.6px;
+}
+
+/****************** Conversation Section ****************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/******************* Responsive Design ********************/
+
+@media screen and (max-width: 1300px) {
+
+     .video-section .down-arrow {
+          width: 90px;
+          height: 90px;
+     }
+
+}
+
+@media screen and (max-width: 1024px) {
+     .extra-padding {
+          padding: 0 40px;
+     }
+
+     .video-section .down-arrow .down-arrow-img {
+          width: 30px;
+     }
+
+     .conversation-section {
+          min-height: 800px;
+     }
+
+
+}
+
+@media screen and (max-width: 768px) {
+     .extra-padding {
+          padding: 0 20px;
+     }
+
+     .video-section .down-arrow .down-arrow-img {
+          width: 25px;
+     }
+
+     .conversation-section {
+          min-height: 700px;
+           background: url(../images/home-page/conversation-bg.svg) center left / cover no-repeat;
+     }
+
+     .conversation-content {
+          top: 40%
+     }
+
+     .conversation-supertitle {
+          font-size: 18px;
+     }
+
+     .conversation-text {
+          font-size: 15px;
+     }
+
+}
+
+@media screen and (max-width: 500px) {
+
+     .conversation-section {
+          min-height: 500px;
+         
+     }
+
+     .conversation-title {
+          font-size: 15vw;
+     }
+
+     .conversation-content {
+          top: 30%;
+     }
+
+     .conversation-supertitle {
+          font-size: 14px;
+          color: #897474;
+          mix-blend-mode: difference;
+     }
+}
+
+@media screen and (max-width: 416px) {
+     .extra-padding {
+          padding: 0 10px;
+     }
+
+     .video-section .down-arrow {
+          width: 70px;
+          height: 70px;
+     }
+
+     .video-section .down-arrow .down-arrow-img {
+          width: 20px;
+     }
+
 }
