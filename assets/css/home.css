@@ -235,12 +235,12 @@
      }
 
      .video-section .down-arrow {
-          width: 70px;
-          height: 70px;
+          width: 55px;
+          height: 55px;
      }
 
      .video-section .down-arrow .down-arrow-img {
-          width: 20px;
+          width: 16px;
      }
 
 }
