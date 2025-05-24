@@ -32,7 +32,7 @@ gsap.to(".navbar-brand-logo", {
 
     gsap.to(marqueeInner, {
       x: `-=${originalText.offsetWidth}`,
-      duration: 6,
+      duration: 5,
       ease: "linear",
       repeat: -1,
       modifiers: {
