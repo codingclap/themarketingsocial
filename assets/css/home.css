@@ -140,8 +140,208 @@
 /****************** Conversation Section ****************/
 
 
+/****************** Helping Brand Section ****************/
+.helping-brand-section {
+     background-color: #322D2A;
+     min-height: 100px;
+}
+
+.helping-brand-section .helping-brand-title {
+     color: #F1E8E0;
+     text-align: center;
+     font-family: "Playfair-Medium";
+     font-size: clamp(1.75rem, 4vw, 3.5rem);
+     font-style: normal;
+     font-weight: 500;
+     line-height: 120%;
+     /* 67.2px */
+     letter-spacing: -1.12px;
+     text-transform: capitalize;
+}
+
+.helping-panel-container {
+     display: flex;
+     gap: 20px;
+     width: 100%;
+     margin-top: 2rem;
+}
+
+.helping-panel-container .panel {
+     width: 100px;
+     min-height: 790px;
+     background-size: cover;
+     background-repeat: no-repeat;
+     overflow: hidden;
+     position: relative;
+     flex: 1;
+     display: flex;
+     align-items: flex-end;
+     justify-content: flex-start;
+     cursor: pointer;
+     mix-blend-mode: luminosity;
+     transition: flex 0.7s cubic-bezier(0.7, 0, 0.7, 0.3);
+
+}
+
+.helping-panel-container .panel:nth-child(1) {
+     background-position: 40%;
+}
+
+.helping-panel-container .panel:nth-child(2) {
+     background-position: 33%;
+}
+
+.helping-panel-container .panel:nth-child(3) {
+     background-position: 50%;
+}
+
+.helping-panel-container .panel:nth-child(4) {
+     background-position: 40%;
+}
+
+.helping-panel-container .panel:nth-child(5) {
+     background-position: 40%;
+}
+
+.helping-panel-container .panel.active {
+     flex: 2.5;
+     mix-blend-mode: inherit;
+}
+
+.helping-panel-container .panel .overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     background: rgba(0, 0, 0, 0.5);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     text-align: center;
+     padding: 20px;
+     transition: 0.7s cubic-bezier(0.7, 0, 1, 1);
+}
+
+.helping-panel-container .panel.active .overlay {
+     background: rgba(2, 2, 2, 0);
+     pointer-events: none;
+     opacity: 0;
+     transition:
+          background 0.7s cubic-bezier(0.7, 0, 1, 1),
+          opacity 0.7s cubic-bezier(0.7, 0, 1, 1);
+}
+
+.helping-panel-container .overlay h2 {
+     margin: 0;
+     color: #FAFAFA;
+     text-align: center;
+     font-family: "playfair-light";
+     font-size: 2vw;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 120%;
+
+}
+
+.helping-panel-container .panel.active .overlay h2 {
+     opacity: 0;
+     transition: opacity 0.7s cubic-bezier(0.7, 0, 1, 1);
+}
 
 
+
+@media (max-width: 1024px) {
+     .helping-panel-container {
+          flex-wrap: wrap;
+          gap: 12px;
+     }
+
+     .helping-panel-container .panel.active {
+          flex: 1;
+          mix-blend-mode: inherit;
+     }
+
+     .helping-panel-container .panel.active .overlay h2 {
+          opacity: 1;
+     }
+
+     .helping-panel-container .panel.active .overlay {
+          opacity: 1;
+          background: rgba(0, 0, 0, 0.5);
+     }
+}
+
+@media (max-width: 991px) {
+     .helping-panel-container .panel {
+          min-width: 90vw;
+          max-width: 95vw;
+          min-height: 350px;
+     }
+
+     .helping-panel-container .overlay h2 {
+          font-size: 35px;
+     }
+
+     .helping-panel-container .panel.active .overlay {
+          opacity: 1;
+          background: rgba(0, 0, 0, 0.5);
+     }
+
+     .helping-panel-container .panel.active {
+          flex: 1;
+          mix-blend-mode: luminosity;
+     }
+}
+
+@media (max-width: 768px) {
+     .helping-panel-container {
+          flex-direction: column;
+          align-items: center;
+          gap: 16px;
+     }
+
+     .helping-panel-container .panel {
+          min-width: 90vw;
+          max-width: 95vw;
+          min-height: 350px;
+     }
+
+     .helping-panel-container .panel .overlay {
+          padding: 1rem;
+          font-size: 1.1rem;
+     }
+      .helping-panel-container .overlay h2 {
+          font-size: 30px;
+     }
+}
+
+@media (max-width: 500px) {
+
+     .helping-panel-container .panel {
+          min-width: 90vw;
+          max-width: 95vw;
+          min-height: 250px;
+     }
+
+     .helping-panel-container .overlay h2 {
+          font-size: 28px;
+     }
+}
+@media (max-width: 425px) {
+
+     .helping-panel-container .panel {
+          min-width: 90vw;
+          max-width: 95vw;
+          min-height: 200px;
+     }
+
+     .helping-panel-container .overlay h2 {
+          font-size: 25px;
+     }
+}
+
+/****************** Helping Brand Section ****************/
 
 
 
@@ -190,7 +390,7 @@
 
      .conversation-section {
           min-height: 700px;
-           background: url(../images/home-page/conversation-bg.svg) center left / cover no-repeat;
+          background: url(../images/home-page/conversation-bg.svg) center left / cover no-repeat;
      }
 
      .conversation-content {
@@ -211,7 +411,7 @@
 
      .conversation-section {
           min-height: 500px;
-         
+
      }
 
      .conversation-title {
