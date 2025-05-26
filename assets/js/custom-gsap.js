@@ -69,3 +69,30 @@ gsap.to(".navbar-brand-logo", {
     });
   });
 /*************  Gsap Marquee Animation- 2****************/
+
+
+/*************  Gsap Marquee Brand-Reimaging ****************/
+  window.addEventListener("load", () => {
+    const marqueeInner = document.getElementById("brand-reimaging-bgtext");
+    const originalText = marqueeInner.querySelector(".brand-bgheading");
+    const containerWidth = document.querySelector(".brand-reimaging-animation").offsetWidth;
+
+    // Clone enough times to fill + overflow the container
+    let totalWidth = originalText.offsetWidth;
+    while (totalWidth < containerWidth * 2) {
+      const clone = originalText.cloneNode(true);
+      marqueeInner.appendChild(clone);
+      totalWidth += clone.offsetWidth;
+    }
+
+    gsap.to(marqueeInner, {
+      x: `-=${originalText.offsetWidth}`,
+      duration: 5,
+      ease: "linear",
+      repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
+      }
+    });
+  });
+/*************  Gsap Marquee Brand-Reimaging ****************/

@@ -58,6 +58,7 @@
   font-style: 400;
   src: url(../fonts/cardo/Cardo-Regular.ttf) format('opentype');
 }
+
 @font-face {
   font-family: 'Cardo-Italic';
   font-style: 400;
@@ -184,3 +185,161 @@ p {
 .navbg-light {
   background-color: var(--color-background-gray);
 }
+
+
+/**************** Footer Section ****************/
+.footer-section {
+  background-color: #F1E8E0;
+
+}
+
+.form-email-container {
+  position: relative;
+}
+
+.footer-section .footer-section-heading {
+  color: var(--color-brown);
+  font-family: 'Playfair-Regular';
+  font-size: clamp(2.8rem, 7vw, 10rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -3.2px;
+}
+
+.footer-section .footer-section-text {
+  color: var(--color-brown);
+  align-self: stretch;
+  font-family: 'Gotham-Light';
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  /* 33.6px */
+}
+
+.footer-section a.btn-custom {
+  border-radius: 40px;
+  border: 2px solid rgba(50, 45, 42, 0.29);
+  padding: 6px 20px;
+  text-decoration: none;
+  color: var(--color-brown);
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-family: 'Gotham-Light';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  /* 20.8px */
+  letter-spacing: -0.32px;
+}
+
+.footer-section .footer-email-heading {
+  position: absolute;
+  transform: rotate(8.032deg);
+  flex-shrink: 0;
+  top: 60px;
+  padding: 50px 70px;
+  border-radius: 80%;
+  border: 2px solid var(--color-brown);
+  color: var(--color-brown);
+  font-family: 'Playfair-Regular';
+  font-size: clamp(1rem, 2vw, 2em);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 110%;
+  /* 35.2px */
+  letter-spacing: -0.64px;
+  text-wrap: wrap;
+}
+
+.form-content-fields {
+  padding-top: 20em;
+}
+
+/**************** Form Fields ****************/
+
+.form-content-fields .form-control {
+  border: none;
+  border-bottom: 1px solid #322D2A;
+  border-radius: 0;
+  padding: 0.8rem 0rem;
+  background: transparent;
+  box-shadow: none;
+}
+
+.form-content-fields .form-control:focus {
+  border-color: #322D2A;
+  box-shadow: none;
+}
+
+.form-content-fields .btn-outline-dark {
+  font-weight: 500;
+  border-radius: 35px;
+  border: 2px solid var(--color-brown);
+  display: flex;
+  padding: 12px 30px;
+  align-items: center;
+  gap: 15px;
+  color: var(--color-brown);
+  font-family: 'Gotham-Medium';
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+  /* 20.8px */
+  letter-spacing: 0.32px;
+  text-transform: uppercase;
+}
+
+::placeholder {
+  color: var(--color-brown);
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-family: 'Gotham-Light';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130%;
+  /* 20.8px */
+  letter-spacing: -0.32px;
+}
+
+.form-content-fields .intl-group select {
+  width: 100px;
+  margin-right: 10px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+
+@media screen and (max-width:991px) {
+  .footer-section .footer-email-heading {
+    top: 0;
+  }
+
+  .form-content-fields {
+    padding-top: 10em;
+  }
+}
+
+@media screen and (max-width:500px) {
+  .footer-section .footer-email-heading {
+    padding: 30px 50px;
+    font-size: clamp(0.7rem, 2vw, 2em);
+  }
+
+  .form-content-fields {
+    padding-top: 5em;
+  }
+}
+
+@media screen and (max-width:375px) {
+  .footer-section .footer-email-heading {
+    padding: 30px 50px;
+    font-size: clamp(0.7rem, 2vw, 2em);
+  }
+}
+
+/**************** Footer Section ****************/
