@@ -422,18 +422,15 @@
 }
 
 .marquee-img-1 {
-     width: 200px;
-     height: 200px;
+     width: 10vw;
 }
 
 .marquee-img-2 {
-     width: 200px;
-     height: 200px;
+     width: 10vw;
 }
 
 .marquee-img-3 {
-     width: 200px;
-     height: 200px;
+     width: 10vw;
 }
 
 /****************** Scroller Footer ****************/
@@ -444,7 +441,7 @@
      color: #322D2A;
      text-align: center;
      font-family: 'Playfair-Regular';
-     font-size: 56px;
+     font-size: clamp(1.75rem, 4vw, 3.5rem);
      font-style: normal;
      font-weight: 500;
      line-height: 120%;
@@ -460,7 +457,7 @@
      color: #322D2A;
      text-align: center;
      font-family: 'Playfair-Regular';
-     font-size: 30px;
+     font-size: clamp(1.1rem, 3vw, 1.6rem);
      font-style: normal;
      font-weight: 500;
      line-height: 120%;
@@ -469,10 +466,14 @@
      text-transform: lowercase;
 }
 
+.socials-follow-container .follow-pics img {
+     width: 50px;
+}
+
 .socials-follow-container .follow-btn {
      border: 1px solid #C4C4C4;
      border-radius: 50px;
-     padding: 5px 15px;
+     padding: 4px 14px;
 }
 
 .socials-follow-container .follow-btn .btn-follow {
@@ -485,6 +486,18 @@
      /* 22.4px */
      letter-spacing: -0.32px;
 }
+
+@media screen and (max-width: 500px) {
+     .socials-follow-container .follow-btn {
+          padding: 1px 10px;
+     }
+
+     .socials-follow-container .follow-btn .btn-follow {
+          font-size: 15px;
+     }
+}
+
+
 
 /****************** Socials Share Section ****************/
 
