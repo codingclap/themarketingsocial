@@ -53,6 +53,17 @@
   src: url(../fonts/anton/Anton-Regular.ttf) format('opentype');
 }
 
+@font-face {
+  font-family: 'Cardo-Regular';
+  font-style: 400;
+  src: url(../fonts/cardo/Cardo-Regular.ttf) format('opentype');
+}
+@font-face {
+  font-family: 'Cardo-Italic';
+  font-style: 400;
+  src: url(../fonts/cardo/Cardo-Italic.ttf) format('opentype');
+}
+
 [data-fontfamily='Gotham-Light'] {
   font-family: 'Gotham-Light', sans-serif;
 }

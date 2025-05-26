@@ -96,7 +96,7 @@
 }
 
 .conversation-section {
-     width: 100vw;
+     width: 100%;
      min-height: 1040px;
      background: url('../images/home-page/conversation-bg.svg') center center/cover no-repeat;
      position: relative;
@@ -163,7 +163,6 @@
      display: flex;
      gap: 20px;
      width: 100%;
-     margin-top: 2rem;
 }
 
 .helping-panel-container .panel {
@@ -311,12 +310,16 @@
           padding: 1rem;
           font-size: 1.1rem;
      }
-      .helping-panel-container .overlay h2 {
+
+     .helping-panel-container .overlay h2 {
           font-size: 30px;
      }
 }
 
 @media (max-width: 500px) {
+     br {
+          display: none;
+     }
 
      .helping-panel-container .panel {
           min-width: 90vw;
@@ -328,6 +331,7 @@
           font-size: 28px;
      }
 }
+
 @media (max-width: 425px) {
 
      .helping-panel-container .panel {
@@ -344,15 +348,167 @@
 /****************** Helping Brand Section ****************/
 
 
+/****************** Success Measure Section ****************/
+
+.success-measure-section .success-measure-title {
+     color: #322D2A;
+     text-align: center;
+     font-family: "Playfair-Medium";
+     font-size: clamp(1.75rem, 4vw, 3.5rem);
+     font-style: normal;
+     font-weight: 500;
+     line-height: 120%;
+     /* 67.2px */
+     letter-spacing: -1.12px;
+     text-transform: capitalize;
+}
+
+.success-measure-section .success-counting-container .success-counting-number {
+     font-family: 'Anton-Regular';
+     -webkit-text-stroke-width: 2px;
+     -webkit-text-stroke-color: var(--Brown, #322D2A);
+     font-size: clamp(4.5rem, 10vw, 15rem);
+     font-style: normal;
+     font-weight: 500;
+     line-height: 120%;
+     /* 67.2px */
+     letter-spacing: -1.12px;
+     text-transform: capitalize;
+     color: #322d2a00;
+}
+
+.success-measure-section .success-counting-container .success-counting-text {
+     color: #322D2A;
+     text-align: center;
+     font-family: 'Gotham-Light';
+     font-size: 24px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 140%;
+     /* 33.6px */
+}
+
+@media screen and (max-width: 780px) {
+     .success-measure-section .success-counting-container .success-counting-text {
+          font-size: 18px;
+     }
+}
+
+/****************** Success Measure Section ****************/
+
+/****************** Scroller Footer ****************/
+.scroller-section-footer {
+     width: 100%;
+     overflow: hidden;
+     min-height: 100px;
+     display: flex;
+     align-items: center;
+}
+
+.marquee-inner-2 {
+     display: flex;
+     white-space: nowrap;
+}
+
+.marquee-text-2 {
+     font-size: 14vw;
+     font-family: 'Cardo-Italic';
+     color: #322D2A;
+     font-weight: 400;
+     white-space: nowrap;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.marquee-img-1 {
+     width: 200px;
+     height: 200px;
+}
+
+.marquee-img-2 {
+     width: 200px;
+     height: 200px;
+}
+
+.marquee-img-3 {
+     width: 200px;
+     height: 200px;
+}
+
+/****************** Scroller Footer ****************/
+
+
+/****************** Socials Share Section ****************/
+.socials-share-section .socials-share-title {
+     color: #322D2A;
+     text-align: center;
+     font-family: 'Playfair-Regular';
+     font-size: 56px;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 120%;
+     /* 67.2px */
+     letter-spacing: -1.12px;
+}
+
+.socials-follow-container {
+     border-bottom: 2px solid #322D2A;
+}
+
+.socials-follow-container .follow-pics-text {
+     color: #322D2A;
+     text-align: center;
+     font-family: 'Playfair-Regular';
+     font-size: 30px;
+     font-style: normal;
+     font-weight: 500;
+     line-height: 120%;
+     /* 38.4px */
+     letter-spacing: -0.64px;
+     text-transform: lowercase;
+}
+
+.socials-follow-container .follow-btn {
+     border: 1px solid #C4C4C4;
+     border-radius: 50px;
+     padding: 5px 15px;
+}
+
+.socials-follow-container .follow-btn .btn-follow {
+     color: #322D2A;
+     font-family: 'Gotham-Light';
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 140%;
+     /* 22.4px */
+     letter-spacing: -0.32px;
+}
+
+/****************** Socials Share Section ****************/
+
+
+/****************** Brand Reimaging Section ****************/
+
+.brand-reimaging-section {
+     width: 100%;
+     min-height: 1040px;
+     background-color: #680B16;
+     position: relative;
+     padding-left: 0;
+     padding-right: 0;
+     color: #fff;
+     display: flex;
+     align-items: center;
+}
+
+/****************** Brand Reimaging Section ****************/
 
 
 
 
-
-
-
-
-/******************* Responsive Design ********************/
+/*******************Common Responsive Design ********************/
 
 @media screen and (max-width: 1300px) {
 

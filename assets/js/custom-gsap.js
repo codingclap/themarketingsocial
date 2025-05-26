@@ -17,6 +17,7 @@ gsap.to(".navbar-brand-logo", {
 // Custom GSAP Animation for Header Image and Logo
 
 
+/*************  Gsap Marquee Animation- 1 ****************/
   window.addEventListener("load", () => {
     const marqueeInner = document.getElementById("marqueeInner");
     const originalText = marqueeInner.querySelector(".marquee-text");
@@ -40,3 +41,31 @@ gsap.to(".navbar-brand-logo", {
       }
     });
   });
+/*************  Gsap Marquee Animation- 1****************/
+
+
+/*************  Gsap Marquee Animation- 2 ****************/
+  window.addEventListener("load", () => {
+    const marqueeInner = document.getElementById("marqueeInner-2");
+    const originalText = marqueeInner.querySelector(".marquee-text-2");
+    const containerWidth = document.querySelector(".scroller-section-footer").offsetWidth;
+
+    // Clone enough times to fill + overflow the container
+    let totalWidth = originalText.offsetWidth;
+    while (totalWidth < containerWidth * 2) {
+      const clone = originalText.cloneNode(true);
+      marqueeInner.appendChild(clone);
+      totalWidth += clone.offsetWidth;
+    }
+
+    gsap.to(marqueeInner, {
+      x: `-=${originalText.offsetWidth}`,
+      duration: 5,
+      ease: "linear",
+      repeat: -1,
+      modifiers: {
+        x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
+      }
+    });
+  });
+/*************  Gsap Marquee Animation- 2****************/
