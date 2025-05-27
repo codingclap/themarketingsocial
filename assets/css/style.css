@@ -186,7 +186,16 @@ p {
   background-color: var(--color-background-gray);
 }
 
+.navbar-shadow{
+ box-shadow: 0 2px 24px rgb(0 0 0 / 20%);
+}
 
+#navbar-shadow-fixed{
+  transition: box-shadow 0.3s ease;
+  position: fixed;
+  top:0;
+  width: 100%;
+}
 /**************** Footer Section ****************/
 .footer-section {
   background-color: #F1E8E0;
@@ -221,12 +230,12 @@ p {
 .footer-section a.btn-custom {
   border-radius: 40px;
   border: 2px solid rgba(50, 45, 42, 0.29);
-  padding: 6px 20px;
+  padding: 7px 24px;
   text-decoration: none;
   color: var(--color-brown);
   font-variant-numeric: oldstyle-nums proportional-nums;
   font-family: 'Gotham-Light';
-  font-size: 16px;
+  font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 130%;
@@ -313,10 +322,20 @@ p {
   border-radius: 4px;
 }
 
+.extra-padding {
+  padding: 0 80px;
+}
+
+@media screen and (max-width: 1024px) {
+  .extra-padding {
+    padding: 0 40px;
+  }
+}
 
 @media screen and (max-width:991px) {
   .footer-section .footer-email-heading {
     top: 0;
+    padding: 30px 50px;
   }
 
   .form-content-fields {
@@ -324,10 +343,16 @@ p {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .extra-padding {
+    padding: 0 20px;
+  }
+}
+
 @media screen and (max-width:500px) {
   .footer-section .footer-email-heading {
     padding: 30px 50px;
-    font-size: clamp(0.7rem, 2vw, 2em);
+    font-size: clamp(0.9rem, 2vw, 2em);
   }
 
   .form-content-fields {
@@ -335,10 +360,16 @@ p {
   }
 }
 
+@media screen and (max-width: 416px) {
+  .extra-padding {
+    padding: 0 10px;
+  }
+}
+
 @media screen and (max-width:375px) {
   .footer-section .footer-email-heading {
-    padding: 30px 50px;
-    font-size: clamp(0.7rem, 2vw, 2em);
+    padding: 28px 50px;
+    font-size: clamp(0.8rem, 2vw, 2em);
   }
 }
 

@@ -1,11 +1,11 @@
 /****************** Main Header ****************/
+.header{
+     margin-top:90px;
+}
 .header .header-title {
      color: var(--color-muted);
 }
 
-.extra-padding {
-     padding: 0 80px;
-}
 
 .header .header-image {
      width: 100%;
@@ -645,9 +645,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-     .extra-padding {
-          padding: 0 40px;
-     }
+     
 
      .video-section .down-arrow .down-arrow-img {
           width: 30px;
@@ -660,11 +658,7 @@
 
 }
 
-@media screen and (max-width: 768px) {
-     .extra-padding {
-          padding: 0 20px;
-     }
-
+@media screen and (max-width: 768px) { 
      .video-section .down-arrow .down-arrow-img {
           width: 25px;
      }
@@ -711,10 +705,7 @@
 }
 
 @media screen and (max-width: 416px) {
-     .extra-padding {
-          padding: 0 10px;
-     }
-
+     
      .video-section .down-arrow {
           width: 55px;
           height: 55px;
