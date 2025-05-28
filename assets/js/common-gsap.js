@@ -2,15 +2,15 @@ window.addEventListener("load", () => {
   ScrollTrigger.refresh();
 });
 
-// Custom GSAP Animation for Header Image and Logo
-gsap.to(".header-image", {
-  rotation: 360,
-  duration: 6,
-  repeat: -1,
-  ease: "none",
-  transformOrigin: "50% 50%" // Ensures it rotates in place
-});
 
+ gsap.to(".navbar-brand-logo", {
+      rotationY: 180,    // Flip 180 degrees along the Y-axis
+      duration: 1.5,       // Duration for one flip
+      repeat: -1,        // Infinite loop
+      yoyo: true,        // Make the animation go back and forth
+      ease: "none",      // Smooth constant motion
+    })
+    // Custom GSAP Animation for Header Image and Logo
 
 //*************** Navbar Scroll Effect  ***************************/ 
 const target = document.getElementById("navbar-shadow-fixed");

@@ -87,7 +87,7 @@
 
   <!-- === Scroller Text === -->
   <section class="scroller-section pb-5 pb-lg-3">
-    <div class="marquee-inner" id="marqueeInner">
+    <div class="marquee-inner" id="home-marqueeInner-1">
       <div class="marquee-text">THE MARKETING SOCIALS &bull;&nbsp</div>
     </div>
   </section>
@@ -225,8 +225,8 @@
   <!-- === Success Measure Section === -->
 
   <!-- === Scroller Text === -->
-  <section class="scroller-section-footer pb-5 pb-lg-3">
-    <div class="marquee-inner-2" id="marqueeInner-2">
+  <section class="scroller-gif-section pb-5 pb-lg-3">
+    <div class="marquee-inner-2" id="home-marqueeInner-2">
       <div class="marquee-text-2">The Marketing Socials <img class="ms-5 marquee-img-1"
           src="assets/images/home-page/success-measure-gif.gif" />&nbsp;<img class="marquee-img-2"
           src="assets/images/logo/TMS-Black.png" />&nbsp;<img class="marquee-img-3 me-5"
@@ -284,7 +284,7 @@
     </div>
     <div class="brand-reimaging-image"> </div>
     <div class="brand-reimaging-animation">
-      <div class="brand-reimaging-bgtext" id="brand-reimaging-bgtext">
+      <div class="brand-reimaging-bgtext" id="about-marqueeInner-3">
         <span class="brand-bgheading">Depth. Direction. Design.</span>
       </div>
     </div>
@@ -357,19 +357,19 @@
 
   <script>
 
-    gsap.to(".navbar-brand-logo", {
-      rotationY: 180,    // Flip 180 degrees along the Y-axis
-      duration: 1.5,       // Duration for one flip
-      repeat: -1,        // Infinite loop
-      yoyo: true,        // Make the animation go back and forth
-      ease: "none",      // Smooth constant motion
-    })
     // Custom GSAP Animation for Header Image and Logo
+    gsap.to(".header-image", {
+      rotation: 360,
+      duration: 6,
+      repeat: -1,
+      ease: "none",
+      transformOrigin: "50% 50%" // Ensures it rotates in place
+    });
 
 
     /*************  Gsap Marquee Animation(Home)- 1 ****************/
     window.addEventListener("load", () => {
-      const marqueeInner = document.getElementById("marqueeInner");
+      const marqueeInner = document.getElementById("home-marqueeInner-1");
       const originalText = marqueeInner.querySelector(".marquee-text");
       const containerWidth = document.querySelector(".scroller-section").offsetWidth;
 
@@ -396,9 +396,9 @@
 
     /*************  Gsap Marquee Animation(Home)- 2 ****************/
     window.addEventListener("load", () => {
-      const marqueeInner = document.getElementById("marqueeInner-2");
+      const marqueeInner = document.getElementById("home-marqueeInner-2");
       const originalText = marqueeInner.querySelector(".marquee-text-2");
-      const containerWidth = document.querySelector(".scroller-section-footer").offsetWidth;
+      const containerWidth = document.querySelector(".scroller-gif-section").offsetWidth;
 
       // Clone enough times to fill + overflow the container
       let totalWidth = originalText.offsetWidth;
@@ -423,7 +423,7 @@
 
     /*************  Gsap Marquee Brand-Reimaging (Home) ****************/
     window.addEventListener("load", () => {
-      const marqueeInner = document.getElementById("brand-reimaging-bgtext");
+      const marqueeInner = document.getElementById("about-marqueeInner-3");
       const originalText = marqueeInner.querySelector(".brand-bgheading");
       const containerWidth = document.querySelector(".brand-reimaging-animation").offsetWidth;
 

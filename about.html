@@ -69,8 +69,8 @@
     <!-- <link rel="stylesheet" href="assets/css/home.css"> -->
     <link rel="stylesheet" href="assets/css/about.css">
 
-    <section class="about-brand-header pb-4 px-3">
-        <div class="about-brand-heading">
+    <section class="about-header pb-4 px-3">
+        <div class="about-content">
             <span class="about-heading-superText d-flex text-center justify-content-center">We Create not just </span>
             <h3 class="about-heading py-3 mb-0 text-center">Brands, But Legacies <br>Timeless ideas, bold
                 execution—crafted to leave a lasting mark.</h3>
@@ -80,12 +80,12 @@
         </div>
     </section>
     <section
-        class="about-brand-subheader d-flex align-items-center justify-content-center flex-column py-4 py-md-5 py-lg-5">
+        class="about-subheader d-flex align-items-center justify-content-center flex-column py-4 py-md-5 py-lg-5">
 
-        <div class="about-brand-image"> </div>
-        <div class="about-brand-animation">
-            <div class="about-brand-bgtext" id="about-brand-reimaging-bgtext">
-                <span class="about-brand-bgheading">THE MARKETING SOCIAL &bull;&nbsp</span>
+        <div class="about-subheaderImage"> </div>
+        <div class="about-subheaderAnimation">
+            <div class="about-subheaderBgtext" id="about-marqueeInner-1">
+                <span class="about-bgheading">THE MARKETING SOCIAL &bull;&nbsp</span>
             </div>
         </div>
     </section>
@@ -129,7 +129,7 @@
     <!-- === About Us === -->
 
     <!-- === About Us - Client === -->
-    <section class="about-us-client-section extra-padding pt-2 pt-md-4 pt-lg-5 pb-2 pb-md-4 pb-lg-5">
+    <section class="about-us-client-section extra-padding pt-2 pt-md-4 pt-lg-5 pb-2 pb-md-4 pb-lg-5 my-0 my-md-3 my-lg-4">
         <div class="about-us-client-container py-5">
             <div class="row justify-content-center pb-4 pb-md-5 pb-lg-5">
                 <div class="col-12">
@@ -180,7 +180,7 @@
 
 
     <!-- === About- Scroller Text === -->
-    <section class="about-scroller-section-footer py-3 py-lg-4">
+    <section class="about-gif-scroller-section py-3 py-lg-4">
         <div class="about-marquee-inner-2" id="about-marqueeInner-2">
             <div class="about-marquee-text-2">The Marketing Socials <img class="ms-5 about-marquee-img-1"
                     src="assets/images/home-page/success-measure-gif.gif" />&nbsp;<img class="about-marquee-img-2"
@@ -238,7 +238,7 @@
         </div>
         <div class="brand-reimaging-image"> </div>
         <div class="brand-reimaging-animation">
-            <div class="brand-reimaging-bgtext" id="brand-reimaging-bgtext">
+            <div class="brand-reimaging-bgtext" id="about-marqueeInner-3">
                 <span class="brand-bgheading">Depth. Direction. Design.</span>
             </div>
         </div>
@@ -312,11 +312,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
     <script>
-        /*************  Gsap Marquee Animation(Home)- 2 ****************/
+         
+
+        /*************  Gsap Marquee Brand-Reimaging(About)- 1 ****************/
+        window.addEventListener("load", () => {
+            const marqueeInner = document.getElementById("about-marqueeInner-1");
+            const originalText = marqueeInner.querySelector(".about-bgheading");
+            const containerWidth = document.querySelector(".about-subheaderAnimation").offsetWidth;
+
+            // Clone enough times to fill + overflow the container
+            let totalWidth = originalText.offsetWidth;
+            while (totalWidth < containerWidth * 2) {
+                const clone = originalText.cloneNode(true);
+                marqueeInner.appendChild(clone);
+                totalWidth += clone.offsetWidth;
+            }
+
+            gsap.to(marqueeInner, {
+                x: `-=${originalText.offsetWidth}`,
+                duration: 5,
+                ease: "linear",
+                repeat: -1,
+                modifiers: {
+                    x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
+                }
+            });
+        });
+        /*************  Gsap Marquee Brand-Reimaging(About)- 1 ****************/
+
+        /*************  Gsap Marquee Animation(About)- 2 ****************/
         window.addEventListener("load", () => {
             const marqueeInner = document.getElementById("about-marqueeInner-2");
             const originalText = marqueeInner.querySelector(".about-marquee-text-2");
-            const containerWidth = document.querySelector(".about-scroller-section-footer").offsetWidth;
+            const containerWidth = document.querySelector(".about-gif-scroller-section").offsetWidth;
 
             // Clone enough times to fill + overflow the container
             let totalWidth = originalText.offsetWidth;
@@ -336,13 +364,13 @@
                 }
             });
         });
-        /*************  Gsap Marquee Animation (Home)- 2****************/
+        /*************  Gsap Marquee Animation (About)- 2 ****************/
 
-        /*************  Gsap Marquee Brand-Reimaging(About) ****************/
+         /*************  Gsap Marquee Brand-Reimaging (About) - 3 ****************/
         window.addEventListener("load", () => {
-            const marqueeInner = document.getElementById("about-brand-reimaging-bgtext");
-            const originalText = marqueeInner.querySelector(".about-brand-bgheading");
-            const containerWidth = document.querySelector(".about-brand-animation").offsetWidth;
+            const marqueeInner = document.getElementById("about-marqueeInner-3");
+            const originalText = marqueeInner.querySelector(".brand-bgheading");
+            const containerWidth = document.querySelector(".brand-reimaging-animation").offsetWidth;
 
             // Clone enough times to fill + overflow the container
             let totalWidth = originalText.offsetWidth;
@@ -362,8 +390,7 @@
                 }
             });
         });
-        /*************  Gsap Marquee Brand-Reimaging(About) ****************/
-
+        /*************  Gsap Marquee Brand-Reimaging(About) - 3 ****************/
     </script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/common-gsap.js"></script>

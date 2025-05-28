@@ -1,6 +1,6 @@
 /****************** About Us Header Section ****************/
 
-.about-brand-header {
+.about-header {
     background-color: #AA9D8E;
     margin-top: 80px;
     padding-top: 6em;
@@ -8,7 +8,7 @@
     bottom: -1px;
 }
 
-.about-brand-header .about-heading {
+.about-header .about-heading {
 
     font-family: "Playfair-Italic";
     font-size: clamp(1.75rem, 3vw, 3.2rem);
@@ -18,7 +18,7 @@
     color: #F1E8E0;
 }
 
-.about-brand-header .about-heading-superText {
+.about-header .about-heading-superText {
     color: #6D2732;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #6D2732;
@@ -30,7 +30,7 @@
     letter-spacing: 2.4px;
 }
 
-.about-brand-header .about-heading-subText {
+.about-header .about-heading-subText {
     color: #6D2732;
     text-align: center;
     -webkit-text-stroke-width: 1px;
@@ -43,7 +43,7 @@
 }
 
 
-.about-brand-subheader {
+.about-subheader {
     width: 100%;
     min-height: 1100px;
     background-color: #AA9D8E;
@@ -59,7 +59,7 @@
 
 
 
-.about-brand-subheader .about-brand-image {
+.about-subheader .about-subheaderImage {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -70,7 +70,7 @@
 }
 
 
-.about-brand-subheader .about-brand-bgheading {
+.about-subheader .about-bgheading {
     font-size: 18vw;
     color: #E3E3E3;
     font-family: 'Anton-Regular';
@@ -80,12 +80,12 @@
     text-transform: uppercase;
 }
 
-.about-brand-subheader .about-brand-bgtext {
+.about-subheader .about-subheaderBgtext {
     display: flex;
     white-space: nowrap;
 }
 
-.about-brand-subheader .about-brand-animation {
+.about-subheader .about-subheaderAnimation {
     width: 100%;
     overflow: hidden;
     min-height: 100px;
@@ -94,63 +94,63 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .about-brand-subheader {
+    .about-subheader {
         min-height: 900px;
     }
 
-    .about-brand-subheader .about-brand-image {
+    .about-subheader .about-subheaderImage {
         background: url('../images/about-page/about-black-heat-lady.webp') center bottom/1600px no-repeat;
     }
 }
 
 @media screen and (max-width: 1024px) {
-    .about-brand-subheader {
+    .about-subheader {
         min-height: 700px;
     }
 
-    .about-brand-subheader .about-brand-image {
+    .about-subheader .about-subheaderImage {
         background: url('../images/about-page/about-black-heat-lady.webp') center bottom/1300px no-repeat;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .about-brand-header {
+    .about-header {
         margin-top: 40px;
         padding-top: 6em;
     }
 
-    .about-brand-subheader {
+    .about-subheader {
         min-height: 500px;
     }
 
-    .about-brand-subheader .about-brand-image {
+    .about-subheader .about-subheaderImage {
         background: url('../images/about-page/about-black-heat-lady.webp') center bottom/900px no-repeat;
     }
 
-    .about-brand-header .about-heading {
-        font-size: clamp(1.5rem, 2vw, 3.5rem);
+    .about-header .about-heading {
+        font-size: clamp(1.6rem, 3vw, 3.5rem);
     }
 
-    .about-brand-header .about-brand-heading {
+    .about-header .about-content {
         left: 0px;
 
     }
 }
 
 @media screen and (max-width: 500px) {
-    .about-brand-subheader {
+    .about-subheader {
         min-height: 280px;
     }
 
-    .about-brand-subheader .about-brand-image {
+    .about-subheader .about-subheaderImage {
         background: url('../images/about-page/about-black-heat-lady.webp') center bottom/500px no-repeat;
     }
 
-    .about-brand-header .about-heading {
-        font-size: clamp(1.4rem, 2vw, 3.5rem);
+    .about-header .about-heading {
+        font-size: clamp(1.4rem, 3vw, 3.5rem);
     }
 
-    .about-brand-header .about-brand-heading {
+    .about-header .about-content {
         left: 0px;
         right: 0px;
         top: 10px;
@@ -320,9 +320,10 @@
 
 /****************** About Us - Client Section ****************/
 .about-us-client-section {
-    background-color: var(--color-background-gray);
+    background-color: var(--color-background-gray); 
 }
 
+ 
 .about-us-client-heading {
     font-family: "Playfair-Regular";
     color: #322D2A;
@@ -350,7 +351,7 @@
 
 
 /****************** About - Scroller Footer ****************/
-.about-scroller-section-footer {
+.about-gif-scroller-section {
      width: 100%;
      overflow: hidden;
      min-height: 100px;
