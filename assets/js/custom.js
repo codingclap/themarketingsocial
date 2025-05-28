@@ -15,6 +15,7 @@ panels.forEach(panel => {
   panel.addEventListener('click', () => {
     panels.forEach(p => p.classList.remove('active'));
     panel.classList.add('active');
+    
   });
 });
 //-- Verticle Bar expend( Helping Brand ) --//
