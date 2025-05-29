@@ -1,7 +1,8 @@
 /****************** Main Header ****************/
-.header{
-     margin-top:90px;
+.header {
+     margin-top: 90px;
 }
+
 .header .header-title {
      color: var(--color-muted);
 }
@@ -349,6 +350,34 @@
 
 
 /****************** Success Measure Section ****************/
+.success-measure-section {
+     position: relative;
+}
+
+.home-gif-left {
+     position: absolute;
+     left: 0;
+     top: 50%;
+     transform: translateY(-50%);
+     /* Vertically center */
+     z-index: 0;
+     width: 25%;
+}
+
+.home-gif-right {
+     position: absolute;
+     right: 0;
+     top: 50%;
+     transform: translateY(-50%);
+     /* Vertically center */
+     z-index: 0;
+     width: 35%;
+}
+
+.success-measure-content {
+     position: relative;
+     z-index: 2;
+}
 
 .success-measure-section .success-measure-title {
      color: #322D2A;
@@ -361,6 +390,11 @@
      /* 67.2px */
      letter-spacing: -1.12px;
      text-transform: capitalize;
+}
+
+.success-measure-section .success-counting-container {
+     position: relative;
+     z-index: 2;
 }
 
 .success-measure-section .success-counting-container .success-counting-number {
@@ -391,6 +425,28 @@
 @media screen and (max-width: 780px) {
      .success-measure-section .success-counting-container .success-counting-text {
           font-size: 18px;
+     }
+}
+
+@media screen and (max-width: 450px) {
+     .home-gif-left {
+          position: absolute;
+          left: 0;
+          top: 20%;
+          transform: translateY(-50%);
+          /* Vertically center */
+          z-index: 0;
+          width: 25%;
+     }
+
+     .home-gif-right {
+          position: absolute;
+          right: 0;
+          top: 80%;
+          transform: translateY(-50%);
+          /* Vertically center */
+          z-index: 0;
+          width: 35%;
      }
 }
 
@@ -522,7 +578,7 @@
      }
 
      .socials-follow-container .follow-btn .btn-follow {
-          font-size: 13px; 
+          font-size: 13px;
      }
 }
 
@@ -645,7 +701,7 @@
 }
 
 @media screen and (max-width: 1024px) {
-     
+
 
      .video-section .down-arrow .down-arrow-img {
           width: 30px;
@@ -658,7 +714,7 @@
 
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
      .video-section .down-arrow .down-arrow-img {
           width: 25px;
      }
@@ -705,7 +761,7 @@
 }
 
 @media screen and (max-width: 416px) {
-     
+
      .video-section .down-arrow {
           width: 55px;
           height: 55px;

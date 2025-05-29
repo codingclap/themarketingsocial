@@ -1,4 +1,7 @@
  /* === Custom Hamburger Button === */
+ .navbar{
+    transition: all 0.5s ease-in-out;
+ }
  .custom-toggler {
      border: none;
      background: transparent;
