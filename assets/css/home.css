@@ -353,6 +353,7 @@
 /****************** Success Measure Section ****************/
 .success-measure-section {
      position: relative;
+     overflow: hidden;
 }
 
 .home-gif-left {
@@ -362,7 +363,20 @@
      transform: translateY(-50%);
      /* Vertically center */
      z-index: 0;
-     width: 25%;
+     width: 20%;
+}
+
+.home-gif-left-shadow {
+     position: absolute;
+     left: 0;
+     top: 50%;
+     transform: translateY(-50%);
+     z-index: 0;
+      width: 25%;
+     min-width: 0px;
+     max-width: 300px;
+     height: 80vh;
+     background-color: #d9d9d9;
 }
 
 .home-gif-right {
@@ -373,6 +387,19 @@
      /* Vertically center */
      z-index: 0;
      width: 35%;
+}
+
+.home-gif-right-shadow {
+     position: absolute;
+     right: 0;
+     top: 50%;
+     transform: translateY(-50%);
+     z-index: 0;
+     width: 35%;
+     min-width: 0px;
+     max-width: 550px;
+     height: 80vh;
+     background-color: #d9d9d9;
 }
 
 .success-measure-content {

@@ -1,9 +1,8 @@
 /****************** About Us Header Section ****************/
 
 .about-header {
-    background-color: #AA9D8E;
-    margin-top: 80px;
-    padding-top: 6em;
+    background-color: #AA9D8E; 
+    padding-top: 11em;
     position: relative;
     bottom: -1px;
 }
@@ -114,9 +113,8 @@
 }
 
 @media screen and (max-width: 768px) {
-    .about-header {
-        margin-top: 40px;
-        padding-top: 6em;
+    .about-header { 
+        padding-top: 9em;
     }
 
     .about-subheader {

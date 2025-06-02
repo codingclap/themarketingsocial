@@ -26,14 +26,14 @@ let isScrolled = false;
       target.classList.add("py-lg-0");
       target.classList.add("py-md-0");
       target.classList.add("py-0");
-      target.classList.remove("py-1");
-      target.classList.remove("py-md-3");
-      target.classList.remove("py-lg-3");
+      target.classList.remove("py-0");
+      target.classList.remove("py-md-2");
+      target.classList.remove("py-lg-2");
     } else if (scrollY <= 50 && isScrolled) {
       target.classList.remove("navbar-shadow"); 
       target.classList.add("py-1");
-      target.classList.add("py-md-3");
-      target.classList.add("py-lg-3");
+      target.classList.add("py-md-2");
+      target.classList.add("py-lg-2");
       isScrolled = false;
     }
   }

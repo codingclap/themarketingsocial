@@ -15,7 +15,7 @@
 <body>
 
   <!-- === Navbar Start === -->
-  <nav class="navbar navbar-expand-lg navbg-light py-1 py-md-3 py-lg-3 sticky-top extra-padding"
+  <nav class="navbar navbar-expand-lg navbg-light py-1 py-md-2 py-lg-2 sticky-top extra-padding"
     id="navbar-shadow-fixed">
     <div class="container-fluid">
       <!-- Logo Left -->
@@ -223,8 +223,10 @@
     </div>
 
     <div class="home-gif-container">
-      <img class="home-gif-left" src="assets/images/small-spiral-left.gif" alt="">
-      <img class="home-gif-right" src="assets/images/big-spiral-right.gif" alt=""> 
+      <img class="home-gif-left" src="assets/images/home-page/spiral-left.png" alt="">
+      <div class="home-gif-left-shadow"></div>
+      <img class="home-gif-right" src="assets/images/home-page/spiral-right.png" alt="">
+      <div class="home-gif-right-shadow"></div>
     </div>
   </section>
   <!-- === Success Measure Section === -->
@@ -505,6 +507,96 @@
 
     //************* GSAP ScrollTrigger for Counter Animation ****************/
 
+
+    //************* Spiral -- Animation ****************/ 
+    // Move effect: slide in from edges to center, then back out
+
+    // Set initial positions: left shadow off to the left, right shadow off to the right
+    gsap.set(".home-gif-left-shadow", { left: "0%", width: "25%", });
+    gsap.set(".home-gif-left", { scale: 0.9 });
+
+    gsap.set(".home-gif-right-shadow", { right: "0%", width: "35%" });
+    gsap.set(".home-gif-right", { scale: 0.9 });
+
+    function animateGifs() {
+      // Animate left shadow in to 0 (edge to center), then back out
+      gsap.to(".home-gif-left-shadow", {
+        left: "20%",
+        duration: 1.5,
+        ease: "power3.inOut",
+        delay: 0.5,
+        onStart: () => {
+          // Scale up the spiral image as the shadow moves in
+          gsap.to(".home-gif-left", {
+            scale: 1,
+            duration: 1.5,
+            ease: "power3.inOut"
+          });
+        },
+        onComplete: () => {
+          gsap.to(".home-gif-left-shadow", {
+            left: "0%",
+            duration: 1.5,
+            ease: "power3.inOut",
+            delay: 0.5,
+            onStart: () => {
+              // Scale back down the spiral image as the shadow moves out
+              gsap.to(".home-gif-left", {
+                scale: 0.9,
+                duration: 1.5,
+                ease: "power3.inOut"
+              });
+            },
+            onComplete: animateGifs
+          });
+        },
+        scrollTrigger: {
+          trigger: ".success-measure-section",
+          start: "top 95%",
+          once: true // run only once when section enters viewport
+        }
+      });
+
+      // Animate right shadow in to 0 (edge to center), then back out
+      gsap.to(".home-gif-right-shadow", {
+        right: "35%",
+        duration: 1.5,
+        ease: "power3.inOut",
+        delay: 0.5,
+        onStart: () => {
+          // Scale up the spiral image as the shadow moves in
+          gsap.to(".home-gif-right", {
+            scale: 1,
+            duration: 1.5,
+            ease: "power3.inOut"
+          });
+        },
+        onComplete: () => {
+          gsap.to(".home-gif-right-shadow", {
+            right: "0%",
+            duration: 1.5,
+            ease: "power3.inOut",
+            delay: 0.5,
+            onStart: () => {
+              // Scale back down the spiral image as the shadow moves out
+              gsap.to(".home-gif-right", {
+                scale: 0.9,
+                duration: 1.5,
+                ease: "power3.inOut"
+              });
+            },
+          });
+        },
+        scrollTrigger: {
+          trigger: ".success-measure-section",
+          start: "top 95%",
+          once: true
+        }
+      });
+    }
+
+    animateGifs();
+    //************* Spiral -- Animation ****************/
 
   </script>
   <script src="assets/js/custom.js"></script>
