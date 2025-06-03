@@ -6,7 +6,7 @@
     position: relative;
     bottom: -1px;
 }
-
+ 
 .about-header .about-heading {
 
     font-family: "Playfair-Italic";
@@ -323,11 +323,64 @@
 
 
 /****************** About Us - Client Section ****************/
+
+
 .about-us-client-section {
     background-color: var(--color-background-gray);
+    position: relative;
 }
 
+.about-us-client-container{
+     position: relative;
+     z-index: 2;
+}
+.about-us-client-images{
+   position: relative;
+     z-index: 2; 
+}
+.about-gif-left {
+     position: absolute;
+     left: 0;
+     top: 50%;
+     transform: translateY(-50%);
+     /* Vertically center */
+     z-index: 1;
+     width: 16%;
+}
 
+.about-gif-left-shadow {
+     position: absolute;
+     left: 0;
+     top: 0; 
+     z-index: 1;
+      width: 25%;
+     min-width: 0px;
+     max-width: 300px;
+     height: 100%;
+     background-color: #d9d9d9;
+}
+
+.about-gif-right {
+     position: absolute;
+     right: 0;
+     top: 50%;
+     transform: translateY(-50%);
+     /* Vertically center */
+     z-index: 1;
+     width: 28%;
+}
+
+.about-gif-right-shadow {
+     position: absolute;
+     right: 0;
+     top: 0; 
+     z-index: 1;
+     width: 35%;
+     min-width: 0px;
+     max-width: 550px;
+     height: 100%;
+     background-color: #d9d9d9;
+}
 .about-us-client-heading {
     font-family: "Playfair-Regular";
     color: #322D2A;
@@ -338,6 +391,7 @@
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
+
 
 @media screen and (max-width: 991px) {
     .about-us-client-section .about-us-client-images img {
@@ -352,6 +406,29 @@
     }
 
 }
+
+@media screen and (max-width: 450px) {
+     .about-gif-left {
+          position: absolute;
+          left: 0;
+          top: 40%;
+          transform: translateY(-50%);
+          /* Vertically center */
+          z-index: 0;
+          width: 15%;
+     }
+
+     .about-gif-right {
+          position: absolute;
+          right: 0;
+          top: 80%;
+          transform: translateY(-50%);
+          /* Vertically center */
+          z-index: 0;
+          width: 20%;
+     }
+}
+
 
 /****************** About Us - Client Section ****************/
 

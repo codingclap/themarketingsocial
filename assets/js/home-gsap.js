@@ -1,93 +1,191 @@
 /*************** Custom GSAP Animation for Header Image and Logo ****************/
+// Optimized infinite rotation for header image
+gsap.set(".header-image", {
+    transformOrigin: "50% 50%",
+    willChange: "transform"
+});
+
 gsap.to(".header-image", {
     rotation: 360,
-    duration: 6,
+    duration: 8,
     repeat: -1,
     ease: "none",
-    transformOrigin: "50% 50%" // Ensures it rotates in place
+    force3D: true // Forces GPU usage
 });
+
 /*************** Custom GSAP Animation for Header Image and Logo ****************/
 
 /*******************  Gsap Marquee Animation(Home)- 1 ****************/
-window.addEventListener("load", () => {
-    const marqueeInner = document.getElementById("home-marqueeInner-1");
-    const originalText = marqueeInner.querySelector(".marquee-text");
-    const containerWidth = document.querySelector(".scroller-section").offsetWidth;
+function setupHomeMarquee(marqueeInner, originalText) {
+    // Remove all previous clones
+    while (marqueeInner.children.length > 1) {
+        marqueeInner.removeChild(marqueeInner.lastChild);
+    }
 
-    // Clone enough times to fill + overflow the container
+    // Reset transform and force layout
+    marqueeInner.style.transform = 'translateX(0)';
+    originalText.style.whiteSpace = 'nowrap';
+
+    const containerWidth = marqueeInner.parentElement.offsetWidth;
     let totalWidth = originalText.offsetWidth;
+
+    // Clone original text until it overflows the container at least 2x
     while (totalWidth < containerWidth * 2) {
         const clone = originalText.cloneNode(true);
         marqueeInner.appendChild(clone);
         totalWidth += clone.offsetWidth;
     }
 
+    marqueeInner.style.willChange = 'transform';
+
+    gsap.killTweensOf(marqueeInner);
     gsap.to(marqueeInner, {
         x: `-=${originalText.offsetWidth}`,
-        duration: 5,
-        ease: "linear",
+        duration: 8,
+        ease: "none", // Use none for smooth continuous scroll
         repeat: -1,
+        force3D: true,
+        overwrite: true,
         modifiers: {
             x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
         }
     });
+}
+
+window.addEventListener("load", () => {
+    const marqueeInner = document.getElementById("home-marqueeInner-1");
+    const originalText = marqueeInner.querySelector(".marquee-text");
+
+    setupHomeMarquee(marqueeInner, originalText);
+
+    // Debounced resize with requestAnimationFrame
+    let resizeFrame;
+    window.addEventListener("resize", () => {
+        if (resizeFrame) cancelAnimationFrame(resizeFrame);
+        resizeFrame = requestAnimationFrame(() => {
+            setupHomeMarquee(marqueeInner, originalText);
+        });
+    });
 });
+
 /*******************  Gsap Marquee Animation(Home)- 1****************/
 
 
 /*******************  Gsap Marquee Animation(Home)- 2 ****************/
-window.addEventListener("load", () => {
-    const marqueeInner = document.getElementById("home-marqueeInner-2");
-    const originalText = marqueeInner.querySelector(".marquee-text-2");
-    const containerWidth = document.querySelector(".scroller-gif-section").offsetWidth;
+function setupHomeMarquee2(marqueeInner, originalText) {
+    // Remove all previously cloned elements (keep original only)
+    while (marqueeInner.children.length > 1) {
+        marqueeInner.removeChild(marqueeInner.lastChild);
+    }
 
-    // Clone enough times to fill + overflow the container
+    // Reset transform and ensure accurate size calculation
+    marqueeInner.style.transform = 'translateX(0)';
+    originalText.style.whiteSpace = 'nowrap';
+
+    const containerWidth = marqueeInner.parentElement.offsetWidth;
     let totalWidth = originalText.offsetWidth;
+
+    // Clone original text until the total width covers the container at least twice
     while (totalWidth < containerWidth * 2) {
         const clone = originalText.cloneNode(true);
         marqueeInner.appendChild(clone);
         totalWidth += clone.offsetWidth;
     }
 
+    // Hint browser for GPU acceleration
+    marqueeInner.style.willChange = 'transform';
+
+    // Clear previous animations and apply smooth scrolling
+    gsap.killTweensOf(marqueeInner);
     gsap.to(marqueeInner, {
         x: `-=${originalText.offsetWidth}`,
-        duration: 5,
-        ease: "linear",
+        duration: 8,
+        ease: "none", // smoother than "linear" for continuous movement
         repeat: -1,
+        force3D: true,
+        overwrite: true,
         modifiers: {
             x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
         }
     });
+}
+
+window.addEventListener("load", () => {
+    const marqueeInner = document.getElementById("home-marqueeInner-2");
+    const originalText = marqueeInner.querySelector(".marquee-text-2");
+
+    setupHomeMarquee2(marqueeInner, originalText);
+
+    // Debounced resize using requestAnimationFrame
+    let resizeFrame;
+    window.addEventListener("resize", () => {
+        if (resizeFrame) cancelAnimationFrame(resizeFrame);
+        resizeFrame = requestAnimationFrame(() => {
+            setupHomeMarquee2(marqueeInner, originalText);
+        });
+    });
 });
+
 /*******************  Gsap Marquee Animation (Home)- 2****************/
 
 
 
 
 /*************  Gsap Marquee Brand-Reimaging (Home) ****************/
-window.addEventListener("load", () => {
-    const marqueeInner = document.getElementById("about-marqueeInner-3");
-    const originalText = marqueeInner.querySelector(".brand-bgheading");
-    const containerWidth = document.querySelector(".brand-reimaging-animation").offsetWidth;
+function setupMarquee3(marqueeInner, originalText) {
+    // Remove previously cloned elements (leave the original only)
+    while (marqueeInner.children.length > 1) {
+        marqueeInner.removeChild(marqueeInner.lastChild);
+    }
 
-    // Clone enough times to fill + overflow the container
+    // Reset transform and ensure accurate width calculation
+    marqueeInner.style.transform = 'translateX(0)';
+    originalText.style.whiteSpace = 'nowrap';
+
+    const containerWidth = marqueeInner.parentElement.offsetWidth;
     let totalWidth = originalText.offsetWidth;
+
+    // Clone original text until it overflows container 2x
     while (totalWidth < containerWidth * 2) {
         const clone = originalText.cloneNode(true);
         marqueeInner.appendChild(clone);
         totalWidth += clone.offsetWidth;
     }
 
+    // Hint browser to prepare for transform animation
+    marqueeInner.style.willChange = 'transform';
+
+    // Clear previous GSAP animations and apply new smooth loop
+    gsap.killTweensOf(marqueeInner);
     gsap.to(marqueeInner, {
         x: `-=${originalText.offsetWidth}`,
-        duration: 5,
-        ease: "linear",
+        duration: 8,
+        ease: "none", // use 'none' for perfectly smooth infinite scroll
         repeat: -1,
+        force3D: true,
+        overwrite: true,
         modifiers: {
             x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
         }
     });
+}
+
+window.addEventListener("load", () => {
+    const marqueeInner = document.getElementById("about-marqueeInner-3");
+    const originalText = marqueeInner.querySelector(".brand-bgheading");
+
+    setupMarquee3(marqueeInner, originalText);
+
+    // Responsive: debounce resize with requestAnimationFrame
+    let resizeFrame;
+    window.addEventListener("resize", () => {
+        if (resizeFrame) cancelAnimationFrame(resizeFrame);
+        resizeFrame = requestAnimationFrame(() => {
+            setupMarquee3(marqueeInner, originalText);
+        });
+    });
 });
+
 /*************  Gsap Marquee Brand-Reimaging(Home) ****************/
 
 
@@ -107,7 +205,7 @@ gsap.to(counter1, {
     ease: "power1.out",
     scrollTrigger: {
         trigger: "#CounterTrigger",
-        start: "top 80%", // start when top of #counter hits 80% of viewport
+        start: "top 90%", // start when top of #counter hits 90% of viewport
         once: true        // run only once
     },
     onUpdate: () => {
@@ -121,7 +219,7 @@ gsap.to(counter2, {
     ease: "power1.out",
     scrollTrigger: {
         trigger: "#CounterTrigger",
-        start: "top 80%", // start when top of #counter hits 80% of viewport
+        start: "top 90%", // start when top of #counter hits 90% of viewport
         once: true        // run only once
     },
     onUpdate: () => {
@@ -135,7 +233,7 @@ gsap.to(counter3, {
     ease: "power1.out",
     scrollTrigger: {
         trigger: "#CounterTrigger",
-        start: "top 80%", // start when top of #counter hits 80% of viewport
+        start: "top 90%", // start when top of #counter hits 90% of viewport
         once: true        // run only once
     },
     onUpdate: () => {
@@ -152,7 +250,7 @@ gsap.to(counter3, {
 //******************* Spiral -- Animation **********************/ 
 // Move effect: slide in from edges to center, then back out 
 // Set initial positions: left shadow off to the left, right shadow off to the right
-gsap.set(".home-gif-left-shadow", { left: "0%", width: "25%", });
+gsap.set(".home-gif-left-shadow", { left: "0%", width: "25%" });
 gsap.set(".home-gif-left", { scale: 0.9 });
 
 gsap.set(".home-gif-right-shadow", { right: "0%", width: "35%" });
@@ -176,7 +274,7 @@ function animateGifs() {
         onComplete: () => {
             gsap.to(".home-gif-left-shadow", {
                 left: "0%",
-                duration: 1.5,
+                duration: 1.8,
                 ease: "power3.inOut",
                 delay: 0.5,
                 onStart: () => {
@@ -187,6 +285,7 @@ function animateGifs() {
                         ease: "power3.inOut"
                     });
                 },
+
                 onComplete: animateGifs
             });
         },
@@ -214,7 +313,7 @@ function animateGifs() {
         onComplete: () => {
             gsap.to(".home-gif-right-shadow", {
                 right: "0%",
-                duration: 1.5,
+                duration: 1.8,
                 ease: "power3.inOut",
                 delay: 0.5,
                 onStart: () => {
