@@ -25,7 +25,7 @@ function setupMarquee(marqueeInner, originalText) {
     gsap.killTweensOf(marqueeInner);
     gsap.to(marqueeInner, {
         x: `-=${originalText.offsetWidth}`,
-        duration: 8,
+        duration: 10,
         ease: "none",
         repeat: -1,
         force3D: true,
@@ -81,7 +81,7 @@ function setupMarquee2(marqueeInner, originalText) {
   gsap.killTweensOf(marqueeInner);
   gsap.to(marqueeInner, {
     x: `-=${originalText.offsetWidth}`,
-    duration: 8,
+    duration: 10,
     ease: "none",
     repeat: -1,
     force3D: true,
@@ -136,7 +136,7 @@ function setupMarquee3(marqueeInner, originalText) {
   gsap.killTweensOf(marqueeInner);
   gsap.to(marqueeInner, {
     x: `-=${originalText.offsetWidth}`,
-    duration: 8,
+    duration: 10,
     ease: "none", // smoother than "linear"
     repeat: -1,
     force3D: true,

@@ -24,19 +24,20 @@
 }
 @font-face {
   font-family: 'Gotham-XLight';
-  font-style: 700;
+  font-style: 400;
   src: url(../fonts/Gotham-XLight.otf) format('opentype');
 }
 
+
 @font-face {
   font-family: 'Playfair-Regular';
-  font-style: 700;
+  font-style: 400;
   src: url(../fonts/playfair/PlayfairDisplay-Regular.ttf) format('opentype');
 }
 
 @font-face {
   font-family: 'Playfair-Italic';
-  font-style: 700;
+  font-style: 400;
   src: url(../fonts/playfair/PlayfairDisplay-Italic.ttf) format('opentype');
 }
 
@@ -54,7 +55,7 @@
 
 @font-face {
   font-family: 'Anton-Regular';
-  font-style: 700;
+  font-style: 400;
   src: url(../fonts/anton/Anton-Regular.ttf) format('opentype');
 }
 

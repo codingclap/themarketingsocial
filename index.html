@@ -86,9 +86,10 @@
   <!-- === Header End === -->
 
   <!-- === Scroller Text === -->
-  <section class="scroller-section pb-5 pb-lg-3">
-    <div class="marquee-inner" id="home-marqueeInner-1">
-      <div class="marquee-text">THE MARKETING SOCIALS &bull;&nbsp</div>
+  <section class="scroller-section pb-5 pb-lg-3" style="overflow: hidden;">
+    <div class="marquee-inner" id="home-marqueeInner-1"
+      style=" display: flex; flex-wrap: nowrap;  white-space: nowrap; will-change: transform;">
+      <div class="marquee-text" style="flex-shrink: 0;display: inline-block;">THE MARKETING SOCIALS &bull;&nbsp</div>
     </div>
   </section>
 
@@ -365,6 +366,10 @@
   <script src="assets/js/home-gsap.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/common-gsap.js"></script>
+
+  <script>
+   
+  </script>
 </body>
 
 </html>

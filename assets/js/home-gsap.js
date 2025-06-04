@@ -7,7 +7,7 @@ gsap.set(".header-image", {
 
 gsap.to(".header-image", {
     rotation: 360,
-    duration: 8,
+    duration: 10,
     repeat: -1,
     ease: "none",
     force3D: true // Forces GPU usage
@@ -16,38 +16,46 @@ gsap.to(".header-image", {
 /*************** Custom GSAP Animation for Header Image and Logo ****************/
 
 /*******************  Gsap Marquee Animation(Home)- 1 ****************/
+// JavaScript with optimizations
 function setupHomeMarquee(marqueeInner, originalText) {
-    // Remove all previous clones
+    // Remove all previous clones (keep only the first)
     while (marqueeInner.children.length > 1) {
         marqueeInner.removeChild(marqueeInner.lastChild);
     }
 
-    // Reset transform and force layout
     marqueeInner.style.transform = 'translateX(0)';
     originalText.style.whiteSpace = 'nowrap';
 
     const containerWidth = marqueeInner.parentElement.offsetWidth;
-    let totalWidth = originalText.offsetWidth;
 
-    // Clone original text until it overflows the container at least 2x
+    // Clone once to measure width without layout thrashing
+    const tempClone = originalText.cloneNode(true);
+    tempClone.style.visibility = "hidden";
+    marqueeInner.appendChild(tempClone);
+    const cloneWidth = tempClone.offsetWidth;
+    marqueeInner.removeChild(tempClone);
+
+    let totalWidth = cloneWidth;
+
+    // Append clones until it covers 2x container width
     while (totalWidth < containerWidth * 2) {
         const clone = originalText.cloneNode(true);
         marqueeInner.appendChild(clone);
-        totalWidth += clone.offsetWidth;
+        totalWidth += cloneWidth;
     }
 
-    marqueeInner.style.willChange = 'transform';
-
+    gsap.set(marqueeInner, { x: 0, willChange: "transform", force3D: true });
     gsap.killTweensOf(marqueeInner);
+
     gsap.to(marqueeInner, {
-        x: `-=${originalText.offsetWidth}`,
-        duration: 8,
-        ease: "none", // Use none for smooth continuous scroll
+        x: `-=${cloneWidth}`,
+        duration: 10,
+        ease: "none",
         repeat: -1,
         force3D: true,
         overwrite: true,
         modifiers: {
-            x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
+            x: gsap.utils.unitize(x => parseFloat(x) % cloneWidth)
         }
     });
 }
@@ -58,7 +66,7 @@ window.addEventListener("load", () => {
 
     setupHomeMarquee(marqueeInner, originalText);
 
-    // Debounced resize with requestAnimationFrame
+    // Optimized resize handling
     let resizeFrame;
     window.addEventListener("resize", () => {
         if (resizeFrame) cancelAnimationFrame(resizeFrame);
@@ -99,7 +107,7 @@ function setupHomeMarquee2(marqueeInner, originalText) {
     gsap.killTweensOf(marqueeInner);
     gsap.to(marqueeInner, {
         x: `-=${originalText.offsetWidth}`,
-        duration: 8,
+        duration: 10,
         ease: "none", // smoother than "linear" for continuous movement
         repeat: -1,
         force3D: true,
@@ -159,7 +167,7 @@ function setupMarquee3(marqueeInner, originalText) {
     gsap.killTweensOf(marqueeInner);
     gsap.to(marqueeInner, {
         x: `-=${originalText.offsetWidth}`,
-        duration: 8,
+        duration: 10,
         ease: "none", // use 'none' for perfectly smooth infinite scroll
         repeat: -1,
         force3D: true,
