@@ -124,7 +124,7 @@ function initScrollTriggers() {
                         const smoothProgress = Math.round(self.progress * (isMobile ? 15 : 20)) / (isMobile ? 15 : 20);
                         const scaleValue = gsap.utils.interpolate(
                             1,
-                            isMobile ? 0.95 : 0.8899,
+                            isMobile ? 0.90 : 0.90,
                             smoothProgress
                         );
 
