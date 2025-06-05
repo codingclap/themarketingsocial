@@ -207,3 +207,242 @@
 }
 
 /****************** Service Card - Section ****************/
+
+
+/****************** Scroller Footer ****************/
+.scroller-gif-section {
+     width: 100%;
+     overflow: hidden;
+     min-height: 100px;
+     display: flex;
+     align-items: center;
+}
+
+.marquee-inner-2 {
+     display: flex;
+     white-space: nowrap;
+}
+
+.marquee-text-2 {
+     font-size: 12vw;
+     font-family: 'Cardo-Italic';
+     color: #322D2A;
+     font-weight: 400;
+     white-space: nowrap;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.marquee-img-1 {
+     width: 10vw;
+}
+
+.marquee-img-2 {
+     width: 10vw;
+}
+
+.marquee-img-3 {
+     width: 10vw;
+}
+
+/****************** Scroller Footer ****************/
+
+
+
+/****************** Socials Share Section ****************/
+.socials-share-section .socials-share-title {
+     color: #322D2A;
+     text-align: center;
+     font-family: 'Playfair-Regular';
+     font-size: clamp(2.3rem, 4vw, 3.5rem);
+     font-style: normal;
+     font-weight: 500;
+     line-height: 120%;
+     /* 67.2px */
+     letter-spacing: -1.12px;
+}
+
+.socials-follow-container {
+     border-bottom: 2px solid #322D2A;
+}
+
+.socials-follow-container .follow-pics-text {
+     color: #322D2A;
+     text-align: center;
+     font-family: 'Playfair-Regular';
+     font-size: clamp(1.1rem, 3vw, 1.6rem);
+     font-style: normal;
+     font-weight: 500;
+     line-height: 120%;
+     /* 38.4px */
+     letter-spacing: -0.64px;
+     text-transform: lowercase;
+}
+
+.socials-follow-container .follow-pics img {
+     width: 50px;
+}
+
+.socials-follow-container .follow-btn {
+     border: 1px solid #C4C4C4;
+     border-radius: 50px;
+     padding: 4px 14px;
+}
+
+.socials-follow-container .follow-btn .btn-follow {
+     color: #322D2A;
+     font-family: 'Gotham-Light';
+     font-size: 16px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 85%;
+     /* 22.4px */
+     letter-spacing: -0.32px;
+}
+
+@media screen and (max-width: 500px) {
+     .socials-follow-container .follow-btn {
+          padding: 1px 10px;
+     }
+
+     .socials-follow-container .follow-btn .btn-follow {
+          font-size: 14px;
+          line-height: 120%;
+     }
+
+     .socials-follow-container .follow-pics img {
+          width: 40px;
+     }
+
+     .socials-follow-container .follow-pics-text {
+          font-size: clamp(1rem, 3vw, 1.6rem);
+     }
+
+     .socials-follow-container .follow-btn {
+          border-radius: 50px;
+          padding: 1px 10px;
+     }
+}
+
+@media screen and (max-width: 375px) {
+     .socials-follow-container .follow-pics-text {
+          font-size: clamp(0.9rem, 3vw, 1.6rem);
+     }
+
+     .socials-follow-container .follow-btn {
+          border-radius: 50px;
+          padding: 1px 6px;
+     }
+
+     .socials-follow-container .follow-btn .btn-follow {
+          font-size: 13px;
+     }
+}
+
+
+/****************** Socials Share Section ****************/
+
+
+
+
+/****************** Brand Reimaging Section ****************/
+
+.brand-reimaging-section {
+     width: 100%;
+     min-height: 900px;
+     background-color: #680B16;
+     position: relative;
+     padding-left: 0;
+     padding-right: 0;
+     color: #fff;
+     display: flex;
+     align-items: center;
+}
+
+.brand-reimaging-section .brand-reimaging-heading {
+     position: absolute;
+     top: 25%;
+     right: 70%;
+     z-index: 1;
+}
+
+.brand-reimaging-section .brand-reimaging-heading .brand-heading {
+     font-size: 20px;
+     font-family: 'Gotham-Light';
+     font-style: normal;
+     font-weight: 400;
+     line-height: 140%;
+     color: #F1E8E0;
+     /* 28px */
+     letter-spacing: -0.4px;
+     text-transform: uppercase;
+}
+
+.brand-reimaging-section .brand-reimaging-image {
+     position: absolute;
+     right: 0;
+     bottom: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 3;
+     background: url('../images/home-page/black-lady.png') center bottom no-repeat;
+     height: 900px;
+}
+
+
+.brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
+     font-size: 18vw;
+     color: #5E0A14;
+     font-family: 'Anton-Regular';
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+     text-transform: uppercase;
+}
+
+.brand-reimaging-section .brand-reimaging-bgtext {
+     display: flex;
+     white-space: nowrap;
+}
+
+.brand-reimaging-section .brand-reimaging-animation {
+     width: 100%;
+     overflow: hidden;
+     min-height: 100px;
+     display: flex;
+     align-items: center;
+}
+
+
+@media screen and (max-width: 768px) {
+     .brand-reimaging-section {
+          min-height: 500px;
+     }
+
+     .brand-reimaging-section .brand-reimaging-image {
+          background: url('../images/home-page/black-lady.png') center bottom/200px no-repeat;
+     }
+
+     .brand-reimaging-section .brand-reimaging-heading .brand-heading {
+          font-size: 16px;
+     }
+
+     .brand-reimaging-section .brand-reimaging-heading {
+          left: 15px;
+     }
+
+
+}
+
+@media screen and (max-width: 500px) {
+     .brand-reimaging-section .brand-reimaging-heading {
+          left: 15px;
+          top: 6%;
+          width: 50%;
+     }
+}
+
+
+/****************** Brand Reimaging Section ****************/
+
