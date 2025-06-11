@@ -123,3 +123,195 @@ window.addEventListener("load", () => {
 });
 
 /*************  Gsap Marquee Brand-Reimaging(Client) ****************/
+
+
+/****************** Client Partner Logs **************************/
+gsap.registerPlugin(ScrollTrigger);
+
+function initPartnerLogos() {
+    // Kill previous triggers/animations
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    gsap.killTweensOf(".partners-section .logo, .partners-section .center-heading");
+
+    const isMobile = window.innerWidth <= 600;
+    const steps = 30;
+
+    // Responsive movement distances in percent
+    const moveYTop = isMobile ? -60 : -30;
+    const moveYBottom = isMobile ? 60 : 80;
+    const moveXLeft = isMobile ? -60 : -80;
+    const moveXRight = isMobile ? 60 : 30;
+
+    // --- Center Heading Animation ---
+    gsap.to(".partners-section .center-heading", {
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+            trigger: ".partners-section .circle-wrapper",
+            start: isMobile ? "top 98%" : "top 90%",
+            end: isMobile ? "top 90%" : "top 80%",
+            scrub: true
+        }
+    });
+
+    // --- Top Logos: Move Down in Steps ---
+    gsap.fromTo(".partners-section .logo.top1",
+        { yPercent: moveYTop, opacity: 0 },
+        {
+            yPercent: 35,
+            xPercent: 0,
+            opacity: 1,
+            duration: 1,
+            ease: `steps(${steps})`,
+            scrollTrigger: {
+                trigger: ".partners-section .circle-wrapper",
+                start: "top 83%",
+                end: "top 30%",
+                scrub: true
+            }
+        }
+    );
+    gsap.fromTo(".partners-section .logo.top2",
+        { yPercent: moveYTop, opacity: 0 },
+        {
+            yPercent: 50,
+            xPercent: -50,
+            opacity: 1,
+            duration: 1.1,
+            ease: `steps(${steps})`,
+            scrollTrigger: {
+                trigger: ".partners-section .circle-wrapper",
+                start: "top 83%",
+                end: "top 30%",
+                scrub: true
+            }
+        }
+    );
+    gsap.fromTo(".partners-section .logo.top3",
+        { yPercent: moveYTop, opacity: 0 },
+        {
+            yPercent: 40,
+            xPercent: -50,
+            opacity: 1,
+            duration: 1.2,
+            ease: `steps(${steps})`,
+            scrollTrigger: {
+                trigger: ".partners-section .circle-wrapper",
+                start: "top 83%",
+                end: "top 30%",
+                scrub: true
+            }
+        }
+    );
+    gsap.fromTo(".partners-section .logo.top4",
+        { yPercent: moveYTop, opacity: 0 },
+        {
+            yPercent: 10,
+            xPercent: -5,
+            opacity: 1,
+            duration: 1.3,
+            ease: `steps(${steps})`,
+            scrollTrigger: {
+                trigger: ".partners-section .circle-wrapper",
+                start: "top 83%",
+                end: "top 30%",
+                scrub: true
+            }
+        }
+    );
+
+    // --- Left Logo: Move Right in Steps ---
+    gsap.fromTo(".partners-section .logo.left",
+        { xPercent: moveXLeft, opacity: 0 },
+        {
+           
+            xPercent: 10,
+            opacity: 1,
+            duration: 1.1,
+            ease: `steps(${steps})`,
+            scrollTrigger: {
+                trigger: ".partners-section .circle-wrapper",
+                start: "top 83%",
+                end: "top 30%",
+                scrub: true
+            }
+        }
+    );
+
+    // --- Right Logo: Move Left in Steps ---
+    gsap.fromTo(".partners-section .logo.right",
+        { xPercent: moveXRight, opacity: 0 },
+        {
+            yPercent: -40,
+            xPercent: -25,
+            opacity: 1,
+            duration: 1.1,
+            ease: `steps(${steps})`,
+            scrollTrigger: {
+                trigger: ".partners-section .circle-wrapper",
+                start: "top 83%",
+                end: "top 30%",
+                scrub: true
+            }
+        }
+    );
+
+    // --- Bottom Logos: Move Up in Steps ---
+    gsap.fromTo(".partners-section .logo.bottom1",
+        { yPercent: moveYBottom, opacity: 0 },
+        {
+            yPercent: 20,
+            xPercent: 20,
+            opacity: 1,
+            duration: 1,
+            ease: `steps(${steps})`,
+            scrollTrigger: {
+                trigger: ".partners-section .circle-wrapper",
+                start: "top 83%",
+                end: "top 30%",
+                scrub: true
+            }
+        }
+    );
+    gsap.fromTo(".partners-section .logo.bottom2",
+        { yPercent: moveYBottom, opacity: 0 },
+        {
+            yPercent: -25,
+            xPercent: -60,
+            opacity: 1,
+            duration: 1.1,
+            ease: `steps(${steps})`,
+            scrollTrigger: {
+                trigger: ".partners-section .circle-wrapper",
+                start: "top 83%",
+                end: "top 30%",
+                scrub: true
+            }
+        }
+    );
+    gsap.fromTo(".partners-section .logo.bottom3",
+        { yPercent: moveYBottom, opacity: 0 },
+        {
+            yPercent: -25,
+            xPercent: -90,
+            opacity: 1,
+            duration: 1.2,
+            ease: `steps(${steps})`,
+            scrollTrigger: {
+                trigger: ".partners-section .circle-wrapper",
+                start: "top 83%",
+                end: "top 30%",
+                scrub: true
+            }
+        }
+    );
+}
+
+// Initialize on load
+window.addEventListener("load", initPartnerLogos);
+// Re-initialize on resize
+window.addEventListener("resize", () => {
+    setTimeout(initPartnerLogos, 100); // debounce for smoother experience
+});
+/****************** Client Partner Logs **************************/

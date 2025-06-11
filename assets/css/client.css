@@ -1,62 +1,65 @@
 /****************** Main Header ****************/
 .client-header {
-    background-color: #AA9D8E;
-    padding-top: 10em;
-    position: relative;
-    bottom: -1px;
+     background-color: #AA9D8E;
+     padding-top: 10em;
+     position: relative;
+     bottom: -1px;
 }
 
 .client-header .header-title {
-    color: #F1E8E0;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 400;
+     color: #F1E8E0;
+     font-size: clamp(2rem, 5vw, 3rem);
+     font-weight: 400;
 }
 
 
 .client-header .header-image {
-    width: 100%;
-    max-width: 150px;
+     width: 100%;
+     max-width: 150px;
 }
 
 
 @media (max-width: 768px) {
-    .client-header .header-image {
-        width: 100%;
-        max-width: 140px;
-    }
+     .client-header .header-image {
+          width: 100%;
+          max-width: 140px;
+     }
 }
 
 @media (max-width: 500px) {
-    .client-header .header-image {
-        width: 100%;
-        max-width: 130px;
-    }
+     .client-header .header-image {
+          width: 100%;
+          max-width: 130px;
+     }
 }
 
 /****************** Main Header ****************/
 
 /****************** Scroller Section ****************/
 .scroller-section {
-    width: 100%;
-    overflow: hidden;
-    min-height: 100px;
-    display: flex;
-    align-items: center;
-    background-color:#AA9D8E;
+     width: 100%;
+     overflow: hidden;
+     min-height: 100px;
+     display: flex;
+     align-items: center;
+     background-color: #AA9D8E;
+     padding-bottom: 3em;
 }
 
 .marquee-inner {
-    display: flex;
-    white-space: nowrap;
+     display: flex;
+     white-space: nowrap;
+     position: relative;
+     z-index: +3;
 }
 
 .marquee-text {
-    font-size: 14vw;
-    font-family: 'Anton-Regular', sans-serif;
-    color: #C5B8AA;
-    font-weight: 400;
-    white-space: nowrap;
-    line-height: 130%;
+     font-size: 14vw;
+     font-family: 'Anton-Regular', sans-serif;
+     color: #C5B8AA;
+     font-weight: 400;
+     white-space: nowrap;
+     line-height: 130%;
 }
 
 /****************** Scroller Section ****************/
@@ -256,11 +259,480 @@
      }
 }
 
+/****************** Brand Reimaging Section ****************/
+
+
+
+/****************** Client Partner Logs - Section ****************/
+.partners-section {
+     position: relative;
+     height: 1024px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-direction: column;
+     padding: 100px 0px;
+     background-color: #AA9D8E;
+     top: -1px;
+
+}
+
+.partners-section .circle-wrapper {
+     position: relative;
+     width: 100%;
+     min-height: 500px;
+}
+
+.partners-section .center-heading {
+     position: absolute;
+     color: #F1E8E0;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     font-size: clamp(1.5rem, 5vw, 4.5rem);
+     line-height: 120%;
+     text-align: center;
+     z-index: 2;
+     opacity: 1;
+}
+
+.partners-section .logo {
+     position: absolute;
+     width: 80px;
+     height: 40px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: #fff;
+     border-radius: 8px;
+     opacity: 0;
+     cursor: pointer;
+}
+
+.partners-section .logo img {
+     max-width: 100%;
+     max-height: 100%;
+     object-fit: contain;
+     /* filter: grayscale(100%); */
+     transition: filter 0.3s;
+}
+
+/* .partners-section .logo:hover img{
+     filter: grayscale(0%);
+} */
+
+.partners-section .logo.top1 {
+     background-color: #D1C7BC;
+     height: 355px;
+     width: 372px;
+     border-radius: 90%;
+     top: 0%;
+     left: 5%;
+     transform: translate(0%, -90%);
+     transition: all 0.3s ease-in-out;
+}
+
+.partners-section .top1 img {
+     width: 120px;
+}
+
+.partners-section .logo.top2 {
+     background-color: #D1C7BC;
+     height: 226px;
+     width: 238px;
+     border-radius: 90%;
+     top: 0;
+     left: 35%;
+     transform: translate(-50%, -100%);
+     transition: all 0.3s ease-in-out;
+}
+
+.partners-section .top2 img {
+     width: 70px;
+}
+
+.partners-section .logo.top3 {
+     background-color: #D1C7BC;
+     height: 295px;
+     width: 312px;
+     border-radius: 90%;
+     top: 0;
+     left: 58%;
+     transform: translate(-50%, -100%);
+     transition: all 0.3s ease-in-out;
+}
+
+.partners-section .top3 img {
+     width: 120px;
+}
+
+.partners-section .logo.top4 {
+     background-color: #D1C7BC;
+     height: 385px;
+     width: 400px;
+     border-radius: 90%;
+     top: 0;
+     right: 0%;
+     transform: translate(-30%, -60%);
+     transition: all 0.3s ease-in-out;
+}
+
+.partners-section .top4 img {
+     width: 130px;
+}
+
+.partners-section .logo.bottom1 {
+     background-color: #D1C7BC;
+     height: 278px;
+     width: 290px;
+     border-radius: 90%;
+     bottom: 0;
+     left: 0%;
+     transform: translate(45%, 60%);
+     transition: all 0.3s ease-in-out;
+}
+
+.partners-section .bottom1 img {
+     width: 130px;
+     transform: rotate(32.657deg);
+}
+
+
+.partners-section .logo.bottom2 {
+     background-color: #D1C7BC;
+     height: 288px;
+     width: 299px;
+     border-radius: 90%;
+     bottom: 0%;
+     left: 40%;
+     transform: translate(-50%, 90%);
+     transition: all 0.3s ease-in-out;
+}
+
+.partners-section .bottom2 img {
+     width: 130px;
+     transform: rotate(-32.657deg);
+}
+
+.partners-section .logo.bottom3 {
+     background-color: #D1C7BC;
+     height: 180px;
+     width: 190px;
+     border-radius: 90%;
+     bottom: 0;
+     left: 64%;
+     transform: translate(-50%, 90%);
+     transition: all 0.3s ease-in-out;
+}
+
+.partners-section .bottom3 img {
+     width: 70px;
+     transform: rotate(19.657deg);
+}
+
+.partners-section .logo.left {
+     background-color: #D1C7BC;
+     height: 205px;
+     width: 213px;
+     border-radius: 90%;
+     left: 20%;
+     top: 65%;
+     transform: translate(0%, -50%);
+     transition: all 0.3s ease-in-out;
+}
+
+.partners-section .left img {
+     width: 70px;
+}
+
+.partners-section .logo.left img {
+     transform: rotate(-19.657deg);
+}
+
+.partners-section .logo.right {
+     background-color: #D1C7BC;
+     height: 295px;
+     width: 312px;
+     border-radius: 90%;
+     right: 10%;
+     top: 80%;
+     transform: translate(0%, -50%);
+     transition: all 0.3s ease-in-out;
+}
+
+.partners-section .right img {
+     width: 120px;
+}
+
+/* Add this to your client.css or in a <style> tag */
+
+/* Make the circle and logos smaller on mobile */
+@media (max-width: 1800px) {
+
+     .partners-section .logo.top1 {
+          height: 240px;
+          width: 250px;
+          transform: translate(40%, -40%);
+     }
+
+     .partners-section .logo.top2 {
+          height: 160px;
+          width: 170px;
+     }
+
+     .partners-section .logo.top3 {
+          height: 220px;
+          width: 220px;
+
+     }
+
+     .partners-section .logo.top4 {
+          height: 300px;
+          width: 300px;
+
+     }
+
+     .partners-section .logo.left {
+          height: 160px;
+          width: 170px;
+          left: 10%;
+     }
+
+     .partners-section .logo.right {
+          height: 250px;
+          width: 250px;
+     }
+
+     .partners-section .logo.bottom1 {
+          height: 240px;
+          width: 250px;
+     }
+
+     .partners-section .logo.bottom2 {
+          height: 160px;
+          width: 170px;
+     }
+
+     .partners-section .logo.bottom3 {
+          height: 160px;
+          width: 170px;
+     }
+}
+
+@media (max-width: 1500px) {
+
+
+     .partners-section .logo.top1 {
+          height: 190px;
+          width: 200px;
+     }
+
+     .partners-section .top1 img {
+          width: 100px;
+     }
+
+     .partners-section .logo.top2 {
+          height: 140px;
+          width: 150px;
+     }
+
+     .partners-section .top2 img {
+          width: 50px;
+     }
+
+     .partners-section .logo.top3 {
+          height: 190px;
+          width: 200px;
+          top: 10%;
+     }
+
+     .partners-section .top3 img {
+          width: 90px;
+     }
+
+     .partners-section .logo.top4 {
+          height: 220px;
+          width: 230px;
+     }
+
+     .partners-section .top4 img {
+          width: 90px;
+     }
+
+     .partners-section .logo.left {
+          height: 140px;
+          width: 150px;
+          left: 10%;
+     }
+
+     .partners-section .left img {
+          width: 50px;
+     }
+
+     .partners-section .logo.right {
+          height: 200px;
+          width: 210px;
+          right: 5%;
+          top: 70%;
+     }
+
+     .partners-section .right img {
+          width: 90px;
+     }
+
+     .partners-section .logo.bottom1 {
+          height: 220px;
+          width: 230px;
+     }
+
+     .partners-section .bottom1 img {
+          width: 100px;
+     }
+
+     .partners-section .logo.bottom2 {
+          height: 190px;
+          width: 200px;
+          bottom: 10%;
+          left: 40%;
+     }
+
+     .partners-section .bottom2 img {
+          width: 90px;
+     }
+
+     .partners-section .logo.bottom3 {
+          height: 120px;
+          width: 130px;
+          bottom: 15%;
+     }
+
+     .partners-section .bottom3 img {
+          width: 50px; 
+     }
+}
+
+
+@media (max-width: 1300px) {
+
+     .partners-section .logo.top1 {
+          height: 190px;
+          width: 200px;
+          left: 0%;
+     }
+
+
+     .partners-section .logo.top2 {
+          height: 140px;
+          width: 150px;
+     }
+
+     .partners-section .logo.top3 {
+          height: 190px;
+          width: 200px;
+          top: 10%;
+     }
+
+     .partners-section .logo.top4 {
+          height: 220px;
+          width: 230px;
+
+     }
+
+     .partners-section .logo.left {
+          height: 140px;
+          width: 150px;
+          left: 10%;
+          top: 60%;
+     }
+
+     .partners-section .logo.right {
+          height: 190px;
+          width: 200px;
+          right: 5%;
+          top: 60%;
+     }
+
+     .partners-section .logo.bottom1 {
+          height: 180px;
+          width: 190px;
+          left: 0%;
+          bottom: 10%;
+     }
+
+     .partners-section .logo.bottom2 {
+          height: 190px;
+          width: 200px;
+          bottom: 10%;
+          left: 44%;
+     }
+
+     .partners-section .logo.bottom3 {
+          height: 120px;
+          width: 130px;
+          bottom: 10%;
+          left: 70%;
+     }
+     
+}
+
+@media (max-width: 600px) {
+     .partners-section .circle-wrapper {
+          width: 220px;
+          height: 220px;
+          max-width: 98vw;
+          max-height: 98vw;
+     }
+
+     .partners-section .logo {
+          width: 48px;
+          height: 24px;
+          font-size: 12px;
+     }
+
+     .partners-section .center-heading {
+          font-size: 16px;
+          padding: 0 10px;
+     }
+}
+
+/****************** Client Partner Logs - Section ****************/
+
+/****************** Client Partner Content - Section ****************/
+.partners-content-section {
+     position: relative;
+     width: 100%;
+     top: -2px;
+     background-color: #AA9D8E;
+}
+
+.partners-content-section .partners-content-text {
+     color: #F1E8E0;
+     text-align: center;
+     -webkit-text-stroke-width: 1px;
+     -webkit-text-stroke-color: #F1E8E0;
+     font-family: 'Gotham-Light';
+     font-size: clamp(1.2rem, 5vw, 1.5rem);
+     font-style: normal;
+     font-weight: 500;
+     line-height: normal;
+}
+
+.partners-content-section .partners-content-signature {
+     color: #6D2732;
+     text-align: center;
+     font-family: 'Hevantica-Regular';
+     font-size: clamp(1.2rem, 5vw, 4rem);
+     font-style: normal;
+     font-weight: 400;
+     line-height: normal;
+}
+
+/****************** Client Partner Content - Section ****************/
 
 /****************** Brand Reimaging Section ****************/
 
 @media screen and (max-width:1200px) {
-    br {
-        display: none;
-    }
+     br {
+          display: none;
+     }
 }
