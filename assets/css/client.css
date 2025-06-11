@@ -848,9 +848,9 @@
 }
 
 @media (max-width: 600px) {
-     .partners-section .logo {
+     /* .partners-section .logo {
           box-shadow: 2px 2px 28px #00000026;
-     }
+     } */
 
      .partners-section .circle-wrapper {
           min-height: 800px;
