@@ -133,14 +133,14 @@ function initPartnerLogos() {
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     gsap.killTweensOf(".partners-section .logo, .partners-section .center-heading");
 
-    const isMobile = window.innerWidth <= 600;
+    const isMobile = window.innerWidth <= 768;
     const steps = 30;
 
     // Responsive movement distances in percent
-    const moveYTop = isMobile ? -60 : -30;
-    const moveYBottom = isMobile ? 60 : 80;
-    const moveXLeft = isMobile ? -60 : -80;
-    const moveXRight = isMobile ? 60 : 30;
+    const moveYTop = isMobile ? 0 : -30;
+    const moveYBottom = isMobile ? 0 : 80;
+    const moveXLeft = isMobile ? 0 : -80;
+    const moveXRight = isMobile ? 0 : 30;
 
     // --- Center Heading Animation ---
     gsap.to(".partners-section .center-heading", {
@@ -157,13 +157,13 @@ function initPartnerLogos() {
 
     // --- Top Logos: Move Down in Steps ---
     gsap.fromTo(".partners-section .logo.top1",
-        { yPercent: moveYTop, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYTop, xPercent: 0, opacity: 0 },
         {
-            yPercent: 35,
+            yPercent: isMobile ? 0 : 35,
             xPercent: 0,
             opacity: 1,
             duration: 1,
-            ease: `steps(${steps})`,
+            ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
                 start: "top 83%",
@@ -173,13 +173,13 @@ function initPartnerLogos() {
         }
     );
     gsap.fromTo(".partners-section .logo.top2",
-        { yPercent: moveYTop, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
         {
-            yPercent: 50,
-            xPercent: -50,
+            yPercent: isMobile ? 0 : 50,
+            xPercent: isMobile ? 0 : -50,
             opacity: 1,
             duration: 1.1,
-            ease: `steps(${steps})`,
+          ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
                 start: "top 83%",
@@ -189,13 +189,13 @@ function initPartnerLogos() {
         }
     );
     gsap.fromTo(".partners-section .logo.top3",
-        { yPercent: moveYTop, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
         {
-            yPercent: 40,
-            xPercent: -50,
+            yPercent: isMobile ? 0 : 40,
+            xPercent: isMobile ? 0 : -50,
             opacity: 1,
             duration: 1.2,
-            ease: `steps(${steps})`,
+            ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
                 start: "top 83%",
@@ -205,13 +205,13 @@ function initPartnerLogos() {
         }
     );
     gsap.fromTo(".partners-section .logo.top4",
-        { yPercent: moveYTop, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXRight, opacity: 0 },
         {
-            yPercent: 10,
-            xPercent: -5,
+            yPercent: isMobile ? 0 : 10,
+            xPercent: isMobile ? 0 : -5,
             opacity: 1,
             duration: 1.3,
-            ease: `steps(${steps})`,
+           ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
                 start: "top 83%",
@@ -223,13 +223,13 @@ function initPartnerLogos() {
 
     // --- Left Logo: Move Right in Steps ---
     gsap.fromTo(".partners-section .logo.left",
-        { xPercent: moveXLeft, opacity: 0 },
+        { xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
         {
-           
-            xPercent: 10,
+
+            xPercent: isMobile ? 0 : 10,
             opacity: 1,
             duration: 1.1,
-            ease: `steps(${steps})`,
+            ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
                 start: "top 83%",
@@ -241,13 +241,13 @@ function initPartnerLogos() {
 
     // --- Right Logo: Move Left in Steps ---
     gsap.fromTo(".partners-section .logo.right",
-        { xPercent: moveXRight, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXRight, opacity: 0 },
         {
-            yPercent: -40,
-            xPercent: -25,
+            yPercent: isMobile ? 0 : -40,
+            xPercent: isMobile ? 0 : -25,
             opacity: 1,
             duration: 1.1,
-            ease: `steps(${steps})`,
+            ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
                 start: "top 83%",
@@ -259,13 +259,13 @@ function initPartnerLogos() {
 
     // --- Bottom Logos: Move Up in Steps ---
     gsap.fromTo(".partners-section .logo.bottom1",
-        { yPercent: moveYBottom, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYBottom, xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
         {
-            yPercent: 20,
-            xPercent: 20,
+             yPercent: isMobile ? 0 : 20,
+            xPercent: isMobile ? 0 : 20,
             opacity: 1,
             duration: 1,
-            ease: `steps(${steps})`,
+            ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
                 start: "top 83%",
@@ -275,13 +275,13 @@ function initPartnerLogos() {
         }
     );
     gsap.fromTo(".partners-section .logo.bottom2",
-        { yPercent: moveYBottom, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYBottom, xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
         {
-            yPercent: -25,
-            xPercent: -60,
+            yPercent: isMobile ? 0 : -25,
+            xPercent: isMobile ? 0 : -60,
             opacity: 1,
             duration: 1.1,
-            ease: `steps(${steps})`,
+            ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
                 start: "top 83%",
@@ -291,13 +291,13 @@ function initPartnerLogos() {
         }
     );
     gsap.fromTo(".partners-section .logo.bottom3",
-        { yPercent: moveYBottom, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYBottom, xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
         {
-            yPercent: -25,
-            xPercent: -90,
+            yPercent: isMobile ? 0 : -25,
+            xPercent: isMobile ? 0 :-90,
             opacity: 1,
             duration: 1.2,
-            ease: `steps(${steps})`,
+            ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
                 start: "top 83%",

@@ -289,7 +289,7 @@
      top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
-     font-size: clamp(1.5rem, 5vw, 4.5rem);
+     font-size: clamp(2rem, 5vw, 4.5rem);
      line-height: 120%;
      text-align: center;
      z-index: 2;
@@ -607,7 +607,7 @@
      }
 
      .partners-section .bottom3 img {
-          width: 50px; 
+          width: 50px;
      }
 }
 
@@ -672,26 +672,291 @@
           bottom: 10%;
           left: 70%;
      }
-     
+
+}
+
+@media (max-width: 1024px) {
+
+     .partners-section .logo.top1 {
+          height: 170px;
+          width: 180px;
+          left: 0%;
+     }
+
+
+     .partners-section .logo.top2 {
+          height: 113px;
+          width: 120px;
+          left: 39%;
+     }
+
+     .partners-section .logo.top3 {
+          height: 133px;
+          width: 140px;
+          top: 10%;
+     }
+
+     .partners-section .logo.top4 {
+          height: 173px;
+          width: 180px;
+
+     }
+
+     .partners-section .logo.left {
+          height: 103px;
+          width: 110px;
+          left: 10%;
+          top: 60%;
+     }
+
+     .partners-section .logo.right {
+          height: 130px;
+          width: 137px;
+          right: 5%;
+          top: 60%;
+     }
+
+     .partners-section .logo.bottom1 {
+          height: 153px;
+          width: 160px;
+          left: 0%;
+          bottom: 10%;
+     }
+
+     .partners-section .logo.bottom2 {
+          height: 133px;
+          width: 140px;
+          bottom: 18%;
+          left: 48%;
+     }
+
+     .partners-section .logo.bottom3 {
+          height: 93px;
+          width: 100px;
+          bottom: 10%;
+          left: 70%;
+     }
+
+}
+
+@media (max-width: 768px) {
+     .partners-section .circle-wrapper {
+          min-height: 800px;
+     }
+
+     .partners-section {
+          height: 800px;
+     }
+
+     .partners-section .logo.top1 {
+          height: 143px;
+          width: 150px;
+          left: 0%;
+          top: 10%;
+     }
+
+     .partners-section .top1 img {
+          width: 70px;
+     }
+
+     .partners-section .logo.top2 {
+          height: 93px;
+          width: 100px;
+          left: 12%;
+          top: 43%;
+     }
+
+     .partners-section .top2 img {
+          width: 30px;
+     }
+
+     .partners-section .logo.top3 {
+          height: 123px;
+          width: 130px;
+          top: 32%;
+          left: 40%;
+     }
+
+     .partners-section .top3 img {
+          width: 60px;
+     }
+
+     .partners-section .logo.top4 {
+          height: 153px;
+          width: 160px;
+          top: 11%;
+     }
+
+     .partners-section .top4 img {
+          width: 70px;
+     }
+
+     .partners-section .logo.left {
+          height: 93px;
+          width: 100px;
+          left: 10%;
+          top: 55%;
+     }
+
+     .partners-section .left img {
+          width: 30px;
+     }
+
+     .partners-section .logo.right {
+          height: 113px;
+          width: 120px;
+          right: 5%;
+          top: 40%;
+     }
+
+     .partners-section .right img {
+          width: 50px;
+     }
+
+     .partners-section .logo.bottom1 {
+          height: 133px;
+          width: 140px;
+          left: 0%;
+          bottom: 20%
+     }
+
+     .partners-section .bottom1 img {
+          width: 70px;
+     }
+
+     .partners-section .logo.bottom2 {
+          height: 123px;
+          width: 130px;
+          bottom: 25%;
+          left: 75%;
+     }
+
+     .partners-section .bottom2 img {
+          width: 60px;
+     }
+
+     .partners-section .logo.bottom3 {
+          height: 93px;
+          width: 100px;
+          bottom: 30%;
+          left: 45%;
+     }
+
+     .partners-section .bottom3 img {
+          width: 30px;
+     }
 }
 
 @media (max-width: 600px) {
-     .partners-section .circle-wrapper {
-          width: 220px;
-          height: 220px;
-          max-width: 98vw;
-          max-height: 98vw;
-     }
-
      .partners-section .logo {
-          width: 48px;
-          height: 24px;
-          font-size: 12px;
+          box-shadow: 2px 2px 28px #00000026;
      }
 
-     .partners-section .center-heading {
-          font-size: 16px;
-          padding: 0 10px;
+     .partners-section .circle-wrapper {
+          min-height: 800px;
+     }
+
+     .partners-section {
+          height: 800px;
+     }
+
+     .partners-section .logo.top1 {
+          height: 113px;
+          width: 120px;
+          left: -8%;
+          top: 6%;
+     }
+
+     .partners-section .top1 img {
+          width: 70px;
+     }
+
+     .partners-section .logo.top2 {
+          height: 83px;
+          width: 90px;
+          left: 12%;
+          top: 43%;
+     }
+
+     .partners-section .top2 img {
+          width: 30px;
+     }
+
+     .partners-section .logo.top3 {
+          height: 113px;
+          width: 120px;
+          top: 30%;
+          left: 40%;
+     }
+
+     .partners-section .top3 img {
+          width: 60px;
+     }
+
+     .partners-section .logo.top4 {
+          height: 133px;
+          width: 140px;
+          top: 8%;
+          right: -7%;
+     }
+
+     .partners-section .top4 img {
+          width: 70px;
+     }
+
+     .partners-section .logo.left {
+          height: 83px;
+          width: 90px;
+          left: 10%;
+          top: 62%;
+     }
+
+     .partners-section .left img {
+          width: 30px;
+     }
+
+     .partners-section .logo.right {
+          height: 93px;
+          width: 100px;
+          right: 5%;
+          top: 30%;
+     }
+
+     .partners-section .right img {
+          width: 50px;
+     }
+
+     .partners-section .logo.bottom1 {
+          height: 133px;
+          width: 140px;
+          left: -10%;
+          bottom: 20%
+     }
+
+     .partners-section .bottom1 img {
+          width: 70px;
+     }
+
+     .partners-section .logo.bottom2 {
+          height: 113px;
+          width: 120px;
+          bottom: 25%;
+          left: 55%;
+     }
+
+     .partners-section .bottom2 img {
+          width: 60px;
+     }
+
+     .partners-section .logo.bottom3 {
+          height: 83px;
+          width: 90px;
+          bottom: 40%;
+          left: 60%;
+     }
+
+     .partners-section .bottom3 img {
+          width: 30px;
      }
 }
 
@@ -721,7 +986,7 @@
      color: #6D2732;
      text-align: center;
      font-family: 'Hevantica-Regular';
-     font-size: clamp(1.2rem, 5vw, 4rem);
+     font-size: clamp(2.8rem, 5vw, 4rem);
      font-style: normal;
      font-weight: 400;
      line-height: normal;
