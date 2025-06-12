@@ -46,11 +46,12 @@
 }
 
 .marquee-text {
-     font-size: 14vw;
+     font-size: 330px;
      font-family: 'Anton-Regular', sans-serif;
      color: #E3E3E3;
      font-weight: 400;
      white-space: nowrap;
+     line-height: 130%;
 }
 
 /****************** Scroller Section ****************/

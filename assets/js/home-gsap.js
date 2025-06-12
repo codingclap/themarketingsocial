@@ -49,7 +49,7 @@ function setupHomeMarquee(marqueeInner, originalText) {
 
     gsap.to(marqueeInner, {
         x: `-=${cloneWidth}`,
-        duration: 10,
+        duration: 18,
         ease: "none",
         repeat: -1,
         force3D: true,

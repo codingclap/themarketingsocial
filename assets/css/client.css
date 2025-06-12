@@ -51,15 +51,36 @@
      white-space: nowrap;
      position: relative;
      z-index: +3;
+     width: 100%;
+     will-change: transform;
 }
 
 .marquee-text {
-     font-size: 14vw;
+     display: inline-block;
+     white-space: nowrap;
+     font-size: 400px;
      font-family: 'Anton-Regular', sans-serif;
      color: #C5B8AA;
      font-weight: 400;
-     white-space: nowrap;
      line-height: 130%;
+}
+
+@media screen and (max-width: 991px) {
+     .marquee-text {
+          font-size: 330px;
+     }
+}
+
+@media screen and (max-width: 767px) {
+     .marquee-text {
+          font-size: 220px;
+     }
+}
+
+@media screen and (max-width: 479px) {
+     .marquee-text {
+          font-size: 260px;
+     }
 }
 
 /****************** Scroller Section ****************/
@@ -208,7 +229,7 @@
 
 
 .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
-     font-size: 18vw;
+     font-size: 400px;
      color: #5E0A14;
      font-family: 'Anton-Regular';
      font-style: normal;
@@ -230,6 +251,23 @@
      align-items: center;
 }
 
+@media screen and (max-width: 991px) {
+     .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
+          font-size: 330px;
+     }
+}
+
+@media screen and (max-width: 767px) {
+     .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
+          font-size: 220px;
+     }
+}
+
+@media screen and (max-width: 479px) {
+     .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
+          font-size: 260px;
+     }
+}
 
 @media screen and (max-width: 768px) {
      .brand-reimaging-section {
@@ -329,7 +367,7 @@
      top: 0%;
      left: 5%;
      transform: translate(0%, -90%);
-     transition: all 0.3s ease-in-out;
+
 }
 
 .partners-section .top1 img {
@@ -344,7 +382,7 @@
      top: 0;
      left: 35%;
      transform: translate(-50%, -100%);
-     transition: all 0.3s ease-in-out;
+
 }
 
 .partners-section .top2 img {
@@ -359,7 +397,7 @@
      top: 0;
      left: 58%;
      transform: translate(-50%, -100%);
-     transition: all 0.3s ease-in-out;
+
 }
 
 .partners-section .top3 img {
@@ -374,7 +412,7 @@
      top: 0;
      right: 0%;
      transform: translate(-30%, -60%);
-     transition: all 0.3s ease-in-out;
+
 }
 
 .partners-section .top4 img {
@@ -389,7 +427,7 @@
      bottom: 0;
      left: 0%;
      transform: translate(45%, 60%);
-     transition: all 0.3s ease-in-out;
+
 }
 
 .partners-section .bottom1 img {
@@ -406,7 +444,7 @@
      bottom: 0%;
      left: 40%;
      transform: translate(-50%, 90%);
-     transition: all 0.3s ease-in-out;
+
 }
 
 .partners-section .bottom2 img {
@@ -422,7 +460,7 @@
      bottom: 0;
      left: 64%;
      transform: translate(-50%, 90%);
-     transition: all 0.3s ease-in-out;
+
 }
 
 .partners-section .bottom3 img {
@@ -438,7 +476,7 @@
      left: 20%;
      top: 65%;
      transform: translate(0%, -50%);
-     transition: all 0.3s ease-in-out;
+
 }
 
 .partners-section .left img {
@@ -457,7 +495,7 @@
      right: 10%;
      top: 80%;
      transform: translate(0%, -50%);
-     transition: all 0.3s ease-in-out;
+
 }
 
 .partners-section .right img {
@@ -848,9 +886,9 @@
 }
 
 @media (max-width: 600px) {
-     /* .partners-section .logo {
+     .partners-section .logo {
           box-shadow: 2px 2px 28px #00000026;
-     } */
+     }
 
      .partners-section .circle-wrapper {
           min-height: 800px;

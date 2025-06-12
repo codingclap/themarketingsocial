@@ -1,12 +1,12 @@
 /****************** About Us Header Section ****************/
 
 .about-header {
-    background-color: #AA9D8E; 
+    background-color: #AA9D8E;
     padding-top: 11em;
     position: relative;
     bottom: -1px;
 }
- 
+
 .about-header .about-heading {
 
     font-family: "Playfair-Italic";
@@ -70,12 +70,13 @@
 
 
 .about-subheader .about-bgheading {
-    font-size: 18vw;
+    font-size: 330px;
     color: #E3E3E3;
     font-family: 'Anton-Regular';
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    white-space: nowrap;
     text-transform: uppercase;
 }
 
@@ -113,7 +114,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .about-header { 
+    .about-header {
         padding-top: 9em;
     }
 
@@ -176,8 +177,11 @@
 }
 
 .marquee-inner {
-    display: flex;
-    white-space: nowrap;
+     display: flex;
+     white-space: nowrap;
+     position: relative; 
+     width: 100%;
+     will-change: transform; 
 }
 
 .marquee-text {
@@ -330,57 +334,60 @@
     position: relative;
 }
 
-.about-us-client-container{
-     position: relative;
-     z-index: 2;
+.about-us-client-container {
+    position: relative;
+    z-index: 2;
 }
-.about-us-client-images{
-   position: relative;
-     z-index: 2; 
+
+.about-us-client-images {
+    position: relative;
+    z-index: 2;
 }
+
 .about-gif-left {
-     position: absolute;
-     left: 0;
-     top: 50%;
-     transform: translateY(-50%);
-     /* Vertically center */
-     z-index: 1;
-     width: 16%;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Vertically center */
+    z-index: 1;
+    width: 16%;
 }
 
 .about-gif-left-shadow {
-     position: absolute;
-     left: 0;
-     top: 0; 
-     z-index: 1;
-      width: 25%;
-     min-width: 0px;
-     max-width: 300px;
-     height: 100%;
-     background-color: #d9d9d9;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 25%;
+    min-width: 0px;
+    max-width: 300px;
+    height: 100%;
+    background-color: #d9d9d9;
 }
 
 .about-gif-right {
-     position: absolute;
-     right: 0;
-     top: 50%;
-     transform: translateY(-50%);
-     /* Vertically center */
-     z-index: 1;
-     width: 28%;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Vertically center */
+    z-index: 1;
+    width: 28%;
 }
 
 .about-gif-right-shadow {
-     position: absolute;
-     right: 0;
-     top: 0; 
-     z-index: 1;
-     width: 35%;
-     min-width: 0px;
-     max-width: 550px;
-     height: 100%;
-     background-color: #d9d9d9;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    width: 35%;
+    min-width: 0px;
+    max-width: 550px;
+    height: 100%;
+    background-color: #d9d9d9;
 }
+
 .about-us-client-heading {
     font-family: "Playfair-Regular";
     color: #322D2A;
@@ -408,25 +415,25 @@
 }
 
 @media screen and (max-width: 450px) {
-     .about-gif-left {
-          position: absolute;
-          left: 0;
-          top: 40%;
-          transform: translateY(-50%);
-          /* Vertically center */
-          z-index: 0;
-          width: 15%;
-     }
+    .about-gif-left {
+        position: absolute;
+        left: 0;
+        top: 40%;
+        transform: translateY(-50%);
+        /* Vertically center */
+        z-index: 0;
+        width: 15%;
+    }
 
-     .about-gif-right {
-          position: absolute;
-          right: 0;
-          top: 80%;
-          transform: translateY(-50%);
-          /* Vertically center */
-          z-index: 0;
-          width: 20%;
-     }
+    .about-gif-right {
+        position: absolute;
+        right: 0;
+        top: 80%;
+        transform: translateY(-50%);
+        /* Vertically center */
+        z-index: 0;
+        width: 20%;
+    }
 }
 
 
@@ -616,7 +623,7 @@
 
 
 .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
-    font-size: 18vw;
+    font-size: 330px;
     color: #5E0A14;
     font-family: 'Anton-Regular';
     font-style: normal;

@@ -1,166 +1,173 @@
 /*************  Gsap Marquee Brand-Reimaging(About)- 1 ****************/
-function setupMarquee(marqueeInner, originalText) {
-    // Clear clones
-    while (marqueeInner.children.length > 1) {
-        marqueeInner.removeChild(marqueeInner.lastChild);
+function initMarquee(container, textEl) {
+    // Remove all clones except the first
+    while (container.children.length > 1) {
+        container.removeChild(container.lastChild);
+    }
+    textEl.style.whiteSpace = 'nowrap';
+
+    // Calculate how many clones are needed
+    const textWidth = textEl.offsetWidth;
+    const containerWidth = container.parentElement.offsetWidth;
+    let total = textWidth;
+    // Add enough clones to cover container + 2×textWidth
+    while (total < containerWidth + textWidth * 2) {
+        const clone = textEl.cloneNode(true);
+        container.appendChild(clone);
+        total += clone.offsetWidth;
     }
 
-    // Force layout update to get accurate width
-    marqueeInner.style.transform = 'translateX(0)';
-    originalText.style.whiteSpace = 'nowrap';
-
-    const containerWidth = marqueeInner.parentElement.offsetWidth;
-    let totalWidth = originalText.offsetWidth;
-
-    // Clone until total width is enough
-    while (totalWidth < containerWidth * 2) {
-        const clone = originalText.cloneNode(true);
-        marqueeInner.appendChild(clone);
-        totalWidth += clone.offsetWidth;
+    // Kill old tween if exists
+    if (container._marqueeTween) {
+        container._marqueeTween.kill();
+        container._marqueeTween = null;
     }
+    gsap.set(container, { x: 0 });
 
-    // Smooth performance via GPU acceleration
-    marqueeInner.style.willChange = 'transform';
-
-    gsap.killTweensOf(marqueeInner);
-    gsap.to(marqueeInner, {
-        x: `-=${originalText.offsetWidth}`,
-        duration: 10,
+    // Animate
+    container._marqueeTween = gsap.to(container, {
+        x: `-=${textWidth}`,
+        duration: 16,
         ease: "none",
         repeat: -1,
         force3D: true,
         overwrite: true,
         modifiers: {
-            x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
+            x: gsap.utils.unitize(val => parseFloat(val) % textWidth)
         }
     });
 }
 
-// Setup marquee on load
-window.addEventListener("load", () => {
-    const marqueeInner = document.getElementById("about-marqueeInner-1");
-    const originalText = marqueeInner.querySelector(".about-bgheading");
 
-    setupMarquee(marqueeInner, originalText);
+let lastWidth = 0;
+window.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("about-marqueeInner-1");
+    const text = container.querySelector(".about-bgheading");
+    initMarquee(container, text);
 
-    // Responsive adjustment using requestAnimationFrame debounce
-    let resizeFrame;
     window.addEventListener("resize", () => {
-        if (resizeFrame) cancelAnimationFrame(resizeFrame);
-        resizeFrame = requestAnimationFrame(() => {
-            setupMarquee(marqueeInner, originalText);
-        });
+        const width = container.parentElement.offsetWidth;
+        if (Math.abs(width - lastWidth) > 10) {
+            lastWidth = width;
+            initMarquee(container, text);
+        }
     });
 });
+
 
 /*************  Gsap Marquee Brand-Reimaging(About)- 1 ****************/
 
 /*************  Gsap Marquee Animation(About)- 2 ****************/
-function setupMarquee2(marqueeInner, originalText) {
-  // Remove previous clones
-  while (marqueeInner.children.length > 1) {
-    marqueeInner.removeChild(marqueeInner.lastChild);
-  }
-
-  // Reset transform to ensure accurate measurements
-  marqueeInner.style.transform = 'translateX(0)';
-  originalText.style.whiteSpace = 'nowrap';
-
-  const containerWidth = marqueeInner.parentElement.offsetWidth;
-  let totalWidth = originalText.offsetWidth;
-
-  // Clone elements to exceed container width
-  while (totalWidth < containerWidth * 2) {
-    const clone = originalText.cloneNode(true);
-    marqueeInner.appendChild(clone);
-    totalWidth += clone.offsetWidth;
-  }
-
-  marqueeInner.style.willChange = 'transform';
-
-  gsap.killTweensOf(marqueeInner);
-  gsap.to(marqueeInner, {
-    x: `-=${originalText.offsetWidth}`,
-    duration: 10,
-    ease: "none",
-    repeat: -1,
-    force3D: true,
-    overwrite: true,
-    modifiers: {
-      x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
+function initMarquee2(container, textEl) {
+    // Remove all clones except the first
+    while (container.children.length > 1) {
+        container.removeChild(container.lastChild);
     }
-  });
+    textEl.style.whiteSpace = 'nowrap';
+
+    // Calculate how many clones are needed
+    const textWidth = textEl.offsetWidth;
+    const containerWidth = container.parentElement.offsetWidth;
+    let total = textWidth;
+    // Add enough clones to cover container + 2×textWidth
+    while (total < containerWidth + textWidth * 2) {
+        const clone = textEl.cloneNode(true);
+        container.appendChild(clone);
+        total += clone.offsetWidth;
+    }
+
+    // Kill old tween if exists
+    if (container._marqueeTween) {
+        container._marqueeTween.kill();
+        container._marqueeTween = null;
+    }
+    gsap.set(container, { x: 0 });
+
+    // Animate
+    container._marqueeTween = gsap.to(container, {
+        x: `-=${textWidth}`,
+        duration: 16,
+        ease: "none",
+        repeat: -1,
+        force3D: true,
+        overwrite: true,
+        modifiers: {
+            x: gsap.utils.unitize(val => parseFloat(val) % textWidth)
+        }
+    });
 }
 
-window.addEventListener("load", () => {
-  const marqueeInner = document.getElementById("about-marqueeInner-2");
-  const originalText = marqueeInner.querySelector(".about-marquee-text-2");
+// Usage example for about-marqueeInner-2
+let lastWidth2 = 0;
+window.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("about-marqueeInner-2");
+    const text = container.querySelector(".about-marquee-text-2");
+    initMarquee2(container, text);
 
-  setupMarquee2(marqueeInner, originalText);
-
-  // Debounced resize using requestAnimationFrame
-  let resizeFrame;
-  window.addEventListener("resize", () => {
-    if (resizeFrame) cancelAnimationFrame(resizeFrame);
-    resizeFrame = requestAnimationFrame(() => {
-      setupMarquee2(marqueeInner, originalText);
+    window.addEventListener("resize", () => {
+        const width = container.parentElement.offsetWidth;
+        if (Math.abs(width - lastWidth2) > 10) {
+            lastWidth2 = width;
+            initMarquee2(container, text);
+        }
     });
-  });
 });
-
 /*************  Gsap Marquee Animation (About)- 2 ****************/
 
 /*************  Gsap Marquee Brand-Reimaging (About) - 3 ****************/
-function setupMarquee3(marqueeInner, originalText) {
-  // Remove existing clones (keep only the first/original)
-  while (marqueeInner.children.length > 1) {
-    marqueeInner.removeChild(marqueeInner.lastChild);
-  }
-
-  // Reset transform and prepare for width measurements
-  marqueeInner.style.transform = 'translateX(0)';
-  originalText.style.whiteSpace = 'nowrap';
-
-  const containerWidth = marqueeInner.parentElement.offsetWidth;
-  let totalWidth = originalText.offsetWidth;
-
-  // Clone original text until it overflows the container 2x
-  while (totalWidth < containerWidth * 2) {
-    const clone = originalText.cloneNode(true);
-    marqueeInner.appendChild(clone);
-    totalWidth += clone.offsetWidth;
-  }
-
-  marqueeInner.style.willChange = 'transform';
-
-  gsap.killTweensOf(marqueeInner);
-  gsap.to(marqueeInner, {
-    x: `-=${originalText.offsetWidth}`,
-    duration: 10,
-    ease: "none", // smoother than "linear"
-    repeat: -1,
-    force3D: true,
-    overwrite: true,
-    modifiers: {
-      x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
+function initMarquee3(container, textEl) {
+    // Remove all clones except the first
+    while (container.children.length > 1) {
+        container.removeChild(container.lastChild);
     }
-  });
+    textEl.style.whiteSpace = 'nowrap';
+
+    // Calculate how many clones are needed
+    const textWidth = textEl.offsetWidth;
+    const containerWidth = container.parentElement.offsetWidth;
+    let total = textWidth;
+    // Add enough clones to cover container + 2×textWidth
+    while (total < containerWidth + textWidth * 2) {
+        const clone = textEl.cloneNode(true);
+        container.appendChild(clone);
+        total += clone.offsetWidth;
+    }
+
+    // Kill old tween if exists
+    if (container._marqueeTween) {
+        container._marqueeTween.kill();
+        container._marqueeTween = null;
+    }
+    gsap.set(container, { x: 0 });
+
+    // Animate
+    container._marqueeTween = gsap.to(container, {
+        x: `-=${textWidth}`,
+        duration: 16,
+        ease: "none",
+        repeat: -1,
+        force3D: true,
+        overwrite: true,
+        modifiers: {
+            x: gsap.utils.unitize(val => parseFloat(val) % textWidth)
+        }
+    });
 }
 
-window.addEventListener("load", () => {
-  const marqueeInner = document.getElementById("about-marqueeInner-3");
-  const originalText = marqueeInner.querySelector(".brand-bgheading");
+// Usage example for about-marqueeInner-3
+let lastWidth3 = 0;
+window.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("about-marqueeInner-3");
+    const text = container.querySelector(".brand-bgheading");
+    initMarquee3(container, text);
 
-  setupMarquee3(marqueeInner, originalText);
-
-  // Debounced resize listener using requestAnimationFrame
-  let resizeFrame;
-  window.addEventListener("resize", () => {
-    if (resizeFrame) cancelAnimationFrame(resizeFrame);
-    resizeFrame = requestAnimationFrame(() => {
-      setupMarquee3(marqueeInner, originalText);
+    window.addEventListener("resize", () => {
+        const width = container.parentElement.offsetWidth;
+        if (Math.abs(width - lastWidth3) > 10) {
+            lastWidth3 = width;
+            initMarquee3(container, text);
+        }
     });
-  });
 });
 
 /*************  Gsap Marquee Brand-Reimaging(About) - 3 ****************/
