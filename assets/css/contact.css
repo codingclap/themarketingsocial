@@ -109,7 +109,7 @@
 .contact-section .contact-text p {
      color: #6D2732;
      font-family: 'Gotham-Light', sans-serif;
-     font-size: clamp(1.2rem, 2.2vw, 2rem);
+     font-size: clamp(1.1rem, 2.2vw, 2rem);
      font-style: normal;
      font-weight: 500;
      line-height: normal;
@@ -163,7 +163,7 @@
      border: 2px solid #6D2732;
      background-color: #6D2732;
      display: flex;
-     padding: 12px 30px;
+     padding: 15px 30px;
      align-items: center;
      gap: 15px;
      color: #D1C7BC;
@@ -229,17 +229,19 @@
      height: 120px;
 }
 
-.contact-form-overlay { 
-     background-image: linear-gradient(180deg, #AA9D8E 21%, #AA9D8E00); 
+.contact-form-overlay {
+     background-image: linear-gradient(180deg, #AA9D8E 21%, #AA9D8E00);
 }
 
-.contact-form-overlay.down { 
-     background-image: linear-gradient(0deg, #AA9D8E 21%, #AA9D8E00); 
+.contact-form-overlay.down {
+     background-image: linear-gradient(0deg, #AA9D8E 21%, #AA9D8E00);
      inset: auto 0% 0%;
 }
 
 .contact-form-slides-holder {
      will-change: transform;
+     touch-action: none;
+     pointer-events: none;
 }
 
 .contact-form-slides {
@@ -271,7 +273,7 @@
 
 @media screen and (max-width: 768px) {
      .contact-form-slides-container {
-          max-width: 70%;
+          max-width: 80%;
           height: 400px;
      }
 
@@ -283,7 +285,7 @@
 
 @media screen and (max-width: 425px) {
      .contact-form-slides-container {
-          max-width: 70%;
+          max-width: 90%;
           height: 300px;
      }
 

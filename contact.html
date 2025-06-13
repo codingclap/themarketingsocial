@@ -96,7 +96,7 @@
 
   <!------------ === Contact Call - Section === ---------------------->
 
-  <section class="contact-section py-1 py-md-2 py-lg-3 py-xl-5">
+  <section class="contact-section pt-3 pt-md-3 pt-lg-3 pt-xl-5 pb-5">
     <div class="container-fluid px-3 px-md-4 px-lg-5 px-xl-5 position-relative z-index-1">
       <div class="row align-items-center">
         <!-- Left: Image -->
@@ -104,7 +104,7 @@
           <img src="assets/images/contact-page/contact-phone.webp" alt="Contact" class="img-fluid" />
         </div>
         <!-- Right: Text -->
-        <div class="col-12 col-md-12 col-lg-5 col-xl-5 contact-text pe-0 pe-md-3 pe-lg-4">
+        <div class="col-12 col-md-12 col-lg-5 col-xl-5 contact-text">
           <p class="mb-0">
             No hold music,
           </p>
@@ -125,7 +125,7 @@
     <div class="contact-form extra-padding w-100">
       <div class="row align-items-center justify-content-evenly gap-5">
         <!-- Left: Form -->
-        <div class="col-12 col-md-12 col-lg-5 col-xl-4 mb-4 mb-md-0 text-center contact-side-img">
+        <div class="col-12 col-md-12 col-lg-5 col-xl-4 mb-4 mb-md-0 text-center contact-side-img px-3">
           <div class="contact-form-fields">
             <form>
               <div class="mb-4">
@@ -149,7 +149,7 @@
               </div>
 
               <div class="mb-5 mt-1">
-                <textarea class="w-100" name="message" id="" rows="6" placeholder="Your Message"></textarea>
+                <textarea class="w-100" name="message" id="" rows="3" placeholder="Your Message"></textarea>
               </div>
 
               <button type="submit" class="btn btn-outline-dark w-100 justify-content-center">SEND</button>
@@ -157,7 +157,7 @@
           </div>
         </div>
         <!-- Right: Image Slider -->
-        <div class="col-12 col-md-12 col-lg-6 col-xl-6 contact-text pe-0 pe-md-3 pe-lg-4">
+        <div class="col-12 col-md-12 col-lg-6 col-xl-6 contact-text">
           <div class="contact-form-slides-container">
             <!-- <div class="contact-form-overlay"></div>
             <div class="contact-form-overlay down"></div> -->
@@ -199,7 +199,7 @@
 
   <!-- === Socials Share Section === -->
   <section
-    class="socials-share-section extra-padding d-flex align-items-center justify-content-center flex-column pt-2 pt-md-4 pt-lg-5 pb-5 pb-md-5 pb-lg-5">
+    class="socials-share-section extra-padding d-flex align-items-center justify-content-center flex-column pt-5 pt-md-5 pt-lg-5 pb-5 pb-md-5 pb-lg-5">
     <div class="socials-share-heading d-flex align-items-center justify-content-start w-100">
       <h2 class="socials-share-title py-4 mb-0 text-md-start">Social</h2>
     </div>
@@ -299,62 +299,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-  <script src="assets/js/client-gsap.js"></script>
+  <script src="assets/js/contact-gsap.js"></script>
   <script src="assets/js/custom.js"></script>
   <script src="assets/js/common-gsap.js"></script>
 
-<script>
-  function initContactVerticalSlider() {
-  const holder = document.querySelector('.contact-form-slides-holder');
-  if (!holder) return;
-
-  // Remove previous clones if any
-  const slides = Array.from(holder.children).filter(el => !el.classList.contains('cloned'));
-  // Remove all clones
-  Array.from(holder.children).forEach(el => {
-    if (el.classList.contains('cloned')) holder.removeChild(el);
-  });
-
-  // Clone all slides for seamless loop
-  slides.forEach(slide => {
-    const clone = slide.cloneNode(true);
-    clone.classList.add('cloned');
-    holder.appendChild(clone);
-  });
-
-  // Calculate total height of original slides
-  let totalHeight = 0;
-  slides.forEach(slide => {
-    totalHeight += slide.offsetHeight + parseInt(getComputedStyle(slide).marginBottom || 0, 10);
-  });
-
-  // Kill old tween if exists
-  if (holder._marqueeTween) {
-    holder._marqueeTween.kill();
-    holder._marqueeTween = null;
-  }
-  gsap.set(holder, { y: 0, willChange: "transform", force3D: true });
-
-  // Animate
-  holder._marqueeTween = gsap.to(holder, {
-    y: `-=${totalHeight}`,
-    duration: 10,
-    ease: "none",
-    repeat: -1,
-    force3D: true,
-    overwrite: true,
-    modifiers: {
-      y: gsap.utils.unitize(val => parseFloat(val) % totalHeight)
-    }
-  });
-}
-
-// Call on load and resize (debounced)
-window.addEventListener("DOMContentLoaded", initContactVerticalSlider);
-window.addEventListener("resize", () => {
-  setTimeout(initContactVerticalSlider, 200);
-});
-</script>
+ 
 </body>
 
 </html>
