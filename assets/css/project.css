@@ -1,29 +1,32 @@
 /****************** Main Header ****************/
-.header {
-     margin-top: 90px;
+.project-header {
+     background-color: #D9D9D9;
+     padding-top: 10em;
+     position: relative;
+     bottom: -1px;
 }
 
-.header .header-title {
+.project-header .header-title {
      color: var(--color-muted);
-     font-size: clamp(2.3rem, 5vw, 4.5rem);
+     font-size: clamp(1.3rem, 2vw, 2.4rem);
 }
 
 
-.header .header-image {
+.project-header .header-image {
      width: 100%;
-     max-width: 180px;
+     max-width: 200px;
 }
 
 
 @media (max-width: 768px) {
-     .header .header-image {
+     .project-header .header-image {
           width: 100%;
-          max-width: 150px;
+          max-width: 180px;
      }
 }
 
 @media (max-width: 500px) {
-     .header .header-image {
+     .project-header .header-image {
           width: 100%;
           max-width: 130px;
      }
@@ -74,13 +77,14 @@
 
 /****************** Scroller Section ****************/
 
-/****************** Video Section ****************/
-.video-section {
+/****************** Project - Section ****************/
+.project-section {
      position: relative;
-     background-color: black;
+     width: 100%;
+     min-height: 100vh;
 }
 
-.video-section .down-arrow {
+.project-section .down-arrow {
      position: absolute;
      top: 0;
      left: 50%;
@@ -93,422 +97,101 @@
      justify-content: center;
      align-items: center;
      cursor: pointer;
-
+     z-index: +6;
 }
 
-.video-section .down-arrow .down-arrow-img {
+.project-section .down-arrow .down-arrow-img {
      width: 35px;
      transform: scale(0.90) rotate(0deg);
      transition: transform 0.4s cubic-bezier(0.32, 1.5, 0.36, 1.4);
      /* "Break" effect */
 }
 
-.video-section .down-arrow:hover .down-arrow-img {
+.project-section .down-arrow:hover .down-arrow-img {
      transform: scale(1.1) rotate(35deg);
 }
 
-/****************** Video Section ****************/
-
-
-/****************** Conversation Section ****************/
-.conversation-supertitle {
-     color: #404040;
-     font-family: 'Gotham-Medium';
-     font-size: 24px;
-     font-style: normal;
-     font-weight: 500;
-     line-height: 90%;
-     /* 21.6px */
-     letter-spacing: -0.48px;
-     text-transform: uppercase;
+.project-section .project-main-holder {
+     width: 100%;
 }
 
-.conversation-section {
-     width: 100%;
-     min-height: 1040px;
-     background: url('../images/home-page/conversation-bg.svg') center center/cover no-repeat;
+.project-section .project-holder .project-profile {
+     width: 100vw;
+     height: 100vh;
      position: relative;
-     padding-left: 0;
-     padding-right: 0;
-     color: #fff;
+     overflow: hidden;
      display: flex;
      align-items: center;
-}
-
-.conversation-content {
-     position: absolute;
-     left: 0;
-     top: 45%
-}
-
-.conversation-title {
-     font-family: "Playfair-Italic";
-     font-size: 11vw;
-     font-style: italic;
-     font-weight: 500;
-     line-height: 90%;
-     letter-spacing: -3.9px;
-     text-transform: capitalize;
-     margin-bottom: 1rem;
-     text-align: left;
-     mix-blend-mode: difference;
-     color: #9F9F9F;
-}
-
-.conversation-text {
-     color: #030404;
-     font-family: 'Gotham-Book';
-     font-size: 20px;
-     font-style: normal;
-     font-weight: 400;
-     line-height: 140%;
-     letter-spacing: -0.6px;
-}
-
-/****************** Conversation Section ****************/
-
-
-/****************** Helping Brand Section ****************/
-.helping-brand-section {
-     background-color: #322D2A;
-     min-height: 100px;
-}
-
-.helping-brand-section .helping-brand-title {
-     color: #F1E8E0;
-     text-align: center;
-     font-family: "Playfair-Medium";
-     font-size: clamp(2.3rem, 4vw, 3.5rem);
-     font-style: normal;
-     font-weight: 500;
-     line-height: 120%;
-     /* 67.2px */
-     letter-spacing: -1.12px;
-     text-transform: capitalize;
-}
-
-.helping-panel-container {
-     display: flex;
-     gap: 20px;
-     width: 100%;
-}
-
-.helping-panel-container .panel {
-     width: 100px;
-     min-height: 790px;
-     background-size: cover;
-     background-repeat: no-repeat;
-     overflow: hidden;
-     position: relative;
-     flex: 1;
-     display: flex;
-     align-items: flex-end;
-     justify-content: flex-start;
-     cursor: pointer;
-     mix-blend-mode: luminosity;
-     transition: flex 0.7s cubic-bezier(0.7, 0, 0.7, 0.3);
+     justify-content: center;
 
 }
 
-.helping-panel-container .panel:nth-child(1) {
-     background-position: 40%;
-}
-
-.helping-panel-container .panel:nth-child(2) {
-     background-position: 33%;
-}
-
-.helping-panel-container .panel:nth-child(3) {
-     background-position: 50%;
-}
-
-.helping-panel-container .panel:nth-child(4) {
-     background-position: 40%;
-}
-
-.helping-panel-container .panel:nth-child(5) {
-     background-position: 40%;
-}
-
-.helping-panel-container .panel.active {
-     flex: 2.5;
-     mix-blend-mode: inherit;
-}
-
-.helping-panel-container .panel .overlay {
+.project-section .project-holder .project-profile img {
+     width: 100vw;
+     height: 100vh;
+     min-width: 100%;
+     min-height: 100%;
+     max-width: none;
+     max-height: none;
+     display: block;
      position: absolute;
      top: 0;
      left: 0;
-     height: 100%;
-     width: 100%;
-     background: rgba(0, 0, 0, 0.5);
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     text-align: center;
-     padding: 20px;
-     transition: 0.7s cubic-bezier(0.7, 0, 1, 1);
-}
-
-.helping-panel-container .panel.active .overlay {
-     background: rgba(2, 2, 2, 0);
-     pointer-events: none;
-     opacity: 0;
-     transition:
-          background 0.7s cubic-bezier(0.7, 0, 1, 1),
-          opacity 0.7s cubic-bezier(0.7, 0, 1, 1);
-}
-
-.helping-panel-container .overlay h2 {
-     margin: 0;
-     color: #FAFAFA;
-     text-align: center;
-     font-family: "Playfair-Medium";
-     font-size: 2vw;
-     font-style: normal;
-     font-weight: 500;
-     line-height: 120%;
-
-}
-
-.helping-panel-container .panel.active .overlay h2 {
-     opacity: 0;
-     transition: opacity 0.7s cubic-bezier(0.7, 0, 1, 1);
+     object-fit: cover;
+     aspect-ratio: unset;
+     /* Remove if you want true cover */
+     z-index: 1;
 }
 
 
-@media screen and (max-width:1200px) {
-     br {
-          display: none;
+/* Responsive adjustments */
+
+
+@media screen and (max-width: 1300px) {
+
+     .project-section .down-arrow {
+          width: 90px;
+          height: 90px;
+     }
+
+}
+
+@media screen and (max-width: 1024px) {
+     .project-section .down-arrow .down-arrow-img {
+          width: 30px;
      }
 }
 
-@media (max-width: 1024px) {
 
-     .helping-panel-container {
-          flex-wrap: wrap;
-          gap: 12px;
+@media (max-width: 767px) {
+
+     .project-section .project-holder .project-profile,
+     .project-section .project-holder .project-profile img {
+          width: 100vw;
+          height: 60vh;
+          min-height: 220px;
      }
 
-     .helping-panel-container .panel.active {
-          flex: 1;
-          mix-blend-mode: inherit;
-     }
-
-     .helping-panel-container .panel.active .overlay h2 {
-          opacity: 1;
-     }
-
-     .helping-panel-container .panel.active .overlay {
-          opacity: 1;
-          background: rgba(0, 0, 0, 0.5);
+     .project-section .down-arrow .down-arrow-img {
+          width: 25px;
      }
 }
 
-@media (max-width: 991px) {
-     .helping-panel-container .panel {
-          min-width: 90vw;
-          max-width: 95vw;
-          min-height: 350px;
+@media screen and (max-width: 416px) {
+
+     .project-section .down-arrow {
+          width: 55px;
+          height: 55px;
      }
 
-     .helping-panel-container .overlay h2 {
-          font-size: 35px;
+     .project-section .down-arrow .down-arrow-img {
+          width: 16px;
      }
 
-     .helping-panel-container .panel.active .overlay {
-          opacity: 1;
-          background: rgba(0, 0, 0, 0.5);
-     }
-
-     .helping-panel-container .panel.active {
-          flex: 1;
-          mix-blend-mode: luminosity;
-     }
 }
 
-@media (max-width: 768px) {
-     .helping-panel-container {
-          flex-direction: column;
-          align-items: center;
-          gap: 16px;
-     }
+/****************** Project - Section ****************/
 
-     .helping-panel-container .panel {
-          min-width: 90vw;
-          max-width: 95vw;
-          min-height: 350px;
-     }
-
-     .helping-panel-container .panel .overlay {
-          padding: 1rem;
-          font-size: 1.1rem;
-     }
-
-     .helping-panel-container .overlay h2 {
-          font-size: 30px;
-     }
-}
-
-@media (max-width: 500px) {
-
-
-     .helping-panel-container .panel {
-          min-width: 90vw;
-          max-width: 95vw;
-          min-height: 250px;
-     }
-
-     .helping-panel-container .overlay h2 {
-          font-size: 28px;
-     }
-}
-
-@media (max-width: 425px) {
-
-     .helping-panel-container .panel {
-          min-width: 90vw;
-          max-width: 95vw;
-          min-height: 200px;
-     }
-
-     .helping-panel-container .overlay h2 {
-          font-size: 25px;
-     }
-}
-
-/****************** Helping Brand Section ****************/
-
-
-/****************** Success Measure Section ****************/
-.success-measure-section {
-     position: relative;
-     overflow: hidden;
-}
-
-.home-gif-left {
-     position: absolute;
-     left: 0;
-     top: 50%;
-     transform: translateY(-50%);
-     /* Vertically center */
-     z-index: 0;
-     width: 20%;
-}
-
-.home-gif-left-shadow {
-     position: absolute;
-     left: 0;
-     top: 50%;
-     transform: translateY(-50%);
-     z-index: 0;
-     width: 25%;
-     min-width: 0px;
-     max-width: 300px;
-     height: 80vh;
-     background-color: #d9d9d9;
-}
-
-.home-gif-right {
-     position: absolute;
-     right: 0;
-     top: 50%;
-     transform: translateY(-50%);
-     /* Vertically center */
-     z-index: 0;
-     width: 35%;
-}
-
-.home-gif-right-shadow {
-     position: absolute;
-     right: 0;
-     top: 50%;
-     transform: translateY(-50%);
-     z-index: 0;
-     width: 35%;
-     min-width: 0px;
-     max-width: 550px;
-     height: 80vh;
-     background-color: #d9d9d9;
-}
-
-.success-measure-content {
-     position: relative;
-     z-index: 2;
-}
-
-.success-measure-section .success-measure-title {
-     color: #322D2A;
-     text-align: center;
-     font-family: "Playfair-Medium";
-     font-size: clamp(2.3rem, 4vw, 3.5rem);
-     font-style: normal;
-     font-weight: 500;
-     line-height: 120%;
-     /* 67.2px */
-     letter-spacing: -1.12px;
-     text-transform: capitalize;
-}
-
-.success-measure-section .success-counting-container {
-     position: relative;
-     z-index: 2;
-}
-
-.success-measure-section .success-counting-container .success-counting-number {
-     font-family: 'Anton-Regular';
-     -webkit-text-stroke-width: 2px;
-     -webkit-text-stroke-color: var(--Brown, #322D2A);
-     font-size: clamp(4.5rem, 10vw, 15rem);
-     font-style: normal;
-     font-weight: 500;
-     line-height: 120%;
-     /* 67.2px */
-     letter-spacing: -1.12px;
-     text-transform: capitalize;
-     color: #322d2a00;
-}
-
-.success-measure-section .success-counting-container .success-counting-text {
-     color: #322D2A;
-     text-align: center;
-     font-family: 'Gotham-Light';
-     font-size: 24px;
-     font-style: normal;
-     font-weight: 400;
-     line-height: 140%;
-     /* 33.6px */
-}
-
-@media screen and (max-width: 780px) {
-     .success-measure-section .success-counting-container .success-counting-text {
-          font-size: 18px;
-     }
-}
-
-@media screen and (max-width: 450px) {
-     .home-gif-left {
-          position: absolute;
-          left: 0;
-          top: 20%;
-          transform: translateY(-50%);
-          /* Vertically center */
-          z-index: 0;
-          width: 25%;
-     }
-
-     .home-gif-right {
-          position: absolute;
-          right: 0;
-          top: 80%;
-          transform: translateY(-50%);
-          /* Vertically center */
-          z-index: 0;
-          width: 35%;
-     }
-}
-
-/****************** Success Measure Section ****************/
 
 /****************** Scroller Footer ****************/
 .scroller-gif-section {
@@ -535,6 +218,7 @@
      align-items: center;
      line-height: 135%;
 }
+
 @media screen and (max-width: 991px) {
      .marquee-text-2 {
           font-size: 150px;
@@ -552,6 +236,7 @@
           font-size: 80px;
      }
 }
+
 .marquee-img-1 {
      width: 10vw;
 }

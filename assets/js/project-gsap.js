@@ -75,6 +75,7 @@ window.addEventListener("DOMContentLoaded", () => {
 /*******************  Gsap Marquee Animation(Home)- 1****************/
 
 
+
 /*******************  Gsap Marquee Animation(Home)- 2 ****************/
 function initHomeMarquee2(container, textEl) {
     // Remove all clones except the first
@@ -137,7 +138,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 
 
-
 /*************  Gsap Marquee Brand-Reimaging (Home) ****************/
 function initMarquee3(container, textEl) {
     // Remove all clones except the first
@@ -197,154 +197,4 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 /*************  Gsap Marquee Brand-Reimaging(Home) ****************/
-
-
-
-
-
-//******************* Counter Animation **********************/
-gsap.registerPlugin(ScrollTrigger);
-
-const counter1 = { value: 0 };
-const counter2 = { value: 0 };
-const counter3 = { value: 0 };
-
-gsap.to(counter1, {
-    value: 50,
-    duration: 3,
-    ease: "power1.out",
-    scrollTrigger: {
-        trigger: "#CounterTrigger",
-        start: "top 90%", // start when top of #counter hits 90% of viewport
-        once: true        // run only once
-    },
-    onUpdate: () => {
-        document.getElementById("counter1").textContent = Math.floor(counter1.value);
-    }
-});
-
-gsap.to(counter2, {
-    value: 5,
-    duration: 3,
-    ease: "power1.out",
-    scrollTrigger: {
-        trigger: "#CounterTrigger",
-        start: "top 90%", // start when top of #counter hits 90% of viewport
-        once: true        // run only once
-    },
-    onUpdate: () => {
-        document.getElementById("counter2").textContent = Math.floor(counter2.value);
-    }
-});
-
-gsap.to(counter3, {
-    value: 100,
-    duration: 3,
-    ease: "power1.out",
-    scrollTrigger: {
-        trigger: "#CounterTrigger",
-        start: "top 90%", // start when top of #counter hits 90% of viewport
-        once: true        // run only once
-    },
-    onUpdate: () => {
-        document.getElementById("counter3").textContent = Math.floor(counter3.value);
-    }
-});
-
-//******************* Counter Animation **********************/
-
-
-
-
-
-//******************* Spiral -- Animation **********************/ 
-// Move effect: slide in from edges to center, then back out 
-// Set initial positions: left shadow off to the left, right shadow off to the right
-gsap.set(".home-gif-left-shadow", { left: "0%", width: "25%" });
-gsap.set(".home-gif-left", { scale: 0.9 });
-
-gsap.set(".home-gif-right-shadow", { right: "0%", width: "35%" });
-gsap.set(".home-gif-right", { scale: 0.9 });
-
-function animateGifs() {
-    // Animate left shadow in to 0 (edge to center), then back out
-    gsap.to(".home-gif-left-shadow", {
-        left: "20%",
-        duration: 1.5,
-        ease: "power3.inOut",
-        delay: 0.5,
-        onStart: () => {
-            // Scale up the spiral image as the shadow moves in
-            gsap.to(".home-gif-left", {
-                scale: 1,
-                duration: 1.5,
-                ease: "power3.inOut"
-            });
-        },
-        onComplete: () => {
-            gsap.to(".home-gif-left-shadow", {
-                left: "0%",
-                duration: 1.8,
-                ease: "power3.inOut",
-                delay: 0.5,
-                onStart: () => {
-                    // Scale back down the spiral image as the shadow moves out
-                    gsap.to(".home-gif-left", {
-                        scale: 0.9,
-                        duration: 1.5,
-                        ease: "power3.inOut"
-                    });
-                },
-
-                onComplete: animateGifs
-            });
-        },
-        scrollTrigger: {
-            trigger: ".success-measure-section",
-            start: "top 95%",
-            once: true // run only once when section enters viewport
-        }
-    });
-
-    // Animate right shadow in to 0 (edge to center), then back out
-    gsap.to(".home-gif-right-shadow", {
-        right: "35%",
-        duration: 1.5,
-        ease: "power3.inOut",
-        delay: 0.5,
-        onStart: () => {
-            // Scale up the spiral image as the shadow moves in
-            gsap.to(".home-gif-right", {
-                scale: 1,
-                duration: 1.5,
-                ease: "power3.inOut"
-            });
-        },
-        onComplete: () => {
-            gsap.to(".home-gif-right-shadow", {
-                right: "0%",
-                duration: 1.8,
-                ease: "power3.inOut",
-                delay: 0.5,
-                onStart: () => {
-                    // Scale back down the spiral image as the shadow moves out
-                    gsap.to(".home-gif-right", {
-                        scale: 0.9,
-                        duration: 1.5,
-                        ease: "power3.inOut"
-                    });
-                },
-            });
-        },
-        scrollTrigger: {
-            trigger: ".success-measure-section",
-            start: "top 95%",
-            once: true
-        }
-    });
-}
-
-animateGifs();
-
-//******************* Spiral -- Animation **********************/
 
