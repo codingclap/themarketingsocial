@@ -324,10 +324,26 @@ function initPartnerLogos() {
     );
 }
 
+let partnerLogoResizeTimeout;
 // Initialize on load
 window.addEventListener("load", initPartnerLogos);
-// Re-initialize on resize
+
+function resetPartnerLogos() {
+    // Reset transforms and opacity for all logos
+    gsap.set(".partners-section .logo", {
+        clearProps: "all"
+    });
+}
+
 window.addEventListener("resize", () => {
-    setTimeout(initPartnerLogos, 100); // debounce for smoother experience
+    clearTimeout(partnerLogoResizeTimeout);
+    partnerLogoResizeTimeout = setTimeout(() => {
+        // Kill all ScrollTriggers and tweens
+        if (window.ScrollTrigger) ScrollTrigger.getAll().forEach(t => t.kill());
+        gsap.killTweensOf(".partners-section .logo");
+        resetPartnerLogos();
+        // Re-initialize your GSAP logo animations
+        initPartnerLogos();
+    }, 200);
 });
 /****************** Client Partner Logs **************************/

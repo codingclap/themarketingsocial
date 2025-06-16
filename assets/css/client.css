@@ -345,6 +345,7 @@
      border-radius: 8px;
      opacity: 0;
      cursor: pointer;
+     padding: 20px;
 }
 
 .partners-section .logo img {
@@ -371,7 +372,7 @@
 }
 
 .partners-section .top1 img {
-     width: 120px;
+     width: 150px;
 }
 
 .partners-section .logo.top2 {
@@ -386,7 +387,7 @@
 }
 
 .partners-section .top2 img {
-     width: 70px;
+     width: 120px;
 }
 
 .partners-section .logo.top3 {
@@ -401,7 +402,7 @@
 }
 
 .partners-section .top3 img {
-     width: 120px;
+     width: 150px;
 }
 
 .partners-section .logo.top4 {
@@ -416,7 +417,7 @@
 }
 
 .partners-section .top4 img {
-     width: 130px;
+     width: 220px;
 }
 
 .partners-section .logo.bottom1 {
@@ -431,7 +432,7 @@
 }
 
 .partners-section .bottom1 img {
-     width: 130px;
+     width: 150px;
      transform: rotate(32.657deg);
 }
 
@@ -448,7 +449,7 @@
 }
 
 .partners-section .bottom2 img {
-     width: 130px;
+     width: 150px;
      transform: rotate(-32.657deg);
 }
 
@@ -464,7 +465,7 @@
 }
 
 .partners-section .bottom3 img {
-     width: 70px;
+     width: 110px;
      transform: rotate(19.657deg);
 }
 
@@ -480,7 +481,7 @@
 }
 
 .partners-section .left img {
-     width: 70px;
+     width: 140px;
 }
 
 .partners-section .logo.left img {
@@ -499,7 +500,7 @@
 }
 
 .partners-section .right img {
-     width: 120px;
+     width: 150px;
 }
 
 /* Add this to your client.css or in a <style> tag */
@@ -575,7 +576,7 @@
      }
 
      .partners-section .top2 img {
-          width: 50px;
+          width: 120px;
      }
 
      .partners-section .logo.top3 {
@@ -585,7 +586,7 @@
      }
 
      .partners-section .top3 img {
-          width: 90px;
+          width: 120px;
      }
 
      .partners-section .logo.top4 {
@@ -594,7 +595,7 @@
      }
 
      .partners-section .top4 img {
-          width: 90px;
+          width: 140px;
      }
 
      .partners-section .logo.left {
@@ -604,7 +605,7 @@
      }
 
      .partners-section .left img {
-          width: 50px;
+          width: 120px;
      }
 
      .partners-section .logo.right {
@@ -615,7 +616,7 @@
      }
 
      .partners-section .right img {
-          width: 90px;
+          width: 120px;
      }
 
      .partners-section .logo.bottom1 {
@@ -624,7 +625,7 @@
      }
 
      .partners-section .bottom1 img {
-          width: 100px;
+          width: 120px;
      }
 
      .partners-section .logo.bottom2 {
@@ -635,7 +636,7 @@
      }
 
      .partners-section .bottom2 img {
-          width: 90px;
+          width: 120px;
      }
 
      .partners-section .logo.bottom3 {
@@ -645,7 +646,7 @@
      }
 
      .partners-section .bottom3 img {
-          width: 50px;
+          width: 120px;
      }
 }
 
@@ -794,7 +795,7 @@
      }
 
      .partners-section .top1 img {
-          width: 70px;
+          width: 100%;
      }
 
      .partners-section .logo.top2 {
@@ -805,7 +806,7 @@
      }
 
      .partners-section .top2 img {
-          width: 30px;
+          width: 100%;
      }
 
      .partners-section .logo.top3 {
@@ -816,7 +817,7 @@
      }
 
      .partners-section .top3 img {
-          width: 60px;
+          width: 100%;
      }
 
      .partners-section .logo.top4 {
@@ -826,7 +827,7 @@
      }
 
      .partners-section .top4 img {
-          width: 70px;
+          width: 100%;
      }
 
      .partners-section .logo.left {
@@ -837,7 +838,7 @@
      }
 
      .partners-section .left img {
-          width: 30px;
+          width: 100%;
      }
 
      .partners-section .logo.right {
@@ -848,7 +849,7 @@
      }
 
      .partners-section .right img {
-          width: 50px;
+          width: 100%;
      }
 
      .partners-section .logo.bottom1 {
@@ -859,7 +860,7 @@
      }
 
      .partners-section .bottom1 img {
-          width: 70px;
+          width: 100%;
      }
 
      .partners-section .logo.bottom2 {
@@ -870,7 +871,7 @@
      }
 
      .partners-section .bottom2 img {
-          width: 60px;
+          width: 100%;
      }
 
      .partners-section .logo.bottom3 {
@@ -881,7 +882,7 @@
      }
 
      .partners-section .bottom3 img {
-          width: 30px;
+          width: 100%;
      }
 }
 
@@ -905,9 +906,9 @@
           top: 6%;
      }
 
-     .partners-section .top1 img {
+     /* .partners-section .top1 img {
           width: 70px;
-     }
+     } */
 
      .partners-section .logo.top2 {
           height: 83px;
@@ -916,9 +917,9 @@
           top: 43%;
      }
 
-     .partners-section .top2 img {
+     /* .partners-section .top2 img {
           width: 30px;
-     }
+     } */
 
      .partners-section .logo.top3 {
           height: 113px;
@@ -927,9 +928,9 @@
           left: 40%;
      }
 
-     .partners-section .top3 img {
+     /* .partners-section .top3 img {
           width: 60px;
-     }
+     } */
 
      .partners-section .logo.top4 {
           height: 133px;
@@ -938,9 +939,9 @@
           right: -7%;
      }
 
-     .partners-section .top4 img {
+     /* .partners-section .top4 img {
           width: 70px;
-     }
+     } */
 
      .partners-section .logo.left {
           height: 83px;
@@ -949,9 +950,9 @@
           top: 62%;
      }
 
-     .partners-section .left img {
+     /* .partners-section .left img {
           width: 30px;
-     }
+     } */
 
      .partners-section .logo.right {
           height: 93px;
@@ -960,9 +961,9 @@
           top: 30%;
      }
 
-     .partners-section .right img {
+     /* .partners-section .right img {
           width: 50px;
-     }
+     } */
 
      .partners-section .logo.bottom1 {
           height: 133px;
@@ -971,9 +972,9 @@
           bottom: 20%
      }
 
-     .partners-section .bottom1 img {
+     /* .partners-section .bottom1 img {
           width: 70px;
-     }
+     } */
 
      .partners-section .logo.bottom2 {
           height: 113px;
@@ -982,9 +983,9 @@
           left: 55%;
      }
 
-     .partners-section .bottom2 img {
+     /* .partners-section .bottom2 img {
           width: 60px;
-     }
+     } */
 
      .partners-section .logo.bottom3 {
           height: 83px;
@@ -993,9 +994,9 @@
           left: 60%;
      }
 
-     .partners-section .bottom3 img {
+     /* .partners-section .bottom3 img {
           width: 30px;
-     }
+     } */
 }
 
 /****************** Client Partner Logs - Section ****************/
