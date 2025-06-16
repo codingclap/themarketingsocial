@@ -173,7 +173,7 @@ function initPartnerLogos() {
 
     // --- Top Logos: Move Down in Steps ---
     gsap.fromTo(".partners-section .logo.top1",
-        { yPercent: isMobile ? 0 : moveYTop, xPercent: 0, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYTop, xPercent: 0, opacity: isMobile ? 1 : 0 },
         {
             yPercent: isMobile ? 0 : 10,
             xPercent: isMobile ? 0 : 0,
@@ -189,7 +189,7 @@ function initPartnerLogos() {
         }
     );
     gsap.fromTo(".partners-section .logo.top2",
-        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXLeft, opacity: isMobile ? 1 : 0 },
         {
             yPercent: isMobile ? 0 : 50,
             xPercent: isMobile ? 0 : -50,
@@ -205,7 +205,7 @@ function initPartnerLogos() {
         }
     );
     gsap.fromTo(".partners-section .logo.top3",
-        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXLeft, opacity: isMobile ? 1 : 0 },
         {
             yPercent: isMobile ? 0 : 40,
             xPercent: isMobile ? 0 : -50,
@@ -221,7 +221,7 @@ function initPartnerLogos() {
         }
     );
     gsap.fromTo(".partners-section .logo.top4",
-        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXRight, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXRight, opacity: isMobile ? 1 : 0 },
         {
             yPercent: isMobile ? 0 : 10,
             xPercent: isMobile ? 0 : 0,
@@ -239,7 +239,7 @@ function initPartnerLogos() {
 
     // --- Left Logo: Move Right in Steps ---
     gsap.fromTo(".partners-section .logo.left",
-        { xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
+        { xPercent: isMobile ? 0 : moveXLeft, opacity: isMobile ? 1 : 0 },
         {
 
             xPercent: isMobile ? 0 : 10,
@@ -257,7 +257,7 @@ function initPartnerLogos() {
 
     // --- Right Logo: Move Left in Steps ---
     gsap.fromTo(".partners-section .logo.right",
-        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXRight, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXRight, opacity: isMobile ? 1 : 0 },
         {
             yPercent: isMobile ? 0 : -40,
             xPercent: isMobile ? 0 : 0,
@@ -275,7 +275,7 @@ function initPartnerLogos() {
 
     // --- Bottom Logos: Move Up in Steps ---
     gsap.fromTo(".partners-section .logo.bottom1",
-        { yPercent: isMobile ? 0 : moveYBottom, xPercent: 0, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYBottom, xPercent: 0, opacity: isMobile ? 1 : 0 },
         {
             yPercent: isMobile ? 0 : 20,
             xPercent: isMobile ? 0 : 0,
@@ -291,7 +291,7 @@ function initPartnerLogos() {
         }
     );
     gsap.fromTo(".partners-section .logo.bottom2",
-        { yPercent: isMobile ? 0 : moveYBottom, xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYBottom, xPercent: isMobile ? 0 : moveXLeft, opacity: isMobile ? 1 : 0 },
         {
             yPercent: isMobile ? 0 : -25,
             xPercent: isMobile ? 0 : -60,
@@ -307,7 +307,7 @@ function initPartnerLogos() {
         }
     );
     gsap.fromTo(".partners-section .logo.bottom3",
-        { yPercent: isMobile ? 0 : moveYBottom, xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYBottom, xPercent: isMobile ? 0 : moveXLeft, opacity: isMobile ? 1 : 0 },
         {
             yPercent: isMobile ? 0 : -25,
             xPercent: isMobile ? 0 : -90,
