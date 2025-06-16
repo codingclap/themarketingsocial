@@ -175,10 +175,10 @@ function initPartnerLogos() {
     gsap.fromTo(".partners-section .logo.top1",
         { yPercent: isMobile ? 0 : moveYTop, xPercent: 0, opacity: 0 },
         {
-            yPercent: isMobile ? 0 : 35,
-            xPercent: 0,
+            yPercent: isMobile ? 0 : 10,
+            xPercent: isMobile ? 0 : 0,
             opacity: 1,
-            duration: 1,
+            duration: 1.3,
             ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
@@ -210,7 +210,7 @@ function initPartnerLogos() {
             yPercent: isMobile ? 0 : 40,
             xPercent: isMobile ? 0 : -50,
             opacity: 1,
-            duration: 1.2,
+            duration: 1.1,
             ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
@@ -224,7 +224,7 @@ function initPartnerLogos() {
         { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXRight, opacity: 0 },
         {
             yPercent: isMobile ? 0 : 10,
-            xPercent: isMobile ? 0 : -5,
+            xPercent: isMobile ? 0 : 0,
             opacity: 1,
             duration: 1.3,
             ease: isMobile ? "power2.out" : `steps(${steps})`,
@@ -260,7 +260,7 @@ function initPartnerLogos() {
         { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXRight, opacity: 0 },
         {
             yPercent: isMobile ? 0 : -40,
-            xPercent: isMobile ? 0 : -25,
+            xPercent: isMobile ? 0 : 0,
             opacity: 1,
             duration: 1.1,
             ease: isMobile ? "power2.out" : `steps(${steps})`,
@@ -275,10 +275,10 @@ function initPartnerLogos() {
 
     // --- Bottom Logos: Move Up in Steps ---
     gsap.fromTo(".partners-section .logo.bottom1",
-        { yPercent: isMobile ? 0 : moveYBottom, xPercent: isMobile ? 0 : moveXLeft, opacity: 0 },
+        { yPercent: isMobile ? 0 : moveYBottom, xPercent: 0, opacity: 0 },
         {
             yPercent: isMobile ? 0 : 20,
-            xPercent: isMobile ? 0 : 20,
+            xPercent: isMobile ? 0 : 0,
             opacity: 1,
             duration: 1,
             ease: isMobile ? "power2.out" : `steps(${steps})`,
@@ -344,6 +344,6 @@ window.addEventListener("resize", () => {
         resetPartnerLogos();
         // Re-initialize your GSAP logo animations
         initPartnerLogos();
-    }, 80);
+    }, 50);
 });
 /****************** Client Partner Logs **************************/
