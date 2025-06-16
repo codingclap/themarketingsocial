@@ -325,8 +325,18 @@ function initPartnerLogos() {
 }
 
 let partnerLogoResizeTimeout;
+
+// Utility to detect mobile devices
+function isMobile() {
+    return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
 // Initialize on load
-window.addEventListener("load", initPartnerLogos);
+window.addEventListener("load", () => {
+    if (!isMobile()) {
+        initPartnerLogos();
+    }
+});
 
 function resetPartnerLogos() {
     // Reset transforms and opacity for all logos
@@ -338,6 +348,11 @@ function resetPartnerLogos() {
 window.addEventListener("resize", () => {
     clearTimeout(partnerLogoResizeTimeout);
     partnerLogoResizeTimeout = setTimeout(() => {
+        if (isMobile()) {
+            // On mobile, just reset and skip GSAP/ScrollTrigger
+            resetPartnerLogos();
+            return;
+        }
         // Kill all ScrollTriggers and tweens
         if (window.ScrollTrigger) ScrollTrigger.getAll().forEach(t => t.kill());
         gsap.killTweensOf(".partners-section .logo");
