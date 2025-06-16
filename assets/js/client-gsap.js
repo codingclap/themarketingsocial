@@ -344,6 +344,6 @@ window.addEventListener("resize", () => {
         resetPartnerLogos();
         // Re-initialize your GSAP logo animations
         initPartnerLogos();
-    }, 200);
+    }, 80);
 });
 /****************** Client Partner Logs **************************/
