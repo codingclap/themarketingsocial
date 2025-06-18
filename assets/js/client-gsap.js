@@ -149,8 +149,8 @@ function initPartnerLogos() {
     ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     gsap.killTweensOf(".partners-section .logo, .partners-section .center-heading");
 
-    const isMobile = window.innerWidth <= 768;
-    const steps = 30;
+    const isMobile = window.innerWidth <= 991;
+    const steps = 60;
 
     // Responsive movement distances in percent
     const moveYTop = isMobile ? 0 : -30;
@@ -191,7 +191,7 @@ function initPartnerLogos() {
     gsap.fromTo(".partners-section .logo.top2",
         { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXLeft, opacity: isMobile ? 1 : 0 },
         {
-            yPercent: isMobile ? 0 : 50,
+            yPercent: isMobile ? 0 : 45,
             xPercent: isMobile ? 0 : -50,
             opacity: 1,
             duration: 1.1,
@@ -257,10 +257,9 @@ function initPartnerLogos() {
 
     // --- Right Logo: Move Left in Steps ---
     gsap.fromTo(".partners-section .logo.right",
-        { yPercent: isMobile ? 0 : moveYTop, xPercent: isMobile ? 0 : moveXRight, opacity: isMobile ? 1 : 0 },
-        {
-            yPercent: isMobile ? 0 : -40,
-            xPercent: isMobile ? 0 : 0,
+        { xPercent: isMobile ? 0 : moveXRight, opacity: isMobile ? 1 : 0 },
+        { 
+            xPercent: isMobile ? 0 : -40,
             opacity: 1,
             duration: 1.1,
             ease: isMobile ? "power2.out" : `steps(${steps})`,
@@ -313,6 +312,24 @@ function initPartnerLogos() {
             xPercent: isMobile ? 0 : -90,
             opacity: 1,
             duration: 1.2,
+            ease: isMobile ? "power2.out" : `steps(${steps})`,
+            scrollTrigger: {
+                trigger: ".partners-section .circle-wrapper",
+                start: "top 83%",
+                end: "top 30%",
+                scrub: true
+            }
+        }
+    );
+
+     // --- Bottom Logos: Move Up in Steps ---
+    gsap.fromTo(".partners-section .logo.bottom4",
+        { yPercent: isMobile ? 0 : moveYBottom, xPercent: 0, opacity: isMobile ? 1 : 0 },
+        {
+            yPercent: isMobile ? 0 : 20,
+            xPercent: isMobile ? 0 : 0,
+            opacity: 1,
+            duration: 1,
             ease: isMobile ? "power2.out" : `steps(${steps})`,
             scrollTrigger: {
                 trigger: ".partners-section .circle-wrapper",
