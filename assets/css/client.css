@@ -1379,7 +1379,7 @@
      .partners-section .logo.top2 {
           height: 140px;
           width: 150px;
-          top: 41%;
+          top: 42%;
           left: 5%;
      }
 
@@ -1411,7 +1411,7 @@
      .partners-section .logo.left {
           height: 140px;
           width: 150px;
-          top: 66%;
+          top: 65.8%;
           left: 5%;
      }
 
@@ -1475,8 +1475,9 @@
           width: 100px;
      }
 }
+
 @media (max-width: 340px) {
- 
+
 
      .scroller-section {
           padding-bottom: 0em;
@@ -1491,7 +1492,7 @@
      }
 
      .partners-section .logo.top1 {
-         height: 120px;
+          height: 120px;
           width: 130px;
      }
 
@@ -1500,9 +1501,9 @@
      }
 
      .partners-section .logo.top2 {
-         height: 120px;
+          height: 120px;
           width: 130px;
-          top: 41%;
+          top: 42%;
           left: 5%;
      }
 
@@ -1522,7 +1523,7 @@
      }
 
      .partners-section .logo.top4 {
-         height: 120px;
+          height: 120px;
           width: 130px;
           right: 5%;
      }
@@ -1534,7 +1535,7 @@
      .partners-section .logo.left {
           height: 120px;
           width: 130px;
-          top: 65%;
+          top: 65.8%;
           left: 5%;
      }
 
@@ -1543,7 +1544,7 @@
      }
 
      .partners-section .logo.right {
-         height: 120px;
+          height: 120px;
           width: 130px;
           right: 5%;
           top: 34.5%;
@@ -1554,7 +1555,7 @@
      }
 
      .partners-section .logo.bottom1 {
-         height: 120px;
+          height: 120px;
           width: 130px;
      }
 
@@ -1574,7 +1575,7 @@
      }
 
      .partners-section .logo.bottom3 {
-         height: 120px;
+          height: 120px;
           width: 130px;
           bottom: 40%;
           left: unset;
@@ -1586,7 +1587,7 @@
      }
 
      .partners-section .logo.bottom4 {
-         height: 120px;
+          height: 120px;
           width: 130px;
      }
 
@@ -1598,6 +1599,7 @@
           width: 100px;
      }
 }
+
 /****************** Client Partner Logs - Section ****************/
 
 /****************** Client Partner Content - Section ****************/
