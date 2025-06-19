@@ -8,21 +8,21 @@
 
 .client-header .header-title {
      color: #F1E8E0;
-     font-size: clamp(2rem, 5vw, 3rem);
+     font-size: clamp(2rem, 4vw, 3rem);
      font-weight: 400;
 }
 
 
 .client-header .header-image {
      width: 100%;
-     max-width: 150px;
+     max-width: 200px;
 }
 
 
 @media (max-width: 768px) {
      .client-header .header-image {
           width: 100%;
-          max-width: 140px;
+          max-width: 180px;
      }
 }
 
@@ -253,13 +253,13 @@
 
 @media screen and (max-width: 991px) {
      .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
-          font-size: 330px;
+          font-size: 350px;
      }
 }
 
 @media screen and (max-width: 767px) {
      .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
-          font-size: 220px;
+          font-size: 300px;
      }
 }
 

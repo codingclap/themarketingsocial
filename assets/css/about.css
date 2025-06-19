@@ -70,7 +70,7 @@
 
 
 .about-subheader .about-bgheading {
-    font-size: 330px;
+    font-size: 400px;
     color: #E3E3E3;
     font-family: 'Anton-Regular';
     font-style: normal;
@@ -78,6 +78,24 @@
     line-height: normal;
     white-space: nowrap;
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 991px) {
+    .about-subheader .about-bgheading {
+        font-size: 350px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about-subheader .about-bgheading {
+        font-size: 300px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .about-subheader .about-bgheading {
+        font-size: 260px;
+    }
 }
 
 .about-subheader .about-subheaderBgtext {
@@ -95,7 +113,7 @@
 
 @media screen and (max-width: 1400px) {
     .about-subheader {
-        min-height: 800px;
+        min-height: 780px;
     }
 
     .about-subheader .about-subheaderImage {
@@ -105,7 +123,8 @@
 
 @media screen and (max-width: 1024px) {
     .about-subheader {
-        min-height: 550px;
+         min-height: unset;
+         height: 560px;
     }
 
     .about-subheader .about-subheaderImage {
@@ -119,7 +138,8 @@
     }
 
     .about-subheader {
-        min-height: 340px;
+        min-height: unset;
+        height: 430px;
     }
 
     .about-subheader .about-subheaderImage {
@@ -138,11 +158,12 @@
 
 @media screen and (max-width: 500px) {
     .about-subheader {
-        min-height: 220px;
+        min-height: unset;
+        height: 320px;
     }
 
     .about-subheader .about-subheaderImage {
-        background: url('../images/about-page/about-black-heat-lady.webp') center bottom/400px no-repeat;
+        background: url('../images/about-page/about-black-heat-lady.webp') center bottom/500px no-repeat;
     }
 
     .about-header .about-heading {
@@ -177,11 +198,11 @@
 }
 
 .marquee-inner {
-     display: flex;
-     white-space: nowrap;
-     position: relative; 
-     width: 100%;
-     will-change: transform; 
+    display: flex;
+    white-space: nowrap;
+    position: relative;
+    width: 100%;
+    will-change: transform;
 }
 
 .marquee-text {
@@ -221,9 +242,9 @@
 
 .about-us-section .about-us-text {
     position: relative;
-    color: #AA9D8E;
+    color: #F1E8E0;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 0px;
     -webkit-text-stroke-color: #F1E8E0;
     font-family: "Gotham-Book";
     font-size: clamp(1.1rem, 2vw, 3rem);
@@ -241,11 +262,12 @@
     position: relative;
     color: #E3E3E3;
     font-family: "Hevantica-Regular";
-    font-size: clamp(2.2rem, 6vw, 6rem);
+    font-size: clamp(2.3rem, 5vw, 6.5rem);
     font-style: normal;
     font-weight: 400;
     line-height: 140%;
     z-index: 1;
+    width: 85%;
     /* 66.667% */
 }
 
@@ -253,11 +275,12 @@
     position: relative;
     color: #F1E8E0;
     font-family: "Playfair-Regular";
-    font-size: clamp(1.4rem, 3vw, 2.5rem);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
     font-style: normal;
     font-weight: 400;
     line-height: 120%;
     z-index: 1;
+    width: 80%;
 }
 
 @media screen and (max-width:1400px) {
@@ -305,6 +328,16 @@
 }
 
 @media screen and (max-width:600px) {
+    .about-us-spacilHead {
+        font-size: clamp(1.6rem, 3vw, 6rem);
+        width: 100%;
+    }
+
+    .about-us-spacilText {
+        width: 95%;
+        font-size: clamp(1.2rem, 3vw, 1.9rem);
+    }
+
     .about-us-section {
         padding-bottom: 3em;
     }
@@ -321,6 +354,18 @@
         min-height: 600px;
     }
 
+}
+
+@media screen and (max-width:375px) {
+    .about-us-spacilHead {
+        font-size: clamp(1.4rem, 3vw, 6rem);
+        width: 100%;
+    }
+
+    .about-us-spacilText {
+        width: 100%;
+        font-size: clamp(1rem, 3vw, 1.9rem);
+    }
 }
 
 /****************** About Us Section ****************/
@@ -442,41 +487,89 @@
 
 
 /****************** About - Scroller Footer ****************/
+  
 .about-gif-scroller-section {
-    width: 100%;
-    overflow: hidden;
-    min-height: 100px;
-    display: flex;
-    align-items: center;
-    background-color: #AA9D8E;
+     width: 100%;
+     overflow: hidden;
+     min-height: 100px;
+     display: flex;
+     align-items: center;
+     padding-top: 3em;
 }
 
 .about-marquee-inner-2 {
-    display: flex;
-    white-space: nowrap;
+     display: flex;
+     white-space: nowrap;
 }
 
 .about-marquee-text-2 {
-    font-size: 14vw;
-    font-family: 'Cardo-Italic';
-    color: #322D2A;
-    font-weight: 400;
-    white-space: nowrap;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+     font-size: 200px;
+     font-family: 'Cardo-Italic';
+     color: #322D2A;
+     font-weight: 400;
+     white-space: nowrap;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     line-height: 135%;
 }
 
 .about-marquee-img-1 {
-    width: 10vw;
+     width: 160px;
 }
 
 .about-marquee-img-2 {
-    width: 10vw;
+     width: 160px;
 }
 
 .about-marquee-img-3 {
-    width: 10vw;
+     width: 160px;
+}
+
+@media screen and (max-width: 991px) {
+     .about-marquee-text-2 {
+          font-size: 150px;
+     }
+
+     .about-marquee-img-1 {
+          width: 110px;
+     }
+
+     .about-marquee-img-2 {
+          width: 110px;
+     }
+
+     .about-marquee-img-3 {
+          width: 110px;
+     }
+}
+
+@media screen and (max-width: 767px) {
+     .about-marquee-text-2 {
+          font-size: 100px;
+     }
+}
+
+@media screen and (max-width: 479px) {
+     .about-marquee-text-2 {
+          font-size: 80px;
+     }
+
+     .about-gif-scroller-section{
+          padding-top: 2em;
+     }
+
+     .about-marquee-img-1 {
+          width: 90px;
+     }
+
+     .about-marquee-img-2 {
+          width: 90px;
+     }
+
+     .about-marquee-img-3 {
+          width: 90px;
+     }
 }
 
 /****************** About - Scroller Footer ****************/
@@ -623,13 +716,30 @@
 
 
 .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
-    font-size: 330px;
+    font-size: 400px;
     color: #5E0A14;
     font-family: 'Anton-Regular';
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+}
+@media screen and (max-width: 991px) {
+    .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
+        font-size: 350px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
+        font-size: 300px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
+        font-size: 260px;
+    }
 }
 
 .brand-reimaging-section .brand-reimaging-bgtext {

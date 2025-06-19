@@ -17,49 +17,60 @@ gsap.to(".header-image", {
 
 
 /*******************  Gsap Marquee Animation(Service)- 1 ****************/
+ 
 function initMarquee(container, textEl) {
-    const resetMarquee = () => {
-        container.innerHTML = '';
-        container.appendChild(textEl);
-        textEl.style.whiteSpace = 'nowrap';
+    // Remove all clones except the first
+    while (container.children.length > 1) {
+        container.removeChild(container.lastChild);
+    }
+    textEl.style.whiteSpace = 'nowrap';
 
-        let total = textEl.offsetWidth;
-        const max = container.parentElement.offsetWidth * 2;
+    // Calculate how many clones are needed
+    const textWidth = textEl.offsetWidth;
+    const containerWidth = container.parentElement.offsetWidth;
+    let total = textWidth;
+    // Add enough clones to cover container + 2×textWidth
+    while (total < containerWidth + textWidth * 2) {
+        const clone = textEl.cloneNode(true);
+        container.appendChild(clone);
+        total += clone.offsetWidth;
+    }
 
-        while (total < max) {
-            const clone = textEl.cloneNode(true);
-            container.appendChild(clone);
-            total += clone.offsetWidth;
+    // Kill old tween if exists
+    if (container._marqueeTween) {
+        container._marqueeTween.kill();
+        container._marqueeTween = null;
+    }
+    gsap.set(container, { x: 0 });
+
+    // Animate
+    container._marqueeTween = gsap.to(container, {
+        x: `-=${textWidth}`,
+        duration: 16,
+        ease: "none",
+        repeat: -1,
+        force3D: true,
+        overwrite: true,
+        modifiers: {
+            x: gsap.utils.unitize(val => parseFloat(val) % textWidth)
         }
-
-        gsap.set(container, {
-            transform: "translate3d(-8.667%, 0, 0) scale3d(1,1,1) rotateX(0) rotateY(0) rotateZ(0) skew(0,0)",
-            transformStyle: "preserve-3d",
-            willChange: "transform",
-            force3D: true
-        });
-
-        gsap.killTweensOf(container);
-        gsap.to(container, {
-            x: `-=${textEl.offsetWidth}`,
-            duration: 10,
-            ease: "none",
-            repeat: -1,
-            force3D: true,
-            modifiers: {
-                x: gsap.utils.unitize(val => parseFloat(val) % textEl.offsetWidth)
-            }
-        });
-    };
-
-    resetMarquee();
-    window.addEventListener("resize", () => requestAnimationFrame(resetMarquee));
+    });
 }
 
+
+let lastWidth = 0;
 window.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("service-marqueeInner-1");
     const text = container.querySelector(".marquee-text");
     initMarquee(container, text);
+
+    window.addEventListener("resize", () => {
+        const width = container.parentElement.offsetWidth;
+        if (Math.abs(width - lastWidth) > 10) {
+            lastWidth = width;
+            initMarquee(container, text);
+        }
+    });
 });
 
 
@@ -189,60 +200,63 @@ window.addEventListener('unload', cleanup);
 
 
 /*******************  Gsap Marquee Animation (Service)- 2 ****************/
-function setupHomeMarquee2(marqueeInner, originalText) {
-    // Remove all previously cloned elements (keep original only)
-    while (marqueeInner.children.length > 1) {
-        marqueeInner.removeChild(marqueeInner.lastChild);
+function initHomeMarquee2(container, textEl) {
+    // Remove all clones except the first
+    while (container.children.length > 1) {
+        container.removeChild(container.lastChild);
+    }
+    textEl.style.whiteSpace = 'nowrap';
+
+    // Calculate how many clones are needed
+    const textWidth = textEl.offsetWidth;
+    const containerWidth = container.parentElement.offsetWidth;
+    let total = textWidth;
+    while (total < containerWidth + textWidth * 2) {
+        const clone = textEl.cloneNode(true);
+        container.appendChild(clone);
+        total += clone.offsetWidth;
     }
 
-    // Reset transform and ensure accurate size calculation
-    marqueeInner.style.transform = 'translateX(0)';
-    originalText.style.whiteSpace = 'nowrap';
-
-    const containerWidth = marqueeInner.parentElement.offsetWidth;
-    let totalWidth = originalText.offsetWidth;
-
-    // Clone original text until the total width covers the container at least twice
-    while (totalWidth < containerWidth * 2) {
-        const clone = originalText.cloneNode(true);
-        marqueeInner.appendChild(clone);
-        totalWidth += clone.offsetWidth;
+    // Kill old tween if exists
+    if (container._marqueeTween) {
+        container._marqueeTween.kill();
+        container._marqueeTween = null;
     }
+    gsap.set(container, { x: 0, willChange: "transform", force3D: true });
 
-    // Hint browser for GPU acceleration
-    marqueeInner.style.willChange = 'transform';
-
-    // Clear previous animations and apply smooth scrolling
-    gsap.killTweensOf(marqueeInner);
-    gsap.to(marqueeInner, {
-        x: `-=${originalText.offsetWidth}`,
-        duration: 10,
-        ease: "none", // smoother than "linear" for continuous movement
+    // Animate
+    container._marqueeTween = gsap.to(container, {
+        x: `-=${textWidth}`,
+        duration: 18,
+        ease: "none",
         repeat: -1,
         force3D: true,
         overwrite: true,
         modifiers: {
-            x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
+            x: gsap.utils.unitize(val => parseFloat(val) % textWidth)
         }
     });
 }
 
-window.addEventListener("load", () => {
-    const marqueeInner = document.getElementById("service-marqueeInner-2");
-    const originalText = marqueeInner.querySelector(".marquee-text-2");
+let lastWidthHome2 = 0;
+window.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("service-marqueeInner-2");
+    const text = container.querySelector(".marquee-text-2");
+    initHomeMarquee2(container, text);
 
-    setupHomeMarquee2(marqueeInner, originalText);
-
-    // Debounced resize using requestAnimationFrame
-    let resizeFrame;
+    let resizeTimeout;
     window.addEventListener("resize", () => {
-        if (resizeFrame) cancelAnimationFrame(resizeFrame);
-        resizeFrame = requestAnimationFrame(() => {
-            setupHomeMarquee2(marqueeInner, originalText);
-        });
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const width = container.parentElement.offsetWidth;
+            if (Math.abs(width - lastWidthHome2) > 10) {
+                lastWidthHome2 = width;
+                initHomeMarquee2(container, text);
+            }
+        }, 100);
     });
 });
-
+ 
 /*******************  Gsap Marquee Animation (Service)- 2****************/
 
 
@@ -250,60 +264,62 @@ window.addEventListener("load", () => {
 
 
 /*************  Gsap Marquee Brand-Reimaging (Service) ****************/
-function setupMarquee3(marqueeInner, originalText) {
-    // Remove previously cloned elements (leave the original only)
-    while (marqueeInner.children.length > 1) {
-        marqueeInner.removeChild(marqueeInner.lastChild);
+function initMarquee3(container, textEl) {
+    // Remove all clones except the first
+    while (container.children.length > 1) {
+        container.removeChild(container.lastChild);
+    }
+    textEl.style.whiteSpace = 'nowrap';
+
+    // Calculate how many clones are needed
+    const textWidth = textEl.offsetWidth;
+    const containerWidth = container.parentElement.offsetWidth;
+    let total = textWidth;
+    while (total < containerWidth + textWidth * 2) {
+        const clone = textEl.cloneNode(true);
+        container.appendChild(clone);
+        total += clone.offsetWidth;
     }
 
-    // Reset transform and ensure accurate width calculation
-    marqueeInner.style.transform = 'translateX(0)';
-    originalText.style.whiteSpace = 'nowrap';
-
-    const containerWidth = marqueeInner.parentElement.offsetWidth;
-    let totalWidth = originalText.offsetWidth;
-
-    // Clone original text until it overflows container 2x
-    while (totalWidth < containerWidth * 2) {
-        const clone = originalText.cloneNode(true);
-        marqueeInner.appendChild(clone);
-        totalWidth += clone.offsetWidth;
+    // Kill old tween if exists
+    if (container._marqueeTween) {
+        container._marqueeTween.kill();
+        container._marqueeTween = null;
     }
+    gsap.set(container, { x: 0, willChange: "transform", force3D: true });
 
-    // Hint browser to prepare for transform animation
-    marqueeInner.style.willChange = 'transform';
-
-    // Clear previous GSAP animations and apply new smooth loop
-    gsap.killTweensOf(marqueeInner);
-    gsap.to(marqueeInner, {
-        x: `-=${originalText.offsetWidth}`,
-        duration: 10,
-        ease: "none", // use 'none' for perfectly smooth infinite scroll
+    // Animate
+    container._marqueeTween = gsap.to(container, {
+        x: `-=${textWidth}`,
+        duration: 16,
+        ease: "none",
         repeat: -1,
         force3D: true,
         overwrite: true,
         modifiers: {
-            x: gsap.utils.unitize(x => parseFloat(x) % originalText.offsetWidth)
+            x: gsap.utils.unitize(val => parseFloat(val) % textWidth)
         }
     });
 }
 
-window.addEventListener("load", () => {
-    const marqueeInner = document.getElementById("service-marqueeInner-3");
-    const originalText = marqueeInner.querySelector(".brand-bgheading");
+let lastWidth3 = 0;
+window.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("service-marqueeInner-3");
+    const text = container.querySelector(".brand-bgheading");
+    initMarquee3(container, text);
 
-    setupMarquee3(marqueeInner, originalText);
-
-    // Responsive: debounce resize with requestAnimationFrame
-    let resizeFrame;
+    let resizeTimeout;
     window.addEventListener("resize", () => {
-        if (resizeFrame) cancelAnimationFrame(resizeFrame);
-        resizeFrame = requestAnimationFrame(() => {
-            setupMarquee3(marqueeInner, originalText);
-        });
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const width = container.parentElement.offsetWidth;
+            if (Math.abs(width - lastWidth3) > 10) {
+                lastWidth3 = width;
+                initMarquee3(container, text);
+            }
+        }, 100);
     });
 });
-
 /*************  Gsap Marquee Brand-Reimaging(Service) ****************/
 
 

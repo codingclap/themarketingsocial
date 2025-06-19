@@ -59,13 +59,13 @@
 
 @media screen and (max-width: 991px) {
      .marquee-text {
-          font-size: 330px;
+          font-size: 350px;
      }
 }
 
 @media screen and (max-width: 767px) {
      .marquee-text {
-          font-size: 220px;
+          font-size: 300px;
      }
 }
 
@@ -446,13 +446,13 @@
 
 @media screen and (max-width: 991px) {
      .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
-          font-size: 330px;
+          font-size: 350px;
      }
 }
 
 @media screen and (max-width: 767px) {
      .brand-reimaging-section .brand-reimaging-bgtext .brand-bgheading {
-          font-size: 220px;
+          font-size: 300px;
      }
 }
 
