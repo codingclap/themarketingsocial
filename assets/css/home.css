@@ -844,7 +844,7 @@
 
      .conversation-section {
           min-height: 700px;
-          background: url(../images/home-page/conversation-bg.svg) center left / cover no-repeat;
+          background: url(../images/home-page/conversation-bg.svg) 65% 100% / cover no-repeat;
      }
 
      .conversation-content {
