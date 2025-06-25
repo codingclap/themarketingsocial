@@ -273,7 +273,7 @@
      }
 
      .project-section .project-profile .project-title {
-          justify-content: space-between;
+          justify-content: space-evenly;
      }
 
      .project-section .project-profile .project-title .title-bottom {
@@ -315,7 +315,11 @@
 
 }
 
-@media screen and (max-width: 375px) {}
+@media screen and (max-width: 375px) {
+      .project-section .project-profile .project-title {
+          padding: 1em 1em;
+     }
+}
 
 /****************** Project - Section ****************/
 
