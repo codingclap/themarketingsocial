@@ -96,7 +96,7 @@
      justify-content: center;
      align-items: center;
      cursor: pointer;
-     z-index: +6;
+     z-index: +2;
 }
 
 .project-section .down-arrow .down-arrow-img {
@@ -118,6 +118,12 @@
      /* or your desired gap */
 }
 
+.project-section .project-holder .project-profile-box {
+     height: 100%;
+     width: 100%;
+     cursor: pointer;
+}
+
 .project-section .project-holder .project-profile {
      flex: 1 1 100%;
      position: relative;
@@ -127,8 +133,24 @@
      justify-content: center;
      background: #000;
      /* Optional: background color for the profile */
-
+     transition: all 0.4s ease-in-out;
 }
+
+.project-section .project-holder .project-profile::before {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     content: "";
+     background-color: #00000030;
+     z-index: 0;
+     transition: all 0.4s ease-in-out;
+}
+
+.project-section .project-holder .project-mobile-description {
+     color: #fff;
+     transition: all 0.4s ease-in-out;
+}
+
 
 .project-section .project-holder .project-profile img {
      width: 100%;
@@ -144,12 +166,94 @@
      height: 100%;
      flex-direction: column;
      display: flex;
-     justify-content: space-between;
+     justify-content: space-around;
      padding: 7em 6em;
      position: absolute;
      color: #fff;
      font-family: 'Playfair-Regular';
      width: 100%;
+     transition: all 0.4s ease-in-out;
+}
+
+
+
+.project-section .project-profile .project-hover-description {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     opacity: 0;
+     z-index: -1;
+     transition: all 0.4s ease-in-out;
+}
+
+.project-section .project-profile .project-hover-description p {
+     color: #000;
+     text-align: center;
+     font-family: 'Gotham-Book';
+     font-size: clamp(1.2rem, 3vw, 1.5rem);
+     font-style: normal;
+     font-weight: 400;
+     line-height: 140%;
+     /* 44.8px */
+     letter-spacing: -0.96px;
+     max-width: 900px;
+     mix-blend-mode: hard-light;
+}
+
+
+
+.project-section .project-profile .project-hover-description p.special-font {
+     font-family: 'Hevantica-Regular';
+     font-size: clamp(1.2rem, 3vw, 2rem);
+     color: #000;
+     text-align: center;
+     -webkit-text-stroke-width: 0.6px;
+     -webkit-text-stroke-color: #000;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 140%;
+     /* 50.4px */
+     letter-spacing: 2.16px;
+}
+
+.project-section .project-profile .project-hover-description:before {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     content: "";
+     opacity: 0;
+     transition: all 0.4s ease-in-out;
+}
+
+.project-section .project-profile .project-text {
+     position: absolute;
+     z-index: 1;
+     opacity: 0;
+     transition: all 0.4s ease-in-out;
+}
+
+
+.project-section .project-holder .project-profile:hover .project-hover-description {
+     opacity: 0.9;
+     transition: all 0.4s ease-in-out;
+     z-index: 1;
+}
+
+.project-section .project-holder .project-profile:hover .project-hover-description:before {
+     background-color: #AA9D8E;
+     opacity: 0.99;
+     transition: all 0.4s ease-in-out;
+     backdrop-filter: blur(2px);
+}
+
+.project-section .project-holder .project-profile:hover .project-text {
+     opacity: 0.9;
+     transition: all 0.4s ease-in-out;
 }
 
 .project-section .project-profile .project-title .title-top {
@@ -177,7 +281,7 @@
 .project-section .project-profile .project-title .title-top .title-para {
      font-size: clamp(1.2rem, 3vw, 2.6rem);
      font-family: 'Playfair-Regular';
-      font-weight: 400;
+     font-weight: 400;
 }
 
 .project-section .project-profile .project-title .title-top .top-tags {
@@ -208,7 +312,10 @@
      width: 200px;
 }
 
- 
+.project-section .project-holder .project-mobile-description {
+     display: none;
+}
+
 /* Responsive adjustments */
 
 
@@ -229,6 +336,7 @@
 
      .project-section .project-profile .project-title {
           padding: 2em 2em;
+          justify-content: space-evenly;
      }
 
      .project-section .project-profile .project-title .title-top .top-tags {
@@ -248,6 +356,85 @@
      }
 }
 
+@media screen and (max-width: 991px) {
+     .project-section .project-holder .project-mobile-description {
+          display: flex;
+     }
+
+     .project-section .project-holder .project-mobile-description p {
+          text-align: center;
+          font-family: 'Gotham-Book';
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 140%;
+          /* 44.8px */
+          max-width: 900px; 
+     }
+
+     .project-section .project-holder .project-mobile-description p.special-font {
+          font-family: 'Hevantica-Regular';
+          font-size: 16px;
+          color: #000;
+          text-align: center;
+          -webkit-text-stroke-width: 0.6px;
+          -webkit-text-stroke-color: #000;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 140%;
+          /* 50.4px */
+          letter-spacing: 2.16px;
+     }
+
+     .project-section .project-profile .project-hover-description {
+          display: none;
+     }
+
+     .project-section .project-holder .project-mobile-description.first-bg {
+          opacity: 0.95;
+          background: #AA9D8E;
+     }
+
+     .project-section .project-holder .project-mobile-description.second-bg {
+          opacity: 0.9;
+          background: #D1C7BC;
+     }
+
+     .project-section .project-holder .project-mobile-description.third-bg {
+          opacity: 0.9;
+          background: #6D2732;
+     }
+
+     .project-section .project-holder .project-mobile-description.fourth-bg {
+          opacity: 0.9;
+          background: #F1E8E0;
+     }
+
+     .project-section .project-holder .project-mobile-description.fifth-bg {
+          opacity: 0.9;
+          background: #D9D9D9;
+     }
+
+     .project-section .project-holder .project-mobile-description.first-bg,
+     .project-section .project-holder .project-mobile-description.second-bg,
+     .project-section .project-holder .project-mobile-description.fifth-bg,
+     .project-section .project-holder .project-mobile-description.fourth-bg {
+          color: #000;
+     }
+
+     .project-section .project-holder .project-mobile-description.third-bg p {
+          color: #fff;
+     }
+
+     .project-section .project-holder .project-mobile-description.third-bg p.special-font {
+          color: #fff;
+          -webkit-text-stroke-width: 0.6px;
+          -webkit-text-stroke-color: #ffffff;
+     }
+
+
+
+}
 
 @media (max-width: 767px) {
      .project-section .project-holder .project-profile {
@@ -291,12 +478,12 @@
      }
 
      .project-section .project-profile .project-title .title-top .top-tags {
-          font-size: 13px;
-           width: 100%;
+          font-size: 10px;
+          width: 100%;
      }
 
      .project-section .project-profile .project-title .title-bottom .bottom-tags {
-          font-size: 13px;
+          font-size: 10px;
           width: 100%;
      }
 
@@ -316,7 +503,7 @@
 }
 
 @media screen and (max-width: 375px) {
-      .project-section .project-profile .project-title {
+     .project-section .project-profile .project-title {
           padding: 1em 1em;
      }
 }
