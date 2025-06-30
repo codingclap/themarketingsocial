@@ -13,43 +13,41 @@
 <body>
     <div class="project-inner-section">
         <!-- Slides -->
-        <div class="slide " style="display: none;">
-            <h2>Blank Slide</h2>
-        </div>
-        <div class="slide">
-            <img src="assets/images/project/project-1.webp" alt="">
-             
-        </div>
-        <div class="slide">
+
+         <div class="slide">
             <img src="assets/images/project/project-inner-1.webp" alt="">
             <!-- <h2>INTRODUCTION</h2> -->
         </div>
         <div class="slide">
+            <img src="assets/images/project/project-inner-1.webp" alt="">
+            <!-- <h2>INTRODUCTION</h2> -->
+        </div> 
+        <div class="slide">
             <img src="assets/images/project/project-inner-2.webp" alt="">
-            <!-- <h2>THE MAKING</h2> -->
+            <!-- <h2>INTRODUCTION</h2> -->
         </div>
         <div class="slide">
             <img src="assets/images/project/project-inner-3.webp" alt="">
-            <!-- <h2>BRAND DESIGN</h2> -->
+            <!-- <h2>THE MAKING</h2> -->
         </div>
         <div class="slide">
             <img src="assets/images/project/project-inner-4.webp" alt="">
-            <!-- <h2>COLOUR PALLETTE</h2> -->
+            <!-- <h2>BRAND DESIGN</h2> -->
         </div>
         <div class="slide">
             <img src="assets/images/project/project-inner-5.webp" alt="">
-            <!-- <h2>CONCLUSION</h2> -->
+            <!-- <h2>COLOUR PALLETTE</h2> -->
         </div>
-        <div class="slide">
+        
+        <div class="slide last-slide">
             <img src="assets/images/project/project-1.webp" alt="">
             <!-- <h2>END</h2> -->
         </div>
 
+
         <!-- Navigation -->
         <div class="custom-progress-nav">
-            <div class="nav-item" style="display: none;"><span>FIRST SLIDE</span>
-                <div class="top-line"></div>
-            </div>
+            
             <div class="nav-item"><span>INTRODUCTION</span>
                 <div class="top-line"></div>
             </div>
@@ -59,15 +57,17 @@
             <div class="nav-item"><span>BRAND DESIGN</span>
                 <div class="top-line"></div>
             </div>
+            <div class="nav-item"><span>PARTNER DESIGN</span>
+                <div class="top-line"></div>
+            </div>
             <div class="nav-item"><span>COLOUR PALLETTE</span>
                 <div class="top-line"></div>
             </div>
             <div class="nav-item"><span>CONCLUSION</span>
                 <div class="top-line"></div>
             </div>
-            <div class="nav-item" style="display: none;"><span>End</span>
-                <div class="top-line"></div>
-            </div>
+
+
         </div>
     </div>
 
@@ -78,10 +78,10 @@
         const topLines = document.querySelectorAll(".top-line");
         const progressNav = document.querySelector('.custom-progress-nav');
 
-        let current = 0;
-        let progress = 1;
+        let current = 1;
+        let progress = 0;
         let isScrolling = false;
-        const step = 0.2;
+        const step = 0.4;
 
 
         function updateSlides() {
@@ -106,13 +106,15 @@
                 } else {
                     topLines[index].style.width = "0%";
                 }
+                // Toggle active class
+                item.classList.toggle('active', index === current);
             });
 
-            if (current === 0 || current === slides.length - 1) {
-                progressNav.style.display = "none";
-            } else {
-                progressNav.style.display = "flex";
-            }
+            // if (current === 0 || current === slides.length - 1) {
+            //     progressNav.style.display = "none";
+            // } else {
+            //     progressNav.style.display = "flex";
+            // }
         }
 
         function handleScroll(deltaY) {
