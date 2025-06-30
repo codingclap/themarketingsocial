@@ -116,7 +116,7 @@
       left: 0;
       width: 100%;
       display: flex;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.185);
       z-index: 10;
  }
 
