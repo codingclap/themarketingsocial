@@ -14,40 +14,70 @@
     <div class="project-inner-section">
         <!-- Slides -->
 
-         <div class="slide">
+        <div class="slide">
             <img src="assets/images/project/project-inner-1.webp" alt="">
             <!-- <h2>INTRODUCTION</h2> -->
         </div>
         <div class="slide">
             <img src="assets/images/project/project-inner-1.webp" alt="">
-            <!-- <h2>INTRODUCTION</h2> -->
-        </div> 
+            <div class="slide-text1">
+                 <h2 class="heading">T <span style="font-family: 'Playfair-Italic';">he</span> E<span style="font-family: 'Playfair-Italic';">dit</span> C<span style="font-family: 'Playfair-Italic';">o</span></h2>
+                <div class="para-1">Project Overview</div>
+                <div class="para-2">SCROLL FOR MORE</div>
+            </div>
+        </div>
         <div class="slide">
             <img src="assets/images/project/project-inner-2.webp" alt="">
-            <!-- <h2>INTRODUCTION</h2> -->
+            <div class="slide-text2">
+                <div class="slide-nested0">
+                    <p class="para-1">
+                        DRAWING INSPIRATION FROM THE ICONIC ART DECO MOVEMENT THE BRAND MARK EMBODIES THE ESSENCE OF
+                        TIMELESS ELEGANCE AND SOPHISTICATED DESIGN.
+                    </p>
+                </div>
+            </div>
         </div>
         <div class="slide">
             <img src="assets/images/project/project-inner-3.webp" alt="">
-            <!-- <h2>THE MAKING</h2> -->
+            <div class="slide-text3">
+                <h2 class="heading">The Making</h2>
+            </div>
         </div>
         <div class="slide">
             <img src="assets/images/project/project-inner-4.webp" alt="">
-            <!-- <h2>BRAND DESIGN</h2> -->
+            <div class="slide-text4">
+                <div class="slide-nested1">
+                    <p class="para-1">CAREFULLY CURATED GEOMETRIC ELEMENTS SEAMLESSLY BLEND TO FORM A HARMONIOUS
+                        COMPOSITION EACH LINE
+                        AND CURVE REFLECTS THE PRECISION AND ATTENTION TO DETAIL THAT DEFINES THE STUDIO'S APPROACH TO
+                        INTERIOR DESIGN. THE CLEAN LINES SIGNIFY MODERNITY, WHILE THE SUBTLE CURVES EVOKE. <span
+                            class="margin-top-20">A SENSE OF
+                            FLUIDITY AND CREATIVITY, THIS DESIGN CHOICE PAYS HOMAGE TO THE ART DECO ERA AN EPOCH KNOWN
+                            FOR
+                            ITS OPULENCE, LUXURY, AND A CELEBRATION OF CRAFTSMANSHIP.</span></p>
+                </div>
+            </div>
         </div>
         <div class="slide">
             <img src="assets/images/project/project-inner-5.webp" alt="">
-            <!-- <h2>COLOUR PALLETTE</h2> -->
+            <div class="slide-text5">
+                <h2 class="heading">Pallette</h2>
+            </div>
         </div>
-        
+
         <div class="slide last-slide">
             <img src="assets/images/project/project-1.webp" alt="">
-            <!-- <h2>END</h2> -->
+            <div class="slide-text6">
+                <h2 class="heading">T <span style="font-family: 'Playfair-Italic';">he</span> E<span style="font-family: 'Playfair-Italic';">dit</span> C<span style="font-family: 'Playfair-Italic';">o</span></h2>
+                <div class="para-1">Interior Design Brand Identity</div>
+                <div class="para-2">Crafting this brand was pure Art Deco magic, truly reflecting The Edit Co.'s knack for luxurious, precisely executed interiors. We brought their sophisticated vision to life, beautifully.</div>
+            </div>
         </div>
 
 
         <!-- Navigation -->
         <div class="custom-progress-nav">
-            
+
             <div class="nav-item"><span>INTRODUCTION</span>
                 <div class="top-line"></div>
             </div>
@@ -70,97 +100,8 @@
 
         </div>
     </div>
-
-
-    <script>
-        const slides = Array.from(document.querySelectorAll(".slide"));
-        const navItems = document.querySelectorAll(".nav-item");
-        const topLines = document.querySelectorAll(".top-line");
-        const progressNav = document.querySelector('.custom-progress-nav');
-
-        let current = 1;
-        let progress = 0;
-        let isScrolling = false;
-        const step = 0.4;
-
-
-        function updateSlides() {
-            slides.forEach((slide, i) => {
-                console.log(i, 'current', current);
-                slide.style.zIndex = slides.length - i;
-                if (i < current) {
-                    slide.style.width = "0%";
-                } else if (i === current) {
-                    slide.style.width = `${100 - progress * 100}%`;
-                } else {
-                    slide.style.width = "100%";
-                }
-            });
-
-            navItems.forEach((item, index) => {
-                // console.log(index,'current',current);
-                if (index < current) {
-                    topLines[index].style.width = "100%";
-                } else if (index === current) {
-                    topLines[index].style.width = `${progress * 100}%`;
-                } else {
-                    topLines[index].style.width = "0%";
-                }
-                // Toggle active class
-                item.classList.toggle('active', index === current);
-            });
-
-            // if (current === 0 || current === slides.length - 1) {
-            //     progressNav.style.display = "none";
-            // } else {
-            //     progressNav.style.display = "flex";
-            // }
-        }
-
-        function handleScroll(deltaY) {
-            if (deltaY > 0) {
-                // Scroll down
-                if (current === slides.length - 1) return; // Stop at last slide
-                if (progress < 1) {
-                    progress = Math.min(1, progress + step);
-                } else if (current < slides.length - 1) {
-                    current++;
-                    progress = 0;
-                }
-            } else {
-                // Scroll up
-                if (current === 0) return; // Stop at first slide
-                if (progress > 0) {
-                    progress = Math.max(0, progress - step);
-                } else if (current > 0) {
-                    current--;
-                    progress = 1;
-                }
-            }
-            updateSlides();
-        }
-
-        updateSlides();
-
-        window.addEventListener("wheel", (e) => {
-            // Disable scroll trigger after 1024px
-            if (window.innerWidth < 1025) return;
-
-            if (isScrolling) return;
-            isScrolling = true;
-            handleScroll(e.deltaY);
-            setTimeout(() => isScrolling = false, 100);
-            e.preventDefault();
-        }, { passive: false });
-
-        navItems.forEach((item, i) => {
-            item.addEventListener("click", () => {
-                current = i;
-                progress = 1;
-                updateSlides();
-            });
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="assets/js/project-inner.js"></script>
 </body>
 
 </html>
