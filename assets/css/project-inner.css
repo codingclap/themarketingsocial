@@ -151,15 +151,16 @@
  }
 
  .slide-text4 .para-1 {
-      width: 220px;
-      text-align: left;
-      font-size: 0.3em;
+      width: 245px;
+      text-align: right;
+      font-size: 0.256em;
       color: #000000;
       font-weight: 300;
       letter-spacing: 2px;
       font-family: 'Gotham-Book';
       margin-right: 50px;
-      line-height: 130%;
+      line-height: 140%;
+      text-transform: uppercase;
  }
 
  .slide-text5 .heading {
