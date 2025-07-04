@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+
+<body>
+     <style>
+          .slides {
+               position: relative;
+          }
+
+          .slide {
+               height: 70vh;
+               background: lightgray;
+               margin-bottom: 10px;
+          }
+
+          #changingHeading {
+               position: fixed;
+               left: 24px;
+               bottom: 32px;
+               font-size: 24px;
+               background: white;
+               padding: 10px;
+               z-index: 999;
+          }
+     </style>
+
+
+
+
+
+
+     <section class="slides">
+          <h1 id="changingHeading">INTRODUCTION</h1>
+
+          <div class="slide" data-title="INTRODUCTION"></div>
+          <div class="slide" data-title="INTRODUCTION"></div>
+          <div class="slide" data-title="Slide One"></div>
+          <div class="slide" data-title="Slide Two"></div>
+     </section>
+
+
+
+
+
+
+
+
+
+
+     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+     <script>
+          gsap.registerPlugin(ScrollTrigger);
+
+          // Grab all slides
+          const slides = document.querySelectorAll(".slide");
+          const heading = document.getElementById("changingHeading");
+
+          slides.forEach((slide, i) => {
+               if (i === 0) return; // Skip the first slide
+               const title = slide.dataset.title;
+
+               ScrollTrigger.create({
+                    trigger: slide,
+                    start: "top 95%",
+                    end: "bottom 80%",
+                    onEnter: () => {
+                         console.log('Entered slide:', i, title); 
+                         heading.textContent = title
+                    },
+                    onEnterBack: () => {
+                         console.log('Back to slide:', i, title);
+                         heading.textContent = title;
+                    }, 
+                    // optional: pin heading if needed
+                    // markers: true, // debug
+               });
+          });
+     </script>
+
+</body>
+
+</html>

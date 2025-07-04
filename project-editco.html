@@ -11,30 +11,73 @@
 </head>
 
 <body>
-    <div class="project-inner-section">
-        <!-- Slides -->
+    <style>
+        .mobile-heading-fixed { 
+            left: -14%;
+        }
 
+        @media (max-width: 1023px) {
+            .project-inner-section {
+                scroll-snap-type: y mandatory;
+                -webkit-overflow-scrolling: touch;
+                height: 100vh;
+                overflow-y: scroll;
+                position: relative;
+            }
+
+            .slide {
+                scroll-snap-align: start;
+                width: 100vw;
+                height: 65vh;
+                position: relative;
+            }
+
+            .mobile-heading-fixed {
+                position: fixed;
+                left: 0%;
+                bottom: 4%;
+                width: 80px;
+                z-index: 1000;
+                color: #322D2A;
+                background: linear-gradient(to bottom, #2d0b0b, #a21221, #c294a3);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                padding: 12px 24px;
+                border-radius: 8px;
+                font-size: 1.4em;
+                font-family: 'Gotham-Bold';
+                pointer-events: none;
+                transition: opacity 0.3s;
+                opacity: 1;
+                 writing-mode: vertical-rl;
+  
+            }
+        }
+    </style>
+
+    <!------------------ Slides Section ----------------->
+
+    <div class="slides-container project-inner-section">
         <div class="slide">
             <img src="#" alt="">
 
         </div>
-        <div class="slide">
-            <img src="assets/images/project/project-inner-1/project-intro.webp" alt="">
+        <div class="slide" data-title="FIRST SLIDE">
+            <img src="assets/images/project/project-inner-1/project-intro.webp" alt="" class="slide-img1">
 
         </div>
-        <div class="slide">
-            <img src="assets/images/project/project-inner-1/project-inner-2.webp" alt="">
-             
+        <div class="slide" data-title="INTRODUCTION">
+            <img src="assets/images/project/project-inner-1/project-inner-2.webp" alt="" class="slide-img2">
+
         </div>
-        <div class="slide">
-            <img src="assets/images/project/project-inner-1/project-inner-3.webp" alt="">
+        <div class="slide" data-title="THE MAKING">
+            <img src="assets/images/project/project-inner-1/project-inner-3.webp" alt="" class="slide-img3">
             <div class="slide-text3">
                 <h2 class="heading">The Making</h2>
             </div>
-            
         </div>
-        <div class="slide">
-            <img src="assets/images/project/project-inner-1/project-inner-4.webp" alt="">
+        <div class="slide" data-title="BRAND DESIGN">
+            <img src="assets/images/project/project-inner-1/project-inner-4.webp" alt="" class="slide-img4">
             <div class="slide-text4">
                 <div class="slide-nested1">
                     <p class="para-1">For The Edit Co., carefully curated geometric elements seamlessly blend to form a
@@ -47,18 +90,16 @@
                 </div>
             </div>
         </div>
-        <div class="slide">
-            <img src="assets/images/project/project-inner-1/project-inner-5.webp" alt="">
+        <div class="slide" data-title="COLOUR PALLETTE">
+            <img src="assets/images/project/project-inner-1/project-inner-5.webp" alt="" class="slide-img5">
             <div class="slide-text5">
                 <h2 class="heading">Pallette</h2>
             </div>
-            
-        </div>
-         
 
-        <div class="slide last-slide">
-            <img src="assets/images/project/project-inner-1/project-inner-6.webp" alt="">
-             
+        </div>
+        <div class="slide last-slide" data-title="CONCLUSION">
+            <img src="assets/images/project/project-inner-1/project-inner-6.webp" alt="" class="slide-img6">
+
         </div>
 
 
@@ -83,11 +124,49 @@
             <div class="nav-item"><span>CONCLUSION</span>
                 <div class="top-line"></div>
             </div>
-
-
         </div>
+
+<div class="mobile-heading-fixed" id="mobileHeading"></div>
     </div>
+
+    
+
+    <!------------------ Slides Section ----------------->
+
+
+
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Grab all slides
+        const slidess = document.querySelectorAll(".slide");
+        const heading = document.getElementById("mobileHeading");
+
+        slidess.forEach((slide, i) => {
+            if (i === 0) return; // Skip the first slide
+            const title = slide.dataset.title;
+            console.log(slide)
+            ScrollTrigger.create({
+                trigger: slide,
+                start: "top 95%",
+                end: "bottom 80%",
+                onEnter: () => {
+                    console.log('Entered slide:', i, title);
+                    heading.textContent = title
+                },
+                onEnterBack: () => {
+                    console.log('Back to slide:', i, title);
+                    heading.textContent = title;
+                },
+                // optional: pin heading if needed
+                // markers: true, // debug
+            });
+        });
+    </script>
     <script src="assets/js/project-inner.js"></script>
 </body>
 
