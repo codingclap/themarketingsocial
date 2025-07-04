@@ -404,7 +404,7 @@
 
  @media screen and (max-width:768px) {
       .slide {
-           height: 60vh;
+           height: 80vh;
       }
  }
 
@@ -428,12 +428,12 @@
 
  @media screen and (max-width:375px) {
       .slide {
-           height: 50vh;
+           height: 54vh;
       }
  }
 
  @media screen and (max-width:320px) {
       .slide {
-           height: 50vh;
+           height: 60vh;
       }
  }

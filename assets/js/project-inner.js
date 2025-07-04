@@ -111,39 +111,3 @@ window.addEventListener('resize', handleSlideTextDisplay);
 
 
 
-
-/**************  Mobile Screen - Images *************/
-document.addEventListener("DOMContentLoaded", function () {
-    const desktopClass = document.getElementsByClassName('project-inner-section')[0];
-    function updateIntroImage() {
-        const img1 = document.querySelector('.slide-img1');
-        const img2 = document.querySelector('.slide-img2');
-        const img3 = document.querySelector('.slide-img3');
-        const img4 = document.querySelector('.slide-img4');
-        const img5 = document.querySelector('.slide-img5');
-        const img6 = document.querySelector('.slide-img6');
-        if (!img1 || !img2 ||!img3 ||!img4 ||!img5 ||!img6) return;
-        if (window.innerWidth <= 1023) {
-            desktopClass.classList.remove('project-inner-section');
-            img1.src = "assets/images/project/project-inner-1/mobile/project-intro-mobile.webp";
-            img2.src = "assets/images/project/project-inner-1/mobile/project-inner-1.webp";
-            img3.src = "assets/images/project/project-inner-1/mobile/project-inner-2.webp";
-            img4.src = "assets/images/project/project-inner-1/mobile/project-inner-3.webp";
-            img5.src = "assets/images/project/project-inner-1/mobile/project-inner-4.webp";
-            img6.src = "assets/images/project/project-inner-1/mobile/project-inner-5.webp";
-            
-        } else {
-            desktopClass.classList.add('project-inner-section');
-            img1.src = "assets/images/project/project-inner-1/project-intro.webp";
-            img2.src = "assets/images/project/project-inner-1/project-inner-2.webp";
-            img3.src = "assets/images/project/project-inner-1/project-inner-3.webp";
-            img4.src = "assets/images/project/project-inner-1/project-inner-4.webp";
-            img5.src = "assets/images/project/project-inner-1/project-inner-5.webp";
-            img6.src = "assets/images/project/project-inner-1/project-inner-6.webp";
-        }
-    }
-
-    updateIntroImage();
-    window.addEventListener('resize', updateIntroImage);
-});
-/**************  Mobile Screen - Images *************/

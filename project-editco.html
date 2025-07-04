@@ -16,7 +16,25 @@
             left: -14%;
         }
 
+        .verticle-text {
+            display: none;
+        }
+
         @media (max-width: 1023px) {
+            .verticle-text {
+                display: block;
+                position: absolute;
+                writing-mode: vertical-rl;
+                left: 3%;
+                background: linear-gradient(to bottom, #2d0b0b, #a21221, #c294a3);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 22px;
+                bottom: 10%;
+                font-weight: 400;
+                font-family: 'Gotham-Medium';
+            }
+
             .project-inner-section {
                 scroll-snap-type: y mandatory;
                 -webkit-overflow-scrolling: touch;
@@ -28,7 +46,6 @@
             .slide {
                 scroll-snap-align: start;
                 width: 100vw;
-                height: 65vh;
                 position: relative;
             }
 
@@ -52,6 +69,30 @@
                 writing-mode: vertical-rl;
 
             }
+
+            .slide-text-mobile .para-1 {
+                position: absolute;
+                width: 100vw;
+                color: #322D2A;
+                text-align: center;
+                top: 16%;
+                left: 0%;
+                padding: 5px 20px;
+                transform: translateY(-46%);
+                margin: 0;
+                font-size: 10px;
+                letter-spacing: 2px;
+                font-family: 'Gotham-Book';
+                text-transform: uppercase;
+            }
+        }
+
+        @media screen and (max-width:425px) {
+            .slide-text-mobile .para-1 {
+                top: 21%;
+                padding: 5px 25px;
+                font-size: 9px;
+            }
         }
     </style>
 
@@ -68,16 +109,25 @@
         </div>
         <div class="slide" data-title="INTRODUCTION">
             <img src="assets/images/project/project-inner-1/project-inner-2.webp" alt="" class="slide-img2">
+            <h1 class="verticle-text">INTRODUCTION</h1>
+            <div class="slide-text-mobile">
+                <div class="para-1"> We crafted a sophisticated brand identity for The Edit Co., rooted in Art Deco
+                    elegance. Our work encompassed logo, brand collateral, and asset design, all featuring geometric
+                    elements signifying modernity and precision. This identity reflects their dedication to luxurious,
+                    precisely executed interior design.</div>
+            </div>
 
         </div>
         <div class="slide" data-title="THE MAKING">
             <img src="assets/images/project/project-inner-1/project-inner-3.webp" alt="" class="slide-img3">
+            <h2 class="verticle-text">THE MAKING</h2>
             <div class="slide-text3">
                 <h2 class="heading">The Making</h2>
             </div>
         </div>
         <div class="slide" data-title="BRAND DESIGN">
             <img src="assets/images/project/project-inner-1/project-inner-4.webp" alt="" class="slide-img4">
+            <h2 class="verticle-text">BRAND DESIGN</h2>
             <div class="slide-text4">
                 <div class="slide-nested1">
                     <p class="para-1">For The Edit Co., carefully curated geometric elements seamlessly blend to form a
@@ -92,6 +142,7 @@
         </div>
         <div class="slide" data-title="COLOUR PALLETTE">
             <img src="assets/images/project/project-inner-1/project-inner-5.webp" alt="" class="slide-img5">
+            <h2 class="verticle-text" style="color:#fff;">COLOUR PALLETTE</h2>
             <div class="slide-text5">
                 <h2 class="heading">Pallette</h2>
             </div>
@@ -99,7 +150,7 @@
         </div>
         <div class="slide last-slide" data-title="CONCLUSION">
             <img src="assets/images/project/project-inner-1/project-inner-6.webp" alt="" class="slide-img6">
-
+            <h2 class="verticle-text">CONCLUSION</h2>
         </div>
 
 
@@ -133,57 +184,51 @@
 
     <!------------------ Slides Section ----------------->
 
+    <script>
 
+
+        /**************  Mobile Screen - Images *************/
+        document.addEventListener("DOMContentLoaded", function () {
+            const desktopClass = document.getElementsByClassName('project-inner-section')[0];
+            function updateIntroImage() {
+                const img1 = document.querySelector('.slide-img1');
+                const img2 = document.querySelector('.slide-img2');
+                const img3 = document.querySelector('.slide-img3');
+                const img4 = document.querySelector('.slide-img4');
+                const img5 = document.querySelector('.slide-img5');
+                const img6 = document.querySelector('.slide-img6');
+                if (!img1 || !img2 || !img3 || !img4 || !img5 || !img6) return;
+                if (window.innerWidth <= 1023) {
+                    desktopClass.classList.remove('project-inner-section');
+                    img1.src = "assets/images/project/project-inner-1/mobile/project-intro-mobile.webp";
+                    img2.src = "assets/images/project/project-inner-1/mobile/project-inner-1.webp";
+                    img3.src = "assets/images/project/project-inner-1/mobile/project-inner-2.webp";
+                    img4.src = "assets/images/project/project-inner-1/mobile/project-inner-3.webp";
+                    img5.src = "assets/images/project/project-inner-1/mobile/project-inner-4.webp";
+                    img6.src = "assets/images/project/project-inner-1/mobile/project-inner-5.webp";
+
+                } else {
+                    desktopClass.classList.add('project-inner-section');
+                    img1.src = "assets/images/project/project-inner-1/project-intro.webp";
+                    img2.src = "assets/images/project/project-inner-1/project-inner-2.webp";
+                    img3.src = "assets/images/project/project-inner-1/project-inner-3.webp";
+                    img4.src = "assets/images/project/project-inner-1/project-inner-4.webp";
+                    img5.src = "assets/images/project/project-inner-1/project-inner-5.webp";
+                    img6.src = "assets/images/project/project-inner-1/project-inner-6.webp";
+                }
+            }
+
+            updateIntroImage();
+            window.addEventListener('resize', updateIntroImage);
+        });
+        /**************  Mobile Screen - Images *************/
+    </script>
 
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger);
-        ScrollTrigger.config({
-            ignoreMobileResize: true, // Avoid constant refresh on resize/orientation
-            autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" // Ensure it refreshes properly
-        });
-        // Grab all slides
-        const slidess = document.querySelectorAll(".slide");
-        const heading = document.getElementById("mobileHeading");
 
-        slidess.forEach((slide, i) => {
-            if (i === 0) return; // Skip the first slide
-            const title = slide.dataset.title;
-            console.log(slide)
-            ScrollTrigger.create({
-                trigger: slide,
-                start: "top 95%",
-                end: "bottom 80%",
-                onEnter: () => {
-                    console.log('Entered slide:', i, title);
-                    heading.textContent = title
-                },
-                onEnterBack: () => {
-                    console.log('Back to slide:', i, title);
-                    heading.textContent = title;
-                },
-                // Important for mobile/touch:
-                fastScrollEnd: true,        // Helps with fast swipe gestures
-                preventOverlaps: true,      // Prevent overlapping triggers
-                // markers: true, // For debugging
-                // optional: pin heading if needed
-                // markers: true, // debug
-            });
-        });
-
-        // Refresh triggers after load to handle images/fonts
-    window.addEventListener("load", () => {
-        ScrollTrigger.refresh();
-    });
-
-    // Optional: Force a refresh when scrolling begins (on touch devices)
-    window.addEventListener("touchstart", () => {
-        ScrollTrigger.refresh();
-    }, { once: true }); // Only once to avoid performance hit
-    </script>
     <script src="assets/js/project-inner.js"></script>
 </body>
 
