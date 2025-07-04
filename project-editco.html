@@ -12,7 +12,7 @@
 
 <body>
     <style>
-        .mobile-heading-fixed { 
+        .mobile-heading-fixed {
             left: -14%;
         }
 
@@ -44,13 +44,13 @@
                 -webkit-text-fill-color: transparent;
                 padding: 12px 12px;
                 border-radius: 8px;
-                font-size: 1em;
+                font-size: 1.2em;
                 font-family: 'Gotham-Bold';
                 pointer-events: none;
                 transition: opacity 0.3s;
                 opacity: 1;
-                 writing-mode: vertical-rl;
-  
+                writing-mode: vertical-rl;
+
             }
         }
     </style>
@@ -126,10 +126,10 @@
             </div>
         </div>
 
-<div class="mobile-heading-fixed" id="mobileHeading"></div>
+        <div class="mobile-heading-fixed" id="mobileHeading"></div>
     </div>
 
-    
+
 
     <!------------------ Slides Section ----------------->
 
@@ -141,7 +141,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
-
+        ScrollTrigger.config({
+            ignoreMobileResize: true, // Avoid constant refresh on resize/orientation
+            autoRefreshEvents: "visibilitychange,DOMContentLoaded,load" // Ensure it refreshes properly
+        });
         // Grab all slides
         const slidess = document.querySelectorAll(".slide");
         const heading = document.getElementById("mobileHeading");
@@ -162,10 +165,24 @@
                     console.log('Back to slide:', i, title);
                     heading.textContent = title;
                 },
+                // Important for mobile/touch:
+                fastScrollEnd: true,        // Helps with fast swipe gestures
+                preventOverlaps: true,      // Prevent overlapping triggers
+                // markers: true, // For debugging
                 // optional: pin heading if needed
                 // markers: true, // debug
             });
         });
+
+        // Refresh triggers after load to handle images/fonts
+    window.addEventListener("load", () => {
+        ScrollTrigger.refresh();
+    });
+
+    // Optional: Force a refresh when scrolling begins (on touch devices)
+    window.addEventListener("touchstart", () => {
+        ScrollTrigger.refresh();
+    }, { once: true }); // Only once to avoid performance hit
     </script>
     <script src="assets/js/project-inner.js"></script>
 </body>
