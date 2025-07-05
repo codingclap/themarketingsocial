@@ -20,17 +20,45 @@
             display: none;
         }
 
+        .last-slide-text {
+            position: absolute;
+            text-align: center;
+            padding: 0px 45px;
+        }
+
+        .last-slide-text .last-head {
+            font-size: 29px;
+            margin-bottom: 8px;
+            font-family: 'Playfair-Regular';
+            font-weight: 300;
+            color:#F1E8E0;
+        }
+
+        .last-slide-text .last-subtext {
+            font-size: 13px;
+            font-family: 'Playfair-Italic';
+            margin-bottom: 25px;
+            color:#F1E8E0;
+        }
+
+        .last-slide-text .last-text {
+            font-size: 11px;
+            font-family: 'Gotham-Light';
+            text-transform: uppercase;
+            color:#F1E8E0;
+        }
+
         @media (max-width: 1023px) {
             .verticle-text {
                 display: block;
                 position: absolute;
                 writing-mode: vertical-rl;
-                left: 3%;
-                background: linear-gradient(to bottom, #2d0b0b, #a21221, #c294a3);
+                left: 2%;
+                background: linear-gradient(to bottom, #322D2A 0%, #5E0A14 56%, #C4C4C4 120%);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
-                font-size: 22px;
-                bottom: 10%;
+                font-size: 21px;
+                bottom: 5%;
                 font-weight: 400;
                 font-family: 'Gotham-Medium';
             }
@@ -47,6 +75,7 @@
                 scroll-snap-align: start;
                 width: 100vw;
                 position: relative;
+                height: auto;
             }
 
 
@@ -72,6 +101,18 @@
                 top: 21%;
                 padding: 5px 25px;
                 font-size: 9px;
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            .slide-text-mobile .para-1 {
+                top: 21%;
+                padding: 5px 10px;
+                font-size: 9px;
+            }
+
+            .verticle-text {
+                font-size: 20px;
             }
         }
     </style>
@@ -123,7 +164,8 @@
         <div class="slide" data-title="COLOUR PALLETTE">
             <img src="assets/images/project/project-inner-1/project-inner-5.webp" alt="" class="slide-img5">
             <h2 class="verticle-text" style="-webkit-background-clip: text!important;
-                -webkit-text-fill-color: transparent; background: linear-gradient(to bottom, #fff, #fff, #fff);">COLOUR PALLETTE</h2>
+                -webkit-text-fill-color: transparent; background: linear-gradient(to bottom, #fff, #fff, #fff);">COLOUR
+                PALLETTE</h2>
             <div class="slide-text5">
                 <h2 class="heading">Pallette</h2>
             </div>
@@ -131,6 +173,15 @@
         </div>
         <div class="slide last-slide" data-title="CONCLUSION">
             <img src="assets/images/project/project-inner-1/project-inner-6.webp" alt="" class="slide-img6">
+            <!-- <div class="last-slide-text">
+                <h3 class="last-head">T<span style="font-family: 'Playfair-Italic';">he</span> E<span
+                        style="font-family: 'Playfair-Italic';">dit</span> C<span
+                        style="font-family: 'Playfair-Italic';">o</span></h3>
+                <p class="last-subtext">Interior Design Brand Identity</p>
+                <p class="last-text">Crafting this brand was pure Art Deco magic, truly reflecting The Edit Co.'s knack
+                    for luxurious, precisely executed interiors. We brought their sophisticated vision to life,
+                    beautifully.</p>
+            </div> -->
             <h2 class="verticle-text">CONCLUSION</h2>
         </div>
 
@@ -165,9 +216,7 @@
 
     <!------------------ Slides Section ----------------->
 
-    <script>
-
-
+    <script> 
         /**************  Mobile Screen - Images *************/
         document.addEventListener("DOMContentLoaded", function () {
             const desktopClass = document.getElementsByClassName('project-inner-section')[0];
@@ -207,9 +256,7 @@
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script> 
     <script src="assets/js/project-inner.js"></script>
 </body>
 

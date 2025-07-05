@@ -313,7 +313,7 @@
       padding: 35px 0;
       color: #F1E8E0;
       font-weight: bold;
-      font-size: 0.9rem; 
+      font-size: 0.9rem;
       cursor: pointer;
       overflow: hidden;
       align-content: center;
@@ -342,16 +342,18 @@
       border-right: none;
  }
 
- @media screen and (max-width:1700px) { 
-      .slide-text2 .slide-nested0 { 
+ @media screen and (max-width:1700px) {
+      .slide-text2 .slide-nested0 {
            transform: translate(-7%, 20%);
       }
  }
-@media screen and (max-width:1500px) { 
-      .slide-text2 .slide-nested0 { 
+
+ @media screen and (max-width:1500px) {
+      .slide-text2 .slide-nested0 {
            transform: translate(-5%, 20%);
       }
  }
+
  @media screen and (max-width:1200px) {
       .custom-progress-nav .nav-item span {
            font-size: 13px;
@@ -362,7 +364,7 @@
            font-size: 2.5em;
       }
 
-      .slide-text2 .slide-nested0 { 
+      .slide-text2 .slide-nested0 {
            transform: translate(-2%, 20%);
       }
  }
@@ -381,6 +383,10 @@
 
       .slide {
            position: unset;
+           height: auto;
+      }
+
+      .extra-slide-mobile { 
            height: 500px;
       }
 
@@ -404,36 +410,55 @@
 
  @media screen and (max-width:768px) {
       .slide {
-           height: 80vh;
+           height: 650px;
       }
+      .extra-slide-mobile { 
+           height: 600px;
+      }
+      
  }
 
  @media screen and (max-width:600px) {
       .slide {
-           height: 60vh;
+           height: 600px;
+      }
+      .extra-slide-mobile { 
+           height: 600px;
       }
  }
 
  @media screen and (max-width:500px) {
       .slide {
-           height: 60vh;
+           height: 520px;
+      }
+      .extra-slide-mobile { 
+           height: 520px;
       }
  }
 
  @media screen and (max-width:425px) {
       .slide {
-           height: 60vh;
+           height: 450px;
+      }
+      .extra-slide-mobile { 
+           height: 450px;
       }
  }
 
  @media screen and (max-width:375px) {
       .slide {
-           height: 56vh;
+           height: 420px;
+      }
+      .extra-slide-mobile { 
+           height: 420px;
       }
  }
 
  @media screen and (max-width:320px) {
       .slide {
-           height: 60vh;
+           height: 365px;
+      }
+      .extra-slide-mobile { 
+           height: 365;
       }
  }

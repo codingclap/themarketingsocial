@@ -11,54 +11,222 @@
 </head>
 
 <body>
-    <div class="project-inner-section">
-        <!-- Slides -->
 
+    <style>
+        .extra-slide-mobile {
+            display: none;
+        }
+
+        .extra-slide-mobile img {
+            position: relative;
+            left: 0%;
+            width: 100vw;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+
+        }
+
+        .mobile-heading-fixed {
+            left: -14%;
+        }
+
+        .verticle-text {
+            display: none;
+        }
+
+        .last-slide-text {
+            position: absolute;
+            text-align: center;
+            padding: 0px 45px;
+        }
+
+        .last-slide-text .last-head {
+            font-size: 29px;
+            margin-bottom: 8px;
+            font-family: 'Playfair-Regular';
+            font-weight: 300;
+            color: #F1E8E0;
+        }
+
+        .last-slide-text .last-subtext {
+            font-size: 13px;
+            font-family: 'Playfair-Italic';
+            margin-bottom: 25px;
+            color: #F1E8E0;
+        }
+
+        .last-slide-text .last-text {
+            font-size: 11px;
+            font-family: 'Gotham-Light';
+            text-transform: uppercase;
+            color: #F1E8E0;
+        }
+
+        @media (max-width: 1023px) {
+
+            .second-last-slide,
+            .last-slide {
+                display: none;
+            }
+
+            .extra-slide-mobile {
+                display: block;
+                scroll-snap-align: start;
+                position: relative;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3em;
+                color: white;
+                transition: width 0.2s linear;
+                background: #333;
+                overflow: hidden;
+                transform-origin: right;
+            }
+
+            .verticle-text {
+                display: block;
+                position: absolute;
+                writing-mode: vertical-rl;
+                left: 2%;
+                background: linear-gradient(to bottom, #F1E8E0 27%, #322D2A 46%, #5E0A14 69%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-size: 21px;
+                bottom: 5%;
+                font-weight: 400;
+                font-family: 'Gotham-Medium';
+            }
+
+            .project-inner-section {
+                scroll-snap-type: y mandatory;
+                -webkit-overflow-scrolling: touch;
+                height: 100vh;
+                overflow-y: scroll;
+                position: relative;
+            }
+
+            .slide {
+                scroll-snap-align: start;
+                width: 100vw;
+                position: relative;
+                height: auto;
+            }
+
+
+            .slide-text-mobile .para-1 {
+                position: absolute;
+                width: 100vw;
+                color: #F1E8E0;
+                text-align: center;
+                top: 16%;
+                left: 0%;
+                padding: 5px 20px;
+                transform: translateY(-46%);
+                margin: 0;
+                font-size: 10px;
+                letter-spacing: 2px;
+                font-family: 'Gotham-Book';
+                text-transform: uppercase;
+            }
+        }
+
+
+        @media screen and (max-width:425px) {
+            .slide-text-mobile .para-1 {
+                top: 21%;
+                padding: 5px 25px;
+                font-size: 10px;
+            }
+        }
+
+        @media screen and (max-width:320px) {
+            .slide-text-mobile .para-1 {
+                top: 21%;
+                padding: 5px 10px;
+                font-size: 9px;
+            }
+
+            .verticle-text {
+                font-size: 20px;
+            }
+        }
+    </style>
+
+
+    <div class="slides-container project-inner-section">
         <div class="slide">
             <img src="#" alt="">
-
         </div>
         <div class="slide">
-            <img src="assets/images/project/project-inner-5/project-intro.webp" alt="">
-
+            <img src="assets/images/project/project-inner-5/project-intro.webp" alt="" class="slide-img1">
         </div>
         <div class="slide">
-            <img src="assets/images/project/project-inner-5/project-inner-2.webp" alt="">
-
+            <img src="assets/images/project/project-inner-5/project-inner-2.webp" alt="" class="slide-img2">
+            <h1 class="verticle-text">INTRODUCTION</h1>
+            <div class="slide-text-mobile">
+                <div class="para-1">For Signature Developers, we manage the social media for three projects plus their
+                    main page. We create newsletters, assets, and brochures, building their digital kingdom and
+                    showcasing their iconic spaces.</div>
+            </div>
         </div>
         <div class="slide">
-            <img src="assets/images/project/project-inner-5/project-inner-3.webp" alt="">
+            <img src="assets/images/project/project-inner-5/project-inner-3.webp" alt="" class="slide-img3">
+            <h1 class="verticle-text">VISUAL DESIGN</h1>
             <div class="slide-text3">
                 <!-- <h2 class="heading">The Making</h2> -->
             </div>
 
         </div>
 
-          
+
         <div class="slide">
-            <img src="assets/images/project/project-inner-5/project-inner-4.webp" alt="">
+            <img src="assets/images/project/project-inner-5/project-inner-4.webp" alt="" class="slide-img4">
             <div class="slide-text4">
                 <div class="slide-nested1">
-                    <p class="para-1">For The Lumière CO, we’re not just managing their online presence; we’re quite literally illuminating their brand story. <b style="font-weight:bold;">Our content creation and social media management</b> is a meticulous craft, where every post, visual, and caption is designed to shine a spotlight on their unique brilliance.<span class="margin-top-20">We weave narratives that aren’t just engaging, but radiate with clarity and captivating energy, ensuring their message cuts through digital noise. It’s about turning fleeting moments into lasting impressions, proving that when your story is truly lit up, it becomes unforgettable.</span>
-                        
+                    <p class="para-1">For The Lumière CO, we’re not just managing their online presence; we’re quite
+                        literally illuminating their brand story. <b style="font-weight:bold;">Our content creation and
+                            social media management</b> is a meticulous craft, where every post, visual, and caption is
+                        designed to shine a spotlight on their unique brilliance.<span class="margin-top-20">We weave
+                            narratives that aren’t just engaging, but radiate with clarity and captivating energy,
+                            ensuring their message cuts through digital noise. It’s about turning fleeting moments into
+                            lasting impressions, proving that when your story is truly lit up, it becomes
+                            unforgettable.</span>
+
                     </p>
-                </div>
+                </div> 
             </div>
+            <h1 class="verticle-text">VISUAL DESIGN</h1>
         </div>
         <div class="slide">
-            <img src="assets/images/project/project-inner-5/project-inner-5.webp" alt="">
+            <img src="assets/images/project/project-inner-5/project-inner-5.webp" alt="" class="slide-img5">
             <div class="slide-text5">
                 <!-- <h2 class="heading">Pallette</h2> -->
             </div>
-
+            <h1 class="verticle-text">VISUAL DESIGN</h1>
         </div>
-
-
         <div class="slide last-slide">
-            <img src="assets/images/project/project-inner-5/project-inner-6.webp" alt="">
-
+            <img src="assets/images/project/project-inner-5/project-inner-6.webp" alt="" class="slide-img6">
+            <h1 class="verticle-text">SOCIAL MEDIA DESIGN</h1>
         </div>
-
+        <div class="extra-slide-mobile" data-title="CONCLUSION">
+            <img src="assets/images/project/project-inner-5/mobile/project-inner-7.webp" alt="">
+            <!-- <div class="last-slide-text">
+                <h3 class="last-head">T<span style="font-family: 'Playfair-Italic';">he</span> E<span
+                        style="font-family: 'Playfair-Italic';">dit</span> C<span
+                        style="font-family: 'Playfair-Italic';">o</span></h3>
+                <p class="last-subtext">Interior Design Brand Identity</p>
+                <p class="last-text">Crafting this brand was pure Art Deco magic, truly reflecting The Edit Co.'s knack
+                    for luxurious, precisely executed interiors. We brought their sophisticated vision to life,
+                    beautifully.</p>
+            </div> -->
+            <h1 class="verticle-text">CONCLUSION</h1>
+        </div>
 
         <!-- Navigation -->
         <div class="custom-progress-nav">
@@ -82,9 +250,50 @@
                 <div class="top-line"></div>
             </div>
 
-
         </div>
     </div>
+
+
+    <script>
+        /**************  Mobile Screen - Images *************/
+        document.addEventListener("DOMContentLoaded", function () {
+            const desktopClass = document.getElementsByClassName('project-inner-section')[0];
+            function updateIntroImage() {
+                const img1 = document.querySelector('.slide-img1');
+                const img2 = document.querySelector('.slide-img2');
+                const img3 = document.querySelector('.slide-img3');
+                const img4 = document.querySelector('.slide-img4');
+                const img5 = document.querySelector('.slide-img5');
+                const img6 = document.querySelector('.slide-img6');
+
+                if (!img1 || !img2 || !img3 || !img4 || !img5 || !img6) return;
+                if (window.innerWidth <= 1023) {
+                    desktopClass.classList.remove('project-inner-section');
+                    img1.src = "assets/images/project/project-inner-5/mobile/project-intro-mobile.webp";
+                    img2.src = "assets/images/project/project-inner-5/mobile/project-inner-2.webp";
+                    img3.src = "assets/images/project/project-inner-5/mobile/project-inner-3.webp";
+                    img4.src = "assets/images/project/project-inner-5/mobile/project-inner-4.webp";
+                    img5.src = "assets/images/project/project-inner-5/mobile/project-inner-5.webp";
+                    img6.src = "assets/images/project/project-inner-5/mobile/project-inner-6.webp";
+
+
+                } else {
+                    desktopClass.classList.add('project-inner-section');
+                    img1.src = "assets/images/project/project-inner-5/project-intro.webp";
+                    img2.src = "assets/images/project/project-inner-5/project-inner-2.webp";
+                    img3.src = "assets/images/project/project-inner-5/project-inner-3.webp";
+                    img4.src = "assets/images/project/project-inner-5/project-inner-4.webp";
+                    img5.src = "assets/images/project/project-inner-5/project-inner-5.webp";
+                    img6.src = "assets/images/project/project-inner-5/project-inner-6.webp";
+                }
+            }
+
+            updateIntroImage();
+            window.addEventListener('resize', updateIntroImage);
+        });
+        /**************  Mobile Screen - Images *************/
+    </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="assets/js/project-inner.js"></script>
 </body>
