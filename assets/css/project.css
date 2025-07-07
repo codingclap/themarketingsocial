@@ -304,17 +304,18 @@
 }
 
 .project-section .project-profile .project-title .title-top .title-para {
-     font-size: clamp(1.2rem, 3vw, 2.6rem);
+     font-size: clamp(1rem, 3vw, 2.6rem);
      font-family: 'Playfair-Regular';
      font-weight: 400;
+     letter-spacing: 3px;
 }
 
 .project-section .project-profile .project-title .title-top .top-tags {
      display: flex;
      flex-direction: column;
-     font-size: 14px;
+     font-size: 13px;
      font-family: 'Gotham-Book';
-     width: 200px;
+     width: 250px;
 }
 
 .project-section .project-profile .project-title .title-bottom {
@@ -332,9 +333,9 @@
 .project-section .project-profile .project-title .title-bottom .bottom-tags {
      display: flex;
      flex-direction: column;
-     font-size: 14px;
+     font-size: 13px;
      font-family: 'Gotham-Book';
-     width: 200px;
+     width: 250px;
 }
 
 .project-section .project-holder .project-mobile-description {
