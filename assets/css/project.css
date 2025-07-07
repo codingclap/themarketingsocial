@@ -117,10 +117,10 @@
 
 
 .project-section .mobile-link-arrow {
-     width: 45px;
-     height: 45px;
+     width: 130px;
+     height: 40px;
      background-color: #020202;
-     border-radius: 50%;
+     border-radius: 10px;
      display: flex;
      justify-content: center;
      align-items: center;
@@ -129,8 +129,14 @@
      display: none;
 }
 .project-section .mobile-link-arrow a{
-     line-height: 45px;
+     line-height: 40px;
+     color: #fff;
+     font-size: 12px;
+     letter-spacing: 1px;
 }
+.project-section .mobile-link-arrow .mobile-link{
+     text-decoration: none;
+} 
 .project-section .mobile-link-arrow .mobile-link-arrow-img {
      width: 16px;
      transform: rotate(270deg);
