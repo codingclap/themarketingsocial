@@ -7,24 +7,22 @@ const progressNav = document.querySelector('.custom-progress-nav');
 let current = 1;
 let progress = 0;
 let isScrolling = false;
-const step = 0.4;
+const step = 0.1 // Step size for progress
 
 
 function updateSlides() {
     slides.forEach((slide, i) => {
-        console.log(i, 'current', current);
         slide.style.zIndex = slides.length - i;
         if (i < current) {
-            slide.style.width = "0%";
+            gsap.to(slide, { width: "0%", duration: 1.5, ease: "power3.out" });
         } else if (i === current) {
-            slide.style.width = `${100 - progress * 100}%`;
+            gsap.to(slide, { width: `${100 - progress * 100}%`, duration: 1.5, ease: "power3.out" });
         } else {
-            slide.style.width = "100%";
+            gsap.to(slide, { width: "100%", duration: 1.5, ease: "power3.out" });
         }
     });
 
     navItems.forEach((item, index) => {
-        // console.log(index,'current',current);
         if (index < current) {
             topLines[index].style.width = "100%";
         } else if (index === current) {
@@ -32,23 +30,31 @@ function updateSlides() {
         } else {
             topLines[index].style.width = "0%";
         }
-        // Toggle active class
         item.classList.toggle('active', index === current);
     });
-
-    // if (current === 0 || current === slides.length - 1) {
-    //     progressNav.style.display = "none";
-    // } else {
-    //     progressNav.style.display = "flex";
-    // }
 }
 
 function handleScroll(deltaY) {
     if (deltaY > 0) {
         // Scroll down
         if (current === slides.length - 1) return; // Stop at last slide
+
+        // Slow start: add a delay when progress is exactly 0
+        if (progress === 0) {
+            setTimeout(() => {
+                progress = Math.min(1, progress + step * 0.5); // smaller step for slow start
+                updateSlides();
+            }, 200); // adjust delay as needed
+            return;
+        }
+
+        // Slow finish: reduce step size as progress approaches 1
+        let dynamicStep = step;
+        if (progress > 0.7) dynamicStep = step * 0.4;
+        else if (progress > 0.4) dynamicStep = step * 0.7;
+
         if (progress < 1) {
-            progress = Math.min(1, progress + step);
+            progress = Math.min(1, progress + dynamicStep);
         } else if (current < slides.length - 1) {
             current++;
             progress = 0;
@@ -56,8 +62,23 @@ function handleScroll(deltaY) {
     } else {
         // Scroll up
         if (current === 0) return; // Stop at first slide
+
+        // Slow start reverse
+        if (progress === 1) {
+            setTimeout(() => {
+                progress = Math.max(0, progress - step * 0.5);
+                updateSlides();
+            }, 120);
+            return;
+        }
+
+        // Slow finish reverse
+        let dynamicStep = step;
+        if (progress < 0.3) dynamicStep = step * 0.4;
+        else if (progress < 0.6) dynamicStep = step * 0.7;
+
         if (progress > 0) {
-            progress = Math.max(0, progress - step);
+            progress = Math.max(0, progress - dynamicStep);
         } else if (current > 0) {
             current--;
             progress = 1;

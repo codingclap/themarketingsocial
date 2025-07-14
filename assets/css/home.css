@@ -29,6 +29,22 @@
      }
 }
 
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.2);
+  will-change: opacity, transform;
+  transition: none;
+}
+
+.fade-animation {
+     opacity: 0;
+     transform: translateY(80px) translateZ(0);
+     /* force GPU layer */
+     transition: transform 0.5s ease-out;
+     /* fallback smoothness */
+     will-change: opacity, transform;
+}
+
 /****************** Main Header ****************/
 
 /****************** Scroller Section ****************/
@@ -124,17 +140,21 @@
 }
 
 .conversation-section {
-     width: 100%;
-     min-height: 1040px;
-     background: url('../images/home-page/conversation-bg.svg') center center/cover no-repeat;
-     position: relative;
-     padding-left: 0;
-     padding-right: 0;
-     color: #fff;
-     display: flex;
-     align-items: center;
+  position: relative;
+  overflow: hidden;
+  height: 100vh; /* optional: adjust as needed */
 }
-
+.bg-image-layer {
+  position: absolute;
+  inset: 0;
+  background-image: url('../images/home-page/conversation-bg.svg'); /* Your image */
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.2); /* Zoomed in by default */
+  z-index: 0;
+  transition: none;
+  will-change: transform;
+}
 .conversation-content {
      position: absolute;
      left: 0;
@@ -585,7 +605,7 @@
      .marquee-text-2 {
           font-size: 80px;
      }
- 
+
      .marquee-img-1 {
           width: 90px;
      }
