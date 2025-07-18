@@ -9,6 +9,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/navbar.css">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
 
 </head>
 
@@ -65,7 +66,7 @@
 
   <!-- === Header Start === -->
   <link rel="stylesheet" href="assets/css/home.css">
-  
+
   <header class="header pt-2 pt-md-4 pt-lg-5 extra-padding" id="header">
     <div class="container-fluid pt-2 pt-md-4 pt-lg-5 pb-3">
       <div class="row flex-column-reverse flex-md-row gap-4 gap-sm-4 gap-md-0 gap-lg-0">
@@ -78,8 +79,7 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 d-flex flex-column align-items-center justify-content-center zoom-in ">
-          <img src="assets/images/home-page/rotating.svg" alt="Header Image"
-            class="img-fluid header-image">
+          <img src="assets/images/home-page/rotating.svg" alt="Header Image" class="img-fluid header-image">
 
         </div>
       </div>
@@ -107,18 +107,18 @@
       Your browser does not support the video tag.
     </video>
 
-    <div class="fade-animation down-arrow ">
+    <!-- <div class="down-arrow">
       <a href="#header">
         <img src="assets/images/home-page/arrow-white.svg" alt="Down Arrow" class="down-arrow-img img-fluid ">
       </a>
-    </div>
+    </div> -->
   </section>
   <!-- === Full Width Video Section End === -->
 
 
   <!-- === Conversation Section === -->
   <section class="conversation-section d-flex align-items-center bg-zoom-section">
-      <div class="bg-image-layer"></div>
+    <div class="bg-image-layer"></div>
     <div class="conversation-content extra-padding">
       <div class="container">
         <div class="row">
@@ -138,6 +138,7 @@
   <!-- === Conversation Section End === -->
 
   <!-- === Helping Brand Section === -->
+ 
   <section
     class="helping-brand-section d-flex align-items-center justify-content-center flex-column py-4 py-md-5 py-lg-5">
     <div class="helping-brand-content extra-padding pt-0 pt-md-4 pt-lg-4 pb-0 pb-md-2 pb-lg-2">
@@ -151,35 +152,103 @@
       </div>
     </div>
 
-    <div class="helping-panel-container extra-padding py-4 py-md-5 py-lg-5 justify-content-center">
-      <div class="panel fade-animation" style="background-image: url('assets/images/home-page/helping-brand-1.webp');">
-        <div class="overlay">
-          <h2>Digital<br>Strategy</h2>
-        </div>
+
+    <div class="helping-panel-container justify-content-center">
+      <div class="helping-panel-heading">
+        <h2>HOW DO <br>WE DO IT?</h2>
       </div>
-      <div class="panel fade-animation" style="background-image: url('assets/images/home-page/helping-brand-2.webp');">
-        <div class="overlay">
-          <h2>Content<br> Creation</h2>
+      <div class="helping-panel-content extra-padding pb-5 pb-lg-5 pb-xl-2 pt-4 pt-md-5 pt-lg-5">
+        <div class="panel">
+          <div class="overlay">
+            <span class="text-center" data-fontfamily='Gotham-Bold'>1.</span>
+            <h2>Brand<br> <span data-fontfamily='Hevantica'>Immersion</span></h2>
+          </div>
         </div>
-      </div>
-      <div class="panel fade-animation" style="background-image: url('assets/images/home-page/helping-brand-3.webp');">
-        <div class="overlay">
-          <h2>Social<br> Media</h2>
+        <div class="panel">
+          <div class="overlay">
+            <span class="text-center" data-fontfamily='Gotham-Bold'>2.</span>
+            <h2>Strategic<br> <span data-fontfamily='Hevantica'>Artistry</span></h2>
+          </div>
         </div>
-      </div>
-      <div class="panel fade-animation" style="background-image: url('assets/images/home-page/helping-brand-4.webp');">
-        <div class="overlay">
-          <h2>Performance<br> Marketing</h2>
+        <div class="panel">
+          <div class="overlay">
+            <span class="text-center" data-fontfamily='Gotham-Bold'>3.</span>
+            <h2>Narrative<br> <span data-fontfamily='Hevantica'>Weaving</span></h2>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="overlay">
+            <span class="text-center" data-fontfamily='Gotham-Bold'>4.</span>
+            <h2>Experience <br> <span data-fontfamily='Hevantica'>Curation</span></h2>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="overlay">
+            <span class="text-center" data-fontfamily='Gotham-Bold'>5.</span>
+            <h2>Expansion <br> <span data-fontfamily='Hevantica'>Mastery</span></h2>
+          </div>
         </div>
       </div>
 
-      <div class="panel fade-animation" style="background-image: url('assets/images/home-page/helping-brand-5.webp');">
-        <div class="overlay">
-          <h2>SEO &<br> Analytics</h2>
+    </div>
+  </section>
+
+
+  <!------------------ For Mobile screen ------------>
+  <section
+    class="helping-brand-section-mobile d-flex align-items-center justify-content-center flex-column py-4 py-md-5 py-lg-5">
+    <div class="helping-brand-content-mobile extra-padding pt-0 pt-md-4 pt-lg-4 pb-0 pb-md-2 pb-lg-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-12">
+            <h2 class="helping-brand-title-mobile py-4 mb-0 fade-animation">Helping Brands Grow While You<br><span
+                class="fst-italic" data-fontfamily='Playfair-Italic'> Sip Your Coffee</span></h2>
+          </div>
         </div>
       </div>
     </div>
+
+
+    <div class="helping-panel-container-mobile  justify-content-center">
+      <div class="helping-panel-heading-mobile fade-animation">
+        <h2>HOW DO <br>WE DO IT?</h2>
+      </div>
+      <div class="helping-panel-content-mobile  extra-padding pb-5 pb-lg-5 pb-xl-2 pt-4 pt-md-5 pt-lg-5">
+        <div class="panel-mobile fade-animation">
+          <div class="overlay-mobile">
+            <span class="text-center" data-fontfamily='Gotham-Bold'>1.</span>
+            <h2>Brand<br> <span data-fontfamily='Hevantica'>Immersion</span></h2>
+          </div>
+        </div>
+        <div class="panel-mobile fade-animation">
+          <div class="overlay-mobile">
+            <span class="text-center" data-fontfamily='Gotham-Bold'>2.</span>
+            <h2>Strategic<br> <span data-fontfamily='Hevantica'>Artistry</span></h2>
+          </div>
+        </div>
+        <div class="panel-mobile fade-animation">
+          <div class="overlay-mobile">
+            <span class="text-center" data-fontfamily='Gotham-Bold'>3.</span>
+            <h2>Narrative<br> <span data-fontfamily='Hevantica'>Weaving</span></h2>
+          </div>
+        </div>
+        <div class="panel-mobile fade-animation">
+          <div class="overlay-mobile">
+            <span class="text-center" data-fontfamily='Gotham-Bold'>4.</span>
+            <h2>Experience <br> <span data-fontfamily='Hevantica'>Curation</span></h2>
+          </div>
+        </div>
+        <div class="panel-mobile fade-animation">
+          <div class="overlay-mobile">
+            <span class="text-center" data-fontfamily='Gotham-Bold'>5.</span>
+            <h2>Expansion <br> <span data-fontfamily='Hevantica'>Mastery</span></h2>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section>
+  <!------------------ For Mobile screen ------------>
   <!-- === Helping Brand Section === -->
 
   <!-- === Success Measure Section === -->
@@ -237,7 +306,7 @@
   <!-- === Success Measure Section === -->
 
   <!-- === Scroller Text === -->
-  <section class="scroller-gif-section pb-1 pb-lg-3 zoom-in">
+  <section class="scroller-gif-section pb-1 pb-lg-3 zoom-in-slow">
     <div class="marquee-inner-2" id="home-marqueeInner-2">
       <div class="marquee-text-2">The Marketing Socials <img class="ms-5 marquee-img-1"
           src="assets/images/home-page/success-measure-gif.gif" />&nbsp;<img class="marquee-img-2"
@@ -294,7 +363,7 @@
     <div class="brand-reimaging-heading">
       <h3 class="brand-heading py-4 mb-0 text-md-start fade-animation">Your Brand,<br> Reimagined for<br> Impact</h3>
     </div>
-    <div class="brand-reimaging-image zoom-in"> </div>
+    <div class="brand-reimaging-image zoom-in-delay"> </div>
     <div class="brand-reimaging-animation">
       <div class="brand-reimaging-bgtext" id="about-marqueeInner-3">
         <span class="brand-bgheading">Depth. Direction. Design.</span>
@@ -315,8 +384,7 @@
           <h3 class="footer-section-heading pb-2 fade-animation"><span data-fontfamily='Playfair-Italic'>Connect</span>
             with us</h3>
           <div class="fade-animation">
-            <a class="btn-custom" href="">Instagram</a>&nbsp;&nbsp; <a class="btn-custom "
-              href="">Whatsapp</a>
+            <a class="btn-custom" href="">Instagram</a>&nbsp;&nbsp; <a class="btn-custom " href="">Whatsapp</a>
           </div>
           <p class="footer-section-text pt-4 mt-2 fade-animation">We blend art with strategy, turning vision into
             reality</p>
@@ -325,7 +393,9 @@
         <div class="col-12 col-md-12 col-lg-5">
           <div class="footer-form-container">
             <div class="form-email-container">
-              <div class="fade-animation"><h3 class="footer-email-heading">hello@themarketingsocials.com</h3></div>
+              <div class="fade-animation">
+                <h3 class="footer-email-heading">themarketingsocials@gmail.com</h3>
+              </div>
 
               <div class="form-content-fields">
                 <form>

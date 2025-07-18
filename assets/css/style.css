@@ -1,10 +1,15 @@
 /* === Import Google Font === */
 @font-face {
+  font-family: 'Anton-Regular';
+  font-style: 300;
+  src: url(../fonts/Anton-Regular.ttf) format('opentype');
+}
+
+@font-face {
   font-family: 'Gotham-Light';
   font-style: 300;
   src: url(../fonts/Gotham-Light.otf) format('opentype');
 }
-
 @font-face {
   font-family: 'Gotham-Book';
   font-style: 500;
@@ -117,9 +122,16 @@
   font-family: 'Playfair-Bold', sans-serif;
 }
 
+[data-fontfamily='Hevantica'] {
+  font-family: 'Hevantica-Regular';
+}
+
 
 
 /* === Root Variables for Colors and Fonts === */
+html {
+  scroll-behavior: smooth;
+}
 :root {
   --color-brown: #322D2A;
   --color-red: #6D2732;
@@ -148,7 +160,7 @@
 
 body {
   font-family: var(--font-family-base);
-  background-color: var(--color-background-gray);
+  background-color: var(--color-text-cream);
   color: var(--color-text);
   line-height: 1.6;
   overflow-x: hidden;
@@ -354,6 +366,9 @@ p {
 @media screen and (max-width: 1024px) {
   .extra-padding {
     padding: 0 40px;
+  }
+  .footer-section .footer-email-heading { 
+    padding: 40px 50px;
   }
 }
 

@@ -348,3 +348,89 @@ animateGifs();
 
 //******************* Spiral -- Animation **********************/
 
+
+
+//******************* Helping Brand Section Animation **********************/
+
+gsap.registerPlugin(ScrollTrigger);
+
+// Set initial states
+gsap.set(".helping-panel-heading", { opacity: 1, });
+// gsap.set(".panel", { height: "10%",opacity: 1 });
+gsap.set(".overlay h2", { color: "#6D2732" });
+
+// Main Heading Animation
+
+gsap.to(".helping-panel-heading", {
+    opacity: 0, 
+    
+    ease: "none", // make opacity directly tied to scroll position
+    scrollTrigger: {
+        trigger: ".helping-panel-container",
+        start: "-=100 top",
+        end: "+=500",
+        scrub: 0.5, 
+        invalidateOnRefresh: true,
+        markers: false,
+    }
+});
+ 
+gsap.fromTo(".panel",
+  {
+    height: "0%", // initial collapsed height
+    opacity: -0.2
+  },
+  {
+    height: "100%", // full screen height
+    opacity: 1,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".helping-brand-section",
+      start: "top top",
+      end: "+=1500", // expand over one viewport height of scrolling
+      scrub: 0.1, 
+      pin: true,
+      anticipatePin: 0.3,
+      invalidateOnRefresh: true,
+      markers: false,
+      pinSpacing: true
+    }
+  }
+);
+
+
+// ScrollTrigger animation for .overlay opacity
+gsap.to(".overlay h2", {
+    opacity: 1,
+    color: "#6D2732",
+    ease: "power2.inOut",
+    ease: "none", // make opacity directly tied to scroll position
+    scrollTrigger: {
+        trigger: ".helping-brand-section",
+        start: "top top",
+        end: "+=1200",
+        scrub: 1,
+        invalidateOnRefresh: true,
+        markers: false,
+    }
+});
+//******************* Helping Brand Section Animation **********************/
+
+ 
+
+
+//--------------Smooth Scrolling with Lenis---------------- //
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
+    smooth: true,
+    smoothTouch: false,
+});
+
+function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
+//--------------Smooth Scrolling with Lenis---------------- //
