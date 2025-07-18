@@ -378,17 +378,17 @@ gsap.to(".helping-panel-heading", {
 gsap.fromTo(".panel",
   {
     height: "0%", // initial collapsed height
-    opacity: -0.2
+    opacity: 1
   },
   {
     height: "100%", // full screen height
     opacity: 1,
-    ease: "power2.out",
+    ease: "none",
     scrollTrigger: {
       trigger: ".helping-brand-section",
       start: "top top",
-      end: "+=1500", // expand over one viewport height of scrolling
-      scrub: 0.1, 
+      end: "+=500", // expand over one viewport height of scrolling
+      scrub: 0.05, 
       pin: true,
       anticipatePin: 0.3,
       invalidateOnRefresh: true,
