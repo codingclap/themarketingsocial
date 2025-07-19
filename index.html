@@ -5,11 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/navbar.css">
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+
 
 </head>
 
@@ -67,40 +68,63 @@
   <!-- === Header Start === -->
   <link rel="stylesheet" href="assets/css/home.css">
 
-  <header class="header pt-2 pt-md-4 pt-lg-5 extra-padding" id="header">
-    <div class="container-fluid pt-2 pt-md-4 pt-lg-5 pb-3">
-      <div class="row flex-column-reverse flex-md-row gap-4 gap-sm-4 gap-md-0 gap-lg-0">
+
+  <header class="header w-100 d-flex flex-column justify-content-between" id="header">
+    <div class="extra-padding">
+      <div class="row flex-column-reverse flex-md-row gap-2 gap-sm-2 gap-md-0 gap-lg-0 pt-2 pt-md-4 pt-lg-5">
         <div
           class="col-12 col-md-6 col-lg-6 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
-          <h1 class="header-title text-center text-md-start m-0 fade-animation" data-fontfamily='Playfair-Regular'>Smart
-            Strategies
-            <br>For The <em>Digital Age</em>
+          <h1 class="header-title text-center text-md-start m-0 fade-animation" data-fontfamily='Playfair-Regular'>
+            Your Vision, <span data-fontfamily='Playfair-Italic'>Our Artistry</span>
           </h1>
         </div>
 
-        <div class="col-12 col-md-6 col-lg-6 d-flex flex-column align-items-center justify-content-center zoom-in ">
-          <img src="assets/images/home-page/rotating.svg" alt="Header Image" class="img-fluid header-image">
-
+        <div
+          class="col-12 col-md-6 col-lg-6 d-flex flex-column align-items-center align-items-lg-end justify-content-center ">
+          <!-- <img src="assets/images/home-page/rotating.svg" alt="Header Image" class="img-fluid header-image"> -->
+          <h1 class="header-title text-center text-md-end m-0 fade-animation" data-fontfamily='Playfair-Regular'>
+            Smart strategies <span data-fontfamily='Playfair-Italic'>Reimagined</span>
+          </h1>
         </div>
       </div>
+
+      <div class="row flex-column-reverse flex-md-row gap-2 gap-sm-2 gap-md-0 gap-lg-0 pt-5 pt-md-5 pt-lg-5">
+        <div
+          class="col-12 col-md-12 col-lg-11 d-flex flex-column align-items-center align-items-lg-end justify-content-center ">
+          <img src="assets/images/home-page/rotating.svg" alt="Header Image" class="img-fluid header-image">
+        </div>
+      </div>
+    </div>
+
+    <div class="scroller-section pb-3 pb-lg-3 zoom-in" style="overflow: hidden;">
+      <div class="marquee-inner" id="home-marqueeInner-1"
+        style="display: flex; flex-wrap: nowrap;  white-space: nowrap; will-change: transform;">
+        <div class="marquee-text" style="flex-shrink: 0;display: inline-block;">THE MARKETING SOCIALS
+          &bull;&nbsp</div>
+      </div>
+    </div>
+
+    <div class="header-lady-image">
+      <img src="assets/images/home-page/header-lady.webp" alt="Down Arrow" class="down-arrow-img img-fluid ">
+    </div>
   </header>
 
   <!-- === Header End === -->
 
   <!-- === Scroller Text === -->
-  <section class="scroller-section pb-5 pb-lg-3 zoom-in" style="overflow: hidden;">
+  <!-- <section class="scroller-section pb-5 pb-lg-3 zoom-in" style="overflow: hidden;">
     <div class="marquee-inner" id="home-marqueeInner-1"
       style="display: flex; flex-wrap: nowrap;  white-space: nowrap; will-change: transform;">
       <div class="marquee-text" style="flex-shrink: 0;display: inline-block;">THE MARKETING SOCIALS
         &bull;&nbsp</div>
     </div>
-  </section>
+  </section> -->
 
   <!-- === Scroller Text End === -->
 
 
   <!-- === Full Width Video Section Start === -->
-  <section class="video-section py-0 fade-animation">
+  <section class="video-section py-0">
     <video class="video-player w-100 d-block" autoplay muted loop playsinline preload="metadata"
       poster="https://thecinematicsocials.com/wp-content/uploads/2025/04/video-poster.webp">
       <source src="https://thecinematicsocials.com/wp-content/uploads/2024/08/Banner-Video-AM_2.mp4" type="video/mp4">
@@ -168,9 +192,10 @@
               <div class="overlay-image">
                 <img src="assets/images/home-page/helping-overlay-1.webp" alt="" class="w-100">
               </div>
-              <p class="pt-3 text-start">We dive deep into your brand's essence, values, and vision to understand what makes you
+              <p class="pt-3 text-start">We dive deep into your brand's essence, values, and vision to understand what
+                makes you
                 truly unique
-              </p> 
+              </p>
             </div>
 
           </div>
@@ -182,12 +207,13 @@
               <span class="text-center" data-fontfamily='Gotham-Bold'>2.</span>
               <h2>Strategic<br> <span data-fontfamily='Hevantica'>Artistry</span></h2>
             </div>
-             <div class="overlay-text">
+            <div class="overlay-text">
               <div class="overlay-image">
                 <img src="assets/images/home-page/helping-overlay-2.webp" alt="" class="w-100">
               </div>
-              <p class="pt-3 text-start">Where strategy meets artistry—we transform insights into compelling creative concepts that resonate
-              </p> 
+              <p class="pt-3 text-start">Where strategy meets artistry—we transform insights into compelling creative
+                concepts that resonate
+              </p>
             </div>
 
           </div>
@@ -198,12 +224,13 @@
               <span class="text-center" data-fontfamily='Gotham-Bold'>3.</span>
               <h2>Narrative<br> <span data-fontfamily='Hevantica'>Weaving</span></h2>
             </div>
-             <div class="overlay-text">
+            <div class="overlay-text">
               <div class="overlay-image">
                 <img src="assets/images/home-page/helping-overlay-3.webp" alt="" class="w-100">
               </div>
-              <p class="pt-3 text-start">Crafting your brand's story across all touchpoints, creating connections that feel authentic and lasting
-              </p> 
+              <p class="pt-3 text-start">Crafting your brand's story across all touchpoints, creating connections that
+                feel authentic and lasting
+              </p>
             </div>
 
           </div>
@@ -214,12 +241,13 @@
               <span class="text-center" data-fontfamily='Gotham-Bold'>4.</span>
               <h2>Experience <br> <span data-fontfamily='Hevantica'>Curation</span></h2>
             </div>
-             <div class="overlay-text">
+            <div class="overlay-text">
               <div class="overlay-image">
                 <img src="assets/images/home-page/helping-overlay-4.webp" alt="" class="w-100">
               </div>
-              <p class="pt-3 text-start">Designing every interaction to be memorable, from visual identity to digital experiences
-              </p> 
+              <p class="pt-3 text-start">Designing every interaction to be memorable, from visual identity to digital
+                experiences
+              </p>
             </div>
 
           </div>
@@ -234,8 +262,9 @@
               <div class="overlay-image">
                 <img src="assets/images/home-page/helping-overlay-1.webp" alt="" class="w-100">
               </div>
-              <p class="pt-3 text-start">Harmonizing all elements to drive sustainable growth while you focus on what you do best
-              </p> 
+              <p class="pt-3 text-start">Harmonizing all elements to drive sustainable growth while you focus on what
+                you do best
+              </p>
             </div>
           </div>
         </div>
@@ -358,12 +387,15 @@
 
   <!-- === Scroller Text === -->
   <section class="scroller-gif-section pb-1 pb-lg-3 ">
-    <div class="marquee-inner-2" id="home-marqueeInner-2">
-      <div class="marquee-text-2 zoom-in-slow">The Marketing Socials <img class="ms-5 marquee-img-1"
-          src="assets/images/home-page/success-measure-gif.gif" />&nbsp;<img class="marquee-img-2"
-          src="assets/images/logo/TMS-Black.webp" />&nbsp;<img class="marquee-img-3 me-5"
-          src="assets/images/home-page/success-measure-gif.gif" /></div>
+    <div class="w-100 zoom-in-slow">
+      <div class="marquee-inner-2" id="home-marqueeInner-2">
+        <div class="marquee-text-2">The Marketing Socials <img class="ms-5 marquee-img-1"
+            src="assets/images/home-page/success-measure-gif.gif" />&nbsp;<img class="marquee-img-2"
+            src="assets/images/logo/TMS-Black.webp" />&nbsp;<img class="marquee-img-3 me-5"
+            src="assets/images/home-page/success-measure-gif.gif" /></div>
+      </div>
     </div>
+
   </section>
   <!-- === Scroller Text End === -->
 

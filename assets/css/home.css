@@ -1,25 +1,52 @@
 /****************** Main Header ****************/
 .header {
-     margin-top: 90px;
      background-color: var(--color-text-cream);
+     width: 100%;
+     padding-top: 100px;
+       height: calc(100vh - 70px);
+     position: relative;
 }
 
 .header .header-title {
      color: var(--color-muted);
-     font-size: clamp(2.3rem, 4vw, 4.5rem);
+     font-size: clamp(1.6rem, 3vw, 3rem);
 }
 
 
 .header .header-image {
      width: 100%;
-     max-width: 200px;
+     max-width: 150px;
 }
 
+.header span {
+     display: block;
+}
+
+.header-lady-image {
+     width: 100%;
+     position: absolute;
+     display: flex;
+     justify-content: center;
+     bottom: 0px;
+     right: 0;
+     left: 0;
+     margin: 0 auto;
+}
+
+.header-lady-image img {
+     width: 30%; 
+}
 
 @media (max-width: 768px) {
      .header .header-image {
           width: 100%;
-          max-width: 180px;
+          max-width: 140px;
+     }
+}
+
+@media (max-width: 767px) {
+     .header span {
+          display: inline-block;
      }
 }
 
@@ -28,7 +55,79 @@
           width: 100%;
           max-width: 130px;
      }
+
 }
+
+
+/****************** Scroller Section ****************/
+.scroller-section {
+     width: 100%;
+     overflow: hidden;
+     height: 250px;
+     display: flex;
+     align-items: center;
+     background-color: var(--color-text-cream);
+}
+
+.marquee-inner {
+     display: flex;
+     white-space: nowrap;
+}
+
+.marquee-text {
+     font-size: 200px;
+     font-family: 'Anton-Regular', sans-serif;
+     color: #D1C7BC;
+     font-weight: 400;
+     line-height: 100%;
+}
+
+@media only screen and (max-height: 800px) {
+  /* Your conditional styles here */
+  .header-lady-image img {
+          width: 35%;
+     }
+}
+@media screen and (max-width: 1200px) {
+     .marquee-text {
+          font-size: 180px;
+     }
+
+     .header-lady-image img {
+          width: 35%;
+     }
+}
+
+@media screen and (max-width: 991px) {
+     .marquee-text {
+          font-size: 150px;
+     }
+}
+
+@media screen and (max-width: 768px) {
+     .marquee-text {
+          font-size: 120px;
+     }
+
+     .scroller-section {
+          height: 180px;
+     }
+}
+@media screen and (max-width: 500px) { 
+     .header-lady-image img {
+          width: 50%;
+     }
+}
+@media screen and (max-width: 479px) {
+     .marquee-text {
+          font-size: 100px;
+     } 
+     .header-lady-image img {
+          width: 70%;
+     }
+}
+
+/****************** Scroller Section ****************/
 
 .zoom-in {
      opacity: 0;
@@ -62,49 +161,6 @@
 
 /****************** Main Header ****************/
 
-/****************** Scroller Section ****************/
-.scroller-section {
-     width: 100%;
-     overflow: hidden;
-     min-height: 100px;
-     display: flex;
-     align-items: center;
-     background-color: var(--color-text-cream);
-}
-
-.marquee-inner {
-     display: flex;
-     white-space: nowrap;
-}
-
-.marquee-text {
-     font-size: 400px;
-     font-family: 'Anton-Regular', sans-serif;
-     color: #D1C7BC;
-     font-weight: 400;
-     white-space: nowrap;
-     line-height: 130%;
-}
-
-@media screen and (max-width: 991px) {
-     .marquee-text {
-          font-size: 330px;
-     }
-}
-
-@media screen and (max-width: 767px) {
-     .marquee-text {
-          font-size: 220px;
-     }
-}
-
-@media screen and (max-width: 479px) {
-     .marquee-text {
-          font-size: 260px;
-     }
-}
-
-/****************** Scroller Section ****************/
 
 /****************** Video Section ****************/
 .video-section {
