@@ -9,7 +9,7 @@
 
 .header .header-title {
      color: var(--color-muted);
-     font-size: clamp(1.6rem, 3vw, 3rem);
+     font-size: clamp(1.3rem, 3vw, 3rem);
 }
 
 
