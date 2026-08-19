@@ -236,10 +236,14 @@
         min-height: clamp(420px, 100vh, 1200px);
     }
 }
-
+@media (max-width: 1024px) {
+    .project-details-section {
+        min-height: 600px;
+    }
+}
 @media (max-width: 767px) {
     .project-details-section {
-        min-height: clamp(420px, 90vh, 1200px);
+        min-height: 600px;
     }
 
     .project-details-section .project-details-section {
@@ -253,7 +257,7 @@
 
 @media (max-width: 425px) {
     .project-details-section {
-        min-height: clamp(420px, 80vh, 1200px);
+        min-height: 600px;
     }
 }
 
