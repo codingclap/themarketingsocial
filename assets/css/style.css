@@ -103,7 +103,12 @@
   font-style: 400;
   src: url(../fonts/playfair/PlayfairDisplay-Italic.ttf) format('opentype');
 }
-
+@font-face {
+  font-family: 'Playfair-MediumItalic';
+  font-style: 400;
+  src: url(../fonts/playfair/PlayfairDisplay-Italic-VariableFont_wght.ttf) format('truetype');
+  font-display: swap;
+}
 @font-face {
   font-family: 'Playfair-Medium';
   font-style: 700;
@@ -193,6 +198,9 @@
 
 [data-fontfamily='Playfair-Italic'] {
   font-family: 'Playfair-Italic', sans-serif;
+}
+[data-fontfamily='Playfair-MediumItalic'] {
+  font-family: 'Playfair-MediumItalic', sans-serif;
 }
 
 [data-fontfamily='Gotham-Light'] {
