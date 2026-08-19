@@ -256,6 +256,7 @@
         min-height: clamp(420px, 80vh, 1200px);
     }
 }
+
 /***************** Project Details  *******************/
 
 
@@ -393,6 +394,218 @@
 }
 
 /***************** Meet the Brand  *******************/
+
+/***************** Challenge Section  *******************/
+
+.challenge-heading-block {
+    background-color: #fff;
+    padding-top: clamp(2.5rem, 6vh, 4.5rem);
+    padding-bottom: clamp(1.5rem, 3vh, 2.5rem);
+}
+
+.challenge-heading-block .challenge-heading {
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-weight: 400;
+}
+
+.challenge-heading-block .challenge-heading-accent {
+    font-size: clamp(1.8rem, 4vw, 3.5rem);
+}
+
+.challenge-heading-block .challenge-quote {
+    font-size: clamp(1rem, 2vw, 1.8rem);
+    color: #333;
+    margin-top: 0.5rem;
+}
+
+.challenge-section {
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    padding-top: clamp(2.5rem, 6vh, 4.5rem);
+    padding-bottom: clamp(2.5rem, 6vh, 4.5rem);
+    min-height: clamp(700px, 160vh, 1800px);
+}
+
+/* Background photo (tower + street) */
+.challenge-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 95%;
+    background-image: url('../images/case-study/challenge-solution.webp');
+    background-size: contain;
+    background-position: 100%;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.challenge-section .container-fluid,
+.challenge-section .row {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+
+.challenge-section .challenge-heading {
+    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-weight: 400;
+}
+
+.challenge-section .challenge-heading-accent {
+    font-size: clamp(1.6rem, 4vw, 3.5rem);
+}
+
+.challenge-section .challenge-quote {
+    font-size: clamp(1.6rem, 4vw, 1.8rem);
+}
+
+/* Content wrapper now needs a defined height so the list can spread across it */
+.challenge-section .challenge-content {
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: stretch;
+    margin-top: clamp(1.5rem, 4vh, 3rem);
+    min-height: clamp(500px, 70vh, 900px);
+}
+
+/* List runs down the left, evenly spaced top-to-bottom to line up beside the tower */
+.challenge-section .challenge-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: clamp(0.75rem, 6vh, 6rem);
+    /* width: clamp(200px, 22vw, 280px); */
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.challenge-section .challenge-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    gap: 2rem;
+    width: 100%;
+}
+
+.challenge-section .challenge-icon {
+    width: clamp(40px, 4.5vw, 60px);
+    /* height: clamp(30px, 4vw, 60px); */
+    flex-shrink: 0;
+}
+
+.challenge-section .challenge-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.challenge-section .challenge-label {
+    font-size: clamp(10px, 1.5vw, 18px);
+    font-weight: 700;
+    color: #322D2A;
+    white-space: nowrap;
+}
+
+/* Tablet and below: bg image can't align with an absolute list anymore — stack instead */
+@media (max-width: 1900px) {
+    .challenge-section .challenge-content {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1600px) {
+    .challenge-section::before {
+        height: 95%;
+        background-size: contain;
+        background-position: 100% bottom;
+    }
+
+    .challenge-section .challenge-content {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 1400px) {
+    .challenge-section::before {
+        height: 90%;
+        background-size: contain;
+        background-position: 100% bottom;
+    }
+}
+
+@media (max-width: 991px) {
+    .challenge-section {
+        min-height: auto;
+        padding-top: clamp(1rem, 1vh, 4.5rem);
+        padding-bottom: clamp(4rem, 6vh, 4.5rem);
+    }
+
+    .challenge-section::before {
+        opacity: 0.2;
+    }
+
+    .challenge-section .challenge-icon {
+        width: clamp(40px, 4.5vw, 60px);
+        height: clamp(30px, 4vw, 60px);
+    }
+
+    .challenge-section .challenge-content {
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .challenge-section .challenge-list {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .challenge-section .challenge-item {
+        flex-direction: column;
+        text-align: center;
+        flex: 1 1 190px;
+        max-width: 220px;
+    }
+
+    .challenge-section .challenge-label {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 575px) {
+    .challenge-section .challenge-list {
+        gap: 1.25rem;
+    }
+
+    .challenge-section .challenge-item {
+        flex: 1 1 45%;
+        max-width: 45%;
+    }
+}
+
+/***************** Challenge Section  *******************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /***************** why Social Media  *******************/
