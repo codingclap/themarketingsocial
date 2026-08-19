@@ -1,5 +1,58 @@
 /* === Import Google Font === */
 @font-face {
+  font-family: 'Helvetica-light';
+  font-weight: 100;
+  font-style: normal;
+  src: url(../fonts/helvetica/helvetica-light.woff2) format('woff2'),
+    url(../fonts/helvetica/helvetica-light.ttf) format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helventica-Regular';
+  font-style: 100;
+  src: url(../fonts/helventica/Helvetica-Regular.otf) format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helventica-Medium';
+  font-style: 100;
+  src: url(../fonts/helventica/HelveticaNowText-Medium.ttf) format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helventica-Bold';
+  font-style: 100;
+  src: url(../fonts/helventica/Helvetica-Bold.ttf) format('truetype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helventica-Neue-bold';
+  font-style: 100;
+  src: url(../fonts/helventica/helvetica-neue/HelveticaNeueBold.otf) format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helventica-Neue-medium';
+  font-style: 500;
+  src: url(../fonts/helventica/helvetica-neue/HelveticaNeueMedium.otf) format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Helventica-Neue-light';
+  font-style: 500;
+  src: url(../fonts/helventica/helvetica-neue/HelveticaNeueLight.otf) format('opentype');
+  font-display: swap;
+}
+
+
+/* === Import Google Font === */
+@font-face {
   font-family: 'Anton-Regular';
   font-style: 300;
   src: url(../fonts/Anton-Regular.ttf) format('opentype');
@@ -87,9 +140,41 @@
   src: url(../fonts/Hevantica-Regular.ttf) format('opentype');
 }
 
+[data-color='red'] {
+  color: #6D2732;
+}
+
+[data-color='black'] {
+  color: #322D2A;
+}
+
+[data-bgcolor='brown'] {
+  background-color: #D9D9D9;
+}
+
+[data-bgcolor='white'] {
+  background-color: #fff;
+}
+
 [data-weight='500'] {
   font-weight: 500;
 }
+[data-weight='500'] {
+  font-weight: 500;
+}
+
+[data-fontfamily='Helventica-Light'] {
+  font-family: 'Helventica-light', sans-serif;
+}
+
+[data-fontfamily='Helventica-Bold'] {
+  font-family: 'Helventica-Bold', sans-serif;
+}
+
+[data-fontfamily='Helventica-Regular'] {
+  font-family: 'Helventica-Regular', sans-serif;
+}
+
 [data-fontfamily='Gotham-Light'] {
   font-family: 'Gotham-Light', sans-serif;
 }

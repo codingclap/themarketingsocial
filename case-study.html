@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study design</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/navbar.css">
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+
+</head>
+
+<body>
+
+  <!-- === Navbar Start === -->
+  <nav class="navbar navbar-expand-lg navbg-light py-1 py-md-2 py-lg-2 sticky-top extra-padding"
+    id="navbar-shadow-fixed">
+    <div class="container-fluid">
+      <!-- Logo Left -->
+      <a class="navbar-brand fw-bold" href="#">
+        <img class="navbar-brand-logo me-2" src="assets/images/logo/TMS-Black.webp" alt="Logo" />
+      </a>
+
+      <!-- Custom Hamburger Button -->
+      <button class="custom-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </button>
+
+      <!-- Navbar Items -->
+      <div class="collapse navbar-collapse justify-content-end" id="mainNavbar">
+        <ul
+          class="navbar-nav align-items-start align-items-md-start align-items-lg-center mb-2 mb-lg-0 gap-3 gap-md-4 gap-lg-5">
+          <li class="nav-item pt-4 pt-lg-0">
+            <a class="nav-link active" href="#">About</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Services</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Web Design</a></li>
+              <li><a class="dropdown-item" href="#">Development</a></li>
+              <li><a class="dropdown-item" href="#">Development</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Projects</a>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="btn-nav btn-navbar ms-0 ms-lg-0 mt-2 mt-lg-0">Get in Touch</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- === Navbar End === -->
+
+  <link rel="stylesheet" href="assets/css/case-study.css">
+  <!-- This creates "blank scroll" -->
+
+
+  <!------------------------------------ caseStudy-header ------------------------------->
+  <section class="caseStudy-header extra-padding">
+
+    <!-- Background video -->
+    <video class="header-bg-video" autoplay muted loop playsinline
+      poster="assets/images/case-study/header-fallback.jpg">
+      <source src="assets/images/case-study/signature-developers.mp4" type="video/mp4">
+    </video>
+    <div class="header-bg-overlay"></div>
+
+    <div class="container-fluid">
+      <div class="row justify-content-center h-100 dynamic-gap">
+
+        <!-- Logo -->
+        <div class="col-12 d-flex flex-column align-items-center justify-content-end pb-2 pb-md-1 pb-lg-0">
+          <img src="assets/images/case-study/signature-logo.png" alt="Signature Developers" class="header-logo"
+            width="170">
+        </div>
+
+        <!-- Heading + copy -->
+        <div
+          class="col-12 d-flex flex-column justify-content-end align-items-center align-items-lg-start pb-2 pb-md-1 pb-lg-0">
+          <h1 class="header-title w-100 text-center mb-0" data-weight='500' data-color='red'
+            data-fontfamily='Playfair-MediumItalic'> <span class="header-subtitle fw-normal"
+              data-fontfamily='Helventica-Regular' data-color='black'>How We Helped</span> Signature Developers
+            <span class="header-subtitle fw-normal" data-fontfamily='Helventica-Regular' data-color='black'>
+              Build a <br class="d-none d-xl-block" /> Stronger Brand with </span> Social Media Services
+          </h1>
+        </div>
+
+        <!-- Info pills -->
+        <div class="col-12 d-flex flex-wrap justify-content-center gap-2 gap-md-3 gap-lg-3">
+          <div class="header-pill" data-fontfamily='Helventica-Regular' data-color='black'>INDUSTRY</div>
+          <div class="header-pill" data-fontfamily='Helventica-Regular' data-color='black'>PROJECT DURATION</div>
+          <div class="header-pill" data-fontfamily='Helventica-Regular' data-color='black'>SERVICE(S)</div>
+        </div>
+
+        <!-- Scroll for more -->
+        <div class="col-12 d-flex flex-column align-items-center justify-content-end scroll-wrap">
+          <p class="header-scroll mb-0 fst-italic" data-fontfamily='Playfair-MediumItalic' data-color='black'>
+            Scroll for more
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!------------------------------------ caseStudy-header ------------------------------->
+
+
+  <!------------------------------------ project-details ------------------------------->
+  <section class="project-details-section">
+    <div class="container">
+
+      <div class="row pt-3 pt-md-3 pt-lg-4 pb-2 pb-md-3 pb-lg-4 row-gap-5 justify-content-evenly">
+        <div class="col-6 col-md-5">
+          <p class="detail-label mb-2 mb-lg-3" data-fontfamily='Helventica-Regular'>CLIENT</p>
+          <p class="detail-value mb-0" data-fontfamily='Helventica-Bold'>SIGNATURE DEVELOPERS</p>
+        </div>
+
+        <div class="col-6 col-md-5">
+          <p class="detail-label mb-2 mb-lg-3" data-fontfamily='Helventica-Regular'>INDUSTRY</p>
+          <p class="detail-value mb-0" data-fontfamily='Helventica-Bold'>REAL ESTATE</p>
+        </div>
+      </div>
+
+      <div class="row pt-3 pt-md-3 pt-lg-4 pb-3 pb-md-3 pb-lg-4 row-gap-5 row-gap-5 justify-content-evenly">
+        <div class="col-6 col-md-5">
+          <p class="detail-label mb-2 mb-lg-3" data-fontfamily='Helventica-Regular'>LOCATION</p>
+          <p class="detail-value mb-0" data-fontfamily='Helventica-Bold'>DUBAI, UAE</p>
+        </div>
+
+        <div class="col-6 col-md-5">
+          <p class="detail-label mb-2 mb-lg-3" data-fontfamily='Helventica-Regular'>TIMELINE</p>
+          <p class="detail-value mb-0" data-fontfamily='Helventica-Bold'>4 WEEKS</p>
+        </div>
+      </div>
+
+      <div class="row pt-2 pt-md-3 pt-lg-4 pb-2 pb-md-3 pb-lg-4 row-gap-5 justify-content-evenly">
+        <div class="col-6 col-md-5">
+          <p class="detail-label mb-2 mb-lg-3" data-fontfamily='Helventica-Regular'>SERVICES</p>
+          <p class="detail-value mb-0" data-fontfamily='Helventica-Bold'>
+            BRANDING, LOGO DESIGN, BROCHURE DESIGN, SOCIAL MEDIA, WEBSITE DESIGN AND DEVELOPMENT
+          </p>
+        </div>
+
+        <div class="col-6 col-md-5">
+          <p class="detail-label mb-2 mb-lg-3" data-fontfamily='Helventica-Regular'>DELIVERABLES</p>
+          <p class="detail-value mb-0" data-fontfamily='Helventica-Bold'>
+            BRAND IDENTITY, LOGO, BRAND GUIDELINES, WEBSITE, SOCIAL MEDIA GRID
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+  <!------------------------------------ project-details ------------------------------->
+
+
+  <!------------------------------------ meet-the-brand ------------------------------->
+  <section class="meet-brand-section">
+    <div class="container">
+      <div class="row justify-content-center align-items-start gy-5">
+
+        <!-- Heading: shown first on mobile, stays with right column on desktop -->
+        <div class="col-12 d-block d-lg-none">
+          <h2 class="brand-heading text-lg-end text-center mb-1" data-weight='500' data-fontfamily='Helventica-Regular'
+            data-color='black'>
+            MEET THE
+            <span class="brand-heading-accent fst-italic" data-fontfamily='Playfair-MediumItalic'
+              data-color='red'>Brand</span>
+          </h2>
+        </div>
+
+        <!-- Left column: top image + text -->
+        <div class="col-12 col-lg-6 d-flex flex-column">
+          <div class="brand-imgWrap brand-img-left mb-4">
+            <img src="assets/images/case-study/meet-the-brand.webp" alt="Signature Developers Tower" class="w-100 h-100">
+          </div>
+
+          <p class="brand-text mt-3 mt-md-3 mt-lg-4 mt-xl-5 mb-3" data-fontfamily='Helventica-Regular'
+            data-color='black'>
+            <span data-fontfamily='Helventica-Bold'>Signature Developers</span> is a Dubai-based luxury real estate
+            developer,
+            established by the Regal Group and Lals Group, two regional groups
+            with decades of experience in innovation and quality.
+          </p>
+
+          <p class="brand-text mb-3" data-fontfamily='Helventica-Regular' data-color='black'>
+            Their target audience is high-net-worth buyers and investors seeking
+            not just property, but a premium lifestyle, operating within Dubai's
+            competitive high-end residential market with a portfolio that includes
+            Signature Mansions, The 118, The Residences, and W Residences Dubai.
+          </p>
+
+          <p class="brand-text mb-0" data-fontfamily='Helventica-Regular' data-color='black'>
+            What sets them apart is their family-founded, globally-minded
+            approach that prioritizes quality over quantity, positioning every project
+            as more than a home, but an elevated, exclusive lifestyle.
+          </p>
+        </div>
+
+        <!-- Right column: heading + offset image -->
+        <div class="col-12 col-lg-6 position-relative">
+          <h2 class="brand-heading text-lg-end text-center mb-4 d-none d-lg-block" data-weight='500'
+            data-fontfamily='Helventica-Regular' data-color='black'>
+            MEET THE
+            <span class="brand-heading-accent fst-italic" data-fontfamily='Playfair-MediumItalic'
+              data-color='red'>Brand</span>
+          </h2>
+
+          <div class="brand-imgWrap brand-img-right">
+            <img src="assets/images/case-study/meet-the-brand-2.webp" alt="Signature Developers Tower at Sunset"
+              class="w-100 h-100">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!------------------------------------ meet-the-brand ------------------------------->
+
+  <!------------------------------------ why-socialMedia ------------------------------->
+  <section class="why-socialMedia py-5 py-md-5 py-lg-5 extra-padding" data-bgcolor='brown' id="why-socialMedia">
+    <div class="container-fluid py-3 py-md-5 py-lg-5">
+      <div class="row flex-row justify-content-between h-100 row-gap-4 row-gap-sm-4 row-gap-md-5 row-gap-lg-5">
+        <div
+          class="col-12 col-md-9 col-lg-5 col-xl-5 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
+          <h2 class="socialMedia-title w-100 text-center text-md-start text-lg-start text-xl-start fade-animation mb-0"
+            data-weight='500' data-color='red' data-fontfamily='Playfair-MediumItalic'>
+            <span class="socialMedia-subtitle fw-normal" data-fontfamily='Helventica-Regular' data-color='black'>Why
+              Businesses Trust <br class="d-none d-md-none d-lg-none d-xl-block" />Our</span> Social Media Management
+            <span class="socialMedia-subtitle fw-normal" data-fontfamily='Helventica-Regular'
+              data-color='black'>Services</span>
+          </h2>
+        </div>
+
+        <div
+          class="col-12 col-md-9 col-lg-6 col-xl-6 d-flex flex-column justify-content-end align-items-center align-items-lg-start">
+          <div class="socialMediaText-container w-100 pt-2 pt-md-0 pt-lg-0">
+            <div class="d-flex mb-2 mb-lg-3">
+              <div class="socialMediaText-img"><img src="assets/images/social-media/location-on.png" alt=""></div>
+              <div class="socialMediaText-list">Managing social media for brands across Dubai & UAE</div>
+            </div>
+            <div class="d-flex mb-2 mb-lg-3">
+              <div class="socialMediaText-img"><img src="assets/images/social-media/groups.png" alt=""></div>
+              <div class="socialMediaText-list">In-house designers, strategists & marketers</div>
+            </div>
+            <div class="d-flex mb-2 mb-lg-3">
+              <div class="socialMediaText-img"><img src="assets/images/social-media/target.png" alt=""></div>
+              <div class="socialMediaText-list">Results-focused approach (engagement, leads, visibility)</div>
+            </div>
+            <div class="d-flex mb-2 mb-lg-3">
+              <div class="socialMediaText-img"><img src="assets/images/social-media/sliders.png" alt=""></div>
+              <div class="socialMediaText-list">Customized strategies for every business</div>
+            </div>
+            <div class="d-flex">
+              <div class="socialMediaText-img"><img src="assets/images/social-media/bar-chart.png" alt=""></div>
+              <div class="socialMediaText-list">Transparent communication and monthly reporting</div>
+            </div>
+
+            <div
+              class="socialMediaText-button d-flex justify-content-center justify-content-md-start justify-content-lg-start mt-5">
+              <a href="#" class="btn-socialMediaText-primary ">Get a Free Social Media Audit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!------------------------------------ why-socialMedia  ------------------------------->
+
+
+
+  <!------------------------------------ socialMedia-service ------------------------------->
+  <section class="socialMedia-service py-5 py-md-5 py-lg-5 extra-padding" data-bgcolor='white' id="socialMedia-service">
+    <div class="container-fluid py-3 py-md-5 py-lg-5">
+      <div class="row flex-column justify-content-between h-100 row-gap-4 row-gap-sm-4 row-gap-md-5 row-gap-lg-5">
+        <div
+          class="col-12 col-md-12 col-lg-11 col-xl-11 d-flex flex-column justify-content-center align-items-center align-items-lg-start">
+          <h2 class="serviceTitle w-100 text-center text-md-start text-lg-start text-xl-start fade-animation mb-0"
+            data-weight='500' data-color='red' data-fontfamily='Playfair-MediumItalic'>
+            <span class="serviceSubtitle fw-normal" data-fontfamily='Helventica-Regular' data-color='black'>What
+              our</span> Social Media Management
+            <span class="serviceSubtitle fw-normal" data-fontfamily='Helventica-Regular' data-color='black'>services<br
+                class="d-none d-md-none d-lg-none d-xl-block" /> in Dubai include</span>
+          </h2>
+        </div>
+
+        <div
+          class="col-12 col-md-12 col-lg-12 col-xl-12 d-flex flex-column justify-content-end align-items-center align-items-lg-start">
+          <div class="row g-4">
+            <!-- Tile 1 -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+              <div class="service-tile">
+                <div class="tile-bg" style="background-image: url('assets/images/social-media/service-1.png');"></div>
+                <div class="tile-overlay"></div>
+                <div class="tile-content">
+                  <h3 class="tile-title">Complete Social Media <br
+                      class="d-none d-md-none d-lg-none d-xl-block" />Management</h3>
+                  <p class="tile-text">We manage your social media to keep your brand active, engaging, and growing.</p>
+                </div>
+                <a href="#" class="tile-arrow">
+                  <img src="assets/images/social-media/service-arrow.png" class="w-100" alt="">
+                </a>
+              </div>
+            </div>
+
+            <!-- Tile 2 -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+              <div class="service-tile">
+                <div class="tile-bg" style="background-image: url('assets/images/social-media/service-2.png');"></div>
+                <div class="tile-overlay"></div>
+                <div class="tile-content">
+                  <h3 class="tile-title">Social Media Design &amp; Content Creation</h3>
+                  <p class="tile-text">We create brand-focused content and designs that capture attention and strengthen
+                    your online presence.</p>
+                </div>
+                <a href="#" class="tile-arrow">
+                  <img src="assets/images/social-media/service-arrow.png" class="w-100" alt="">
+                </a>
+              </div>
+            </div>
+
+            <!-- Tile 3 -->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+              <div class="service-tile">
+                <div class="tile-bg" style="background-image: url('assets/images/social-media/service-3.png');"></div>
+                <div class="tile-overlay"></div>
+                <div class="tile-content">
+                  <h3 class="tile-title">Social Media Marketing Services</h3>
+                  <p class="tile-text">We use data-driven social media marketing to increase reach, engagement, and
+                    generate real business growth.</p>
+                </div>
+                <a href="#" class="tile-arrow">
+                  <img src="assets/images/social-media/service-arrow.png" class="w-100" alt="">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!------------------------------------ socialMedia-service ------------------------------->
+
+  <!------------------------------------ portfolio-Section ------------------------------->
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+
+  <section class="portfolio-section pt-5 pt-md-5 pt-lg-5 pt-xl-5 pb-0 extra-padding" data-bgcolor='white'>
+    <div class="container-fluid">
+
+      <div class="text-center mb-5">
+        <p class="portfolio-eyebrow mb-2 mb-md-3 mb-lg-3 mb-xl-4">OUR PORTFOLIO</p>
+        <h2 class="portfolio-title mb-0" data-weight='500' data-color='red' data-fontfamily='Playfair-MediumItalic'>
+          The Marketing Socials <span class="fw-normal" data-fontfamily='Helventica-Regular' data-color='black'>Your
+            Social Media <br class="d-none d-md-none d-lg-none d-xl-block" />Growth Partner in Dubai</span>
+        </h2>
+        <p class="portfolio-subtitle text-center w-100 mb-0 pt-3 pt-md-3 pt-lg-4 fade-animation fw-normal"
+          data-fontfamily="Helventica-Regular" data-color='black'>
+          Creative content, strategic marketing, and expert account management that drive real business growth.
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="phonereel-wrap">
+      <div class="owl-carousel owl-theme" id="owlReel">
+
+        <div class="owl-slide">
+
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <a href="" class="phone-screen">
+              <video autoplay muted loop playsinline src="assets/images/social-media/1.mp4"></video>
+              <div class="phone-card-overlay"></div>
+            </a>
+          </div>
+          <div class="slide-brand" data-fontfamily='Helventica-Regular'>W Residences</div>
+        </div>
+
+        <div class="owl-slide">
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <a href="" class="phone-screen">
+              <video autoplay muted loop playsinline src="assets/images/social-media/2.mp4"></video>
+            </a>
+          </div>
+          <div class="slide-brand" data-fontfamily='Helventica-Regular'>Lumiere</div>
+        </div>
+
+        <div class="owl-slide">
+
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <a href="" class="phone-screen">
+              <video autoplay muted loop playsinline src="assets/images/social-media/3.mp4"></video>
+            </a>
+          </div>
+          <div class="slide-brand" data-fontfamily='Helventica-Regular'>Pink Cakes</div>
+        </div>
+
+        <div class="owl-slide">
+
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <a href="" class="phone-screen">
+              <video autoplay muted loop playsinline src="assets/images/social-media/4.mp4"></video>
+            </a>
+          </div>
+          <div class="slide-brand" data-fontfamily='Helventica-Regular'>Signature Developers</div>
+        </div>
+
+        <div class="owl-slide">
+
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <a href="" class="phone-screen">
+              <video autoplay muted loop playsinline src="assets/images/social-media/5.mp4"></video>
+            </a>
+          </div>
+          <div class="slide-brand" data-fontfamily='Helventica-Regular'>A3 Design</div>
+        </div>
+
+        <div class="owl-slide">
+
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <a href="" class="phone-screen">
+              <video autoplay muted loop playsinline src="assets/images/social-media/1.mp4"></video>
+              <div class="phone-card-overlay"></div>
+            </a>
+          </div>
+          <div class="slide-brand" data-fontfamily='Helventica-Regular'>W Residences</div>
+        </div>
+
+        <div class="owl-slide">
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <a href="" class="phone-screen">
+              <video autoplay muted loop playsinline src="assets/images/social-media/2.mp4"></video>
+            </a>
+          </div>
+          <div class="slide-brand" data-fontfamily='Helventica-Regular'>Lumiere</div>
+        </div>
+
+        <div class="owl-slide">
+
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <a href="" class="phone-screen">
+              <video autoplay muted loop playsinline src="assets/images/social-media/3.mp4"></video>
+            </a>
+          </div>
+          <div class="slide-brand" data-fontfamily='Helventica-Regular'>Pink Cakes</div>
+        </div>
+
+        <div class="owl-slide">
+
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <a href="" class="phone-screen">
+              <video autoplay muted loop playsinline src="assets/images/social-media/4.mp4"></video>
+            </a>
+          </div>
+          <div class="slide-brand" data-fontfamily='Helventica-Regular'>Signature Developers</div>
+        </div>
+
+        <div class="owl-slide">
+
+          <div class="phone">
+            <div class="phone-notch"></div>
+            <a href="" class="phone-screen">
+              <video autoplay muted loop playsinline src="assets/images/social-media/5.mp4"></video>
+            </a>
+          </div>
+          <div class="slide-brand" data-fontfamily='Helventica-Regular'>A3 Design</div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+    <div
+      class="socialMediaText-button d-flex justify-content-center justify-content-md-center justify-content-lg-center mt-5"
+      data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+      <a href="#" class="btn-socialMediaText-primary gap-3">View More <img class="read-arrow"
+          src="assets/images/social-media/view-more-arrow.png" alt=""></a>
+    </div>
+    <!-- <div class="portfolio-grid pt-3 pt-md-3 pt-lg-4">
+         
+        <a href="#" class="portfolio-card portfolio-tile-outer">
+          <div class="portfolio-bg" style="background-image:url('assets/images/social-media/lumiere.png');"></div>
+          <div class="portfolio-card-overlay"></div>
+          <div class="portfolio-card-label gap-3">
+            <span>Lumiere</span>
+            <img src="assets/images/social-media/portfolio-arrow.png" alt="Arrow Up Right" class="portfolio-card-img">
+          </div>
+        </a>
+
+       
+        <div class="portfolio-middle-stack">
+
+          <div class="portfolio-row">
+            <a href="#" class="portfolio-card portfolio-tile-narrow">
+              <div class="portfolio-bg" style="background-image:url('assets/images/social-media/a3-design.png');"></div>
+              <div class="portfolio-card-overlay"></div>
+              <div class="portfolio-card-label gap-3">
+                <span>A3 Design</span>
+                <img src="assets/images/social-media/portfolio-arrow.png" alt="Arrow Up Right"
+                  class="portfolio-card-img">
+              </div>
+            </a>
+            <a href="#" class="portfolio-card portfolio-tile-wide">
+              <div class="portfolio-bg"
+                style="background-image:url('assets/images/social-media/signature-developers.png');"></div>
+              <div class="portfolio-card-overlay"></div>
+              <div class="portfolio-card-label gap-3">
+                <span>Signature Developers</span>
+                <img src="assets/images/social-media/portfolio-arrow.png" alt="Arrow Up Right"
+                  class="portfolio-card-img">
+              </div>
+            </a>
+          </div>
+
+          <div class="portfolio-row">
+            <a href="#" class="portfolio-card portfolio-tile-wide">
+              <div class="portfolio-bg" style="background-image:url('assets/images/social-media/residence-22.png');">
+              </div>
+              <div class="portfolio-card-overlay"></div>
+              <div class="portfolio-card-label gap-3">
+                <span>Residence 22</span>
+                <img src="assets/images/social-media/portfolio-arrow.png" alt="Arrow Up Right"
+                  class="portfolio-card-img">
+              </div>
+            </a>
+            <a href="#" class="portfolio-card portfolio-tile-narrow">
+              <div class="portfolio-bg" style="background-image:url('assets/images/social-media/pinkcake.png');"></div>
+              <div class="portfolio-card-overlay"></div>
+              <div class="portfolio-card-label gap-3">
+                <span>Pink Cakes</span>
+                <img src="assets/images/social-media/portfolio-arrow.png" alt="Arrow Up Right"
+                  class="portfolio-card-img">
+              </div>
+            </a>
+          </div>
+
+        </div>
+
+        
+        <a href="#" class="portfolio-card portfolio-tile-outer">
+          <div class="portfolio-bg" style="background-image:url('assets/images/social-media/w-residences.png');"></div>
+          <div class="portfolio-card-overlay"></div>
+          <div class="portfolio-card-label gap-3">
+            <span>W Residences</span>
+            <img src="assets/images/social-media/portfolio-arrow.png" alt="Arrow Up Right" class="portfolio-card-img">
+          </div>
+        </a>
+
+      </div> -->
+
+
+  </section>
+  <!------------------------------------ portfolio-Section ------------------------------->
+
+  <!------------------------------------ platforms-Section ------------------------------->
+  <section class="platforms-section py-5 extra-padding" data-bgcolor='white'>
+    <div class="container-fluid">
+
+      <div class="text-center mb-5 pt-4 pt-md-4 pt-lg-5">
+        <h2 class="platforms-title mb-0" data-weight='500' data-color='red' data-fontfamily='Playfair-MediumItalic'>
+          Social Media Platforms <span class="fw-normal" data-fontfamily='Helventica-Regular' data-color='black'>We
+            Manage</span>
+        </h2>
+        <p class="platforms-subtitle text-center w-100 mb-0 pt-3 pt-md-3 pt-lg-4 fw-normal"
+          data-fontfamily="Helventica-Regular" data-color='black'>
+          Different businesses require different platforms. Our team develops strategies targeting specific platforms<br
+            class="d-none d-md-none d-lg-none d-xl-block" />
+          while maintaining a consistent brand voice.
+        </p>
+      </div>
+
+      <div class="platforms-grid">
+
+        <!-- Instagram -->
+        <div class="platform-tile">
+          <div class="platform-tile-icon">
+            <img src="assets/images/social-media/Instagram.png" alt="Instagram" class="platform-tile-logo">
+          </div>
+        </div>
+
+        <!-- Facebook -->
+        <div class="platform-tile">
+          <div class="platform-tile-icon">
+            <img src="assets/images/social-media/Facebook.png" alt="Facebook" class="platform-tile-logo">
+          </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="platform-tile">
+          <div class="platform-tile-icon">
+            <img src="assets/images/social-media/Linkedin.png" alt="LinkedIn" class="platform-tile-logo">
+          </div>
+        </div>
+
+        <!-- TikTok -->
+        <div class="platform-tile">
+          <div class="platform-tile-icon">
+            <img src="assets/images/social-media/tiktok.png" alt="TikTok" class="platform-tile-logo">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!------------------------------------ platforms-Section ------------------------------->
+
+
+  <!------------------------------------ industries-Section ------------------------------->
+  <section class="industries-section py-5 extra-padding" data-bgcolor='white'>
+    <div class="container-fluid">
+      <div class="text-center mb-5">
+        <h2 class="industries-title mb-0" data-weight='500' data-color='red' data-fontfamily='Playfair-MediumItalic'>
+          Social Media Management <span class="fw-normal" data-fontfamily='Helventica-Regular'
+            data-color='black'>Services for the <br class="d-none d-md-none d-lg-none d-xl-block" /> Industries</span>
+        </h2>
+        <p class="industries-subtitle mx-auto pt-3 pt-md-3 pt-lg-4 fw-normal" data-fontfamily="Helventica-Regular"
+          data-color='black'>
+          At The Marketing Socials, we understand that every industry has different customer behaviour, competition,<br
+            class="d-none d-md-none d-lg-none d-xl-block" /> and
+          content requirements.
+        </p>
+      </div>
+
+      <div class="industries-grid">
+
+        <!-- Real Estate -->
+        <div class="industry-tile">
+          <div class="industry-tile-bg" style="background-image:url('assets/images/social-media/industrie-img1.png');">
+          </div>
+          <div class="industry-tile-overlay"></div>
+          <h3 class="industry-tile-label">Real Estate Social Media Management</h3>
+        </div>
+
+        <!-- E-commerce -->
+        <div class="industry-tile">
+          <div class="industry-tile-bg" style="background-image:url('assets/images/social-media/industrie-img2.png');">
+          </div>
+          <div class="industry-tile-overlay"></div>
+          <h3 class="industry-tile-label">E-commerce Social Media Marketing</h3>
+        </div>
+
+        <!-- Restaurants & Cafes -->
+        <div class="industry-tile">
+          <div class="industry-tile-bg" style="background-image:url('assets/images/social-media/industrie-img3.png');">
+          </div>
+          <div class="industry-tile-overlay"></div>
+          <h3 class="industry-tile-label">Restaurants &amp; Cafes</h3>
+        </div>
+
+        <!-- Startups & SMEs -->
+        <div class="industry-tile">
+          <div class="industry-tile-bg" style="background-image:url('assets/images/social-media/industrie-img4.png');">
+          </div>
+          <div class="industry-tile-overlay"></div>
+          <h3 class="industry-tile-label">Startups &amp; SMEs</h3>
+        </div>
+
+        <!-- Corporate & Professional Services -->
+        <div class="industry-tile">
+          <div class="industry-tile-bg" style="background-image:url('assets/images/social-media/industrie-img5.png');">
+          </div>
+          <div class="industry-tile-overlay"></div>
+          <h3 class="industry-tile-label">Corporate &amp; Professional Services</h3>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!------------------------------------ industries-Section ------------------------------->
+
+
+  <!------------------------------------ Process-Section ------------------------------->
+  <section class="process-section py-5 extra-padding" data-bgcolor='white'>
+    <div class="container-fluid">
+
+      <div class="text-center mb-5">
+        <h2 class="process-title mb-0" data-weight='500' data-color='red' data-fontfamily='Playfair-MediumItalic'>
+          <span class="fw-normal" data-fontfamily='Helventica-Regular' data-color='black'>Our</span> Social Media
+          Management <span class="fw-normal" data-fontfamily='Helventica-Regular' data-color='black'>Process</span>
+        </h2>
+        <p class="process-subtitle mx-auto pt-3 pt-md-3 pt-lg-4 fw-normal" data-fontfamily="Helventica-Regular"
+          data-color='black'>
+          Our process ensures every campaign is strategic, creative, and performance-driven.
+        </p>
+      </div>
+
+      <div class="process-list">
+
+        <!-- Step 1 -->
+        <div class="process-row">
+          <div class="process-number">01</div>
+          <div class="process-content">
+            <h3 class="process-heading">Social Media Audit &amp; Brand Understanding</h3>
+            <p class="process-text">We begin by understanding your business, audience, competitors, and existing social
+              media presence.</p>
+          </div>
+          <div class="process-image" style="background-image:url('assets/images/social-media/process-pic1.png');"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-row">
+          <div class="process-number">02</div>
+          <div class="process-content">
+            <h3 class="process-heading">Strategy &amp; Content Planning</h3>
+            <p class="process-text">Our team develops a content strategy tailored to your business goals and target
+              audience.</p>
+          </div>
+          <div class="process-image" style="background-image:url('assets/images/social-media/process-pic2.png');"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-row">
+          <div class="process-number">03</div>
+          <div class="process-content">
+            <h3 class="process-heading">Design &amp; Content Creation</h3>
+            <p class="process-text">We create engaging content, visuals, videos, captions, and campaigns aligned with
+              your brand identity.</p>
+          </div>
+          <div class="process-image" style="background-image:url('assets/images/social-media/process-pic3.png');"></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-row">
+          <div class="process-number">04</div>
+          <div class="process-content">
+            <h3 class="process-heading">Account Management &amp; Marketing Execution</h3>
+            <p class="process-text">We publish content, manage accounts, monitor engagement, and execute marketing
+              strategies.</p>
+          </div>
+          <div class="process-image" style="background-image:url('assets/images/social-media/process-pic4.png');"></div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="process-row">
+          <div class="process-number">05</div>
+          <div class="process-content">
+            <h3 class="process-heading">Monitoring, Reporting &amp; Optimisation</h3>
+            <p class="process-text">Performance data helps us identify what works and continuously improve our results.
+              Monthly reports show you what's working, from reach and engagement to audience growth, content
+              performance, and campaign results.</p>
+          </div>
+          <div class="process-image" style="background-image:url('assets/images/social-media/process-pic5.png');"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!------------------------------------ Process-Section ------------------------------->
+
+  <!------------------------------------ why-choose-Section ------------------------------->
+
+  <section class="why-choose-section py-5 extra-padding" data-bgcolor='white'>
+    <div class="container-fluid">
+
+      <div class="text-center mb-5" data-weight='500' data-color='red' data-fontfamily='Playfair-MediumItalic'>
+        <h2 class="why-choose-title mb-0">
+          <span class="fw-normal" data-fontfamily='Helventica-Regular' data-color='black'>Why Choose</span> Our Social
+          Media Management <br class="d-none d-md-none d-lg-none d-xl-block" /> Agency<span class="fw-normal"
+            data-fontfamily='Helventica-Regular' data-color='black'> in Dubai</span>
+        </h2>
+        <p class="why-choose-subtitle mx-auto pt-3 pt-md-3 pt-lg-4 fw-normal" data-fontfamily="Helventica-Regular"
+          data-color='black'>
+          Our process ensures every campaign is strategic, creative, and performance-driven.
+        </p>
+      </div>
+
+      <div class="why-choose-grid">
+
+        <!-- Scalable Solutions -->
+        <div class="why-choose-item">
+          <div class="why-choose-icon">
+            <img src="assets/images/social-media/scalable-solutions.png" alt="Scalable Solutions">
+          </div>
+          <h3 class="why-choose-heading">Scalable Solutions</h3>
+          <p class="why-choose-text">Whether you're a startup or an established company, our services grow alongside
+            your business.</p>
+        </div>
+
+        <!-- Complete In-House Team -->
+        <div class="why-choose-item">
+          <div class="why-choose-icon">
+            <img src="assets/images/social-media/complete-in-house-team.png" alt="Complete In-House Team">
+          </div>
+          <h3 class="why-choose-heading">Complete In-House Team</h3>
+          <p class="why-choose-text">Our strategists, designers, marketers, and content creators work together under one
+            roof.</p>
+        </div>
+
+        <!-- No Outsourcing -->
+        <div class="why-choose-item">
+          <div class="why-choose-icon">
+            <img src="assets/images/social-media/no-outsourcing.png" alt="No Outsourcing">
+          </div>
+          <h3 class="why-choose-heading">No Outsourcing</h3>
+          <p class="why-choose-text">Everything is handled internally, ensuring quality, consistency, and
+            accountability.</p>
+        </div>
+
+        <!-- Transparent Communication -->
+        <div class="why-choose-item">
+          <div class="why-choose-icon">
+            <img src="assets/images/social-media/transparent-communication.png" alt="Transparent Communication">
+          </div>
+          <h3 class="why-choose-heading">Transparent Communication</h3>
+          <p class="why-choose-text">Regular updates and monthly reports keep you informed about your social media
+            performance.</p>
+        </div>
+
+        <!-- Local Dubai Market Understanding -->
+        <div class="why-choose-item">
+          <div class="why-choose-icon">
+            <img src="assets/images/social-media/local-dubai-market.png" alt="Local Dubai Market Understanding">
+          </div>
+          <h3 class="why-choose-heading">Local Dubai Market Understanding</h3>
+          <p class="why-choose-text">We understand the local audience, market trends, and consumer behavior in Dubai.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!------------------------------------ why-choose-Section ------------------------------->
+
+  <!------------------------------------ closing-cta ------------------------------->
+
+  <section class="closing-cta-section py-5 extra-padding" data-bgcolor='white'>
+    <div class="container-fluid">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9 text-center">
+
+          <h2 class="closing-cta-title mb-4" data-weight='500' data-color='red' data-fontfamily='Playfair-MediumItalic'>
+            Looking for a Social Media Management Agency in Dubai?
+          </h2>
+
+          <p class="closing-cta-text mx-auto pt-2 pt-md-2 pt-lg-3 mb-3 fw-normal" data-fontfamily="Helventica-Regular"
+            data-color='black'>
+            Your customers are already spending time on social media. The question is whether your brand is making the
+            right impression.
+          </p>
+
+          <p class="closing-cta-text pt-2 pt-md-2 pt-lg-3 mb-3" data-fontfamily="Helventica-Regular" data-color='black'>
+            At The Cinematic Socials, we manage, design, and market your social media so you can focus on running your
+            business while we focus on growing it.
+          </p>
+
+          <p class="closing-cta-text pt-2 pt-md-2 pt-lg-3 mb-3" data-fontfamily="Helventica-Regular" data-color='black'>
+            Let us manage, design, and market your social media — so you can focus on running your business.
+          </p>
+
+          <div
+            class="socialMediaText-button d-flex justify-content-center justify-content-md-center justify-content-lg-center mt-5">
+            <a href="#" class="btn-socialMediaText-primary ">Get your free social media audit today</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!------------------------------------ closing-cta ------------------------------->
+
+
+
+
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/owl.carousel.js"></script>
+  <script>
+    var service = $('#owlReel');
+    service.owlCarousel({
+      items: 3,
+      loop: true,
+      margin: 0,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: false,
+      smartSpeed: 3000,
+      responsive: {
+        // breakpoint from 0 up
+        0: {
+          items: 1,
+        },
+        320: {
+          items: 2,
+        },
+        // breakpoint from 480 up
+        375: {
+          items: 2,
+        },
+        // breakpoint from 480 up
+        480: {
+          items: 2,
+        },
+        // breakpoint from 768 up
+        768: {
+          items: 2,
+        },
+        1024: {
+          items: 3,
+        },
+        1400: {
+          items: 4,
+        },
+        1500: {
+          items: 4
+        },
+        1600: {
+          items: 4
+        },
+        1920: {
+          items: 5
+        }
+      },
+
+    });
+
+  </script>
+
+
+  <!-- Bootstrap JS (required for collapse and dropdowns) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <script src="assets/js/common-gsap.js"></script>
+
+
+
+</body>
+
+</html>
