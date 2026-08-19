@@ -270,8 +270,7 @@
 }
 
 .meet-brand-section .brand-heading {
-    font-size: clamp(1.6rem, 4vw, 3rem);
-    color: #000;
+    font-size: clamp(1.6rem, 4vw, 3rem); 
 }
 
 .meet-brand-section .brand-heading-accent {
@@ -300,7 +299,7 @@
 .meet-brand-section .brand-text {
     font-size: clamp(14px, 1.4vw, 16px);
     line-height: 1.7;
-    color: #333;
+    color: #322D2A;
 }
 
 /* Offset the right-side image slightly lower/right to match the layered look */
