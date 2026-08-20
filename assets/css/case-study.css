@@ -438,8 +438,8 @@
     right: 0;
     width: 100%;
     height: 95%;
-    background-image: url('../images/case-study/challenge-solution.webp');
-    background-size: contain;
+    background-image: url('../images/case-study/WJLT_Hero.png');
+    background-size: cover;
     background-position: 100%;
     background-repeat: no-repeat;
     z-index: 0;
@@ -523,9 +523,8 @@
 
 @media (max-width: 1600px) {
     .challenge-section::before {
-        height: 95%;
-        background-size: contain;
-        background-position: 100% bottom;
+        height: 95%; 
+        background-position: 80% bottom;
     }
 
     .challenge-section .challenge-content {
@@ -535,12 +534,16 @@
 
 @media (max-width: 1400px) {
     .challenge-section::before {
-        height: 90%;
-        background-size: contain;
-        background-position: 100% bottom;
+        height: 90%; 
+        background-position: 70% bottom;
     }
 }
-
+@media (max-width: 1300px) {
+    .challenge-section::before {
+        height: 90%; 
+        background-position: 70% bottom;
+    }
+}
 @media (max-width: 991px) {
     .challenge-section {
         min-height: auto;
