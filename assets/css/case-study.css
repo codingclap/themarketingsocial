@@ -471,7 +471,7 @@
 /* Content wrapper now needs a defined height so the list can spread across it */
 .challenge-section .challenge-content {
     position: relative;
-    justify-content: center;
+    justify-content: flex-start;
     display: flex;
     align-items: stretch;
     margin-top: clamp(1.5rem, 4vh, 3rem);
@@ -518,9 +518,17 @@
 }
 
 /* Tablet and below: bg image can't align with an absolute list anymore — stack instead */
+@media (max-width: 2500px) { 
+    .challenge-section::before{
+     background-position: 50%;
+    }
+}
 @media (max-width: 1900px) {
     .challenge-section .challenge-content {
         justify-content: flex-start;
+    } 
+    .challenge-section::before{
+     background-position: 80%;
     }
 }
 
