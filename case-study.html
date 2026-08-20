@@ -393,66 +393,67 @@
   </section>
   <!------------------------------------ Project Goals Hero ------------------------------->
 
-  <!-- GSAP (place once, near the end of body, or wherever your other vendor scripts load) -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script>
-    (function () {
-      var track = document.getElementById('heroGoalsTrack');
-      if (!track || typeof gsap === 'undefined') return;
-
-      var marqueeBar = track.closest('.hero-goals-marquee');
-      var originalGroup = track.querySelector('.hero-goals-group');
-      if (!marqueeBar || !originalGroup) return;
-
-      var groupWidth = 0;
-      var tween = null;
-
-      // clone the source group until the track is at least 2x the bar's width,
-      // so there's always enough content to cover the viewport during the loop
-      function fillTrack() {
-        track.innerHTML = '';
-        track.appendChild(originalGroup);
-        groupWidth = originalGroup.getBoundingClientRect().width;
-
-        var barWidth = marqueeBar.getBoundingClientRect().width;
-        var guard = 0; // safety cap in case of a zero-width edge case
-        while (track.getBoundingClientRect().width < barWidth * 2 && guard < 20) {
-          var clone = originalGroup.cloneNode(true);
-          clone.setAttribute('aria-hidden', 'true');
-          track.appendChild(clone);
-          guard++;
-        }
-      }
-
-      function startTween() {
-        if (tween) tween.kill();
-        gsap.set(track, { x: 0 });
-        tween = gsap.to(track, {
-          x: -groupWidth,
-          ease: 'none',
-          duration: 26,
-          repeat: -1
-        });
-      }
-
-      fillTrack();
-      startTween();
-
-      // rebuild on resize so the loop stays seamless at any viewport width
-      var resizeTimer;
-      window.addEventListener('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
-          fillTrack();
-          startTween();
-        }, 250);
-      });
-    })();
-  </script>
 
 
 
 
+  <!------------------------------------ Our Creative Approach ------------------------------->
+  <section class="creative-approach-section position-relative overflow-hidden">
+    <div class="creative-approach-bloom" aria-hidden="true"></div>
+
+    <div class="position-relative">
+      <div class="row align-items-center justify-content-end gy-5">
+
+        <!-- Left column: heading + timeline -->
+        <div class="col-12 col-md-12 col-lg-4 col-xl-3 ">
+
+          <h2 class="creative-approach-heading mb-4" data-weight='700' data-fontfamily='Helventica-Bold'
+            data-color='maroon'>
+            OUR <span class="fst-italic" data-fontfamily='Playfair-MediumItalic'>Creative</span><br>
+            APPROACH
+          </h2>
+
+          <ul class="creative-approach-timeline list-unstyled mb-0">
+            <li class="creative-approach-step">
+              <span class="creative-approach-label" data-weight='700' data-fontfamily='Helventica-Bold'
+                data-color='black'>Research</span>
+            </li>
+            <li class="creative-approach-step">
+              <span class="creative-approach-label" data-weight='700' data-fontfamily='Helventica-Bold'
+                data-color='black'>Competitor Analysis</span>
+            </li>
+            <li class="creative-approach-step">
+              <span class="creative-approach-label" data-weight='700' data-fontfamily='Helventica-Bold'
+                data-color='black'>Brand Positioning</span>
+            </li>
+            <li class="creative-approach-step">
+              <span class="creative-approach-label" data-weight='700' data-fontfamily='Helventica-Bold'
+                data-color='black'>Creative Direction</span>
+            </li>
+            <li class="creative-approach-step">
+              <span class="creative-approach-label" data-weight='700' data-fontfamily='Helventica-Bold'
+                data-color='black'>Visual Identity</span>
+            </li>
+            <li class="creative-approach-step">
+              <span class="creative-approach-label" data-weight='700' data-fontfamily='Helventica-Bold'
+                data-color='black'>Implementation</span>
+            </li>
+          </ul>
+
+        </div>
+
+        <!-- Right column: laptop mockup -->
+        <div class="col-12 col-md-12 col-lg-6 col-xl-6">
+          <div class="creative-approach-mockup">
+            <img src="assets/images/case-study/creative-approach-image.svg"
+              alt="Signature Mansions website shown on a laptop" class="w-100 h-auto">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!------------------------------------ Our Creative Approach ------------------------------->
 
 
 
@@ -1129,7 +1130,60 @@
 
   <script src="assets/js/common-gsap.js"></script>
 
+  <script>
+    (function () {
+      var track = document.getElementById('heroGoalsTrack');
+      if (!track || typeof gsap === 'undefined') return;
 
+      var marqueeBar = track.closest('.hero-goals-marquee');
+      var originalGroup = track.querySelector('.hero-goals-group');
+      if (!marqueeBar || !originalGroup) return;
+
+      var groupWidth = 0;
+      var tween = null;
+
+      // clone the source group until the track is at least 2x the bar's width,
+      // so there's always enough content to cover the viewport during the loop
+      function fillTrack() {
+        track.innerHTML = '';
+        track.appendChild(originalGroup);
+        groupWidth = originalGroup.getBoundingClientRect().width;
+
+        var barWidth = marqueeBar.getBoundingClientRect().width;
+        var guard = 0; // safety cap in case of a zero-width edge case
+        while (track.getBoundingClientRect().width < barWidth * 2 && guard < 20) {
+          var clone = originalGroup.cloneNode(true);
+          clone.setAttribute('aria-hidden', 'true');
+          track.appendChild(clone);
+          guard++;
+        }
+      }
+
+      function startTween() {
+        if (tween) tween.kill();
+        gsap.set(track, { x: 0 });
+        tween = gsap.to(track, {
+          x: -groupWidth,
+          ease: 'none',
+          duration: 26,
+          repeat: -1
+        });
+      }
+
+      fillTrack();
+      startTween();
+
+      // rebuild on resize so the loop stays seamless at any viewport width
+      var resizeTimer;
+      window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+          fillTrack();
+          startTween();
+        }, 250);
+      });
+    })();
+  </script>
 
 </body>
 
