@@ -82,12 +82,12 @@
 }
 
 .caseStudy-header .header-title {
-    font-size: clamp(1.6rem, 4vw, 3.5rem);
-    line-height: clamp(2rem, 5.5vw, 3.5rem);
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
+    line-height: clamp(2rem, 5.5vw, 3.3rem);
 }
 
 .caseStudy-header .header-subtitle {
-    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3rem);
 }
 
 .caseStudy-header .header-imgWrap {
@@ -109,11 +109,12 @@
 
 @media (max-width: 550px) {
     .caseStudy-header .header-title {
-        font-size: clamp(1.8rem, 5vw, 3rem);
+        font-size: clamp(2.2rem, 4vw, 3rem);
+        line-height: clamp(2.2rem, 6vw, 3.4375rem);
     }
 
     .caseStudy-header .header-subtitle {
-        font-size: clamp(1.5rem, 5vw, 3rem);
+        font-size: clamp(2rem, 4vw, 3rem);
     }
 
     .caseStudy-header .header-logo {
@@ -123,11 +124,11 @@
 
 @media (max-width: 325px) {
     .caseStudy-header .header-title {
-        font-size: clamp(1.3rem, 5vw, 3rem);
+        font-size: clamp(2.2rem, 5vw, 3rem);
     }
 
     .caseStudy-header .header-subtitle {
-        font-size: clamp(1.3rem, 5vw, 3rem);
+        font-size: clamp(2rem, 5vw, 3rem);
     }
 
     .caseStudy-header .header-logo {
@@ -157,7 +158,9 @@
 
     .caseStudy-header .header-title,
     .caseStudy-header .header-subtitle {
-        font-size: clamp(1.3rem, 4vw, 2rem);
+        font-size: clamp(1.7rem, 4vw, 2rem);
+        line-height: clamp(2rem, 6vw, 3.4375rem);
+
     }
 
     .caseStudy-header .header-pill {
@@ -276,11 +279,12 @@
 }
 
 .meet-brand-section .brand-heading {
-    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: clamp(2.2rem, 6vw, 3.4375rem);
 }
 
 .meet-brand-section .brand-heading-accent {
-    font-size: clamp(1.6rem, 4vw, 3.5rem);
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
 }
 
 .meet-brand-section .brand-imgWrap {
@@ -327,11 +331,11 @@
     }
 
     .meet-brand-section .brand-heading {
-        font-size: clamp(1.6rem, 4vw, 3rem);
+        font-size: clamp(2rem, 4vw, 3rem);
     }
 
     .meet-brand-section .brand-heading-accent {
-        font-size: clamp(1.6rem, 4vw, 3.8rem);
+        font-size: clamp(2.3rem, 4vw, 3.3rem);
     }
 }
 
@@ -341,11 +345,11 @@
     }
 
     .meet-brand-section .brand-heading {
-        font-size: clamp(1.6rem, 4vw, 3rem);
+        font-size: clamp(2rem, 4vw, 2.4rem);
     }
 
     .meet-brand-section .brand-heading-accent {
-        font-size: clamp(1.6rem, 4.2vw, 3.8rem);
+        font-size: clamp(2.3rem, 4vw, 2.7rem);
     }
 }
 
@@ -367,11 +371,11 @@
     }
 
     .meet-brand-section .brand-heading {
-        font-size: clamp(1.6rem, 4vw, 3rem);
+        font-size: clamp(2rem, 4vw, 3rem);
     }
 
     .meet-brand-section .brand-heading-accent {
-        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-size: clamp(2.3rem, 4vw, 3.3rem);
     }
 }
 
@@ -383,11 +387,11 @@
     }
 
     .meet-brand-section .brand-heading {
-        font-size: clamp(1.6rem, 4vw, 3rem);
+        font-size: clamp(2rem, 4vw, 3rem);
     }
 
     .meet-brand-section .brand-heading-accent {
-        font-size: clamp(2rem, 4.8vw, 3.5rem);
+        font-size: clamp(2.2rem, 4.8vw, 3.3rem);
     }
 
     .meet-brand-section .brand-img-left,
@@ -409,16 +413,17 @@
 }
 
 .challenge-heading-block .challenge-heading {
-    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: clamp(2.2rem, 6vw, 3.4375rem);
     font-weight: 500;
 }
 
 .challenge-heading-block .challenge-heading-accent {
-    font-size: clamp(1.8rem, 4.8vw, 3.5rem);
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
 }
 
 .challenge-heading-block .challenge-quote {
-    font-size: clamp(1rem, 2vw, 1.8rem);
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
     color: #333;
     margin-top: 0.5rem;
 }
@@ -456,12 +461,12 @@
 }
 
 .challenge-section .challenge-heading {
-    font-size: clamp(1.6rem, 4vw, 3rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 400;
 }
 
 .challenge-section .challenge-heading-accent {
-    font-size: clamp(1.6rem, 4vw, 3.5rem);
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
 }
 
 .challenge-section .challenge-quote {
@@ -648,7 +653,7 @@
     font-style: normal;
     font-weight: 400;
     letter-spacing: 0.1em;
-    font-size: clamp(1.2rem, 3.2vw, 1.7rem);
+    font-size: clamp(1.5rem, 3.2vw, 1.7rem);
     text-transform: uppercase;
     color: #fff;
 }
@@ -656,7 +661,8 @@
 .hero-goals-section .hero-goals-heading {
     font-style: normal;
     font-weight: 400;
-    font-size: clamp(1.6rem, 4vw, 3.5rem);
+    font-size: clamp(2.3rem, 4vw, 3.5rem);
+    line-height: clamp(2.8rem, 6vw, 4.6375rem);
     color: #fff;
 }
 
@@ -728,95 +734,96 @@
 
 /***************** Creative Approach Section  *******************/
 
-.creative-approach-section{
-  padding: 90px 0;
-  background: #fff;
+.creative-approach-section {
+    padding: 90px 0;
+    background: #fff;
 }
 
 /* faint decorative line-art bottom-left, matches the comp's flower motif */
-.creative-approach-bloom{
-  position: absolute;
-  left: -40px;
-  bottom: -40px;
-  width: 260px;
-  height: 260px;
-  background-image: url('../images/case-study/bloom-outline.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  opacity: 0.35;
-  pointer-events: none;
+.creative-approach-bloom {
+    position: absolute;
+    left: -40px;
+    bottom: -40px;
+    width: 260px;
+    height: 260px;
+    background-image: url('../images/case-study/bloom-outline.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: 0.35;
+    pointer-events: none;
 }
 
-.creative-approach-heading{
-  font-size: clamp(26px, 3vw, 36px);
-  line-height: 1.15;
-  text-transform: uppercase;
+.creative-approach-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: clamp(2.3rem, 6vw, 3.4rem);
+    text-transform: uppercase;
+    font-weight: 400;
 }
 
 /* ===== timeline list ===== */
-.creative-approach-timeline{
-  position: relative;
-  margin-left: 4px;
-  padding-left: 28px;
+.creative-approach-timeline {
+    position: relative;
+    margin-left: 4px;
+    padding-left: 28px;
 }
 
 /* the connecting vertical line running through all dots */
-.creative-approach-timeline::before{
-  content: "";
-  position: absolute;
-  top: 6px;
-  bottom: 6px;
-  left: 4px;
-  width: 1px;
-  background: #1a1a1a;
+.creative-approach-timeline::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    bottom: 6px;
+    left: 4px;
+    width: 1px;
+    background: #1a1a1a;
 }
 
-.creative-approach-step{
-  position: relative;
-  padding-bottom: 34px;
+.creative-approach-step {
+    position: relative;
+    padding-bottom: 34px;
 }
 
-.creative-approach-step:last-child{
-  padding-bottom: 0;
+.creative-approach-step:last-child {
+    padding-bottom: 0;
 }
 
 /* dot marker on the line for each step */
-.creative-approach-step::before{
-  content: "";
-  position: absolute;
-  top: 6px;
-  left: -28px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: #1a1a1a;
+.creative-approach-step::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -28px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #1a1a1a;
 }
 
-.creative-approach-label{
-  font-size: clamp(14px, 1.2vw, 16px);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+.creative-approach-label {
+    font-size: clamp(14px, 1.2vw, 16px);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
 }
 
 /* ===== laptop mockup ===== */
-.creative-approach-mockup{
-  max-width: 900px;
-  margin: 0 0 0 auto;
+.creative-approach-mockup {
+    max-width: 900px;
+    margin: 0 0 0 auto;
 }
 
-.creative-approach-mockup img{
-  display: block;
+.creative-approach-mockup img {
+    display: block;
 }
 
-@media (max-width: 991.98px){
-  .creative-approach-section{
-    padding: 60px 0;
-  }
+@media (max-width: 991.98px) {
+    .creative-approach-section {
+        padding: 60px 0;
+    }
 
-  .creative-approach-heading,
-  .creative-approach-timeline{
-    text-align: left;
-  }
+    .creative-approach-heading,
+    .creative-approach-timeline {
+        text-align: left;
+    }
 }
 
 /***************** Creative Approach Section  *******************/
