@@ -236,11 +236,13 @@
         min-height: clamp(420px, 100vh, 1200px);
     }
 }
+
 @media (max-width: 1024px) {
     .project-details-section {
         min-height: 600px;
     }
 }
+
 @media (max-width: 767px) {
     .project-details-section {
         min-height: 600px;
@@ -274,7 +276,7 @@
 }
 
 .meet-brand-section .brand-heading {
-    font-size: clamp(1.6rem, 4vw, 3rem); 
+    font-size: clamp(1.6rem, 4vw, 3rem);
 }
 
 .meet-brand-section .brand-heading-accent {
@@ -427,7 +429,8 @@
     overflow: hidden;
     padding-top: clamp(2.5rem, 6vh, 4.5rem);
     padding-bottom: clamp(2.5rem, 6vh, 4.5rem);
-    min-height: clamp(700px, 160vh, 1800px);
+    /* min-height: clamp(700px, 160vh, 1800px); */
+    min-height: 1450px;
 }
 
 /* Background photo (tower + street) */
@@ -481,7 +484,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: flex-start;
-    gap: clamp(0.75rem, 6vh, 6rem);
+    gap: clamp(0.75rem, 7vh, 6rem);
     /* width: clamp(200px, 22vw, 280px); */
     flex-shrink: 0;
     z-index: 2;
@@ -523,7 +526,7 @@
 
 @media (max-width: 1600px) {
     .challenge-section::before {
-        height: 95%; 
+        height: 95%;
         background-position: 80% bottom;
     }
 
@@ -534,14 +537,24 @@
 
 @media (max-width: 1400px) {
     .challenge-section::before {
-        height: 90%; 
+        height: 90%;
         background-position: 70% bottom;
     }
 }
+
 @media (max-width: 1300px) {
     .challenge-section::before {
-        height: 90%; 
+        height: 90%;
         background-position: 70% bottom;
+    }
+
+    .challenge-section { 
+        min-height: 1350px;
+    }
+}
+@media (max-width: 1100px) {  
+    .challenge-section { 
+        min-height: 1250px;
     }
 }
 @media (max-width: 991px) {
