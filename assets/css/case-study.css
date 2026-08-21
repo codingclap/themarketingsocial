@@ -200,6 +200,8 @@
     align-items: flex-end;
     padding-top: clamp(2rem, 6vh, 4rem);
     padding-bottom: clamp(2rem, 6vh, 4rem);
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* Background image */
@@ -743,7 +745,7 @@
 }
 
 /* faint decorative line-art bottom-left, matches the comp's flower motif */
-.creative-approach-bloom {
+.creative-approach-section .creative-approach-bloom {
     position: absolute;
     left: -40px;
     bottom: -40px;
@@ -756,37 +758,37 @@
     pointer-events: none;
 }
 
-.creative-approach-heading {
+.creative-approach-section .creative-approach-heading {
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: clamp(2.3rem, 6vw, 3.6rem);
     font-weight: 400;
 }
 
-.creative-approach-accent {
+.creative-approach-section .creative-approach-accent {
     font-weight: 500;
     font-size: clamp(2.3rem, 4vw, 3.3rem);
 }
 
 /* ===== timeline list ===== */
-.creative-approach-timeline {
+.creative-approach-section .creative-approach-timeline {
     position: relative;
     margin-left: 30px;
     padding-left: 28px;
+    position: relative;
+    z-index: 2;
 }
 
 /* the connecting vertical line running through all dots */
 
-.creative-approach-step {
+.creative-approach-section .creative-approach-step {
     position: relative;
     padding-bottom: 53px;
 }
 
-.creative-approach-step:last-child {
-    padding-bottom: 0;
-}
+
 
 /* dot marker on the line for each step */
-.creative-approach-step::before {
+.creative-approach-section .creative-approach-step::before {
     content: "";
     position: absolute;
     top: -58px;
@@ -798,7 +800,7 @@
     background-image: url(../images/case-study/creative-approach-dot.png);
 }
 
-.creative-approach-label {
+.creative-approach-section .creative-approach-label {
     font-size: clamp(15px, 1.7vw, 20px);
     letter-spacing: 0.04em;
     font-weight: 700;
@@ -807,73 +809,222 @@
 }
 
 /* ===== laptop mockup ===== */
-.creative-approach-mockup {
+.creative-approach-section .creative-approach-mockup {
     max-width: 900px;
     margin: 0 0 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
-.creative-approach-mockup img {
+.creative-approach-section .creative-approach-mockup img {
     display: block;
 }
 
 @media (max-width: 1100px) {
 
-    .creative-approach-step::before {
+    .creative-approach-section .creative-approach-step::before {
         top: -59px;
         left: -28px;
     }
 }
 
 @media (max-width: 1024px) {
-    .creative-approach-step {
+    .creative-approach-section .creative-approach-step {
         padding-bottom: 48px;
     }
 
-    .creative-approach-step::before {
+    .creative-approach-section .creative-approach-step::before {
         top: -59px;
         left: -28px;
     }
 }
 
 @media (max-width: 991.98px) {
-    .creative-approach-section {
+    .creative-approach-section .creative-approach-section {
         padding: 60px 0;
     }
 
-    .creative-approach-heading,
-    .creative-approach-timeline {
+    .creative-approach-section .creative-approach-heading,
+    .creative-approach-section .creative-approach-timeline {
         text-align: left;
     }
 
-    .creative-approach-step {
+    .creative-approach-section .creative-approach-step {
         padding-bottom: 40px;
     }
 }
 
 @media (max-width: 767px) {
-    .creative-approach-timeline {
+    .creative-approach-section .creative-approach-timeline {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        align-items: center;
         justify-content: center;
     }
 
-    .creative-approach-step {
-        width: 45%;
+    .creative-approach-section .creative-approach-step {
+        width: 40%;
     }
 }
 
 @media (max-width: 550px) {
-    .creative-approach-timeline {
+    .creative-approach-section .creative-approach-timeline {
         flex-direction: column;
+        margin-right: 0px;
+        padding-right: 28px;
     }
 
-    .creative-approach-step {
+    .creative-approach-section .creative-approach-step {
         width: 100%;
     }
 }
 
 /***************** Creative Approach Section  *******************/
+
+
+/***************** Design Process Section  *******************/
+
+.design-process-section {
+    position: relative;
+    background-color: #fff;
+    padding: 150px 0px 150px 0px;
+}
+
+.design-process-section .design-process-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: clamp(2.3rem, 6vw, 3.6rem);
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+}
+
+.design-process-section .design-process-accent {
+    font-weight: 500;
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
+}
+
+.design-process-section .process-bg-one {
+    position: absolute;
+    top: -350px;
+    left: 0px;
+    width: 45%;
+    height: auto;
+}
+
+.design-process-section .process-bg-two {
+    position: absolute;
+    top: 25%;
+    right: 0px;
+    width: 35%;
+    height: auto;
+}
+
+/* .design-process-section .process-bg-three {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 45%;
+    height: auto;
+} */
+
+.design-process-section .process-wrap {
+    width: 100%;
+    padding: 120px 0px;
+    position: relative;
+    z-index: 2;
+}
+
+:root {
+    --radius: 10;
+}
+
+.design-process-section .process-svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.design-process-section .process-line {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 1;
+}
+
+.design-process-section .process-dot {
+    fill: #6D2732;
+}
+
+.design-process-section .process-label {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    fill: #322D2A;
+    text-transform: uppercase;
+    font-family: 'Helventica-Bold';
+}
+
+.design-process-section .process-mobile {
+    display: none;
+}
+
+@media (max-width: 1550px) {
+    .design-process-section .process-bg-one {
+        top: -180px;
+        width: 45%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .design-process-section .process-bg-one {
+        top: -100px;
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    .design-process-section .process-bg-one {
+        top: -50px;
+        width: 55%;
+    }
+
+    .design-process-section .process-bg-two {
+        top: 30%;
+        width: 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .design-process-section .process-desktop {
+        display: none;
+    }
+
+    .design-process-section .process-mobile {
+        display: block;
+    }
+
+    .design-process-section .process-label-mobile {
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.1px;
+        font-family: 'Helventica-Bold';
+        fill: #322D2A;
+        text-transform: uppercase;
+    }
+
+    .design-process-section .process-bg-one {
+        top: 0px;
+        width: 60%;
+    }
+
+    .design-process-section .process-bg-two {
+        top: 50%;
+        width: 60%;
+    }
+}
+
+/***************** Design Process Section  *******************/
+
 
 
 
