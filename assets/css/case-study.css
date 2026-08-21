@@ -120,9 +120,8 @@
     .caseStudy-header .header-logo {
         width: clamp(130px, 13vw, 180px);
     }
-    .caseStudy-header .scroll-wrap{
 
-    }
+    .caseStudy-header .scroll-wrap {}
 }
 
 @media (max-width: 325px) {
@@ -520,7 +519,7 @@
 }
 
 .challenge-section .challenge-label {
-    font-size: clamp(10px, 1.5vw, 18px);
+    font-size: clamp(13px, 1.5vw, 18px);
     font-weight: 700;
     color: #322D2A;
     white-space: nowrap;
@@ -759,32 +758,27 @@
 
 .creative-approach-heading {
     font-size: clamp(2rem, 4vw, 3rem);
-    line-height: clamp(2.3rem, 6vw, 3.4rem);
-    text-transform: uppercase;
+    line-height: clamp(2.3rem, 6vw, 3.6rem);
     font-weight: 400;
+}
+
+.creative-approach-accent {
+    font-weight: 500;
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
 }
 
 /* ===== timeline list ===== */
 .creative-approach-timeline {
     position: relative;
-    margin-left: 4px;
+    margin-left: 30px;
     padding-left: 28px;
 }
 
 /* the connecting vertical line running through all dots */
-.creative-approach-timeline::before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    bottom: 6px;
-    left: 4px;
-    width: 1px;
-    background: #1a1a1a;
-}
 
 .creative-approach-step {
     position: relative;
-    padding-bottom: 34px;
+    padding-bottom: 53px;
 }
 
 .creative-approach-step:last-child {
@@ -795,17 +789,20 @@
 .creative-approach-step::before {
     content: "";
     position: absolute;
-    top: 6px;
+    top: -58px;
     left: -28px;
     width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: #1a1a1a;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 78px;
+    background-image: url(../images/case-study/creative-approach-dot.png);
 }
 
 .creative-approach-label {
-    font-size: clamp(14px, 1.2vw, 16px);
+    font-size: clamp(15px, 1.7vw, 20px);
     letter-spacing: 0.04em;
+    font-weight: 700;
+    color: #322D2A;
     text-transform: uppercase;
 }
 
@@ -819,6 +816,25 @@
     display: block;
 }
 
+@media (max-width: 1100px) {
+
+    .creative-approach-step::before {
+        top: -59px;
+        left: -28px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .creative-approach-step {
+        padding-bottom: 48px;
+    }
+
+    .creative-approach-step::before {
+        top: -59px;
+        left: -28px;
+    }
+}
+
 @media (max-width: 991.98px) {
     .creative-approach-section {
         padding: 60px 0;
@@ -827,6 +843,33 @@
     .creative-approach-heading,
     .creative-approach-timeline {
         text-align: left;
+    }
+
+    .creative-approach-step {
+        padding-bottom: 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .creative-approach-timeline {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .creative-approach-step {
+        width: 45%;
+    }
+}
+
+@media (max-width: 550px) {
+    .creative-approach-timeline {
+        flex-direction: column;
+    }
+
+    .creative-approach-step {
+        width: 100%;
     }
 }
 
