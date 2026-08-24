@@ -1152,7 +1152,7 @@
 
 @media (max-width: 767px) {
     .what-we-delivered-section {
-        padding: 80px 20px;
+        padding: 60px 20px;
     }
 
     .what-we-delivered-mockup {
@@ -1167,7 +1167,7 @@
 
 @media (max-width: 500px) {
     .what-we-delivered-section {
-        padding: 80px 10px;
+        padding: 60px 10px;
     }
 }
 
@@ -1276,7 +1276,7 @@
 
 .business-impact-section {
     background-color: #fff;
-    padding: 90px 0px 90px 0px;
+    padding: 150px 0px 90px 0px;
 }
 
 .business-impact-section .business-impact-grid {
@@ -1414,7 +1414,10 @@
 }
 
 /* --- mobile: collapse everything to a single stacked column --- */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
+    .business-impact-section { 
+        padding: 60px 0px 60px 0px;
+    }
 
     .business-impact-section .business-impact-heading {
         padding: 20px 15px 50px 15px;
@@ -1481,7 +1484,7 @@
 /***************** Design Showcase Section  *******************/
 .design-showcase-section {
     background-color: #fff;
-    padding: 90px 0px 90px 0px;
+    padding: 100px 0px 200px 0px;
 }
 
 .design-showcase-section .design-showcase-grid {
@@ -1666,6 +1669,12 @@
 }
 
 @media (max-width: 768px) {
+
+    .design-showcase-section {
+        background-color: #fff;
+        padding: 60px 0px 60px 0px;
+    }
+
     .design-showcase-section .design-impact-cell p {
         font-size: clamp(18px, 2vw, 1.3rem);
     }
