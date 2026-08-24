@@ -1415,7 +1415,7 @@
 
 /* --- mobile: collapse everything to a single stacked column --- */
 @media (max-width: 768px) {
-    .business-impact-section { 
+    .business-impact-section {
         padding: 60px 0px 60px 0px;
     }
 
@@ -1485,6 +1485,11 @@
 .design-showcase-section {
     background-color: #fff;
     padding: 100px 0px 200px 0px;
+}
+
+.design-showcase-section .design-showcase-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: clamp(2.3rem, 6vw, 3.6rem);
 }
 
 .design-showcase-section .design-showcase-grid {
