@@ -63,6 +63,7 @@
   font-style: 300;
   src: url(../fonts/Gotham-Light.otf) format('opentype');
 }
+
 @font-face {
   font-family: 'Gotham-Book';
   font-style: 500;
@@ -80,11 +81,13 @@
   font-style: 700;
   src: url(../fonts/Gotham-Bold.otf) format('opentype');
 }
+
 @font-face {
   font-family: 'Gotham-thin';
   font-style: 400;
   src: url(../fonts/Gotham-Thin.otf) format('opentype');
 }
+
 @font-face {
   font-family: 'Gotham-XLight';
   font-style: 400;
@@ -103,12 +106,14 @@
   font-style: 400;
   src: url(../fonts/playfair/PlayfairDisplay-Italic.ttf) format('opentype');
 }
+
 @font-face {
   font-family: 'Playfair-MediumItalic';
   font-style: 400;
   src: url(../fonts/playfair/PlayfairDisplay-Italic-VariableFont_wght.ttf) format('truetype');
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Playfair-Medium';
   font-style: 700;
@@ -153,6 +158,10 @@
   color: #322D2A;
 }
 
+[data-color='white'] {
+  color: #fff;
+}
+
 [data-bgcolor='brown'] {
   background-color: #D9D9D9;
 }
@@ -164,6 +173,7 @@
 [data-weight='500'] {
   font-weight: 500;
 }
+
 [data-weight='500'] {
   font-weight: 500;
 }
@@ -199,6 +209,7 @@
 [data-fontfamily='Playfair-Italic'] {
   font-family: 'Playfair-Italic', sans-serif;
 }
+
 [data-fontfamily='Playfair-MediumItalic'] {
   font-family: 'Playfair-MediumItalic', sans-serif;
 }
@@ -225,6 +236,7 @@
 html {
   scroll-behavior: smooth;
 }
+
 :root {
   --color-brown: #322D2A;
   --color-red: #6D2732;
@@ -244,8 +256,9 @@ html {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
+
 }
+
 .has-js .zoom-in {
   opacity: 0;
   transform: scale(0.8);
@@ -315,17 +328,18 @@ p {
   background-color: var(--color-background-gray);
 }
 
-.navbar-shadow{
- box-shadow: 0 2px 24px rgb(0 0 0 / 20%);
+.navbar-shadow {
+  box-shadow: 0 2px 24px rgb(0 0 0 / 20%);
 }
 
-#navbar-shadow-fixed{
+#navbar-shadow-fixed {
   transition: box-shadow 0.3s ease;
   position: fixed;
-  top:0;
+  top: 0;
   width: 100%;
-   transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
+
 /**************** Footer Section ****************/
 .footer-section {
   background-color: #F1E8E0;
@@ -460,7 +474,8 @@ p {
   .extra-padding {
     padding: 0 40px;
   }
-  .footer-section .footer-email-heading { 
+
+  .footer-section .footer-email-heading {
     padding: 40px 50px;
   }
 }

@@ -120,8 +120,7 @@
     .caseStudy-header .header-logo {
         width: clamp(130px, 13vw, 180px);
     }
-
-    .caseStudy-header .scroll-wrap {}
+ 
 }
 
 @media (max-width: 325px) {
@@ -180,12 +179,7 @@
 
     .caseStudy-header .row.dynamic-gap {
         gap: clamp(0.5rem, 1.5vw, 1rem);
-    }
-
-    .caseStudy-header .header-scroll {
-        /* display: none; */
-        /* hide "scroll for more" on very short screens to save space */
-    }
+    } 
 }
 
 /***************** Case Study Header  *******************/
@@ -451,7 +445,7 @@
     right: 0;
     width: 100%;
     height: 95%;
-    background-image: url('../images/case-study/WJLT_Hero.png');
+    background-image: url('../images/case-study/challenge-Hero.webp');
     background-size: cover;
     background-position: 100%;
     background-repeat: no-repeat;
@@ -641,7 +635,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('../images/case-study/hero-goals-bg.png');
+    background-image: url('../images/case-study/hero-goals-bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1108,6 +1102,8 @@
 
 
 .what-we-delivered-heading {
+    position: relative;
+    z-index: 1;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: clamp(2.3rem, 6vw, 3.6rem);
     letter-spacing: 0.5px;
@@ -1176,6 +1172,321 @@
 }
 
 /***************** What We Develiver Section  *******************/
+
+
+/***************** Before After Section  *******************/
+.before-after-section {
+    background-color: #fff;
+}
+
+.before-after-section .before-after-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: clamp(2.3rem, 6vw, 3.6rem);
+    padding: 40px 0 50px 0;
+}
+
+.before-after-section .before-after-content {
+    position: relative;
+    min-height: 500px;
+    padding: 60px 30px;
+}
+
+.before-after-section .before-after-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.before-after-section .before-after-row {
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.before-after-section .before-after-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.before-after-section .before-after-label {
+    color: #fff;
+    font-size: clamp(23px, 2.5vw, 35px);
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.before-after-section .before-after-phone-wrap {
+    width: 100%;
+    max-width: 320px;
+}
+
+.before-after-section .before-after-phone {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width:1200px) {
+    .before-after-section .before-after-phone-wrap {
+        width: 100%;
+        max-width: 260px;
+    }
+}
+
+@media (max-width:1024px) {
+    .before-after-section .before-after-phone-wrap {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+@media (max-width: 767px) {
+    .before-after-section .before-after-content {
+        padding: 50px 13px;
+    }
+
+    .before-after-section .before-after-col {
+        margin-bottom: 40px;
+    }
+
+    .before-after-section .before-after-col:last-child {
+        margin-bottom: 0;
+    }
+
+    .before-after-section .before-after-phone-wrap {
+        max-width: 250px;
+    }
+
+    .before-after-section .before-after-label {
+        margin-bottom: 16px;
+    }
+}
+
+/***************** Before After Section  *******************/
+
+
+
+/***************** Business Impact Section  *******************/
+
+.business-impact-section {
+    background-color: #fff;
+    padding: 90px 0px 90px 0px;
+}
+
+.business-impact-section .business-impact-grid {
+    display: grid;
+}
+
+.business-impact-section .business-impact-grid-top {
+    grid-template-columns: 1.6fr 1fr 1fr;
+    grid-template-rows: repeat(2, minmax(180px, 0.9fr));
+}
+
+.business-impact-section .business-impact-grid-bottom {
+    grid-template-columns: 1fr 1fr 1.6fr;
+    grid-template-rows: minmax(180px, 0.9fr);
+}
+
+.business-impact-section .business-impact-cell {
+    /* border-right: 1px solid #AA9D8E;
+    border-bottom: 1px solid #AA9D8E; */
+    min-height: 120px
+}
+
+.business-impact-section .business-impact-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: clamp(2.3rem, 6vw, 3.6rem);
+    font-weight: 500;
+    margin-bottom: 0;
+    padding: 5px 30px 5px 0px;
+    border: none;
+    display: flex;
+    align-items: flex-start;
+
+}
+
+.business-impact-section .business-impact-accent {
+    font-style: italic;
+    color: #6D2732;
+    margin-right: 8px;
+}
+
+.business-impact-section .business-impact-tile {
+    display: flex;
+    align-items: flex-end;
+    padding: 24px;
+    min-height: 120px;
+}
+
+.business-impact-section .business-impact-tile p {
+    font-size: clamp(18px, 1.8vw, 25px);
+    line-height: 1.35;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.business-impact-section .business-impact-tile[data-bg="white"] {
+    background-color: #ffffff;
+}
+
+.business-impact-section .business-impact-tile[data-bg="tan"] {
+    background-color: #D1C7BC;
+}
+
+.business-impact-section .business-impact-cell.bi-image {
+    padding: 0;
+    overflow: hidden;
+    border-right: none;
+}
+
+.business-impact-section .bi-image img {
+    object-fit: cover;
+    display: block;
+}
+
+/* --- explicit grid placement (desktop) --- */
+.business-impact-section .bi-heading {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.business-impact-section .bi-image-golf {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.business-impact-section .bi-image-golf img {
+    padding-right: 30px;
+}
+
+.business-impact-section .bi-tileA {
+    grid-column: 2;
+    grid-row: 1;
+    border-top: 1px solid #AA9D8E;
+    border-bottom: 1px solid #AA9D8E;
+    border-right: 1px solid #AA9D8E;
+}
+
+.business-impact-section .bi-tileB {
+    grid-column: 3;
+    grid-row: 1;
+    border-top: 1px solid #AA9D8E;
+    border-right: 1px solid #AA9D8E;
+}
+
+.business-impact-section .bi-tileC {
+    grid-column: 2;
+    grid-row: 2;
+    border-bottom: 1px solid #AA9D8E;
+}
+
+.business-impact-section .bi-tileD {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.business-impact-section .bi-tileE {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.business-impact-section .bi-tileF {
+    grid-column: 2;
+    grid-row: 1;
+    border-top: 1px solid #AA9D8E;
+    border-bottom: 1px solid #AA9D8E;
+}
+
+.business-impact-section .bi-image-bridge {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.business-impact-section .bi-image-bridge img {
+    padding-left: 30px;
+}
+
+/* --- mobile: collapse everything to a single stacked column --- */
+@media (max-width: 767px) {
+
+    .business-impact-section .business-impact-heading {
+        padding: 20px 15px 50px 15px;
+    }
+
+    .business-impact-section .business-impact-tile {
+        padding: 20px 16px;
+        min-height: 100px;
+    }
+
+    .business-impact-section .bi-image-golf img {
+        padding-right: 0px;
+    }
+
+    .business-impact-section .bi-image-bridge img {
+        padding-left: 0px;
+    }
+
+    .business-impact-section .business-impact-grid-top,
+    .business-impact-section .business-impact-grid-bottom {
+        grid-template-columns: 1fr;
+        grid-template-rows: none;
+    }
+
+    .business-impact-section .business-impact-cell,
+    .business-impact-section .business-impact-heading {
+        grid-column: 1 / -1 !important;
+        grid-row: auto !important;
+    }
+
+    .business-impact-section .bi-tileA {
+        border-left: 1px solid #AA9D8E;
+        border-right: 1px solid #AA9D8E;
+    }
+
+    .business-impact-section .bi-tileB {
+        border-top: 0px solid #AA9D8E;
+        border-bottom: 1px solid #AA9D8E;
+        border-left: 1px solid #AA9D8E;
+        border-right: 1px solid #AA9D8E;
+    } 
+    .business-impact-section .bi-tileC {
+        border-right: 1px solid #AA9D8E;
+        border-left: 1px solid #AA9D8E;
+    } 
+    .business-impact-section .bi-tileF {
+        border-top: 0px solid #AA9D8E;
+        border-left: 1px solid #AA9D8E;
+        border-right: 1px solid #AA9D8E;
+    } 
+    .business-impact-section .bi-image {
+        min-height: 220px;
+        border-right: 1px solid #AA9D8E;
+    }
+
+}
+
+/***************** Business Impact Section  *******************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2094,7 +2405,6 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     letter-spacing: -0.04em;
-    text-fill-color: transparent;
     opacity: 0.2;
     flex: 0 0 280px;
     font-size: clamp(4rem, 12vw, 12rem);
