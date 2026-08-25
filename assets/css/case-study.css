@@ -2030,7 +2030,7 @@
 }
 
 @media (max-width:768px) {
-    .case-study-title { 
+    .case-study-title {
         font-size: clamp(1.3rem, 3vw, 2.8rem);
         line-height: clamp(1.6rem, 4vw, 3rem);
     }
@@ -2056,3 +2056,108 @@
 }
 
 /***************** Related CaseStudies Section  *******************/
+
+
+/************************* FAQ Section  *************************/
+
+.faq-section {
+    position: relative;
+    padding: clamp(80px, 7vw, 100px) 0;
+    background-image: url('../images/case-study/faq-hero.webp');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: top;
+    overflow: hidden;
+}
+
+.faq-container {
+    position: relative;
+    z-index: 2;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 32px);
+}
+
+.faq-heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    color: #fff;
+}
+
+.faq-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.4vw, 12px);
+}
+
+.faq-item {
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.faq-item:nth-child(odd) .faq-question {
+    background: #F1E8E0;
+}
+
+.faq-item:nth-child(even) .faq-question {
+    background: #D9D9D9;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    padding: clamp(14px, 1.8vw, 16px) clamp(18px, 3vw, 50px);
+    font-size: clamp(18px, 2vw, 27px);
+    font-weight: 500;
+    color: #000;
+}
+
+.faq-chevron {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    transition: transform 0.25s ease;
+}
+
+.faq-item.open .faq-chevron {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #fff;
+}
+
+.faq-item.open .faq-answer {
+    max-height: 200px;
+}
+
+.faq-answer p {
+    margin: 0;
+    padding: 14px clamp(18px, 3vw, 50px) 18px;
+    font-size: clamp(14.5px, 2vw, 19px);
+    line-height: 1.6;
+    color: #000;
+    font-weight: 400;
+    font-family: 'Helvetica-Light';
+}
+
+@media (max-width:768px) {
+    .faq-chevron {
+        width: 19px;
+        height: 19px;
+    }
+
+}
+
+/************************* FAQ Section  *************************/
