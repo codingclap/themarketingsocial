@@ -1984,7 +1984,7 @@
     width: 44px;
     height: 100%;
     display: flex !important;
-    justify-content: end;
+    justify-content: center;
     align-items: end;
 }
 
@@ -2005,7 +2005,7 @@
     flex: 1;
     display: flex;
     justify-content: space-between;
-    padding: clamp(28px, 3vw, 51px) clamp(28px, 3vw, 30px) clamp(28px, 3vw, 51px) clamp(28px, 3vw, 51px);
+    padding: clamp(28px, 3vw, 51px) clamp(28px, 3vw, 50px) clamp(28px, 3vw, 51px) clamp(28px, 3vw, 51px);
 }
 
 .case-study-title {
