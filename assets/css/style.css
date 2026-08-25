@@ -3,8 +3,7 @@
   font-family: 'Helvetica-light';
   font-weight: 100;
   font-style: normal;
-  src: url(../fonts/helvetica/helvetica-light.woff2) format('woff2'),
-    url(../fonts/helvetica/helvetica-light.ttf) format('truetype');
+  src:url(../fonts/helventica/HelveticaNowText-Light.ttf) format('truetype');
   font-display: swap;
 }
 
@@ -173,11 +172,7 @@
 [data-weight='500'] {
   font-weight: 500;
 }
-
-[data-weight='500'] {
-  font-weight: 500;
-}
-
+ 
 [data-fontfamily='Helventica-Light'] {
   font-family: 'Helventica-light', sans-serif;
 }
@@ -209,28 +204,21 @@
 [data-fontfamily='Playfair-Italic'] {
   font-family: 'Playfair-Italic', sans-serif;
 }
-
 [data-fontfamily='Playfair-MediumItalic'] {
   font-family: 'Playfair-MediumItalic', sans-serif;
 }
-
 [data-fontfamily='Gotham-Light'] {
   font-family: 'Gotham-Light', sans-serif;
 }
-
 [data-fontfamily='Playfair-Medium'] {
   font-family: 'Playfair-Medium', sans-serif;
 }
-
 [data-fontfamily='Playfair-Bold'] {
   font-family: 'Playfair-Bold', sans-serif;
 }
-
-[data-fontfamily='Hevantica'] {
+[data-fontfamily='Hevantica-Regular'] {
   font-family: 'Hevantica-Regular';
 }
-
-
 
 /* === Root Variables for Colors and Fonts === */
 html {

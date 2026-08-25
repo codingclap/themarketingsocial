@@ -1312,10 +1312,10 @@
 }
 
 .business-impact-section .business-impact-accent {
-    font-style: italic;
     color: #6D2732;
     margin-right: 8px;
-    margin-top: -2px;
+    margin-top: -5px;
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
 }
 
 .business-impact-section .business-impact-tile {
@@ -1734,12 +1734,217 @@
 
 
 
+/***************** Testimonial Section  *******************/
+
+.testimonial-section {
+    background: #D1C7BC;
+    padding: clamp(28px, 6vw, 60px) 0;
+}
+
+.testimonial-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.testimonial-heading {
+    width: 90vw;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: clamp(2.3rem, 6vw, 3.6rem);
+    font-weight: 500;
+    color: #322D2A;
+    text-transform: uppercase;
+}
+
+.testimonial-heading .accent {
+    text-transform: capitalize;
+    font-weight: 600;
+    color: #6D2732;
+    margin-right: 2px;
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
+}
+
+/* --- THE KEY PART: full-bleed wrapper --- */
+.testimonial-owl-wrap {
+    width: 90vw;
+    padding-right: 0;
+    overflow: hidden;
+}
+
+.testimonial-owl .owl-stage-outer {
+    overflow: visible;
+}
+
+.testimonial-card {
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 20px;
+    padding: clamp(30px, 3vw, 40px);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 310px;
+}
+
+.testimonial-card h3 {
+    font-family: 'Helventica-Bold';
+    font-size: clamp(15px, 1.5vw, 18.4px);
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0 0 12px;
+    text-transform: uppercase;
+}
+
+.testimonial-card p {
+    font-family: 'Helvetica-Light';
+    font-size: clamp(13px, 1.2vw, 15px);
+    line-height: 1.6;
+    color: #000;
+    margin: 0 0 18px;
+
+}
+
+.testimonial-card p .see-more {
+    color: #6B6B6B;
+    cursor: pointer;
+}
+
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.testimonial-name {
+    font-family: 'Helventica-Bold';
+    font-weight: 500;
+    font-size: clamp(12px, 1.2vw, 15px);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.testimonial-stars {
+    color: #FFF600;
+    font-size: clamp(20px, 2vw, 30px);
+    letter-spacing: 2px;
+}
+
+.testimonial-owl .owl-item {
+    padding-right: 16px;
+}
+
+/* gap BETWEEN cards, right side of each card */
+.testimonial-owl .owl-dots {
+    text-align: left;
+    margin-top: 20px;
+    padding-left: clamp(16px, 4vw, 40px);
+}
+
+.testimonial-owl .owl-dot span {
+    background: #000 !important;
+    opacity: 1;
+    width: 9px;
+    height: 9px;
+}
+
+.testimonial-owl .owl-dot.active span {
+    background: #6D2732 !important;
+    opacity: 1;
+}
+
+@media (max-width:768px) {
+    .testimonial-section {
+        padding: clamp(48px, 6vw, 60px) 0;
+    }
+
+    .testimonial-heading {
+        width: 100vw;
+        text-align: center;
+        padding: 0px 10px 0px 10px;
+    }
+}
+
+/***************** Testimonial Section  *******************/
 
 
 
+/***************** Services We Offer Section  *******************/
 
+.services-we-offer-section {
+    background: #6D2732;
+    padding: clamp(40px, 7vw, 90px) 0;
+}
 
+.services-we-offer-heading {
+    color: #fff;
+    font-size: clamp(28px, 4vw, 42px);
+    letter-spacing: 0.01em;
+    font-weight: 500;
+}
 
+.services-we-offer-accent {
+    font-weight: 500;
+    margin-right: 2px;
+    font-size: clamp(2.3rem, 4vw, 3.3rem);
+}
+.services-we-offer-list{
+    display: flex;
+    flex-direction: column;
+     gap: clamp(10px, 1.4vw, 16px);
+}
+.services-we-offer-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    min-height: clamp(90px, 11vw, 156px);
+    /* padding-bottom: clamp(24px, 3.4vw, 40px); */
+}
+
+.services-we-offer-title {
+    color: #fff;
+    font-size: clamp(20px, 3vw, 30px);
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.services-we-offer-desc {
+    color: #e7d9db;
+    font-size: clamp(12.5px, 1.15vw, 14px);
+    letter-spacing: 0.03em;
+    line-height: 1.6;
+    text-transform: uppercase;
+    max-width: 550px;
+}
+
+.services-we-offer-media {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 1.4vw, 16px);
+    height: 100%;
+}
+
+.services-we-offer-media-tile {
+    position: relative;
+    flex: 1;
+    min-height: clamp(90px, 10vw, 130px);
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 767px) {
+    .services-we-offer-media {
+        margin-top: 24px;
+    }
+}
+
+/***************** Services We Offer Section  *******************/
 
 
 
