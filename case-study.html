@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/navbar.css">
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/owl.carousel.min.css" />
   <link rel="stylesheet" href="assets/css/owl.theme.default.min.css" />
 </head>
@@ -460,69 +461,101 @@
         <div class="col-12 col-lg-9 col-xl-9 text-center">
 
           <div class="process-wrap">
+
             <svg class="process-svg process-desktop" viewBox="0 0 720 660" xmlns="http://www.w3.org/2000/svg" role="img"
               aria-labelledby="dp-title">
               <title id="dp-title">The design process: discovery, moodboards, wireframes, concepts, iterations, final
                 approval, mockups</title>
 
-              <!-- the connecting path: straight L segments + A (arc) commands for rounded corners -->
               <path class="process-line" d="
-        M30,25
-        L600,25
-        A60,60 0 0 1 660,85
-        L660,185
-        A60,60 0 0 1 600,245
-        L130,245
-        A60,60 0 0 0 70,305
-        L70,415
-        A60,60 0 0 0 130,475
-        L585,475
-        A60,60 0 0 1 645,535
-        L645,605
-      " />
+      M30,25
+      L600,25
+      A60,60 0 0 1 660,85
+      L660,185
+      A60,60 0 0 1 600,245
+      L130,245
+      A60,60 0 0 0 70,305
+      L70,415
+      A60,60 0 0 0 130,475
+      L585,475
+      A60,60 0 0 1 645,535
+      L645,605
+    " />
 
-              <!-- dots -->
-              <circle class="process-dot" cx="30" cy="25" r="5" />
-              <circle class="process-dot" cx="460" cy="25" r="5" />
-              <circle class="process-dot" cx="360" cy="245" r="5" />
-              <circle class="process-dot" cx="70" cy="375" r="5" />
-              <circle class="process-dot" cx="208" cy="475" r="5" />
-              <circle class="process-dot" cx="453" cy="475" r="5" />
-              <circle class="process-dot" cx="645" cy="605" r="5" />
+              <g class="process-step" data-y="25">
+                <circle class="process-dot" cx="30" cy="25" r="5" />
+                <text class="process-label" x="20" y="60" text-anchor="start">Discovery</text>
+              </g>
 
-              <!-- labels -->
-              <text class="process-label" x="20" y="60" text-anchor="start">Discovery</text>
-              <text class="process-label" x="400" y="60" text-anchor="start">Moodboards</text>
-              <text class="process-label" x="360" y="282" text-anchor="middle">Wireframes</text>
-              <text class="process-label" x="95" y="380" text-anchor="start">Concepts</text>
-              <text class="process-label" x="208" y="513" text-anchor="middle">Iterations</text>
-              <text class="process-label" x="453" y="513" text-anchor="middle">Final approval</text>
-              <text class="process-label" x="645" y="640" text-anchor="middle">Mockups</text>
+              <g class="process-step" data-y="25">
+                <circle class="process-dot" cx="460" cy="25" r="5" />
+                <text class="process-label" x="400" y="60" text-anchor="start">Moodboards</text>
+              </g>
+
+              <g class="process-step" data-y="245">
+                <circle class="process-dot" cx="360" cy="245" r="5" />
+                <text class="process-label" x="360" y="282" text-anchor="middle">Wireframes</text>
+              </g>
+
+              <g class="process-step" data-y="375">
+                <circle class="process-dot" cx="70" cy="375" r="5" />
+                <text class="process-label" x="95" y="380" text-anchor="start">Concepts</text>
+              </g>
+
+              <g class="process-step" data-y="475">
+                <circle class="process-dot" cx="208" cy="475" r="5" />
+                <text class="process-label" x="208" y="513" text-anchor="middle">Iterations</text>
+              </g>
+
+              <g class="process-step" data-y="475">
+                <circle class="process-dot" cx="453" cy="475" r="5" />
+                <text class="process-label" x="453" y="513" text-anchor="middle">Final approval</text>
+              </g>
+
+              <g class="process-step" data-y="605">
+                <circle class="process-dot" cx="645" cy="605" r="5" />
+                <text class="process-label" x="645" y="640" text-anchor="middle">Mockups</text>
+              </g>
             </svg>
 
+
             <!-- mobile version: a single straight vertical line, dots on the line, labels to the right -->
-            <svg class="process-svg process-mobile" viewBox="0 0 400 700" xmlns="http://www.w3.org/2000/svg" role="img"
+
+            <svg class="process-svg process-mobile" viewBox="0 0 400 507" xmlns="http://www.w3.org/2000/svg" role="img"
               aria-labelledby="dp-title-mobile">
               <title id="dp-title-mobile">The design process: discovery, moodboards, wireframes, concepts, iterations,
                 final approval, mockups</title>
 
-              <path class="process-line" d="M40,20 L40,680" />
+              <path class="process-line" d="M40,20 L40,500" />
 
-              <circle class="process-dot" cx="40" cy="20" r="6" />
-              <circle class="process-dot" cx="40" cy="130" r="6" />
-              <circle class="process-dot" cx="40" cy="240" r="6" />
-              <circle class="process-dot" cx="40" cy="350" r="6" />
-              <circle class="process-dot" cx="40" cy="460" r="6" />
-              <circle class="process-dot" cx="40" cy="570" r="6" />
-              <circle class="process-dot" cx="40" cy="680" r="6" />
-
-              <text class="process-label-mobile" x="70" y="27" text-anchor="start">Discovery</text>
-              <text class="process-label-mobile" x="70" y="137" text-anchor="start">Moodboards</text>
-              <text class="process-label-mobile" x="70" y="247" text-anchor="start">Wireframes</text>
-              <text class="process-label-mobile" x="70" y="357" text-anchor="start">Concepts</text>
-              <text class="process-label-mobile" x="70" y="467" text-anchor="start">Iterations</text>
-              <text class="process-label-mobile" x="70" y="577" text-anchor="start">Final approval</text>
-              <text class="process-label-mobile" x="70" y="687" text-anchor="start">Mockups</text>
+              <g class="process-step" data-y="20">
+                <circle class="process-dot" cx="40" cy="20" r="6" />
+                <text class="process-label-mobile" x="70" y="27" text-anchor="start">Discovery</text>
+              </g>
+              <g class="process-step" data-y="100">
+                <circle class="process-dot" cx="40" cy="100" r="6" />
+                <text class="process-label-mobile" x="70" y="107" text-anchor="start">Moodboards</text>
+              </g>
+              <g class="process-step" data-y="180">
+                <circle class="process-dot" cx="40" cy="180" r="6" />
+                <text class="process-label-mobile" x="70" y="187" text-anchor="start">Wireframes</text>
+              </g>
+              <g class="process-step" data-y="260">
+                <circle class="process-dot" cx="40" cy="260" r="6" />
+                <text class="process-label-mobile" x="70" y="267" text-anchor="start">Concepts</text>
+              </g>
+              <g class="process-step" data-y="340">
+                <circle class="process-dot" cx="40" cy="340" r="6" />
+                <text class="process-label-mobile" x="70" y="347" text-anchor="start">Iterations</text>
+              </g>
+              <g class="process-step" data-y="420">
+                <circle class="process-dot" cx="40" cy="420" r="6" />
+                <text class="process-label-mobile" x="70" y="427" text-anchor="start">Final approval</text>
+              </g>
+              <g class="process-step" data-y="500">
+                <circle class="process-dot" cx="40" cy="500" r="6" />
+                <text class="process-label-mobile" x="70" y="507" text-anchor="start">Mockups</text>
+              </g>
             </svg>
 
 
@@ -1040,7 +1073,8 @@
 
   <section class="faq-section">
     <div class="container">
-      <h2 class="faq-heading mb-0 pb-4 pb-md-4 pb-xl-5 mb-2 mb-md-3 mb-xl-3" data-fontfamily='Playfair-MediumItalic'>FAQ</h2>
+      <h2 class="faq-heading mb-0 pb-4 pb-md-4 pb-xl-5 mb-2 mb-md-3 mb-xl-3" data-fontfamily='Playfair-MediumItalic'>FAQ
+      </h2>
 
       <ul class="faq-list">
 
@@ -1059,7 +1093,8 @@
 
           </button>
           <div class="faq-answer">
-            <p data-fontfamily='Helventica-Regular'>The project ran over roughly 6 weeks, covering strategy, design, revisions, and final delivery of all
+            <p data-fontfamily='Helventica-Regular'>The project ran over roughly 6 weeks, covering strategy, design,
+              revisions, and final delivery of all
               brand assets.</p>
           </div>
         </li>
@@ -1078,7 +1113,8 @@
             </svg>
           </button>
           <div class="faq-answer">
-            <p data-fontfamily='Helventica-Regular'>Logo design, color palette, typography, brand guidelines, business cards, and social media templates.</p>
+            <p data-fontfamily='Helventica-Regular'>Logo design, color palette, typography, brand guidelines, business
+              cards, and social media templates.</p>
           </div>
         </li>
 
@@ -1096,7 +1132,8 @@
             </svg>
           </button>
           <div class="faq-answer">
-            <p data-fontfamily='Helventica-Regular'>Yes, we regularly refresh and rebuild existing brand identities while retaining recognizable elements
+            <p data-fontfamily='Helventica-Regular'>Yes, we regularly refresh and rebuild existing brand identities
+              while retaining recognizable elements
               clients want to keep.</p>
           </div>
         </li>
@@ -1115,7 +1152,8 @@
             </svg>
           </button>
           <div class="faq-answer">
-            <p data-fontfamily='Helventica-Regular'>Absolutely — website design is often bundled with branding projects to keep the digital and print
+            <p data-fontfamily='Helventica-Regular'>Absolutely — website design is often bundled with branding projects
+              to keep the digital and print
               experience fully consistent.</p>
           </div>
         </li>
@@ -1209,7 +1247,77 @@
     });
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
 
+      var svgs = document.querySelectorAll('.process-svg');
+
+      svgs.forEach(function (svg) {
+        var path = svg.querySelector('.process-line');
+        var length = path.getTotalLength(); // exact path length, no guessing a dasharray number
+
+        path.style.strokeDasharray = length;
+        path.style.strokeDashoffset = length;
+
+        // total svg-space height, used to convert scroll progress into "how far down the path" we are
+        var viewBox = svg.viewBox.baseVal;
+        var totalSvgHeight = viewBox.height;
+
+        var steps = svg.querySelectorAll('.process-step');
+
+        function updateOnScroll() {
+          var rect = svg.getBoundingClientRect();
+          var windowHeight = window.innerHeight;
+
+          // progress: 0 exactly when the SVG's top edge reaches the top of the viewport,
+          // 1 exactly when the SVG's bottom edge reaches the bottom of the viewport.
+          // (assumes the SVG's own height is <= viewport height — see note below if it's taller)
+          var scrollableDistance = rect.height - windowHeight;
+          var raw;
+
+          if (scrollableDistance <= 0) {
+            // svg is shorter than the viewport: progress is simply how far its top
+            // has travelled from the bottom of the viewport (0) to the top (1)
+            raw = (windowHeight - rect.top) / windowHeight;
+          } else {
+            // svg is taller than the viewport: progress across the range where its top
+            // goes from viewport-top (0) to its bottom reaching viewport-bottom (1)
+            raw = (0 - rect.top) / scrollableDistance;
+          }
+
+          var progress = Math.min(Math.max(raw, 0), 1);
+
+          // draw the line proportionally to scroll progress
+          var offset = length * (1 - progress);
+          path.style.strokeDashoffset = offset;
+
+          // reveal each step once scroll progress has passed its vertical position in the SVG
+          steps.forEach(function (step) {
+            var stepY = parseFloat(step.getAttribute('data-y'));
+            var stepProgress = stepY / totalSvgHeight;
+            if (progress >= stepProgress - 0.03) { // small lead-in so the dot appears just before the line fully reaches it
+              step.classList.add('visible');
+            } else {
+              step.classList.remove('visible');
+            }
+          });
+        }
+
+        window.addEventListener('scroll', updateOnScroll, { passive: true });
+        window.addEventListener('resize', updateOnScroll);
+        updateOnScroll(); // run once on load in case the section is already partially in view
+      });
+
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      once: true,       // animation plays only the first time it scrolls into view, not every time
+      offset: 60
+    });
+  </script>
 
 
 
@@ -1221,60 +1329,7 @@
 
   <script src="assets/js/common-gsap.js"></script>
 
-  <script>
-    (function () {
-      var track = document.getElementById('heroGoalsTrack');
-      if (!track || typeof gsap === 'undefined') return;
 
-      var marqueeBar = track.closest('.hero-goals-marquee');
-      var originalGroup = track.querySelector('.hero-goals-group');
-      if (!marqueeBar || !originalGroup) return;
-
-      var groupWidth = 0;
-      var tween = null;
-
-      // clone the source group until the track is at least 2x the bar's width,
-      // so there's always enough content to cover the viewport during the loop
-      function fillTrack() {
-        track.innerHTML = '';
-        track.appendChild(originalGroup);
-        groupWidth = originalGroup.getBoundingClientRect().width;
-
-        var barWidth = marqueeBar.getBoundingClientRect().width;
-        var guard = 0; // safety cap in case of a zero-width edge case
-        while (track.getBoundingClientRect().width < barWidth * 2 && guard < 20) {
-          var clone = originalGroup.cloneNode(true);
-          clone.setAttribute('aria-hidden', 'true');
-          track.appendChild(clone);
-          guard++;
-        }
-      }
-
-      function startTween() {
-        if (tween) tween.kill();
-        gsap.set(track, { x: 0 });
-        tween = gsap.to(track, {
-          x: -groupWidth,
-          ease: 'none',
-          duration: 26,
-          repeat: -1
-        });
-      }
-
-      fillTrack();
-      startTween();
-
-      // rebuild on resize so the loop stays seamless at any viewport width
-      var resizeTimer;
-      window.addEventListener('resize', function () {
-        clearTimeout(resizeTimer);
-        resizeTimer = setTimeout(function () {
-          fillTrack();
-          startTween();
-        }, 250);
-      });
-    })();
-  </script>
 
 </body>
 
