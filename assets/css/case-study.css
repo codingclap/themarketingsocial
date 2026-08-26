@@ -2257,9 +2257,9 @@
     background: #6D2732;
     color: #fff;
     font-weight: 500;
-    font-size: clamp(15px, 1.4vw, 25px);
+    font-size: clamp(18px, 1.4vw, 25px);
     text-decoration: none;
-    padding: 10px 55px;
+    padding: 15px 55px;
     border-radius: 999px;
     overflow: hidden;
     z-index: 1;
@@ -2291,9 +2291,9 @@
 
 @media (max-width:414px) {
     .cta-button {
-        padding: 12px 42px;
+        padding: 15px 30px;
         font-weight: 500;
-        font-size: clamp(15px, 1.4vw, 25px);
+        font-size: clamp(17px, 1.4vw, 25px);
     }
 }
 
