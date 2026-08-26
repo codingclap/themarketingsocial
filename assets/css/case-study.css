@@ -1681,6 +1681,15 @@
 }
 
 @media (max-width: 768px) {
+    .design-showcase-section .design-showcase-grid.design-showcase-grid-top .bi-tileB {
+        display: none;
+    } 
+    .design-showcase-section .design-showcase-grid.design-showcase-grid-third .bi-tileF {
+        display: none;
+    } 
+    .design-showcase-section .design-showcase-grid.design-showcase-grid-four .bi-tileJ {
+        display: none;
+    }
 
     .design-showcase-section {
         background-color: #fff;
