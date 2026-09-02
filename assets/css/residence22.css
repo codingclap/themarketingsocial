@@ -206,7 +206,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/case-study/project-image-overlay.webp');
+    background-image: url('../images/residence22/project-image-overlay.webp');
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -445,9 +445,9 @@
     right: 0;
     width: 100%;
     height: 95%;
-    background-image: url('../images/case-study/challenge-Hero.webp');
-    background-size: cover;
-    background-position: 100%;
+    background-image: url('../images/residence22/challenge-Hero.webp');
+    background-size: contain;
+    background-position: top right;
     background-repeat: no-repeat;
     z-index: 0;
 }
@@ -524,7 +524,7 @@
 /* Tablet and below: bg image can't align with an absolute list anymore — stack instead */
 @media (max-width: 2500px) {
     .challenge-section::before {
-        background-position: 50%;
+        background-position: 100%;
     }
 }
 
@@ -534,14 +534,14 @@
     }
 
     .challenge-section::before {
-        background-position: 80%;
+        background-position: 100%;
     }
 }
 
 @media (max-width: 1600px) {
     .challenge-section::before {
         height: 95%;
-        background-position: 80% bottom;
+        background-position: 100% bottom;
     }
 
     .challenge-section .challenge-content {
@@ -552,14 +552,14 @@
 @media (max-width: 1400px) {
     .challenge-section::before {
         height: 90%;
-        background-position: 70% bottom;
+        background-position: 100% bottom;
     }
 }
 
 @media (max-width: 1300px) {
     .challenge-section::before {
         height: 90%;
-        background-position: 70% bottom;
+        background-position: 100% bottom;
     }
 
     .challenge-section {
@@ -635,7 +635,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('../images/case-study/hero-goals-bg.webp');
+    background-image: url('../images/residence22/hero-goals-bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -734,8 +734,22 @@
 /***************** Creative Approach Section  *******************/
 
 .creative-approach-section {
+    position: relative;
     padding: 90px 0;
     background: #fff;
+}
+.creative-approach-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/residence22/creative-approach-image.webp');
+    background-size: cover;
+    background-position: top right;
+    background-repeat: no-repeat;
+    z-index: 0;
 }
 
 /* faint decorative line-art bottom-left, matches the comp's flower motif */
@@ -745,7 +759,7 @@
     bottom: -40px;
     width: 260px;
     height: 260px;
-    background-image: url('../images/case-study/bloom-outline.svg');
+    background-image: url('../images/residence22/bloom-outline.svg');
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.35;
@@ -791,7 +805,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     height: 78px;
-    background-image: url(../images/case-study/creative-approach-dot.png);
+    background-image: url(../images/residence22/creative-approach-dot.png);
 }
 
 .creative-approach-section .creative-approach-label {
@@ -900,9 +914,9 @@
 
 .design-process-section .process-bg-one {
     position: absolute;
-    top: -350px;
+    top: 0px;
     left: 0px;
-    width: 45%;
+    width: 35%;
     height: auto;
 }
 
@@ -918,7 +932,7 @@
     position: absolute;
     bottom: -525px;
     left: 0px;
-    width: 50%;
+    width: 40%;
     height: auto;
     z-index: 1;
 }
@@ -1001,13 +1015,13 @@
 
 @media (max-width: 1550px) {
     .design-process-section .process-bg-one {
-        top: -180px;
-        width: 45%;
+        top: 0px;
+        width: 35%;
     }
 
     .design-process-section .process-bg-three {
         bottom: -550px;
-        width: 50%;
+        width: 40%;
     }
 }
 
@@ -1024,26 +1038,26 @@
 
     .design-process-section .process-bg-three {
         bottom: -550px;
-        width: 50%;
+        width: 40%;
     }
 }
 
 @media (max-width: 1200px) {
     .design-process-section .process-bg-one {
-        top: -100px;
-        width: 45%;
+        top: 0px;
+        width: 35%;
     }
 
     .design-process-section .process-bg-three {
         bottom: -450px;
-        width: 50%;
+        width: 40%;
     }
 }
 
 @media (max-width: 1024px) {
     .design-process-section .process-bg-three {
         bottom: -300px;
-        width: 55%;
+        width: 45%;
     }
 }
 
@@ -1058,12 +1072,12 @@
 
     .design-process-section .process-bg-three {
         bottom: -200px;
-        width: 60%;
+        width: 50%;
     }
 
     .design-process-section .process-bg-one {
-        top: -50px;
-        width: 55%;
+        top: 0px;
+        width: 45%;
     }
 
     .design-process-section .process-bg-two {
@@ -1092,7 +1106,7 @@
 
     .design-process-section .process-bg-one {
         top: 0px;
-        width: 60%;
+        width: 50%;
     }
 
     .design-process-section .process-bg-two {
@@ -1103,13 +1117,13 @@
 
 @media (max-width: 425px) {
     .design-process-section .process-bg-one {
-        top: -60px;
-        width: 70%;
+        top: 0px;
+        width: 60%;
     }
 
     .design-process-section .process-bg-three {
         bottom: -240px;
-        width: 70%;
+        width: 60%;
     }
 
     .design-process-section .process-bg-two {
@@ -1125,13 +1139,13 @@
     }
 
     .design-process-section .process-bg-one {
-        top: -60px;
-        width: 80%;
+        top: 0px;
+        width: 70%;
     }
 
     .design-process-section .process-bg-three {
         bottom: -240px;
-        width: 80%;
+        width: 60%;
     }
 }
 
@@ -2174,7 +2188,7 @@
 .faq-section {
     position: relative;
     padding: clamp(80px, 7vw, 100px) 0;
-    background-image: url('../images/case-study/faq-hero.webp');
+    background-image: url('../images/residence22/faq-hero.webp');
     background-size: cover;
     background-attachment: fixed;
     background-position: top;

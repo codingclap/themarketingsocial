@@ -41,7 +41,7 @@
 }
 
 .caseStudy-header .header-logo {
-    width: clamp(110px, 14vw, 180px);
+    width: clamp(110px, 14vw, 280px);
     height: auto;
 }
 
@@ -206,9 +206,9 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../images/case-study/project-image-overlay.webp');
+    background-image: url('../images/helper-bot/project-image-overlay.webp');
     background-size: cover;
-    background-position: center;
+    background-position: center right;
     z-index: 0;
 }
 
@@ -445,9 +445,9 @@
     right: 0;
     width: 100%;
     height: 95%;
-    background-image: url('../images/case-study/challenge-Hero.webp');
-    background-size: cover;
-    background-position: 100%;
+    background-image: url('../images/helper-bot/challenge-Hero.webp');
+    background-size: contain;
+    background-position: center right;
     background-repeat: no-repeat;
     z-index: 0;
 }
@@ -524,7 +524,7 @@
 /* Tablet and below: bg image can't align with an absolute list anymore — stack instead */
 @media (max-width: 2500px) {
     .challenge-section::before {
-        background-position: 50%;
+        background-position: right;
     }
 }
 
@@ -534,14 +534,14 @@
     }
 
     .challenge-section::before {
-        background-position: 80%;
+        background-position: right;
     }
 }
 
 @media (max-width: 1600px) {
     .challenge-section::before {
         height: 95%;
-        background-position: 80% bottom;
+        background-position: right bottom;
     }
 
     .challenge-section .challenge-content {
@@ -552,14 +552,14 @@
 @media (max-width: 1400px) {
     .challenge-section::before {
         height: 90%;
-        background-position: 70% bottom;
+        background-position: right bottom;
     }
 }
 
 @media (max-width: 1300px) {
     .challenge-section::before {
         height: 90%;
-        background-position: 70% bottom;
+        background-position: right bottom;
     }
 
     .challenge-section {
@@ -635,7 +635,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('../images/case-study/hero-goals-bg.webp');
+    background-image: url('../images/helper-bot/hero-goals-bg.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -745,7 +745,7 @@
     bottom: -40px;
     width: 260px;
     height: 260px;
-    background-image: url('../images/case-study/bloom-outline.svg');
+    background-image: url('../images/helper-bot/bloom-outline.svg');
     background-repeat: no-repeat;
     background-size: contain;
     opacity: 0.35;
@@ -791,7 +791,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     height: 78px;
-    background-image: url(../images/case-study/creative-approach-dot.png);
+    background-image: url(../images/helper-bot/creative-approach-dot.png);
 }
 
 .creative-approach-section .creative-approach-label {
@@ -1207,8 +1207,9 @@
     transform: translateY(-50%) translateX(0) rotate(0deg) scale(1);
     pointer-events: auto;
 }
+
 .what-we-delivered-item:hover .what-we-delivered-preview img {
-  transform: scale(1.15);
+    transform: scale(1.15);
 }
 
 /* Disable on touch devices where hover doesn't make sense */
@@ -2088,8 +2089,9 @@
     height: 100%;
     display: flex !important;
     justify-content: center;
-    align-items: end;
+    align-items: end; 
 }
+
 .case-study-card .case-study-plant {
     transition: all 0.3s ease-in-out;
 }
@@ -2099,6 +2101,7 @@
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
+
 .case-study-media {
     flex: 0 0 48%;
     position: relative;
@@ -2174,7 +2177,7 @@
 .faq-section {
     position: relative;
     padding: clamp(80px, 7vw, 100px) 0;
-    background-image: url('../images/case-study/faq-hero.webp');
+    background-image: url('../images/helper-bot/faq-hero.webp');
     background-size: cover;
     background-attachment: fixed;
     background-position: top;
