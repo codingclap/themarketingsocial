@@ -487,7 +487,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
     gap: clamp(0.75rem, 5vh, 5rem);
     width: clamp(200px, 80vw, 1000px);
@@ -529,6 +529,7 @@
 /* Tablet and below: bg image can't align with an absolute list anymore — stack instead */
 @media (max-width: 2500px) {
     .challenge-section::before {
+         height: 100%;
         background-position: center;
     }
 }
@@ -932,15 +933,15 @@
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 35%;
+    width: 30%;
     height: auto;
 }
 
 .design-process-section .process-bg-two {
     position: absolute;
-    top: 25%;
+    top: 10%;
     right: 0px;
-    width: 35%;
+    width: 25%;
     height: auto;
 }
 
@@ -948,7 +949,7 @@
     position: absolute;
     bottom: -525px;
     left: 0px;
-    width: 40%;
+    width: 35%;
     height: auto;
     z-index: 1;
 }
@@ -1032,12 +1033,12 @@
 @media (max-width: 1550px) {
     .design-process-section .process-bg-one {
         top: 0px;
-        width: 35%;
+        width: 30%;
     }
 
     .design-process-section .process-bg-three {
         bottom: -550px;
-        width: 40%;
+        width: 30%;
     }
 }
 
@@ -1073,7 +1074,7 @@
 @media (max-width: 1024px) {
     .design-process-section .process-bg-three {
         bottom: -300px;
-        width: 45%;
+        width: 40%;
     }
 }
 
@@ -1871,18 +1872,14 @@
 /***************** Testimonial Section  *******************/
 
 .testimonial-section {
-    background: #D1C7BC;
+    background: #F1E8E0;
     padding: clamp(30px, 6vw, 60px) 0;
 }
 
-.testimonial-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
+ 
 
-.testimonial-heading {
-    width: 90vw;
+.testimonial-heading { 
+    width: 100%;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: clamp(2.3rem, 6vw, 3.6rem);
     font-weight: 500;
@@ -1900,8 +1897,7 @@
 
 /* --- THE KEY PART: full-bleed wrapper --- */
 .testimonial-owl-wrap {
-    width: 90vw;
-    padding-right: 0;
+    width: 100%; 
     overflow: hidden;
 }
 
@@ -1910,20 +1906,39 @@
 }
 
 .testimonial-card {
-    background: #fff;
-    border: 1px solid #000;
+    position: relative;
+    background: #fff; 
     border-radius: 20px;
-    padding: clamp(30px, 3vw, 40px);
+    padding: clamp(60px, 4vw, 100px) clamp(30px, 3vw, 80px) clamp(60px, 4vw, 100px) clamp(30px, 3vw, 80px);
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 310px;
+    min-height: 500px;
 }
-
+.testimonial-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: url('../images/w-residence/top-quote.webp') no-repeat center center;
+    z-index: 1;
+}
+.testimonial-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: url('../images/w-residence/bottom-quote.webp') no-repeat center center;
+    z-index: 1;
+}
 .testimonial-card h3 {
-    font-family: 'Helventica-Bold';
-    font-size: clamp(15px, 1.5vw, 18.4px);
+    font-family: 'Helventica-Medium';
+    font-size: clamp(18px, 1.5vw, 22px);
     font-weight: 500;
     line-height: 1.4;
     margin: 0 0 12px;
@@ -1932,8 +1947,8 @@
 
 .testimonial-card p {
     font-family: 'Helvetica-Light';
-    font-size: clamp(13px, 1.2vw, 15px);
-    line-height: 1.6;
+    font-size: clamp(16px, 1.2vw, 18px);
+    line-height: 1.4;
     color: #000;
     margin: 0 0 18px;
 
@@ -1953,9 +1968,9 @@
 }
 
 .testimonial-name {
-    font-family: 'Helventica-Bold';
+    font-family: 'Helventica-Medium';
     font-weight: 500;
-    font-size: clamp(12px, 1.2vw, 15px);
+    font-size: clamp(16px, 1.2vw, 18px);
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
@@ -1995,12 +2010,11 @@
     }
 
     .testimonial-heading {
-        width: 100vw;
+        width: 100%;
         text-align: center;
         padding: 0px 10px 0px 10px;
     }
 }
-
 /***************** Testimonial Section  *******************/
 
 

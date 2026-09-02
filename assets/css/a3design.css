@@ -41,7 +41,7 @@
 }
 
 .caseStudy-header .header-logo {
-    width: clamp(110px, 14vw, 180px);
+    width: clamp(110px, 14vw, 150px);
     height: auto;
 }
 
@@ -103,7 +103,7 @@
 /* Narrow screens — scale text down further */
 @media (max-width: 768px) {
     .caseStudy-header .header-logo {
-        width: clamp(140px, 14vw, 180px);
+        width: clamp(140px, 14vw, 150px);
     }
 }
 
@@ -118,7 +118,7 @@
     }
 
     .caseStudy-header .header-logo {
-        width: clamp(130px, 13vw, 180px);
+        width: clamp(110px, 13vw, 150px);
     }
 
 }
@@ -133,7 +133,7 @@
     }
 
     .caseStudy-header .header-logo {
-        width: clamp(130px, 13vw, 180px);
+        width: clamp(100px, 13vw, 180px);
     }
 }
 
@@ -431,8 +431,8 @@
     position: relative;
     background-color: #fff;
     overflow: hidden;
-    padding-top: clamp(2.5rem, 6vh, 4.5rem);
-    padding-bottom: clamp(2.5rem, 6vh, 4.5rem);
+    padding-top: clamp(2.5rem, 6vh, 5rem);
+    padding-bottom: clamp(2.5rem, 6vh, 5rem);
     /* min-height: clamp(700px, 160vh, 1800px); */
     min-height: 1450px;
 }
@@ -444,7 +444,7 @@
     bottom: 0;
     right: 0;
     width: 100%;
-    height: 95%;
+    height: 100%;
     background-image: url('../images/a3design/challenge-Hero.webp');
     background-size: cover;
     background-position: 100%;
@@ -475,7 +475,7 @@
 /* Content wrapper now needs a defined height so the list can spread across it */
 .challenge-section .challenge-content {
     position: relative;
-    justify-content: flex-start;
+    justify-content: center;
     display: flex;
     align-items: stretch;
     margin-top: clamp(1.5rem, 4vh, 3rem);
@@ -524,13 +524,13 @@
 /* Tablet and below: bg image can't align with an absolute list anymore — stack instead */
 @media (max-width: 2500px) {
     .challenge-section::before {
-        background-position: 50%;
+        background-position: 100%;
     }
 }
 
 @media (max-width: 1900px) {
     .challenge-section .challenge-content {
-        justify-content: flex-start;
+        justify-content: center;
     }
 
     .challenge-section::before {
@@ -540,26 +540,26 @@
 
 @media (max-width: 1600px) {
     .challenge-section::before {
-        height: 95%;
-        background-position: 80% bottom;
+        height: 100%;
+        background-position: 100% bottom;
     }
 
     .challenge-section .challenge-content {
-        justify-content: flex-start;
+        justify-content: center;
     }
 }
 
 @media (max-width: 1400px) {
     .challenge-section::before {
-        height: 90%;
-        background-position: 70% bottom;
+        height: 100%;
+        background-position: 100% bottom;
     }
 }
 
 @media (max-width: 1300px) {
     .challenge-section::before {
-        height: 90%;
-        background-position: 70% bottom;
+        height: 100%;
+        background-position: 100% bottom;
     }
 
     .challenge-section {
@@ -576,7 +576,7 @@
 @media (max-width: 991px) {
     .challenge-section {
         min-height: auto;
-        padding-top: clamp(1rem, 1vh, 4.5rem);
+        padding-top: clamp(1rem, 6vh, 4.5rem);
         padding-bottom: clamp(4rem, 6vh, 4.5rem);
     }
 
@@ -734,10 +734,23 @@
 /***************** Creative Approach Section  *******************/
 
 .creative-approach-section {
+    position: relative;
     padding: 90px 0;
     background: #fff;
 }
-
+.creative-approach-section::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../images/a3design/creative-approach-image.webp');
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
 /* faint decorative line-art bottom-left, matches the comp's flower motif */
 .creative-approach-section .creative-approach-bloom {
     position: absolute;
@@ -791,14 +804,14 @@
     background-repeat: no-repeat;
     background-size: contain;
     height: 78px;
-    background-image: url(../images/a3design/creative-approach-dot.png);
+    background-image: url(../images/a3design/creative-approach-dot.webp);
 }
 
 .creative-approach-section .creative-approach-label {
     font-size: clamp(15px, 1.7vw, 20px);
     letter-spacing: 0.04em;
     font-weight: 700;
-    color: #322D2A;
+    color: #fff;
     text-transform: uppercase;
 }
 
@@ -916,9 +929,9 @@
 
 .design-process-section .process-bg-three {
     position: absolute;
-    bottom: -525px;
+    bottom: -725px;
     left: 0px;
-    width: 50%;
+    width: 40%;
     height: auto;
     z-index: 1;
 }
@@ -1007,7 +1020,7 @@
 
     .design-process-section .process-bg-three {
         bottom: -550px;
-        width: 50%;
+        width: 40%;
     }
 }
 
@@ -1023,8 +1036,8 @@
     }
 
     .design-process-section .process-bg-three {
-        bottom: -550px;
-        width: 50%;
+        bottom: -650px;
+        width: 40%;
     }
 }
 
@@ -1035,15 +1048,15 @@
     }
 
     .design-process-section .process-bg-three {
-        bottom: -450px;
+        bottom: -550px;
         width: 50%;
     }
 }
 
 @media (max-width: 1024px) {
     .design-process-section .process-bg-three {
-        bottom: -300px;
-        width: 55%;
+        bottom: -400px;
+        width: 45%;
     }
 }
 
@@ -1057,8 +1070,8 @@
     }
 
     .design-process-section .process-bg-three {
-        bottom: -200px;
-        width: 60%;
+        bottom: -400px;
+        width: 50%;
     }
 
     .design-process-section .process-bg-one {
@@ -1109,7 +1122,7 @@
 
     .design-process-section .process-bg-three {
         bottom: -240px;
-        width: 70%;
+        width: 65%;
     }
 
     .design-process-section .process-bg-two {
@@ -1131,7 +1144,7 @@
 
     .design-process-section .process-bg-three {
         bottom: -240px;
-        width: 80%;
+        width: 70%;
     }
 }
 
@@ -1840,18 +1853,14 @@
 /***************** Testimonial Section  *******************/
 
 .testimonial-section {
-    background: #D1C7BC;
+    background: #F1E8E0;
     padding: clamp(30px, 6vw, 60px) 0;
 }
 
-.testimonial-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
+ 
 
-.testimonial-heading {
-    width: 90vw;
+.testimonial-heading { 
+    width: 100%;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: clamp(2.3rem, 6vw, 3.6rem);
     font-weight: 500;
@@ -1869,8 +1878,7 @@
 
 /* --- THE KEY PART: full-bleed wrapper --- */
 .testimonial-owl-wrap {
-    width: 90vw;
-    padding-right: 0;
+    width: 100%; 
     overflow: hidden;
 }
 
@@ -1879,20 +1887,39 @@
 }
 
 .testimonial-card {
-    background: #fff;
-    border: 1px solid #000;
+    position: relative;
+    background: #fff; 
     border-radius: 20px;
-    padding: clamp(30px, 3vw, 40px);
+    padding: clamp(60px, 4vw, 100px) clamp(30px, 3vw, 80px) clamp(60px, 4vw, 100px) clamp(30px, 3vw, 80px);
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    min-height: 310px;
+    min-height: 500px;
 }
-
+.testimonial-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: url('../images/w-residence/top-quote.webp') no-repeat center center;
+    z-index: 1;
+}
+.testimonial-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: url('../images/w-residence/bottom-quote.webp') no-repeat center center;
+    z-index: 1;
+}
 .testimonial-card h3 {
-    font-family: 'Helventica-Bold';
-    font-size: clamp(15px, 1.5vw, 18.4px);
+    font-family: 'Helventica-Medium';
+    font-size: clamp(18px, 1.5vw, 22px);
     font-weight: 500;
     line-height: 1.4;
     margin: 0 0 12px;
@@ -1901,8 +1928,8 @@
 
 .testimonial-card p {
     font-family: 'Helvetica-Light';
-    font-size: clamp(13px, 1.2vw, 15px);
-    line-height: 1.6;
+    font-size: clamp(16px, 1.2vw, 18px);
+    line-height: 1.4;
     color: #000;
     margin: 0 0 18px;
 
@@ -1922,9 +1949,9 @@
 }
 
 .testimonial-name {
-    font-family: 'Helventica-Bold';
+    font-family: 'Helventica-Medium';
     font-weight: 500;
-    font-size: clamp(12px, 1.2vw, 15px);
+    font-size: clamp(16px, 1.2vw, 18px);
     letter-spacing: 0.04em;
     text-transform: uppercase;
 }
@@ -1964,12 +1991,11 @@
     }
 
     .testimonial-heading {
-        width: 100vw;
+        width: 100%;
         text-align: center;
         padding: 0px 10px 0px 10px;
     }
 }
-
 /***************** Testimonial Section  *******************/
 
 
