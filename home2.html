@@ -307,60 +307,92 @@
 
 
      <script>
-          document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-               const tabs = document.querySelectorAll(".service-tab");
-               const track = document.querySelector(".slider-track");
-               const slides = document.querySelectorAll(".service-slide");
+    const tabs = document.querySelectorAll(".service-tab");
+    const tabsContainer = document.querySelector(".service-tabs");
+    const track = document.querySelector(".slider-track");
+    const slides = document.querySelectorAll(".service-slide");
 
-               let currentSlide = 0;
+    let currentSlide = 0;
 
-               function goToSlide(index) {
+    function goToSlide(index) {
 
-                    currentSlide = index;
+        if (!slides.length) return;
 
-                    // Vertical movement
-                    const slideHeight = slides[0].offsetHeight;
+        currentSlide = index;
 
-                    track.style.transform =
-                         `translateY(-${index * slideHeight}px)`;
+        // Get the actual height of one slide
+        const slideHeight = slides[0].getBoundingClientRect().height;
+
+        // Move image slider vertically
+        track.style.transform = `translate3d(0, -${index * slideHeight}px, 0)`;
+
+        // Update active tab
+        tabs.forEach((tab, i) => {
+            tab.classList.toggle("active", i === index);
+        });
+
+        // Mobile: ONLY scroll the horizontal tabs container
+        // Do NOT use scrollIntoView()
+        if (window.innerWidth <= 650) {
+
+            const activeTab = tabs[index];
+
+            const containerWidth = tabsContainer.clientWidth;
+            const tabLeft = activeTab.offsetLeft;
+            const tabWidth = activeTab.offsetWidth;
+
+            const scrollPosition =
+                tabLeft - (containerWidth / 2) + (tabWidth / 2);
+
+            tabsContainer.scrollTo({
+                left: scrollPosition,
+                behavior: "smooth"
+            });
+        }
+    }
 
 
-                    // Active tab
-                    tabs.forEach((tab, i) => {
-                         tab.classList.toggle("active", i === index);
-                    });
+    // Tab click
+    tabs.forEach((tab, index) => {
+
+        tab.addEventListener("click", function (e) {
+
+            e.preventDefault();
+
+            goToSlide(index);
+
+        });
+
+    });
 
 
-                    // On mobile, automatically bring active tab into view
-                    if (window.innerWidth <= 650) {
-
-                         tabs[index].scrollIntoView({
-                              behavior: "smooth",
-                              block: "nearest",
-                              inline: "center"
-                         });
-
-                    }
-               }
+    // Recalculate slider after images are loaded
+    window.addEventListener("load", function () {
+        goToSlide(currentSlide);
+    });
 
 
-               tabs.forEach((tab, index) => {
+    // Resize
+    let resizeTimer;
 
-                    tab.addEventListener("click", () => {
-                         goToSlide(index);
-                    });
+    window.addEventListener("resize", function () {
 
-               });
+        clearTimeout(resizeTimer);
+
+        resizeTimer = setTimeout(function () {
+            goToSlide(currentSlide);
+        }, 150);
+
+    });
 
 
-               // Recalculate slider position when screen size changes
-               window.addEventListener("resize", () => {
-                    goToSlide(currentSlide);
-               });
+    // Initial slide
+    goToSlide(0);
 
-          });
-     </script>
+});
+</script>
 </body>
 
 </html>
