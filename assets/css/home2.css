@@ -1,0 +1,868 @@
+ /* ==========================================================
+                "What We Do" section     
+ ========================================================== */
+ .what-we-do-section {
+     background: #fff;
+ }
+
+ .what-we-do {
+     box-sizing: border-box;
+     max-width: 900px;
+     margin: 0 auto;
+     padding: 60px 20px;
+     display: flex;
+     flex-direction: column;
+     gap: 30px;
+ }
+
+ .what-we-do .what-we-do-title {
+     font-size: clamp(2rem, 4vw, 3rem);
+     line-height: clamp(2.2rem, 6vw, 3.4375rem);
+     font-weight: 500;
+ }
+
+ .what-we-do .what-we-do-title .accent {
+     font-size: clamp(2.3rem, 4vw, 3.3rem);
+     font-weight: 500;
+ }
+
+ .what-we-do .group {
+     position: relative;
+     height: clamp(110px, 16vw, 180px);
+     width: 100%;
+ }
+
+ .what-we-do .expend-card {
+     position: absolute;
+     top: 0;
+     left: 50%;
+     width: clamp(280px, 58vw, 750px);
+     height: 100%;
+     transform: translateX(-50%);
+     transition: transform .6s cubic-bezier(.22, .9, .28, 1), opacity .5s cubic-bezier(.22, .9, .28, 1), box-shadow .4s ease;
+ }
+
+ .what-we-do .card-text {
+     z-index: 2;
+     border: 1px solid #6D2732;
+     border-radius: 20px;
+     padding: clamp(18px, 3vw, 30px) clamp(20px, 5vw, 50px);
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     cursor: pointer;
+     -webkit-tap-highlight-color: transparent;
+ }
+
+ .what-we-do .card-text .expend-card-heading {
+     margin: 0 0 8px;
+     font-weight: 400;
+     font-size: clamp(25px, 5vw, 35px);
+     color: #000;
+ }
+
+ .what-we-do .card-text .expend-card-para {
+     margin: 0;
+     font-size: clamp(15px, 2vw, 18px);
+     color: #000;
+ }
+
+ .what-we-do .image {
+     width: clamp(120px, 28vw, 350px);
+     z-index: 1;
+     overflow: hidden;
+     opacity: 0;
+     pointer-events: none;
+ }
+
+ .what-we-do .image .photo {
+     flex: 0 0 100%;
+     background-size: cover;
+     background-position: center;
+     height: 85%;
+ }
+
+ /* ---- Odd rows: text expend-card cream, centered by default.
+         On reveal it slides slightly left and the image emerges to the right ---- */
+ .what-we-do .group.dir-right .card-text {
+     background: #F1E8E0;
+ }
+
+ .what-we-do .group.dir-right .image {
+     width: clamp(120px, 28vw, 350px);
+     z-index: 1;
+     align-items: end;
+     overflow: hidden;
+     display: flex;
+     flex-direction: row-reverse;
+ }
+
+ .what-we-do .group.dir-left .photo {
+     border-radius: 20px 0px 0px 20px;
+ }
+
+ .what-we-do .group.dir-right .photo {
+     border-radius: 0px 20px 20px 0px;
+ }
+
+ .what-we-do .group.dir-right:hover .card-text,
+ .what-we-do .group.dir-right.is-active .card-text {
+     transform: translateX(calc(-50% - clamp(80px, 18vw, 220px) / 2));
+     box-shadow: 0 14px 30px rgba(0, 0, 0, .3);
+ }
+
+ .what-we-do .group.dir-right:hover .image,
+ .what-we-do .group.dir-right.is-active .image {
+     transform: translateX(calc(0% + clamp(80px, 18vw, 220px)));
+     opacity: 1;
+     pointer-events: auto;
+     transition: transform .6s cubic-bezier(.22, .9, .28, 1) .05s, opacity .45s ease .1s, box-shadow .4s ease;
+ }
+
+ /* ---- Even rows: text expend-card tan, centered by default.
+         On reveal it slides slightly right and the image emerges to the left ---- */
+ .what-we-do .group.dir-left .card-text {
+     background: #D1C7BC;
+ }
+
+ .what-we-do .group.dir-left .image {
+     z-index: 1;
+     align-items: end;
+     overflow: hidden;
+     display: flex;
+     flex-direction: row-reverse;
+ }
+
+ .what-we-do .group.dir-left:hover .card-text,
+ .what-we-do .group.dir-left.is-active .card-text {
+     transform: translateX(calc(-50% + clamp(80px, 18vw, 220px) / 2));
+     box-shadow: 0 14px 30px rgba(0, 0, 0, .3);
+ }
+
+ .what-we-do .group.dir-left:hover .image,
+ .what-we-do .group.dir-left.is-active .image {
+     transform: translateX(calc(-100% - clamp(80px, 18vw, 220px)));
+     opacity: 1;
+     pointer-events: auto;
+     transition: transform .6s cubic-bezier(.22, .9, .28, 1) .05s, opacity .45s ease .1s, box-shadow .4s ease;
+ }
+
+ @media (max-width:991px) {
+
+     .what-we-do .group,
+     .what-we-do .group.dir-right,
+     .what-we-do .group.dir-left {
+         height: auto;
+         display: flex;
+         flex-direction: column;
+         gap: 0;
+     }
+
+     .what-we-do {
+         max-width: 600px;
+     }
+
+     .what-we-do .expend-card,
+     .what-we-do .group.dir-right .card-text,
+     .what-we-do .group.dir-left .card-text,
+     .what-we-do .group.dir-right .image,
+     .what-we-do .group.dir-left .image {
+         position: static;
+         width: 100%;
+         transform: none !important;
+         opacity: 1 !important;
+         pointer-events: none;
+         transition: none;
+         box-shadow: none;
+     }
+
+     .what-we-do .card-text {
+         order: 2;
+         cursor: default;
+         border-radius: 0 0 20px 20px;
+         padding: 20px 22px;
+     }
+
+     .what-we-do .image {
+         order: 1;
+         height: 200px;
+         display: block;
+     }
+
+     .what-we-do .group.dir-right .photo,
+     .what-we-do .group.dir-left .photo {
+         height: 100%;
+         border-radius: 20px 20px 0 0;
+     }
+ }
+
+ /* ==========================================================
+                "What We Do" section     
+ ========================================================== */
+
+
+
+ /* ==========================================================
+                "Why Businesses Choose Us" section         
+ ========================================================== */
+
+ .why-business-choose {
+     position: relative;
+     background-image: url('../images/home2/why-choose-bg.webp');
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+     padding: 56px 20px 64px;
+     overflow: hidden;
+ }
+
+ .why-business-choose .why-business-title {
+     font-size: clamp(2rem, 4vw, 3rem);
+     line-height: clamp(2.2rem, 6vw, 3.4375rem);
+     font-weight: 500;
+ }
+
+ .why-business-choose .why-business-title .accent {
+     font-size: clamp(2.3rem, 4vw, 3.3rem);
+     font-weight: 500;
+ }
+
+ .why-business-tiles {
+     max-width: 1400px;
+     margin: 0 auto;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: flex-start;
+     gap: 15px;
+     min-height: 400px;
+ }
+
+ .business-tile {
+     position: relative;
+     width: 323px;
+     height: 230px;
+     border-radius: 15px;
+     overflow: hidden;
+     cursor: pointer;
+     box-shadow: 0 10px 24px rgba(0, 0, 0, .18);
+     -webkit-tap-highlight-color: transparent;
+     transition: height .55s cubic-bezier(.22, .9, .28, 1);
+ }
+
+ /* Grows taller on reveal — width stays fixed at 323px */
+ .business-tile:hover,
+ .business-tile.is-active {
+     height: 380px;
+ }
+
+ .business-tile .bg {
+     position: absolute;
+     inset: 0;
+     background-size: cover;
+     background-position: center;
+     transition: opacity .5s cubic-bezier(.22, .9, .28, 1), transform .6s cubic-bezier(.22, .9, .28, 1);
+ }
+
+ .business-tile .overlay {
+     position: absolute;
+     inset: 0;
+     background: #6D2732;
+     opacity: 0;
+     transform: translateY(6px);
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     padding: 24px;
+     transition: opacity .4s cubic-bezier(.22, .9, .28, 1) .2s, transform .4s cubic-bezier(.22, .9, .28, 1) .2s;
+ }
+
+ .business-tile .overlay h3 {
+     margin: 0;
+     color: #fff;
+     font-size: clamp(20px, 3vw, 25px);
+     line-height: 1.3;
+     font-weight: 700;
+ }
+
+ .business-tile .overlay p {
+     margin: 0;
+     color: #fff;
+     font-size: clamp(12px, 1.8vw, 15px);
+     line-height: 1.3;
+ }
+
+ /* Hover (desktop) and .is-active (touch) both trigger the swap */
+ .business-tile:hover .bg,
+ .business-tile.is-active .bg {
+     opacity: 0;
+     transform: scale(1.06);
+ }
+
+ .business-tile:hover .overlay,
+ .business-tile.is-active .overlay {
+     opacity: 1;
+     transform: translateY(0);
+ }
+
+ @media (max-width:1399px) {
+     .business-tile {
+         width: 300px;
+         height: 220px;
+     }
+ }
+
+ @media (max-width:1300px) {
+     .business-tile .overlay h3 {
+         font-size: clamp(20px, 3vw, 22px);
+     }
+
+     .why-business-tiles {
+         min-height: 350px;
+     }
+
+     .business-tile:hover,
+     .business-tile.is-active {
+         height: 330px;
+     }
+
+     .business-tile {
+         width: 260px;
+         height: 195px;
+     }
+ }
+
+ @media (max-width:1150px) {
+     .business-tile .overlay h3 {
+         font-size: clamp(20px, 3vw, 21px);
+     }
+
+     .why-business-choose {
+         padding: 40px 20px 40px;
+     }
+
+     .why-business-tiles {
+         min-height: 330px;
+     }
+
+     .business-tile:hover,
+     .business-tile.is-active {
+         height: 310px;
+     }
+
+     .business-tile {
+         width: 230px;
+         height: 190px;
+     }
+ }
+
+ @media (max-width:1040px) {
+
+     .why-business-tiles {
+         flex-direction: row;
+         align-items: stretch;
+         gap: 18px;
+     }
+
+     .business-tile,
+     .business-tile:hover,
+     .business-tile.is-active {
+         width: 100%;
+         max-width: 380px;
+         height: 300px;
+         display: flex;
+         flex-direction: column;
+         transition: none;
+     }
+
+     .business-tile .bg,
+     .business-tile:hover .bg,
+     .business-tile.is-active .bg {
+         position: static;
+         width: 100%;
+         height: 190px;
+         opacity: 1 !important;
+         transform: none !important;
+         transition: none;
+     }
+
+     .business-tile .overlay,
+     .business-tile:hover .overlay,
+     .business-tile.is-active .overlay {
+         min-height: 160px;
+         position: static;
+         opacity: 1 !important;
+         transform: none !important;
+         transition: none;
+         padding: 18px 20px 22px;
+         gap: 8px;
+     }
+
+     .business-tile .overlay {
+         justify-content: start;
+     }
+
+     .business-tile .overlay h3 {
+         font-size: 20px;
+     }
+
+     .business-tile .overlay p {
+         font-size: 15px;
+     }
+ }
+
+
+ @media (max-width:990px) {
+     .business-tile {
+         width: calc(50% - 8px);
+     }
+
+     .why-business-tiles {
+         flex-direction: row;
+         align-items: stretch;
+         gap: 18px;
+     }
+
+     .business-tile .overlay,
+     .business-tile:hover .overlay,
+     .business-tile.is-active .overlay {
+         min-height: 180px;
+         position: static;
+         opacity: 1 !important;
+         transform: none !important;
+         transition: none;
+         padding: 18px 20px 22px;
+         gap: 8px;
+     }
+
+     .business-tile,
+     .business-tile:hover,
+     .business-tile.is-active {
+         width: 100%;
+         max-width: 350px;
+         height: 360px;
+         display: flex;
+         flex-direction: column;
+         transition: none;
+     }
+
+     .business-tile .bg,
+     .business-tile:hover .bg,
+     .business-tile.is-active .bg {
+         position: static;
+         width: 100%;
+         height: 190px;
+         opacity: 1 !important;
+         transform: none !important;
+         transition: none;
+     }
+
+     .business-tile .overlay,
+     .business-tile:hover .overlay,
+     .business-tile.is-active .overlay {
+         position: static;
+         opacity: 1 !important;
+         transform: none !important;
+         transition: none;
+         padding: 18px 20px 22px;
+         gap: 8px;
+     }
+
+     .business-tile .overlay h3 {
+         font-size: 20px;
+     }
+
+     .business-tile .overlay p {
+         font-size: 15px;
+     }
+ }
+
+ @media (max-width:768px) {
+
+     .business-tile,
+     .business-tile:hover,
+     .business-tile.is-active {
+         width: 100%;
+         max-width: 420px;
+         height: 350px;
+         display: flex;
+         flex-direction: column;
+         transition: none;
+     }
+
+     .business-tile .bg,
+     .business-tile:hover .bg,
+     .business-tile.is-active .bg {
+         position: static;
+         width: 100%;
+         height: 190px;
+         opacity: 1 !important;
+         transform: none !important;
+         transition: none;
+     }
+
+     .business-tile .overlay,
+     .business-tile:hover .overlay,
+     .business-tile.is-active .overlay {
+         position: static;
+         opacity: 1 !important;
+         transform: none !important;
+         transition: none;
+         padding: 18px 20px 22px;
+         gap: 8px;
+     }
+
+ }
+
+ /* ---- Guard the badge against the heading on narrow screens ---- */
+ @media (max-width:480px) {
+     .why-business-choose {
+         padding: 40px 20px 40px;
+     }
+
+     .why-business-title {
+         margin-bottom: 28px;
+     }
+ }
+
+ /* ==========================================================
+                "Why Businesses Choose Us" section         
+ ========================================================== */
+
+ /* ==========================================================
+                "Creative Services" section
+    ========================================================== */
+
+ .creative-services {
+     width: 100%;
+     padding: 60px 6vw;
+     background: #fff;
+     overflow: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .services-container {
+     width: 100%;
+     max-width: 1100px;
+     margin: 0 auto;
+ }
+
+
+ /* -------------------------
+   Heading
+------------------------- */
+
+ .services-heading {
+     font-size: clamp(1.9rem, 4vw, 2.9rem);
+     line-height: clamp(2.2rem, 6vw, 3.4375rem);
+     font-weight: 500;
+ }
+
+ .services-heading .accent {
+     font-size: clamp(2.3rem, 5vw, 3.6rem);
+     font-weight: 500;
+ }
+
+
+ /* -------------------------
+   Main Layout
+------------------------- */
+
+ .services-content {
+     display: grid;
+     grid-template-columns: 370px minmax(300px, 1fr);
+     gap: 10px;
+     align-items: start;
+ }
+
+
+ /* -------------------------
+   Tabs
+------------------------- */
+
+ .service-tabs {
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     gap: 10px;
+ }
+
+ .service-tab {
+     position: relative;
+     width: 100%;
+     min-height: 40px;
+     padding: 0 0 0 0;
+     margin: 0;
+     border: 0;
+     background: transparent;
+     text-align: left;
+     cursor: pointer;
+     color: #AA9D8E;
+     font-weight: 300;
+     transition:
+         color 0.3s ease,
+         padding 0.3s ease;
+ }
+
+ .service-tab+.service-tab {
+     margin-top: 7px;
+ }
+
+ .service-tab::before {
+     content: "";
+     position: absolute;
+     left: 0;
+     top: 50%;
+     width: 4px;
+     height: 0;
+     background: #111;
+     transform: translateY(-50%);
+     transition: height 0.3s ease;
+ }
+
+ .service-tab span {
+     font-size: clamp(1rem, 3vw, 1.2rem);
+     display: block;
+     padding: 8px 0;
+     transition: transform 0.3s ease;
+     font-family: 'Helventica-Regular', sans-serif;
+ }
+
+ .service-tab.active {
+     color: #111;
+     font-weight: 700;
+ }
+
+ .service-tab.active::before {
+     height: 100%;
+ }
+
+ .service-tab.active span {
+     transform: translateX(15px);
+     font-size: clamp(1.1rem, 3vw, 1.35rem);
+     font-family: 'Helventica-Bold', sans-serif;
+ }
+
+
+ /* -------------------------
+   Vertical Image Slider
+------------------------- */
+
+ .services-slider {
+     position: relative;
+     width: 100%;
+     height: 550px;
+     overflow: hidden;
+     border-radius: 8px;
+ }
+
+ .slider-track {
+     width: 100%;
+     transition: transform 0.7s cubic-bezier(.77, 0, .18, 1);
+ }
+
+ .service-slide {
+     position: relative;
+     width: 100%;
+     height: 550px;
+     flex-shrink: 0;
+     overflow: hidden;
+     border-radius: 15px;
+ }
+
+ .service-slide img {
+     display: block;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+
+
+ /* Overlay - optional */
+
+ .slide-overlay {
+     position: absolute;
+     left: 30px;
+     bottom: 25px;
+     color: white;
+     z-index: 2;
+     text-shadow: 0 2px 10px rgba(0, 0, 0, .4);
+ }
+
+ .slide-overlay h3 {
+     margin: 0;
+     font-size: 28px;
+     line-height: 1;
+ }
+
+ .slide-overlay span {
+     font-size: 13px;
+     letter-spacing: 3px;
+ }
+
+
+ /* Dark gradient */
+
+ .service-slide::after {
+     content: "";
+     position: absolute;
+     inset: 0;
+     /* background: linear-gradient(to top,
+             rgba(0, 0, 0, .4),
+             transparent 45%); */
+     pointer-events: none;
+ }
+
+
+ /* -------------------------
+   Tablet
+------------------------- */
+ @media (max-width: 1100px) {
+     .services-content {
+         grid-template-columns: 340px minmax(300px, 1fr);
+     }
+ }
+
+ @media (max-width: 900px) {
+
+     .creative-services {
+         padding: 45px 5vw;
+     }
+
+     .services-content {
+         grid-template-columns: 290px minmax(280px, 1fr);
+         gap: 0px;
+     }
+
+     .service-tab.active span {
+         font-size: 18px;
+     }
+
+     .service-tab span {
+         font-size: 17px;
+     }
+
+     .services-slider,
+     .service-slide {
+         height: 500px;
+     }
+ }
+
+
+ /* -------------------------
+   Mobile
+------------------------- */
+
+ @media (max-width: 650px) {
+     .services-heading {
+         font-size: clamp(1.83rem, 4vw, 3rem);
+     }
+
+         .creative-services {
+             padding: 35px 20px 50px;
+         }
+
+         .services-heading {
+             text-align: left;
+             margin-bottom: 30px;
+         }
+
+         .services-content {
+             display: flex;
+             flex-direction: column;
+             gap: 25px;
+         }
+
+
+         /* Horizontal scrolling tabs */
+
+         .service-tabs {
+             width: calc(100vw - 40px);
+             margin-left: 0;
+             flex-direction: row;
+             gap: 8px;
+             overflow-x: auto;
+             overflow-y: hidden;
+             padding-bottom: 8px;
+             scrollbar-width: none;
+         }
+
+         .service-tabs::-webkit-scrollbar {
+             display: none;
+         }
+
+         .service-tab {
+             width: auto;
+             min-width: max-content;
+             min-height: auto;
+             padding: 7px 24px;
+             border: 1px solid #d8d0ca;
+             border-radius: 30px;
+             font-size: 13px;
+             white-space: nowrap;
+         }
+
+         .service-tab+.service-tab {
+             margin-top: 0;
+         }
+
+         .service-tab::before {
+             display: none;
+         }
+
+         .service-tab span {
+             padding: 0;
+         }
+
+         .service-tab.active {
+             background: #111;
+             color: #fff;
+             border-color: #111;
+         }
+
+         .service-tab.active span {
+             transform: none;
+         }
+
+
+         /* Slider */
+
+         .services-slider {
+             height: 390px;
+             border-radius: 7px;
+         }
+
+         .service-slide {
+             height: 390px;
+             border-radius: 15px;
+         }
+
+         .service-tab.active span {
+             font-size: 15px;
+         }
+
+         .service-tab span {
+             font-size: 15px;
+         }
+     }
+
+
+     @media (max-width: 400px) {
+
+         .creative-services {
+             padding-left: 15px;
+             padding-right: 15px;
+         }
+
+         .service-tabs {
+             width: calc(100vw - 30px);
+         }
+
+         .services-slider,
+         .service-slide {
+             height: 330px;
+         }
+
+     }

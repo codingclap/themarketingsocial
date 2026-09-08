@@ -1,90 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creative Design & Branding Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#7a2436;
+    --ink:#141312;
+    --muted:#a89a8d;
+    --teal:#1a8f8a;
+    --ease:cubic-bezier(.22,.9,.28,1);
+  }
+
+  *{ box-sizing:border-box; }
+
+  html,body{
+    margin:0;
+    background:#ffffff;
+    font-family:'Inter',sans-serif;
+  }
+
+  .wrap{
+    max-width:900px;
+    margin:0 auto;
+    padding:56px 24px 70px;
+  }
+
+  .heading{
+    position:relative;
+    margin-bottom:44px;
+  }
+
+  .heading .line1{
+    display:inline-block;
+    font-family:'Playfair Display',serif;
+    font-style:italic;
+    font-weight:600;
+    font-size:clamp(24px, 4vw, 34px);
+    color:var(--maroon);
+    text-decoration:underline;
+    text-decoration-color:rgba(122,36,54,.45);
+    text-underline-offset:8px;
+  }
+
+  .badge{
+    position:absolute;
+    top:-6px;
+    right:0;
+    width:34px;
+    height:34px;
+    border-radius:50% 50% 50% 4px;
+    background:var(--teal);
+    color:#fff;
+    font-weight:700;
+    font-size:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 4px 10px rgba(0,0,0,.15);
+  }
+
+  .heading .line2{
+    display:block;
+    margin-top:6px;
+    font-weight:700;
+    font-size:clamp(17px, 2.6vw, 22px);
+    letter-spacing:.4px;
+    color:var(--ink);
+    text-decoration:underline;
+    text-decoration-color:rgba(20,19,18,.2);
+    text-underline-offset:6px;
+  }
+
+  .content{
+    display:flex;
+    gap:44px;
+    align-items:flex-start;
+  }
+
+  .tabs{
+    list-style:none;
+    margin:0;
+    padding:0;
+    flex:0 0 230px;
+  }
+
+  .tabs li{
+    padding:9px 0 9px 18px;
+    margin-bottom:4px;
+    border-left:3px solid transparent;
+    font-size:14px;
+    letter-spacing:.3px;
+    color:var(--muted);
+    cursor:pointer;
+    transition:color .3s ease, border-color .3s ease, font-weight .1s;
+    -webkit-tap-highlight-color:transparent;
+  }
+
+  .tabs li.active{
+    color:var(--ink);
+    font-weight:700;
+    border-left-color:var(--ink);
+    text-transform:uppercase;
+    font-size:16px;
+  }
+
+  .tabs li:not(.active){
+    text-transform:uppercase;
+  }
+
+  .tabs li:not(.active):hover{
+    color:#7d7268;
+  }
+
+  .display{
+    flex:1;
+    width:100%;
+    position:relative;
+    aspect-ratio:1 / 1;
+    max-width:380px;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:0 16px 34px rgba(0,0,0,.18);
+    background:#e5e0da;
+  }
+
+  .display .img{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    transition:transform .55s var(--ease);
+    will-change:transform;
+  }
+
+  @media (max-width:680px){
+    .content{
+      flex-direction:column;
+    }
+    .tabs{
+      flex:none;
+      width:100%;
+      display:flex;
+      flex-wrap:wrap;
+      gap:2px 18px;
+    }
+    .tabs li{
+      padding:6px 0 6px 14px;
+    }
+    .display{
+      max-width:100%;
+    }
+  }
+</style>
 </head>
-
 <body>
-     <style>
-          .slides {
-               position: relative;
-          }
 
-          .slide {
-               height: 70vh;
-               background: lightgray;
-               margin-bottom: 10px;
-          }
+  <div class="wrap">
 
-          #changingHeading {
-               position: fixed;
-               left: 24px;
-               bottom: 32px;
-               font-size: 24px;
-               background: white;
-               padding: 10px;
-               z-index: 999;
-          }
-     </style>
+    <div class="heading">
+      <span class="line1">Creative Design &amp; Branding Services</span>
+      <div class="badge">T</div>
+      <span class="line2">THAT STRENGTHENS YOUR MARKETING</span>
+    </div>
 
+    <div class="content">
+      <ul class="tabs" id="tabs">
+        <li class="active" data-img="assets/images/test-7.png">Logo Design</li>
+        <li data-img="assets/images/test-7.png">Branding</li>
+        <li data-img="assets/images/test-7.png">PPT Design</li>
+        <li data-img="assets/images/test-7.png">Brochure Design</li>
+        <li data-img="assets/images/test-7.png">UI/UX Design</li>
+        <li data-img="assets/images/test-7.png">Web Design</li>
+        <li data-img="assets/images/test-7.png">Social Media Marketing</li>
+        <li data-img="assets/images/test-7.png">Media Production</li>
+      </ul>
 
+      <div class="display" id="display">
+        <div class="img" id="displayImg" style="background-image:url('assets/images/test-7.png'); transform:translateY(0);"></div>
+      </div>
+    </div>
 
+  </div>
 
+  <script>
+    var tabs = document.querySelectorAll('#tabs li');
+    var display = document.getElementById('display');
+    var currentImg = document.getElementById('displayImg');
+    var currentIndex = 0;
+    var animating = false;
+    var imageCache = {};
 
+    function preload(src, cb){
+      if (imageCache[src]) { cb(); return; }
+      var loader = new Image();
+      loader.onload = function(){ imageCache[src] = true; cb(); };
+      loader.onerror = function(){ imageCache[src] = true; cb(); }; // don't block forever on a failed load
+      loader.src = src;
+    }
 
-     <section class="slides">
-          <h1 id="changingHeading">INTRODUCTION</h1>
+    tabs.forEach(function(tab, i){
+      tab.addEventListener('click', function(){
+        if (tab.classList.contains('active') || animating) return;
+        animating = true;
 
-          <div class="slide" data-title="INTRODUCTION"></div>
-          <div class="slide" data-title="INTRODUCTION"></div>
-          <div class="slide" data-title="Slide One"></div>
-          <div class="slide" data-title="Slide Two"></div>
-     </section>
+        var newSrc = tab.getAttribute('data-img');
 
+        // wait for the image bytes to actually be ready before we touch the DOM/animation,
+        // so the old image stays fully visible until the new one can paint immediately
+        preload(newSrc, function(){
+          tabs.forEach(function(t){ t.classList.remove('active'); });
+          tab.classList.add('active');
 
+          // slide bottom-to-top when moving down the list, top-to-bottom when moving up
+          var direction = i > currentIndex ? 1 : -1;
+          currentIndex = i;
 
+          var incoming = document.createElement('div');
+          incoming.className = 'img';
+          incoming.style.backgroundImage = "url('" + newSrc + "')";
+          incoming.style.transform = 'translateY(' + (direction * 100) + '%)';
+          incoming.style.transition = 'none';
+          display.appendChild(incoming);
 
+          // force layout so the starting position is applied before animating
+          incoming.offsetWidth;
 
-
-
-
-
-
-     <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
-     <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
-
-     <script>
-          gsap.registerPlugin(ScrollTrigger);
-
-          // Grab all slides
-          const slides = document.querySelectorAll(".slide");
-          const heading = document.getElementById("changingHeading");
-
-          slides.forEach((slide, i) => {
-               if (i === 0) return; // Skip the first slide
-               const title = slide.dataset.title;
-
-               ScrollTrigger.create({
-                    trigger: slide,
-                    start: "top 95%",
-                    end: "bottom 80%",
-                    onEnter: () => {
-                         console.log('Entered slide:', i, title); 
-                         heading.textContent = title
-                    },
-                    onEnterBack: () => {
-                         console.log('Back to slide:', i, title);
-                         heading.textContent = title;
-                    }, 
-                    // optional: pin heading if needed
-                    // markers: true, // debug
-               });
+          requestAnimationFrame(function(){
+            incoming.style.transition = '';
+            incoming.style.transform = 'translateY(0)';
+            currentImg.style.transform = 'translateY(' + (-direction * 100) + '%)';
           });
-     </script>
+
+          var oldImg = currentImg;
+          currentImg = incoming;
+
+          setTimeout(function(){
+            if (oldImg.parentNode) oldImg.parentNode.removeChild(oldImg);
+            animating = false;
+          }, 600);
+        });
+      });
+    });
+
+    // warm the cache for all tab images up front so the very first click is instant too
+    tabs.forEach(function(tab){ preload(tab.getAttribute('data-img'), function(){}); });
+  </script>
 
 </body>
-
 </html>
