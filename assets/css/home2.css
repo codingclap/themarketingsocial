@@ -1441,7 +1441,14 @@
  }
 
  #case-studies .case-studies-heading {
-     font-size: clamp(1.6rem, 3vw, 2.4rem);
+     font-size: clamp(1.9rem, 4vw, 2.9rem);
+     line-height: 120%;
+     font-weight: 500;
+ }
+
+#case-studies .case-studies-heading .accent {
+     font-size: clamp(2.3rem, 5vw, 3.6rem);
+     font-weight: 400;
  }
 
  #case-studies .case-studies-stage {
@@ -1541,7 +1548,7 @@
  }
 
  #case-studies .case-card-logo {
-    padding: 10px 20px 10px 20px;
+     padding: 10px 20px 10px 20px;
      max-width: 100%;
      max-height: 130px;
      object-fit: contain;
@@ -1632,9 +1639,11 @@
          max-height: 40px;
          padding: 0px 10px;
      }
-     #case-studies .case-card-text{
-        padding: 0px 10px 0px 10px
+
+     #case-studies .case-card-text {
+         padding: 0px 10px 0px 10px
      }
+
      .case-studies-section {
          padding: 90px 3px 90px;
      }
