@@ -17,7 +17,7 @@
 
  .what-we-do .what-we-do-title {
      font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 120%;
+     line-height: 120%;
      font-weight: 500;
  }
 
@@ -218,7 +218,7 @@
 
  .why-business-choose .why-business-title {
      font-size: clamp(2rem, 4vw, 3rem);
-    line-height: 120%;
+     line-height: 120%;
      font-weight: 500;
  }
 
@@ -556,7 +556,7 @@
 
  .services-heading {
      font-size: clamp(1.9rem, 4vw, 2.9rem);
-    line-height: 120%;
+     line-height: 120%;
      font-weight: 500;
  }
 
@@ -760,109 +760,943 @@
          font-size: clamp(1.83rem, 4vw, 3rem);
      }
 
-         .creative-services {
-             padding: 35px 20px 50px;
-         }
+     .creative-services {
+         padding: 35px 20px 50px;
+     }
 
-         .services-heading {
-             text-align: left;
-             margin-bottom: 30px;
-         }
+     .services-heading {
+         text-align: left;
+         margin-bottom: 30px;
+     }
 
-         .services-content {
-             display: flex;
-             flex-direction: column;
-             gap: 25px;
-         }
-
-
-         /* Horizontal scrolling tabs */
-
-         .service-tabs {
-             width: calc(100vw - 40px);
-             margin-left: 0;
-             flex-direction: row;
-             gap: 8px;
-             overflow-x: auto;
-             overflow-y: hidden;
-             padding-bottom: 8px;
-             scrollbar-width: none;
-         }
-
-         .service-tabs::-webkit-scrollbar {
-             display: none;
-         }
-
-         .service-tab {
-             width: auto;
-             min-width: max-content;
-             min-height: auto;
-             padding: 7px 24px;
-             border: 1px solid #d8d0ca;
-             border-radius: 30px;
-             font-size: 13px;
-             white-space: nowrap;
-         }
-
-         .service-tab+.service-tab {
-             margin-top: 0;
-         }
-
-         .service-tab::before {
-             display: none;
-         }
-
-         .service-tab span {
-             padding: 0;
-         }
-
-         .service-tab.active {
-             background: #111;
-             color: #fff;
-             border-color: #111;
-         }
-
-         .service-tab.active span {
-             transform: none;
-         }
-
-
-         /* Slider */
-
-         .services-slider {
-             height: 390px;
-             border-radius: 7px;
-         }
-
-         .service-slide {
-             height: 390px;
-             border-radius: 15px;
-         }
-
-         .service-tab.active span {
-             font-size: 15px;
-         }
-
-         .service-tab span {
-             font-size: 15px;
-         }
+     .services-content {
+         display: flex;
+         flex-direction: column;
+         gap: 25px;
      }
 
 
-     @media (max-width: 400px) {
+     /* Horizontal scrolling tabs */
 
-         .creative-services {
-             padding-left: 15px;
-             padding-right: 15px;
-         }
-
-         .service-tabs {
-             width: calc(100vw - 30px);
-         }
-
-         .services-slider,
-         .service-slide {
-             height: 330px;
-         }
-
+     .service-tabs {
+         width: calc(100vw - 40px);
+         margin-left: 0;
+         flex-direction: row;
+         gap: 8px;
+         overflow-x: auto;
+         overflow-y: hidden;
+         padding-bottom: 8px;
+         scrollbar-width: none;
      }
+
+     .service-tabs::-webkit-scrollbar {
+         display: none;
+     }
+
+     .service-tab {
+         width: auto;
+         min-width: max-content;
+         min-height: auto;
+         padding: 7px 24px;
+         border: 1px solid #d8d0ca;
+         border-radius: 30px;
+         font-size: 13px;
+         white-space: nowrap;
+     }
+
+     .service-tab+.service-tab {
+         margin-top: 0;
+     }
+
+     .service-tab::before {
+         display: none;
+     }
+
+     .service-tab span {
+         padding: 0;
+     }
+
+     .service-tab.active {
+         background: #111;
+         color: #fff;
+         border-color: #111;
+     }
+
+     .service-tab.active span {
+         transform: none;
+     }
+
+
+     /* Slider */
+
+     .services-slider {
+         height: 390px;
+         border-radius: 7px;
+     }
+
+     .service-slide {
+         height: 390px;
+         border-radius: 15px;
+     }
+
+     .service-tab.active span {
+         font-size: 15px;
+     }
+
+     .service-tab span {
+         font-size: 15px;
+     }
+ }
+
+
+ @media (max-width: 400px) {
+
+     .creative-services {
+         padding-left: 15px;
+         padding-right: 15px;
+     }
+
+     .service-tabs {
+         width: calc(100vw - 30px);
+     }
+
+     .services-slider,
+     .service-slide {
+         height: 330px;
+     }
+
+ }
+
+ /* ==========================================================
+                "Creative Services" section
+ ========================================================== */
+
+
+
+ /* =========================================
+          INDUSTRIES SECTION
+=========================================== */
+
+ .industries-section {
+     width: 100%;
+     padding: 70px 0 80px;
+     background: #F1E8E0;
+     overflow: hidden;
+ }
+
+ .industries-container {
+     width: 100%;
+     max-width: 1400px;
+     margin: 0 auto;
+     padding: 0 32px;
+ }
+
+
+ /* =========================================
+   HEADING
+========================================= */
+
+ .industries-heading {
+     text-align: center;
+     margin: 0 0 8px;
+     font-size: clamp(1.9rem, 4vw, 2.9rem);
+     line-height: 120%;
+     font-weight: 500;
+     color: #000;
+ }
+
+ .industries-heading .accent {
+     font-size: clamp(2.3rem, 5vw, 3.6rem);
+     font-weight: 500;
+ }
+
+ .industries-slider-wrapper {
+     position: relative;
+     width: 100%;
+ }
+
+ .industriesSwiper {
+     width: 100%;
+     overflow: hidden;
+ }
+
+ .industriesSwiper .swiper-slide {
+     height: auto;
+ }
+
+ .industry-card {
+     position: relative;
+     width: 100%;
+     height: 450px;
+     overflow: hidden;
+     border-radius: 15px;
+     background: #fff;
+     cursor: pointer;
+ }
+
+ .industry-card img {
+     display: block;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.6s ease;
+ }
+
+ /* Image zoom on hover */
+
+ .industry-card:hover img {
+     transform: scale(1.06);
+ }
+
+ .industry-card:hover .industry-overlay {
+     background: linear-gradient(180deg, rgba(50, 45, 42, 0) 0%, #322D2A 100%);
+     transition: background 0.5s ease;
+ }
+
+ .industry-overlay {
+     position: absolute;
+     inset: 0;
+     display: flex;
+     align-items: flex-end;
+     padding: 25px;
+     transition: background 0.5s ease;
+ }
+
+
+ .industry-content {
+     width: 100%;
+     transform: translateY(52px);
+     transition:
+         transform 0.5s cubic-bezier(.25, .8, .25, 1);
+ }
+
+ .industry-content .industry-card-heading {
+     margin: 0 0 8px;
+     color: #fff;
+     text-align: center;
+     display: block;
+     font-size: clamp(19px, 4vw, 23px);
+     font-weight: 700;
+     line-height: 1.2;
+     opacity: 0;
+     transform: translateY(15px);
+     transition:
+         opacity 0.4s ease 0.08s,
+         transform 0.4s ease 0.08s;
+ }
+
+
+ /* Description */
+
+ .industry-content p {
+     max-width: 270px;
+     margin: 0 0 15px;
+     color: rgba(255, 255, 255, 0.95);
+     font-size: 15px;
+     font-weight: 400;
+     line-height: 1.45;
+     opacity: 0;
+     transform: translateY(15px);
+     transition:
+         opacity 0.4s ease 0.08s,
+         transform 0.4s ease 0.08s;
+ }
+
+
+ /* Arrow */
+
+ .industry-arrow {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 43px;
+     height: 43px;
+     border: 1px solid #fff;
+     border-radius: 50%;
+     color: #fff;
+     font-size: 23px;
+     line-height: 1;
+     opacity: 0;
+     transform: translateY(15px);
+     transition:
+         opacity 0.4s ease 0.12s,
+         transform 0.4s ease 0.12s,
+         background 0.3s ease;
+ }
+
+
+ /* =========================================
+   HOVER REVEAL
+========================================= */
+
+ .industry-card:hover .industry-content {
+     transform: translateY(0);
+ }
+
+ .industry-card:hover .industry-content p,
+ .industry-card:hover .industry-arrow,
+ .industry-card:hover .industry-card-heading {
+     opacity: 1;
+     transform: translateY(0);
+ }
+
+ .industry-card:hover .industry-arrow:hover {
+     background: #fff;
+     color: #000;
+ }
+
+ .industry-prev,
+ .industry-next {
+     position: absolute;
+     top: 50%;
+     z-index: 20;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 46px;
+     height: 46px;
+     padding: 0;
+     border: 0;
+     border-radius: 50%;
+     background: #fff;
+     color: #000;
+     font-size: 22px;
+     cursor: pointer;
+     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+     transition:
+         background 0.3s ease,
+         transform 0.3s ease;
+ }
+
+ .industry-prev:hover,
+ .industry-next:hover {
+     background: #6D2732;
+     color: #fff;
+ }
+
+ .industry-prev {
+     left: -23px;
+ }
+
+ .industry-next {
+     right: -23px;
+ }
+
+
+ /* =========================================
+   PAGINATION
+========================================= */
+
+ .industry-pagination {
+     position: relative !important;
+     margin-top: 25px;
+     bottom: auto !important;
+ }
+
+ .industry-pagination .swiper-pagination-bullet {
+     width: 10px;
+     height: 10px;
+     margin: 0 5px !important;
+     opacity: 1;
+     background: #AA9D8E;
+ }
+
+ .industry-pagination .swiper-pagination-bullet-active {
+     background: #6D2732;
+ }
+
+
+ /* =========================================
+   TABLET
+========================================= */
+
+ @media (max-width: 991px) {
+
+     .industries-section {
+         padding: 60px 0;
+     }
+
+     .industries-container {
+         padding: 0 45px;
+     }
+
+     .industry-card {
+         height: 420px;
+     }
+
+     .industry-prev {
+         left: -20px;
+     }
+
+     .industry-next {
+         right: -20px;
+     }
+ }
+
+
+ /* =========================================
+   MOBILE
+========================================= */
+
+ @media (max-width: 767px) {
+
+     .industries-section {
+         padding: 50px 0 50px;
+     }
+
+     .industries-container {
+         padding: 0 20px;
+     }
+
+     .industries-heading {
+         margin-bottom: 28px;
+     }
+
+     /* 
+     .industries-heading h2 {
+         font-size: 30px;
+     }
+
+     .industries-heading h3 {
+         font-size: 19px;
+     } */
+
+
+     /* One card on mobile */
+
+     .industry-card {
+         height: 390px;
+         border-radius: 15px;
+     }
+
+     .industry-overlay {
+         padding: 22px;
+     }
+
+     .industry-content .industry-card-heading {
+         opacity: 1;
+         transform: translateY(0px);
+     }
+
+     .industry-overlay {
+         background: linear-gradient(180deg, rgba(50, 45, 42, 0) 0%, #322D2A 100%);
+     }
+
+     .industry-content {
+         transform: translateY(0);
+     }
+
+     /* .industry-content h3 {
+         font-size: 22px;
+     } */
+     .industry-content p {
+         font-size: 14px;
+         opacity: 1;
+         transform: translateY(0);
+     }
+
+     .industry-arrow {
+         opacity: 1;
+         transform: translateY(0);
+     }
+
+     .industry-prev,
+     .industry-next {
+         display: none;
+     }
+
+     .industry-pagination {
+         margin-top: 20px;
+     }
+ }
+
+
+ /* =========================================
+   SMALL MOBILE
+========================================= */
+
+ @media (max-width: 480px) {
+
+     .industries-container {
+         padding: 0 15px;
+     }
+
+     .industry-card {
+         height: 350px;
+     }
+
+     .industries-heading h2 {
+         font-size: 27px;
+     }
+
+     .industries-heading h3 {
+         font-size: 17px;
+     }
+ }
+
+ /* ==================================================
+               INDUSTRIES SECTION
+=================================================== */
+
+
+ /* ==========================================================
+                "Serving Businesses" section
+    ========================================================== */
+ .serving-section {
+     width: 100%;
+     padding: 110px 0 110px;
+     overflow: hidden;
+     background-color: #fff;
+ }
+
+ .serving-heading {
+     color: #000;
+     padding: 0 15px;
+     font-size: clamp(1.9rem, 4vw, 2.9rem);
+     line-height: 120%;
+     font-weight: 500;
+
+ }
+
+ .serving-heading .accent {
+     font-size: clamp(2.3rem, 5vw, 3.6rem);
+     font-weight: 400;
+ }
+
+ .serving-swiper {
+     width: 100%;
+     position: relative;
+ }
+
+ .serving-slide-img {
+     width: 100%;
+     height: clamp(350px, 55vw, 720px);
+     object-fit: cover;
+     display: block;
+ }
+
+ /* Progress bar pagination — sits at the bottom edge of the image */
+ .serving-progress.swiper-pagination-progressbar {
+     top: auto;
+     bottom: 0;
+     height: 4px;
+     background: rgba(255, 255, 255, 0.25);
+     z-index: 5;
+ }
+
+ .serving-progress.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+     background: #fff;
+ }
+
+ .serving-tabs {
+     gap: clamp(2rem, 6vw, 5rem);
+ }
+
+ .serving-tab {
+     font-size: clamp(1.3rem, 2vw, 2.1rem);
+     line-height: 120%;
+     width: 50%;
+     text-align: center;
+     font-weight: 600;
+     color: #000;
+     padding: 0.25rem 0;
+     transition: color 0.25s ease;
+     cursor: default;
+     user-select: none;
+ }
+
+ .serving-tab.active {
+     color: #000;
+     width: 50%;
+     text-align: center;
+ }
+
+ /* Tablet */
+ @media (max-width: 991px) {
+     .serving-section {
+         padding: 90px 0 90px;
+     }
+
+     .serving-slide-img {
+         height: clamp(290px, 60vw, 480px);
+     }
+ }
+
+ /* Mobile */
+ @media (max-width: 575px) {
+     .serving-section {
+         padding: 50px 0 50px;
+     }
+
+     .serving-slide-img {
+         height: clamp(250px, 65vw, 360px);
+     }
+
+     .serving-tabs {
+         gap: 2.5rem;
+     }
+ }
+
+
+ /* ==========================================================
+                "Serving Businesses" section
+    ========================================================== */
+
+
+
+
+ /* ==========================================================
+                "Why Choose Us" section
+    ========================================================== */
+ .why-choose-section {
+     background: #D9D9D9;
+     width: 100%;
+     padding: 110px 0px 110px;
+ }
+
+ .why-choose-heading {
+     font-size: clamp(1.9rem, 4vw, 2.9rem);
+     line-height: 120%;
+     font-weight: 500;
+ }
+
+ .why-choose-heading .accent {
+     font-size: clamp(2.3rem, 5vw, 3.6rem);
+     font-weight: 400;
+ }
+
+ .why-choose-text {
+     font-size: clamp(0.95rem, 2vw, 1.2rem);
+     line-height: 1.7;
+     max-width: 480px;
+ }
+
+ .why-choose-container {
+     gap: 10rem;
+ }
+
+ /* Framed image treatment — rounded corners + soft border like a photo card */
+ .why-choose-imgWrap {
+     overflow: hidden;
+     aspect-ratio: 4 / 4;
+ }
+
+ .why-choose-imgWrap img {
+     object-fit: cover;
+ }
+
+ @media (max-width: 1199px) {
+     .why-choose-container {
+         gap: 5rem;
+     }
+ }
+
+ /* Tablet */
+ @media (max-width: 991px) {
+     .why-choose-container {
+         gap: 0rem;
+     }
+
+     .why-choose-section {
+         padding: 90px 3px 90px;
+     }
+
+     .why-choose-text {
+         max-width: 100%;
+     }
+
+     .why-choose-imgWrap {
+         aspect-ratio: 16 / 10;
+     }
+ }
+
+ /* Mobile */
+ @media (max-width: 575px) {
+     .why-choose-section {
+         padding: 50px 3px 50px;
+     }
+
+     .why-choose-heading {
+         text-align: center;
+     }
+
+     .why-choose-imgWrap {
+         aspect-ratio: 4 / 5;
+     }
+ }
+
+
+ /* ==========================================================
+                "Why Choose Us" section
+    ========================================================== */
+
+
+ /* ==========================================================
+                "Case Studies" section
+    ========================================================== */
+ .case-studies-section {
+     background: #fff;
+     width: 100%;
+     padding: 110px 0px 110px;
+ }
+
+ #case-studies .case-studies-heading {
+     font-size: clamp(1.6rem, 3vw, 2.4rem);
+ }
+
+ #case-studies .case-studies-stage {
+     position: relative;
+     width: 100%;
+     border-radius: 20px;
+     overflow: hidden;
+     height: clamp(360px, 55vw, 750px);
+ }
+
+ #case-studies .case-bg-stack {
+     position: absolute;
+     inset: 0;
+     height: 100%;
+     width: 100%;
+     overflow: hidden;
+ }
+
+ #case-studies .case-bg-track {
+     display: flex;
+     height: 100%;
+     width: 100%;
+     transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+     will-change: transform;
+ }
+
+ #case-studies .case-bg-slide {
+     position: relative;
+     flex: 0 0 100%;
+     width: 100%;
+     height: 100%;
+ }
+
+ #case-studies .case-bg-slide img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+ }
+
+ #case-studies .case-bg-slide.is-active {
+     opacity: 1 !important;
+     z-index: 1;
+ }
+
+
+
+ #case-studies .case-cards-wrap {
+     position: absolute;
+     left: 0;
+     right: 0;
+     bottom: clamp(75px, 10vw, 90px);
+     padding: 0 clamp(16px, 3vw, 32px);
+     z-index: 5;
+ }
+
+ #case-studies .case-cards-swiper {
+     overflow: visible;
+ }
+
+ #case-studies .case-cards-swiper .swiper-wrapper {
+     padding-bottom: 10px;
+     align-items: flex-end;
+ }
+
+
+
+ #case-studies .case-card {
+     padding: 20px;
+     position: relative;
+     height: clamp(44px, 15vw, 200px);
+     width: clamp(140px, 15vw, 200px);
+     background: rgba(217, 217, 217, 0.45);
+     border: 0.801251px solid #FFFFFF;
+     backdrop-filter: blur(18.0281px);
+     border-radius: 12.0188px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     overflow: hidden;
+     cursor: pointer;
+     transition: height 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+         background 0.4s ease,
+         border-color 0.4s ease,
+         box-shadow 0.4s ease;
+ }
+
+ #case-studies .case-card.is-active {
+     width: clamp(220px, 26vw, 380px);
+     height: clamp(170px, 25vw, 260px);
+     background: #fff;
+     border-color: #fff;
+     justify-content: start;
+     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+     align-items: flex-start;
+     padding: 20px 10px;
+ }
+
+ #case-studies .case-card-logo {
+    padding: 10px 20px 10px 20px;
+     max-width: 100%;
+     max-height: 130px;
+     object-fit: contain;
+     position: absolute;
+     transition: opacity 0.3s ease, max-height 0.4s ease;
+ }
+
+ #case-studies .logo-black {
+     opacity: 0;
+ }
+
+ #case-studies .logo-white {
+     opacity: 1;
+ }
+
+ #case-studies .case-card.is-active .logo-white {
+     opacity: 0;
+ }
+
+ #case-studies .case-card.is-active .logo-black {
+     opacity: 1;
+ }
+
+ #case-studies .case-card.is-active .case-card-logo {
+     max-height: 120px;
+ }
+
+ #case-studies .case-card-body {
+     position: absolute;
+     left: 14px;
+     right: 14px;
+     bottom: 16px;
+     opacity: 0;
+     transform: translateY(8px);
+     transition: opacity 0.35s ease 0.15s, transform 0.35s ease 0.15s;
+ }
+
+ #case-studies .case-card-text {
+     font-size: clamp(0.8rem, 1.1vw, 1.5rem);
+     line-height: 130%;
+     color: #000;
+     margin: 0;
+     font-weight: 500;
+     padding: 0px 10px 20px 10px;
+ }
+
+
+ #case-studies .case-card.is-active .case-card-body {
+     opacity: 1;
+     transform: translateY(0);
+ }
+
+ #case-studies .case-card.is-active::after {
+     content: '';
+     position: absolute;
+     inset: 0;
+     border-radius: 12px;
+     border: 1.5px solid rgba(255, 255, 255, 0.9);
+     pointer-events: none;
+ }
+
+ #case-studies .case-nav {
+     position: absolute;
+     bottom: clamp(-52px, -6vw, -44px);
+     width: 38px;
+     height: 38px;
+     border-radius: 50%;
+     background: rgba(109, 39, 50, 0.82);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+     cursor: pointer;
+     z-index: 6;
+     color: #333;
+ }
+
+ #case-studies .case-nav-prev {
+     right: 60px;
+ }
+
+ #case-studies .case-nav-next {
+     right: 14px;
+ }
+
+ @media (max-width: 991px) {
+     #case-studies .case-card.is-active .case-card-logo {
+         max-height: 40px;
+         padding: 0px 10px;
+     }
+     #case-studies .case-card-text{
+        padding: 0px 10px 0px 10px
+     }
+     .case-studies-section {
+         padding: 90px 3px 90px;
+     }
+
+     #case-studies .case-studies-stage {
+         height: clamp(420px, 70vw, 560px);
+     }
+
+
+     #case-studies .case-card {
+         height: clamp(80px, 15vw, 200px);
+         width: clamp(140px, 15vw, 200px);
+     }
+
+     #case-studies .case-card.is-active {
+         height: clamp(150px, 24vw, 190px);
+     }
+ }
+
+ @media (max-width: 575px) {
+     #case-studies .case-card.is-active .case-card-logo {
+         max-height: 25px;
+     }
+
+     .case-studies-section {
+         padding: 50px 3px 50px;
+     }
+
+     #case-studies .case-studies-stage {
+         height: clamp(460px, 100vw, 560px);
+         border-radius: 14px;
+     }
+
+     #case-studies .case-cards-wrap {
+         /* bottom: 12px; */
+         padding: 0 12px;
+     }
+
+     #case-studies .case-card {
+         height: clamp(90px, 15vw, 200px);
+         width: clamp(140px, 15vw, 200px);
+     }
+
+     #case-studies .case-card.is-active {
+         height: 150px;
+     }
+
+     #case-studies .case-nav {
+         width: 32px;
+         height: 32px;
+         bottom: -44px;
+     }
+
+     #case-studies .case-nav-prev {
+         right: 48px;
+     }
+
+     #case-studies .case-nav-next {
+         right: 10px;
+     }
+ }
+
+ /* ==========================================================
+                "Case Studies" section
+    ========================================================== */
