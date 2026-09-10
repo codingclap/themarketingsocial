@@ -1550,7 +1550,7 @@
  #case-studies .case-card-logo {
      padding: 10px 20px 10px 20px;
      max-width: 100%;
-     max-height: 130px;
+     max-height: 110px;
      object-fit: contain;
      position: absolute;
      transition: opacity 0.3s ease, max-height 0.4s ease;
@@ -1572,10 +1572,13 @@
      opacity: 1;
  }
 
- #case-studies .case-card.is-active .case-card-logo {
-     max-height: 120px;
- }
-
+ #case-studies .case-card:nth-child(1).is-active .case-card-logo { max-height: 55px; }
+#case-studies .case-card:nth-child(2).is-active .case-card-logo { max-height: 120px; }
+#case-studies .case-card:nth-child(3).is-active .case-card-logo { max-height: 110px; }
+#case-studies .case-card:nth-child(4).is-active .case-card-logo { max-height: 90px; }
+#case-studies .case-card:nth-child(5).is-active .case-card-logo { max-height: 90px; } 
+#case-studies .case-card:nth-child(6).is-active .case-card-logo { max-height: 100px; } 
+#case-studies .case-card:nth-child(7).is-active .case-card-logo { max-height: 100px; } 
  #case-studies .case-card-body {
      position: absolute;
      left: 14px;
@@ -1634,7 +1637,14 @@
      right: 14px;
  }
 
- @media (max-width: 991px) {
+ @media (max-width: 991px) { 
+    #case-studies .case-card:nth-child(2).is-active .case-card-logo { max-height: 100px; }
+    #case-studies .case-card:nth-child(3).is-active .case-card-logo { max-height: 90px; }
+    #case-studies .case-card:nth-child(4).is-active .case-card-logo { max-height: 70px; }
+    #case-studies .case-card:nth-child(5).is-active .case-card-logo { max-height: 60px; } 
+    #case-studies .case-card:nth-child(6).is-active .case-card-logo { max-height: 80px; } 
+    #case-studies .case-card:nth-child(7).is-active .case-card-logo { max-height: 80px; } 
+
      #case-studies .case-card.is-active .case-card-logo {
          max-height: 40px;
          padding: 0px 10px;
@@ -1654,16 +1664,38 @@
 
 
      #case-studies .case-card {
-         height: clamp(80px, 15vw, 200px);
+         height: clamp(90px, 15vw, 200px);
          width: clamp(140px, 15vw, 200px);
      }
-
+     #case-studies .case-card:nth-child(2) .case-card-logo { max-height: 90px; }
      #case-studies .case-card.is-active {
-         height: clamp(150px, 24vw, 190px);
+         height: clamp(150px, 45vw, 240px);
      }
  }
+@media (max-width:768px){
+    #case-studies .case-card:nth-child(1).is-active .case-card-logo { max-height: 35px; }
+    #case-studies .case-card:nth-child(2).is-active .case-card-logo { max-height: 85px; }
+    #case-studies .case-card:nth-child(3).is-active .case-card-logo { max-height: 70px; }
+    #case-studies .case-card:nth-child(4).is-active .case-card-logo { max-height: 60px; }
+    #case-studies .case-card:nth-child(5).is-active .case-card-logo { max-height: 35px; } 
+    #case-studies .case-card:nth-child(6).is-active .case-card-logo { max-height: 80px; } 
+    #case-studies .case-card:nth-child(7).is-active .case-card-logo { max-height: 80px; } 
 
+}
  @media (max-width: 575px) {
+    #case-studies .case-card:nth-child(1).is-active .case-card-logo { max-height: 25px; }
+    #case-studies .case-card:nth-child(2).is-active .case-card-logo { max-height: 80px; }
+    #case-studies .case-card:nth-child(3).is-active .case-card-logo { max-height: 60px; }
+    #case-studies .case-card:nth-child(4).is-active .case-card-logo { max-height: 50px; }
+    #case-studies .case-card:nth-child(5).is-active .case-card-logo { max-height: 30px; } 
+    #case-studies .case-card:nth-child(6).is-active .case-card-logo { max-height: 70px; } 
+    #case-studies .case-card:nth-child(7).is-active .case-card-logo { max-height: 70px; } 
+    #case-studies .case-card-logo { 
+       max-height: 70px;
+    }
+    #case-studies .case-card:nth-child(4) .case-card-logo { max-height: 58px; }
+    #case-studies .case-card:nth-child(6) .case-card-logo { max-height: 80px; }
+    #case-studies .case-card:nth-child(7) .case-card-logo { max-height: 80px; }
      #case-studies .case-card.is-active .case-card-logo {
          max-height: 25px;
      }
@@ -1688,7 +1720,7 @@
      }
 
      #case-studies .case-card.is-active {
-         height: 150px;
+          height: clamp(200px, 45vw, 240px);
      }
 
      #case-studies .case-nav {
