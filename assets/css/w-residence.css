@@ -275,6 +275,14 @@
     overflow: hidden;
     padding-top: clamp(2rem, 15vh, 15rem);
     padding-bottom: clamp(2rem, 15vh, 15rem);
+    background-image: url('../images/w-residence/meet-the-brand-bg.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .meet-brand-section .brand-heading {
@@ -306,12 +314,12 @@
 }
 
 .meet-brand-section .brand-text {
-    font-size: clamp(14px, 1.4vw, 16px);
-    line-height: 1.7;
-    color: #322D2A;
+    font-size: clamp(14px, 1.8vw, 22px);
+    line-height: 133%;
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
-/* Offset the right-side image slightly lower/right to match the layered look */
 @media (min-width: 992px) {
     .meet-brand-section .brand-img-right {
         margin-top: 1rem;
@@ -339,6 +347,10 @@
 }
 
 @media (max-width: 1300px) {
+    .meet-brand-section {
+        min-height: 700px;
+    }
+
     .meet-brand-section .brand-img-left {
         width: clamp(100%, 52vw, 750px);
     }
@@ -353,6 +365,10 @@
 }
 
 @media (max-width: 1200px) {
+    .meet-brand-section {
+        min-height: 600px;
+    }
+
     .meet-brand-section .brand-img-left {
         width: clamp(100%, 48vw, 700px);
     }
@@ -379,6 +395,11 @@
 }
 
 @media (max-width: 991px) {
+    .meet-brand-section {
+        height: auto;
+        padding-top: clamp(2rem, 12vh, 15rem);
+        padding-bottom: clamp(2rem, 12vh, 15rem);
+    }
 
     .meet-brand-section .meet-brand-section {
         padding-top: clamp(1.5rem, 10vh, 10rem);
@@ -908,9 +929,9 @@
 
 .design-process-section .process-bg-two {
     position: absolute;
-    top: 25%;
+    top: 20%;
     right: 0px;
-    width: 35%;
+    width: 20%;
     height: auto;
 }
 
@@ -1068,7 +1089,7 @@
 
     .design-process-section .process-bg-two {
         top: 30%;
-        width: 45%;
+        width: 25%;
     }
 }
 
@@ -1096,8 +1117,8 @@
     }
 
     .design-process-section .process-bg-two {
-        top: 50%;
-        width: 60%;
+        top: 25%;
+        width: 40%;
     }
 }
 
@@ -1113,15 +1134,15 @@
     }
 
     .design-process-section .process-bg-two {
-        top: 40%;
-        width: 60%;
+        top: 25%;
+        width: 40%;
     }
 }
 
 @media (max-width: 320px) {
     .design-process-section .process-bg-two {
-        top: 40%;
-        width: 70%;
+         top: 25%;
+        width: 40%;
     }
 
     .design-process-section .process-bg-one {
@@ -1366,209 +1387,98 @@
 
 
 /***************** Business Impact Section  *******************/
-
 .business-impact-section {
     background-color: #fff;
-    padding: 150px 0px 90px 0px;
+    padding: clamp(60px, 6vw, 120px) 0;
 }
 
-.business-impact-section .business-impact-grid {
-    display: grid;
-}
-
-.business-impact-section .business-impact-grid-top {
-    grid-template-columns: 1.6fr 1fr 1fr;
-    grid-template-rows: repeat(2, minmax(180px, 0.9fr));
-}
-
-.business-impact-section .business-impact-grid-bottom {
-    grid-template-columns: 1fr 1fr 1.6fr;
-    grid-template-rows: minmax(180px, 0.9fr);
-}
-
-.business-impact-section .business-impact-cell {
-    /* border-right: 1px solid #AA9D8E;
-    border-bottom: 1px solid #AA9D8E; */
-    min-height: 120px
-}
-
-.business-impact-section .business-impact-heading {
+.business-impact-heading {
     font-size: clamp(2rem, 4vw, 3rem);
-    line-height: clamp(2.3rem, 6vw, 3.6rem);
+    line-height: 120%;
     font-weight: 500;
-    margin-bottom: 0;
-    padding: 5px 30px 5px 0px;
-    border: none;
-    display: flex;
-    align-items: flex-start;
-
 }
 
-.business-impact-section .business-impact-accent {
-    color: #6D2732;
-    margin-right: 8px;
-    margin-top: -5px;
-    font-size: clamp(2.3rem, 4vw, 3.3rem);
-}
-
-.business-impact-section .business-impact-tile {
-    display: flex;
-    align-items: flex-end;
-    padding: 24px;
-    min-height: 120px;
-}
-
-.business-impact-section .business-impact-tile p {
-    font-size: clamp(18px, 1.8vw, 25px);
-    line-height: 1.35;
-    letter-spacing: 0.3px;
-    text-transform: uppercase;
-}
-
-.business-impact-section .business-impact-tile[data-bg="white"] {
-    background-color: #ffffff;
-}
-
-.business-impact-section .business-impact-tile[data-bg="tan"] {
-    background-color: #D1C7BC;
-}
-
-.business-impact-section .business-impact-cell.bi-image {
-    padding: 0;
+.business-impact-image {
+    border-radius: clamp(12px, 1vw, 20px);
     overflow: hidden;
-    border-right: none;
+    height: 900px;
 }
 
-.business-impact-section .bi-image img {
+.business-impact-image img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
 
-/* --- explicit grid placement (desktop) --- */
-.business-impact-section .bi-heading {
-    grid-column: 1;
-    grid-row: 1;
+.business-impact-item:first-child {
+    border-top: 1px solid #000000;
 }
 
-.business-impact-section .bi-image-golf {
-    grid-column: 1;
-    grid-row: 2;
+.business-impact-item {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 4vw, 5rem);
+    padding: clamp(0.9rem, 1.2vw, 1.4rem) 0;
+    border-bottom: 1px solid #000000;
 }
 
-.business-impact-section .bi-image-golf img {
-    padding-right: 30px;
+
+.business-impact-number {
+    background: linear-gradient(180deg, #322D2A 0%, rgba(50, 45, 42, 0) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0.3;
+    font-size: clamp(2rem, 2rem + 5.5vw, 6.5rem);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: clamp(2.5rem, 3vw, 3.5rem);
 }
 
-.business-impact-section .bi-tileA {
-    grid-column: 2;
-    grid-row: 1;
-    border-top: 1px solid #AA9D8E;
-    border-bottom: 1px solid #AA9D8E;
-    border-right: 1px solid #AA9D8E;
+.business-impact-text {
+    font-size: clamp(0.95rem, 0.85rem + 1vw, 1.6rem);
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.01em;
+    color: #6D2732;
+    text-transform: uppercase;
 }
 
-.business-impact-section .bi-tileB {
-    grid-column: 3;
-    grid-row: 1;
-    border-top: 1px solid #AA9D8E;
-    border-right: 1px solid #AA9D8E;
+/* Mobile responsive */
+@media (max-width: 1700px) {
+    .business-impact-image {
+        height: 850px;
+    }
 }
 
-.business-impact-section .bi-tileC {
-    grid-column: 2;
-    grid-row: 2;
-    border-bottom: 1px solid #AA9D8E;
+@media (max-width: 1350px) {
+    .business-impact-image {
+        height: 800px;
+    }
 }
 
-.business-impact-section .bi-tileD {
-    grid-column: 3;
-    grid-row: 2;
+@media (max-width: 1150px) {
+    .business-impact-image {
+        height: 750px;
+    }
 }
 
-.business-impact-section .bi-tileE {
-    grid-column: 1;
-    grid-row: 1;
+@media (max-width: 991.98px) {
+    .business-impact-list {
+        max-width: 100%;
+    }
 }
 
-.business-impact-section .bi-tileF {
-    grid-column: 2;
-    grid-row: 1;
-    border-top: 1px solid #AA9D8E;
-    border-bottom: 1px solid #AA9D8E;
-}
-
-.business-impact-section .bi-image-bridge {
-    grid-column: 3;
-    grid-row: 1;
-}
-
-.business-impact-section .bi-image-bridge img {
-    padding-left: 30px;
-}
-
-/* --- mobile: collapse everything to a single stacked column --- */
-@media (max-width: 768px) {
-    .business-impact-section {
-        padding: 60px 0px 60px 0px;
+@media (max-width: 575.98px) {
+    .business-impact-item {
+        gap: 2rem;
+        padding: 0.75rem 0;
     }
 
-    .business-impact-section .business-impact-heading {
-        padding: 20px 15px 50px 15px;
+    .business-impact-number {
+        font-size: clamp(3.8rem, 1.3rem + 3vw, 2.2rem);
+        min-width: 2.2rem;
     }
-
-    .business-impact-section .business-impact-tile {
-        padding: 20px 16px;
-        min-height: 100px;
-    }
-
-    .business-impact-section .bi-image-golf img {
-        padding-right: 0px;
-    }
-
-    .business-impact-section .bi-image-bridge img {
-        padding-left: 0px;
-    }
-
-    .business-impact-section .business-impact-grid-top,
-    .business-impact-section .business-impact-grid-bottom {
-        grid-template-columns: 1fr;
-        grid-template-rows: none;
-    }
-
-    .business-impact-section .business-impact-cell,
-    .business-impact-section .business-impact-heading {
-        grid-column: 1 / -1 !important;
-        grid-row: auto !important;
-    }
-
-    .business-impact-section .bi-tileA {
-        border-left: 1px solid #AA9D8E;
-        border-right: 1px solid #AA9D8E;
-    }
-
-    .business-impact-section .bi-tileB {
-        border-top: 0px solid #AA9D8E;
-        border-bottom: 1px solid #AA9D8E;
-        border-left: 1px solid #AA9D8E;
-        border-right: 1px solid #AA9D8E;
-    }
-
-    .business-impact-section .bi-tileC {
-        border-right: 1px solid #AA9D8E;
-        border-left: 1px solid #AA9D8E;
-    }
-
-    .business-impact-section .bi-tileF {
-        border-top: 0px solid #AA9D8E;
-        border-left: 1px solid #AA9D8E;
-        border-right: 1px solid #AA9D8E;
-    }
-
-    .business-impact-section .bi-image {
-        min-height: 220px;
-        border-right: 1px solid #AA9D8E;
-    }
-
 }
 
 /***************** Business Impact Section  *******************/
@@ -1845,9 +1755,9 @@
     padding: clamp(30px, 6vw, 60px) 0;
 }
 
- 
 
-.testimonial-heading { 
+
+.testimonial-heading {
     width: 100%;
     font-size: clamp(2rem, 4vw, 3rem);
     line-height: clamp(2.3rem, 6vw, 3.6rem);
@@ -1866,7 +1776,7 @@
 
 /* --- THE KEY PART: full-bleed wrapper --- */
 .testimonial-owl-wrap {
-    width: 100%; 
+    width: 100%;
     overflow: hidden;
 }
 
@@ -1876,7 +1786,7 @@
 
 .testimonial-card {
     position: relative;
-    background: #fff; 
+    background: #fff;
     border-radius: 20px;
     padding: clamp(60px, 4vw, 100px) clamp(30px, 3vw, 80px) clamp(60px, 4vw, 100px) clamp(30px, 3vw, 80px);
     height: 100%;
@@ -1885,6 +1795,7 @@
     justify-content: space-between;
     min-height: 500px;
 }
+
 .testimonial-card::before {
     content: "";
     position: absolute;
@@ -1895,6 +1806,7 @@
     background: url('../images/w-residence/top-quote.webp') no-repeat center center;
     z-index: 1;
 }
+
 .testimonial-card::after {
     content: "";
     position: absolute;
@@ -1905,6 +1817,7 @@
     background: url('../images/w-residence/bottom-quote.webp') no-repeat center center;
     z-index: 1;
 }
+
 .testimonial-card h3 {
     font-family: 'Helventica-Medium';
     font-size: clamp(18px, 1.5vw, 22px);
@@ -2103,7 +2016,7 @@
     height: 100%;
     display: flex !important;
     justify-content: center;
-    align-items: end; 
+    align-items: end;
 }
 
 .case-study-card .case-study-plant {
