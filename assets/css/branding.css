@@ -218,6 +218,8 @@
 }
 
 .branding-marquee__group li {
+    font-family: 'Helventica-Regular';
+    font-weight: 100;
     color: #fff;
     white-space: nowrap;
     font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.25rem);
@@ -267,7 +269,7 @@
 .case-slider-section {
     --gutter: clamp(1.25rem, 7vw, 7rem);
     /* heading, card and arrows align to this */
-    --dots-h: 2.75rem;
+    --dots-h: 4.5rem;
     /* height of the dots row under the slide */
     padding: clamp(2rem, 2.5rem + 3vw, 6rem) 0 0;
     overflow: hidden;
@@ -504,3 +506,145 @@
 }
 
 /****************************** Brand Visual Slider **************************/
+
+
+
+/****************************** why-branding *****************************/
+.why-branding {
+    --gutter: clamp(1.25rem, 7vw, 7rem);
+    --brand-red: #6b2535;           /* swap for your brand variable */
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3rem, 2rem + 5vw, 6rem) var(--gutter);
+    background-color: #fff;
+    background-image: url('../images/branding/wave-pattern.png');   /* your wavy line image */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+}
+
+.why-branding__inner {
+    position: relative;
+    max-width: 75rem;
+    margin-inline: auto;
+}
+
+/* Heading */
+.why-branding__title {
+    margin: 0 0 clamp(2.5rem, 1.5rem + 5vw, 5.5rem);
+    font-size: clamp(1.75rem, 1rem + 2.6vw, 50px);
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.why-branding__accent {
+    display: inline-block;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+/* Rows: label + text */
+.why-branding__row {
+    display: grid;
+    align-items: center;
+    gap: clamp(0.75rem, 0.5rem + 1.5vw, 2rem);
+}
+
+.why-branding__row--problem {
+    grid-template-columns: auto minmax(0, 1fr);
+    margin-bottom: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+}
+
+.why-branding__row--solution {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    margin-top: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+}
+
+.why-branding__label {
+    margin: 0;
+    font-size: clamp(1.5rem, 1rem + 1.6vw, 2.6rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+
+.why-branding__text {
+    font-family: 'Helvetica-light';
+    margin: 0;
+    max-width: 46rem;
+    font-size: clamp(0.5rem, 0.6rem + 1.25vw, 1.2rem);
+    line-height: 1.45;
+    color: #6D2732;
+    justify-self: end;      /* moves the text block to the right edge */
+    text-align: left;  
+}
+/* Problems row: text pushed to the right side */
+.why-branding__row--problem .why-branding__text {
+    justify-self: end;
+    text-align: left;               /* change to "right" to right-align each line */
+}
+
+/* Solution row: text on the left, label on the right */
+.why-branding__row--solution .why-branding__text {
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+    text-align: left;
+}
+ 
+.why-branding__row--solution .why-branding__label {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+}
+
+/* Image */
+.why-branding__media {
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 21 / 8;
+}
+
+.why-branding__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Tablet and mobile: stack in reading order */
+@media (max-width: 767.98px) {
+    .why-branding__row--problem,
+    .why-branding__row--solution {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 0.5rem;
+    }
+
+    .why-branding__row--solution .why-branding__label,
+    .why-branding__row--solution .why-branding__text {
+        grid-column: 1;
+        text-align: left;
+    }
+
+    /* label first, then text */
+    .why-branding__row--solution .why-branding__label { grid-row: 1; }
+    .why-branding__row--solution .why-branding__text  { grid-row: 2; }
+
+    .why-branding__row--problem { margin-bottom: 1rem; }
+    .why-branding__row--solution { margin-top: 1.25rem; }
+
+    .why-branding__media {
+        aspect-ratio: 4 / 3;
+    }
+
+    .why-branding__text {
+        max-width: none;
+    }
+}
+/****************************** why-branding *****************************/
