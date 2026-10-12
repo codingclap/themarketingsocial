@@ -512,7 +512,8 @@
 /****************************** why-branding *****************************/
 .why-branding {
     --gutter: clamp(1.25rem, 7vw, 7rem);
-    --brand-red: #6b2535;           /* swap for your brand variable */
+    --brand-red: #6b2535;
+    --wave: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='120' viewBox='0 0 24 120'%3E%3Cpath d='M12 0C21 20 21 40 12 60C3 80 3 100 12 120' fill='none' stroke='%23d9d9d9' stroke-width='1'/%3E%3C/svg%3E");
     position: relative;
     overflow: hidden;
     padding: clamp(3rem, 2rem + 5vw, 6rem) var(--gutter);
