@@ -15,6 +15,368 @@
 </head>
 
 <body>
+     <style>
+          /* ===== Custom cursor (desktop only) ===== */
+          .video-section {
+               position: relative;
+               overflow: hidden;
+          }
+
+          @media (hover: hover) and (pointer: fine) {
+               .video-section {
+                    cursor: none;
+               }
+          }
+
+          .showreel-cursor {
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 150px;
+               height: 150px;
+               pointer-events: none;
+               transform: translate(-50%, -50%) scale(.85);
+               opacity: 0;
+               transition: opacity .25s ease, transform .25s ease;
+               z-index: 5;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+          }
+
+          .showreel-cursor.is-active {
+               opacity: 1;
+               transform: translate(-50%, -50%) scale(1);
+          }
+
+          .showreel-cursor-ring {
+               width: 100%;
+               height: 100%;
+               animation: showreel-spin 9s linear infinite;
+          }
+
+          @keyframes showreel-spin {
+               to {
+                    transform: rotate(360deg);
+               }
+          }
+
+          .showreel-cursor-ring text {
+               fill: #fff;
+               font-size: 15px;
+               letter-spacing: 2px;
+               text-transform: uppercase;
+               font-family: 'Inter', sans-serif;
+          }
+
+          .showreel-cursor-play {
+               position: absolute;
+               color: #fff;
+               font-size: 18px;
+               transform: translateX(2px);
+               /* optical centering for the triangle glyph */
+          }
+
+          /* ===== Mobile tap hint (static, no follow) ===== */
+          .showreel-tap-hint {
+               position: absolute;
+               top: 50%;
+               left: 50%;
+               transform: translate(-50%, -50%);
+               width: 64px;
+               height: 64px;
+               border-radius: 50%;
+               border: 1px solid rgba(255, 255, 255, .6);
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               z-index: 5;
+               cursor: pointer;
+          }
+
+          .showreel-tap-icon {
+               color: #fff;
+               font-size: 18px;
+               transform: translateX(2px);
+          }
+
+          /* ===== Lightbox modal ===== */
+          .showreel-modal {
+               position: fixed;
+               inset: 0;
+               z-index: 9999;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               opacity: 0;
+               visibility: hidden;
+               transition: opacity .35s ease;
+          }
+
+          .showreel-modal.is-open {
+               opacity: 1;
+               visibility: visible;
+          }
+
+          .showreel-modal-backdrop {
+               position: absolute;
+               inset: 0;
+               background: rgba(0, 0, 0, .88);
+          }
+
+          .showreel-modal-inner {
+               position: relative;
+               width: min(1100px, 92vw);
+               aspect-ratio: 16 / 9;
+               z-index: 1;
+          }
+
+          .showreel-modal-inner video {
+               width: 100%;
+               height: 100%;
+               object-fit: contain;
+               background: #000;
+          }
+
+          .showreel-modal-close {
+               position: absolute;
+               top: 24px;
+               right: 24px;
+               width: 44px;
+               height: 44px;
+               border-radius: 50%;
+               background: rgba(255, 255, 255, .12);
+               color: #fff;
+               border: none;
+               font-size: 26px;
+               line-height: 1;
+               cursor: pointer;
+               z-index: 2;
+               transition: background .25s ease;
+          }
+
+          .showreel-modal-close:hover {
+               background: rgba(255, 255, 255, .22);
+          }
+     </style>
+     <section class="video-section py-0" id="showreelSection">
+          <video id="homeVideo" class="video-player w-100 d-block" autoplay muted loop playsinline
+               poster="https://themarketingsocials.com/wp-content/uploads/2025/08/video-banner.webp">
+               <source
+                    src="https://themarketingsocials.com/wp-content/themes/themarketingsocials/assets/images/home-page/tms-showreel.mp4"
+                    type="video/mp4">
+               Your browser does not support the video tag.
+          </video>
+
+          <!-- Custom rotating cursor — desktop only, follows the mouse -->
+          <div class="showreel-cursor" id="showreelCursor">
+               <svg viewBox="0 0 200 200" class="showreel-cursor-ring">
+                    <defs>
+                         <path id="showreelCirclePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0">
+                         </path>
+                    </defs>
+                    <text>
+                         <textPath href="#showreelCirclePath" startOffset="0%">WATCH SHOWREEL &#8226; CLICK TO PLAY
+                              &#8226; WATCH SHOWREEL &#8226; CLICK TO PLAY &#8226; </textPath>
+                    </text>
+               </svg>
+               <span class="showreel-cursor-play">&#9658;</span>
+          </div>
+
+          <!-- Mobile / tablet: no cursor-follow, just a static tap hint -->
+          <div class="showreel-tap-hint d-lg-none">
+               <span class="showreel-tap-icon">&#9658;</span>
+          </div>
+     </section>
+
+     <!-- Lightbox modal -->
+     <div class="showreel-modal" id="showreelModal">
+          <div class="showreel-modal-backdrop"></div>
+          <button class="showreel-modal-close" aria-label="Close video">&times;</button>
+          <div class="showreel-modal-inner">
+               <video id="showreelModalVideo" controls playsinline
+                    poster="https://themarketingsocials.com/wp-content/uploads/2025/08/video-banner.webp">
+                    <source
+                         src="https://themarketingsocials.com/wp-content/themes/themarketingsocials/assets/images/home-page/tms-showreel.mp4"
+                         type="video/mp4">
+               </video>
+          </div>
+     </div>
+
+
+     <style>
+          .marketingAgency {
+               position: relative;
+               overflow: hidden;
+               padding: clamp(40px, 6vw, 90px) clamp(20px, 5vw, 70px) clamp(50px, 7vw, 90px);
+               background-color: #fff;
+               /* fallback while the video loads */
+          }
+
+          .marketingAgency-video {
+               position: absolute;
+               inset: 0;
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               z-index: 0;
+          }
+
+          /* Light wash over the video so the black heading/paragraph stay legible.
+   Raise the alpha if the video is busy/dark-varying; lower it (or delete
+   this rule) if the footage is calm enough on its own. */
+          .marketingAgency-overlay {
+               position: absolute;
+               inset: 0;
+               background: rgba(255, 255, 255, 0.78);
+               z-index: 1;
+          }
+
+          .marketingAgency>.container-fluid {
+               position: relative;
+               z-index: 2;
+          }
+
+          .marketingAgency-heading {
+               margin: 0;
+               font-weight: 500;
+               font-size: clamp(2.6rem, 5.5vw, 4.6rem);
+               line-height: 1.4;
+          }
+
+          .marketingAgency-heading .accent {
+               font-size: clamp(3rem, 5.5vw, 5rem);
+               font-weight: 500;
+          }
+
+          .marketingAgency-chip {
+               display: inline-block;
+               width: clamp(90px, 35vw, 410px);
+               height: clamp(36px, 5.5vw, 75px);
+               border-radius: 25px;
+               background-size: cover;
+               background-position: center;
+               vertical-align: middle;
+               margin: 0 .12em;
+               transform: translateY(-.06em);
+          }
+
+          .marketingAgency-paragraph {
+               margin: 0 0 clamp(22px, 3.4vw, 32px);
+               font-size: clamp(1rem, 1.4vw, 1.8rem);
+               line-height: 1.5;
+               color: #000;
+          }
+
+          .marketingAgency-actions {
+               display: flex;
+               flex-wrap: wrap;
+               gap: 14px;
+               justify-content: flex-end;
+          }
+
+          .marketingAgency-btn {
+               display: inline-flex;
+               align-items: center;
+               font-family: 'Helventica-Regular', sans-serif;
+               line-height: 100%;
+               justify-content: center;
+               padding: 18px 35px;
+               border-radius: 999px;
+               background: #6D2732;
+               color: #fff;
+               font-size: 0.9rem;
+               font-weight: 600;
+               letter-spacing: .6px;
+               text-decoration: none;
+               white-space: nowrap;
+               transition: background .3s cubic-bezier(.22, .9, .28, 1), transform .3s cubic-bezier(.22, .9, .28, 1);
+          }
+
+          .marketingAgency-btn:hover {
+               background: #6D2732;
+               transform: translateY(-2px);
+               color: #fff;
+          }
+
+          @media (max-width:1445px) {
+               .marketingAgency-chip {
+                    width: clamp(249px, 27vw, 410px);
+                    height: clamp(45px, 5.5vw, 75px);
+               }
+          }
+
+          @media (max-width: 700px) {
+               .marketingAgency-actions {
+                    flex-direction: column;
+                    align-items: stretch;
+               }
+
+               .marketingAgency-btn {
+                    width: 100%;
+               }
+          }
+
+          @media (max-width: 425px) {
+               .marketingAgency {
+                    padding: clamp(40px, 6vw, 90px) clamp(5px, 1vw, 70px) clamp(50px, 7vw, 90px);
+               }
+
+               .marketingAgency-chip {
+                    width: 80%;
+               }
+          }
+     </style>
+
+     <section class="marketingAgency py-5 py-lg-5">
+
+          <video class="marketingAgency-video" autoplay muted loop playsinline preload="none"
+               poster="https://themarketingsocials.com/wp-content/uploads/2025/08/video-banner.webp">
+               <source
+                    src="https://themarketingsocials.com/wp-content/themes/themarketingsocials/assets/images/home-page/tms-showreel.mp4"
+                    type="video/mp4">
+          </video>
+
+          <div class="marketingAgency-overlay"></div>
+
+          <div class="container-fluid">
+
+               <h1 class="marketingAgency-heading mb-0" data-fontfamily="Helventica-Regular">
+                    <span class="accent" data-fontfamily="Playfair-Italic" data-color="red">Marketing Agency</span>
+                    in<br>
+                    UAE for
+                    <span class="marketingAgency-chip"
+                         style="background-image:url('assets/images/home2/branding-mockup.webp');"></span><br>
+                    Growing Brands
+               </h1>
+
+               <div class="row justify-content-end">
+                    <div class="col-12 col-md-10 col-lg-9 col-xl-8">
+                         <div class="marketingAgency-subtext text-end mt-4 mt-lg-5">
+                              <p class="marketingAgency-paragraph mb-4" data-fontfamily="Helventica-Regular">
+                                   We are a UAE-based marketing agency helping businesses grow through
+                                   strategic marketing, branding, and design services across Dubai, Abu Dhabi, and the
+                                   wider UAE.
+                              </p>
+
+                              <div
+                                   class="marketingAgency-actions d-flex flex-column flex-sm-row flex-wrap gap-3 justify-content-end">
+                                   <a href="#"
+                                        class="marketingAgency-btn btn rounded-pill text-uppercase text-decoration-none">GET
+                                        A MARKETING QUOTE</a>
+                                   <a href="#"
+                                        class="marketingAgency-btn btn rounded-pill text-uppercase text-decoration-none">TALK
+                                        TO A MARKETING EXPERT</a>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+
+          </div>
+     </section>
+
+
+
 
 
      <!-------------------------------------- What We Do Section ------------------------->
@@ -978,6 +1340,57 @@
                // Initial slide
                goToSlide(0);
 
+          });
+
+
+
+
+
+
+          document.addEventListener('DOMContentLoaded', function () {
+               var section = document.getElementById('showreelSection');
+               var cursor = document.getElementById('showreelCursor');
+               var modal = document.getElementById('showreelModal');
+               var modalVideo = document.getElementById('showreelModalVideo');
+               var closeBtn = modal.querySelector('.showreel-modal-close');
+               var backdrop = modal.querySelector('.showreel-modal-backdrop');
+
+               var isDesktopPointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+               if (isDesktopPointer) {
+                    section.addEventListener('mousemove', function (e) {
+                         var rect = section.getBoundingClientRect();
+                         cursor.style.left = (e.clientX - rect.left) + 'px';
+                         cursor.style.top = (e.clientY - rect.top) + 'px';
+                         cursor.classList.add('is-active');
+                    });
+
+                    section.addEventListener('mouseleave', function () {
+                         cursor.classList.remove('is-active');
+                    });
+               }
+
+               section.addEventListener('click', openShowreel);
+
+               function openShowreel() {
+                    modal.classList.add('is-open');
+                    document.body.style.overflow = 'hidden';
+                    modalVideo.currentTime = 0;
+                    modalVideo.muted = false;
+                    modalVideo.play().catch(function () { /* user gesture already present (click), should be fine */ });
+               }
+
+               function closeShowreel() {
+                    modal.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                    modalVideo.pause();
+               }
+
+               closeBtn.addEventListener('click', closeShowreel);
+               backdrop.addEventListener('click', closeShowreel);
+               document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && modal.classList.contains('is-open')) closeShowreel();
+               });
           });
      </script>
 

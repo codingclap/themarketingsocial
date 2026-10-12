@@ -638,7 +638,18 @@
  .service-tab.active::before {
      height: 100%;
  }
-
+ .service-tab:hover::before {
+     height: 100%;
+ }
+ .service-tab:hover {
+     color: #111;
+     font-weight: 700;
+ }
+.service-tab:hover span {
+     transform: translateX(15px);
+     font-size: clamp(1.1rem, 3vw, 1.35rem);
+     font-family: 'Helventica-Bold', sans-serif;
+ }
  .service-tab.active span {
      transform: translateX(15px);
      font-size: clamp(1.1rem, 3vw, 1.35rem);
