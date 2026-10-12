@@ -51,7 +51,7 @@
     font-family: 'Playfair-MediumItalic', serif;
     font-style: italic;
     color: #6D2732;
-    font-size: clamp(2.4rem, 5.6vw, 4.5rem);
+    font-size: clamp(2.4rem, 5.4vw, 4.4rem);
     line-height: clamp(2.9rem, 6.6vw, 5.25rem);
 }
 
@@ -76,7 +76,7 @@
     padding: clamp(0.9rem, 1.6vw, 1.15rem) clamp(1.5rem, 3vw, 2.25rem);
     font-family: 'Helventica-Regular', sans-serif;
     font-size: clamp(0.85rem, 1.1vw, 1rem);
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
     text-transform: uppercase;
     text-decoration: none;
     overflow: hidden;
@@ -163,3 +163,344 @@
 }
 
 /***************** Branding Header  *******************/
+
+
+
+/****************************** branding-recognised *****************************/
+.branding-recognised {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3rem, 2rem + 5vw, 6rem) 0 clamp(3rem, 2rem + 5vw, 6rem);
+    background: url('../images/branding/branding-business.png') center / cover no-repeat;
+}
+
+.branding-recognised__bg {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(rgba(107, 37, 53, 0.30), rgba(107, 37, 53, 0.30));
+
+}
+
+.branding-recognised__title {
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 3rem);
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+.branding-recognised__accent {
+    font-style: italic;
+    font-weight: 400;
+}
+
+/* Marquee */
+.branding-marquee {
+    margin-top: clamp(2rem, 1.5rem + 3vw, 4rem);
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 25%, #000 85%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 25%, #000 85%, transparent);
+}
+
+.branding-marquee__track {
+    display: flex;
+    width: max-content;
+    animation: branding-scroll 30s linear infinite !important;
+}
+
+.branding-marquee:hover .branding-marquee__track {
+    /* animation-play-state: paused; */
+}
+
+.branding-marquee__group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.branding-marquee__group li {
+    color: #fff;
+    white-space: nowrap;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.25rem);
+}
+
+.branding-marquee__star {
+    width: 0.9rem;
+    height: 0.9rem;
+    margin: 0 clamp(1.5rem, 1rem + 2vw, 3rem);
+    background: #fff;
+    /* 8-point star / asterisk shape */
+    clip-path: polygon(50% 0%, 59.3% 15.2%, 75% 6.7%, 75.5% 24.5%,
+            93.3% 25%, 84.8% 40.7%, 100% 50%, 84.8% 59.3%,
+            93.3% 75%, 75.5% 75.5%, 75% 93.3%, 59.3% 84.8%,
+            50% 100%, 40.7% 84.8%, 25% 93.3%, 24.5% 75.5%,
+            6.7% 75%, 15.2% 59.3%, 0% 50%, 15.2% 40.7%,
+            6.7% 25%, 24.5% 24.5%, 25% 6.7%, 40.7% 15.2%);
+}
+
+@keyframes branding-scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .branding-marquee__track {
+        animation: none;
+    }
+
+    .branding-marquee__track {
+        animation-duration: 90s;
+    }
+
+}
+
+/****************************** branding-recognised *****************************/
+
+
+
+/****************************** Brand Visual Slider **************************/
+
+.case-slider-section {
+    --gutter: clamp(1.25rem, 7vw, 7rem);
+    /* heading, card and arrows align to this */
+    --dots-h: 2.75rem;
+    /* height of the dots row under the slide */
+    padding: clamp(2rem, 2.5rem + 3vw, 6rem) 0 0;
+    overflow: hidden;
+    background: #fff;
+}
+
+/* Heading */
+.case-slider__heading {
+    margin: 0 0 clamp(1.5rem, 1.5rem + 3vw, 3rem);
+    padding-inline: var(--gutter);
+    font-size: clamp(1.75rem, 1rem + 2.6vw, 48px);   /* top lines: 50px max */
+    font-weight: 400;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.case-slider__accent {
+    text-transform: none;
+    font-style: italic;
+    font-size: 1.2em;   /* 1.2 x 50px = 60px at full size */
+}
+
+/* Slide */
+.case-slider.owl-carousel {
+    position: relative; 
+}
+
+.case-slide {
+    display: flex;
+    align-items: center;
+    min-height: clamp(26rem, 56vw, 42rem);
+    padding: clamp(3.5rem, 8vw, 6rem) var(--gutter);
+    background-color: #f8eeed;
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: cover;
+    /* use "auto 100%" if your image is a transparent PNG of the bouquet only */
+}
+
+/* Text card */
+.case-card {
+    position: relative;
+    flex: 0 0 auto;
+    width: clamp(19rem, 44vw, 34rem);
+    padding: clamp(4rem, 5rem + 7vw, 7rem) clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem) clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    background-image: url('../images/branding/visual-card-bg.png');
+    /* match your brand red */
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    color: #fff;
+}
+
+/* Owl sets img width:100%, so this is more specific to keep the logo size */
+.case-slider .owl-item .case-card__logo {
+    position: absolute;
+    top: 2.7%;
+    left: 50%;
+    width: 140px;
+    height: 140px;
+    object-fit: contain;
+    transform: translate(-50%, -50%);
+}
+
+.case-card__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+}
+
+.case-card__block+.case-card__block {
+    margin-top: clamp(1rem, 0.8rem + 1vw, 1.5rem);
+}
+
+.case-card__label {
+    font-family: 'Helventica-Bold';
+    margin: 0 0 0.4rem;
+    font-size: clamp(0.68rem, 0.62rem + 0.2vw, 0.8rem);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.case-card__value {
+    font-family: 'Helvetica-light';
+    margin: 0;
+    font-size: clamp(1rem, 0.85rem + 0.5vw, 1.3rem);
+    font-weight: 300;
+}
+
+.case-card__text {
+    font-family: 'Helvetica-light'
+    margin: 0;
+    font-size: clamp(0.8rem, 0.75rem + 0.25vw, 0.95rem);
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+/****************************** Owl carousel base (scoped) **************************/
+.case-slider-section .owl-carousel {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.case-slider-section .owl-carousel .owl-stage-outer {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    background: #F8F0EE;
+}
+
+.case-slider-section .owl-carousel .owl-stage {
+    position: relative;
+    touch-action: pan-y;
+}
+
+.case-slider-section .owl-carousel .owl-stage::after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.case-slider-section .owl-carousel .owl-item {
+    position: relative;
+    float: left;
+    min-height: 1px;
+    backface-visibility: hidden;
+}
+
+.case-slider-section .owl-carousel .owl-nav.disabled,
+.case-slider-section .owl-carousel .owl-dots.disabled {
+    display: none;
+}
+
+.case-slider-section .owl-carousel .owl-nav button {
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+}
+
+.case-slider-section .owl-carousel .owl-dots .owl-dot {
+    border: 0;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+}
+
+/****************************** Owl carousel base (scoped) **************************/
+/* Arrows: centred on the bottom edge of the slide, as in the design */
+.case-slider.owl-carousel .owl-nav {
+    margin: 0;
+}
+
+.case-slider.owl-carousel .owl-nav button.owl-prev,
+.case-slider.owl-carousel .owl-nav button.owl-next {
+    position: absolute;
+    bottom: var(--dots-h);
+    transform: translateY(50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    margin: 0;
+    border-radius: 20px;
+    background-color: rgba(50, 45, 42, 0.6);
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.case-slider.owl-carousel .owl-nav button.owl-prev {
+    left: 1.5rem;
+}
+
+.case-slider.owl-carousel .owl-nav button.owl-next {
+    right: 1.5rem;
+}
+
+.case-slider.owl-carousel .owl-nav button.owl-prev:hover,
+.case-slider.owl-carousel .owl-nav button.owl-next:hover {
+    background-color: #6b2535;
+    color: #fff;
+}
+
+/* Dots: centred under the slide */
+.case-slider.owl-carousel .owl-dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--dots-h);
+    margin: 0;
+}
+
+.case-slider.owl-carousel .owl-dots .owl-dot {
+    margin: 0 0.3rem;
+}
+
+.case-slider.owl-carousel .owl-dots .owl-dot span {
+    display: block;
+    width: 13px;
+    height: 13px;
+    margin: 0;
+    border-radius: 50%;
+    background-color: #D3D3D3;
+    transition: background-color 0.3s ease;
+}
+
+.case-slider.owl-carousel .owl-dots .owl-dot.active span {
+    background-color: #322D2A;
+}
+
+/* Tablet and mobile: card on top, image below */
+@media (max-width: 991.98px) {
+    .case-slide {
+        flex-direction: column;
+        justify-content: flex-start;
+        min-height: 0;
+        padding-top: 4.5rem;
+        padding-bottom: 70vw;
+        background-position: right bottom;
+        background-size: auto 62%;
+    }
+
+    .case-card {
+        width: 100%;
+        max-width: 30rem;
+        margin-inline: auto;
+    }
+}
+
+/****************************** Brand Visual Slider **************************/
