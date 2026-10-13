@@ -250,41 +250,92 @@
 
 
   <!------------------------------------ why-branding ------------------------------->
-<section class="why-branding">
-  <div class="why-branding__inner">
+  <section class="why-branding">
+    <div class="why-branding__inner">
 
-    <h2 class="why-branding__title text-center fade-animation" data-fontfamily='Helventica-Regular' data-color='black'>
-      WHY BUSINESSES NEED<br />
-      <span class="why-branding__accent" data-fontfamily='Playfair-MediumItalic' data-color='red'>Branding</span>
-    </h2>
+      <h2 class="why-branding__title text-center fade-animation" data-fontfamily='Helventica-Regular'
+        data-color='black'>
+        WHY BUSINESSES NEED<br class="d-none d-md-block">
+        <span class="why-branding__accent" data-fontfamily='Playfair-MediumItalic' data-color='red'>Branding</span>
+      </h2>
 
-    <!-- Problems -->
-    <div class="why-branding__row why-branding__row--problem fade-animation">
-      <h3 class="why-branding__label" data-fontfamily='Helventica-Regular' data-color='black'>PROBLEMS</h3>
-      <p class="why-branding__text mb-0" data-fontfamily='Helventica-Regular' data-color='red'>
-        Businesses that post on social media without a fixed visual style look scattered and
-        unprofessional, so customers struggle to recognise them.
-      </p>
+      <!-- Problems -->
+      <div class="why-branding__row why-branding__row--problem fade-animation">
+        <h3 class="why-branding__label" data-fontfamily='Helventica-Regular' data-color='black'>PROBLEMS</h3>
+        <p class="why-branding__text mb-0" data-fontfamily='Helventica-Regular' data-color='red'>
+          Businesses that post on social media without a fixed visual style look scattered and
+          unprofessional, so customers struggle to recognise them.
+        </p>
+      </div>
+
+      <!-- Image -->
+      <div class="why-branding__media fade-animation">
+        <img src="assets/images/branding/why-branding-bg.png" alt="Woman in a pink blazer holding a camera"
+          loading="lazy" />
+      </div>
+
+      <!-- Solution -->
+      <div class="why-branding__row why-branding__row--solution fade-animation">
+        <h3 class="why-branding__label" data-fontfamily='Helventica-Regular' data-color='black'>SOLUTION</h3>
+        <p class="why-branding__text mb-0" data-fontfamily='Helventica-Regular' data-color='red'>
+          A brand kit with set colours, fonts and ready-made templates gives every post a consistent
+          look that customers recognise instantly.
+        </p>
+      </div>
+
     </div>
+  </section>
+  <!------------------------------------ why-branding ------------------------------->
 
-    <!-- Image -->
-    <div class="why-branding__media fade-animation">
-      <img src="assets/images/branding/why-branding-bg.png" alt="Woman in a pink blazer holding a camera"
-        loading="lazy" />
+
+  <!------------------------------------ services-slider ------------------------------->
+  <section class="services-slider">
+    <div class="services-slider__inner">
+
+      <!-- Left: heading + image -->
+      <div class="services-slider__left">
+        <h2 class="services-slider__title" data-fontfamily='Helventica-Regular' data-color='black'>
+          WHAT DOES A
+          <span class="services-slider__accent" data-fontfamily='Playfair-MediumItalic' data-color='red'>Branding<br
+              class="d-none d-md-block">
+            Agency</span> IN DUBAI DO?
+        </h2>
+
+        <div class="services-slider__media">
+          <div class="services-slider__slide is-active"><img src="assets/images/branding/service-1.png"
+              alt="Brand positioning" /></div>
+          <div class="services-slider__slide"><img src="assets/images/branding/service-2.png" alt="Brand strategy" />
+          </div>
+          <div class="services-slider__slide"><img src="assets/images/branding/service-3.png"
+              alt="Market and competitor research" /></div>
+          <div class="services-slider__slide"><img src="assets/images/branding/service-1.png" alt="Brand naming" />
+          </div>
+          <div class="services-slider__slide"><img src="assets/images/branding/service-2.png"
+              alt="Logo and visual identity" /></div>
+          <div class="services-slider__slide"><img src="assets/images/branding/service-3.png" alt="Brand guidelines" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: headings (same order as the images) -->
+      <ul class="services-slider__list list-unstyled">
+        <li class="services-slider__row"><button type="button" class="services-slider__item"
+            data-fontfamily='Helventica-Regular'>Brand Positioning</button></li>
+        <li class="services-slider__row"><button type="button" class="services-slider__item"
+            data-fontfamily='Helventica-Regular'>Brand Strategy</button></li>
+        <li class="services-slider__row"><button type="button" class="services-slider__item"
+            data-fontfamily='Helventica-Regular'>Market and Competitor Research</button></li>
+        <li class="services-slider__row"><button type="button" class="services-slider__item"
+            data-fontfamily='Helventica-Regular'>Brand Naming</button></li>
+        <li class="services-slider__row"><button type="button" class="services-slider__item"
+            data-fontfamily='Helventica-Regular'>Logo and Visual Identity</button></li>
+        <li class="services-slider__row"><button type="button" class="services-slider__item"
+            data-fontfamily='Helventica-Regular'>Brand Guidelines</button></li>
+      </ul>
+
     </div>
-
-    <!-- Solution -->
-    <div class="why-branding__row why-branding__row--solution fade-animation">
-      <h3 class="why-branding__label" data-fontfamily='Helventica-Regular' data-color='black'>SOLUTION</h3>
-      <p class="why-branding__text mb-0" data-fontfamily='Helventica-Regular' data-color='red'>
-        A brand kit with set colours, fonts and ready-made templates gives every post a consistent
-        look that customers recognise instantly.
-      </p>
-    </div>
-
-  </div>
-</section>
-<!------------------------------------ why-branding ------------------------------->
+  </section>
+  <!------------------------------------ services-slider ------------------------------->
 
 
 
@@ -295,7 +346,7 @@
     jQuery(function ($) {
       $('.case-slider').owlCarousel({
         items: 1,
-        loop: false,        // set back to true once you have 2+ slides
+        loop: true,        // set back to true once you have 2+ slides
         nav: true,
         dots: true,
         autoplay: true,
@@ -305,6 +356,187 @@
         navText: ['<svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
           '<svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>']
       });
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var section = document.querySelector('.services-slider');
+      if (!section) return;
+
+      var rows = section.querySelectorAll('.services-slider__row');
+      var slides = section.querySelectorAll('.services-slider__slide');
+      var n = rows.length;
+      var current = 0;
+      var offsets = [];
+      var timers = [];
+      var DELAY = 5000;                 // time each slide stays, in milliseconds
+      var CLEANUP = 1600;               // a little longer than --speed (1.4s)
+      var INTRO = 2200;                 // wait for the reveal to finish before autoplay starts
+      var autoTimer = null;
+      var MOVE = 1400;                                  // how long the heading move takes, in milliseconds
+      var MOVE_EASE = 'cubic-bezier(0.45, 0, 0.15, 1)';
+      var BELOW = 'translateY(100%)';
+      var SHOWN = 'translateY(0)';
+      var ABOVE = 'translateY(-100%)';
+
+
+      // Put an image back below its window without showing a transition
+      function reset(el) {
+        el.classList.add('is-reset');
+        el.classList.remove('is-active', 'is-leaving');
+        void el.offsetWidth;
+        el.classList.remove('is-reset');
+      }
+
+      var SLOT = 2;            // active heading slot from the top (0-based)
+      var tv = [];             // each row's target position (unwrapped)
+      var shown = [];          // each row's current position (unwrapped)
+      var raf = null;
+
+      // same easing as MOVE_EASE, as a function
+      function bezier(x1, y1, x2, y2) {
+        return function (x) {
+          if (x <= 0) return 0;
+          if (x >= 1) return 1;
+          var t = x;
+          for (var k = 0; k < 8; k++) {
+            var cx = 3 * (1 - t) * (1 - t) * t * x1 + 3 * (1 - t) * t * t * x2 + t * t * t - x;
+            var d = 3 * (1 - t) * (1 - t) * x1 + 6 * (1 - t) * t * (x2 - x1) + 3 * t * t * (1 - x2);
+            if (Math.abs(cx) < 1e-5 || Math.abs(d) < 1e-6) break;
+            t -= cx / d;
+          }
+          return 3 * (1 - t) * (1 - t) * t * y1 + 3 * (1 - t) * t * t * y2 + t * t * t;
+        };
+      }
+      var ease = bezier(0.45, 0, 0.15, 1);
+
+      // put row i at virtual position v, wrapping it around the loop
+      function place(i, v) {
+        var p = ((v + SLOT + 1) % n + n) % n - SLOT - 1;      // wraps through the hidden slots
+        rows[i].style.transform = 'translateY(' + ((p + SLOT) * 100) + '%)';
+      }
+
+      // Move the headings so the active one sits in the 3rd of 4 rows
+      function layout(index, instant) {
+        var first = instant || offsets[0] === undefined;
+        var s = first ? 0 : -offsets[index];                  // how far every row moves
+
+        rows.forEach(function (row, i) {
+          tv[i] = first ? ((i - index) % n + n) % n : tv[i] + s;
+          if (first && ((i - index) % n + n) % n > n - 1 - SLOT) tv[i] -= n;
+
+          var off = ((tv[i] + SLOT) % n + n) % n - SLOT;      // final position: -SLOT ... n-1-SLOT
+
+          row.dataset.dist = Math.min(Math.abs(off), 2);
+          row.dataset.pos = off === -SLOT ? 'top' : off === 1 ? 'bottom' : off === 0 ? 'active' : off < 0 ? 'near' : 'hidden';
+          row.classList.toggle('is-active', off === 0);
+          row.querySelector('button').setAttribute('aria-current', off === 0 ? 'true' : 'false');
+          offsets[i] = off;
+        });
+
+        cancelAnimationFrame(raf);
+
+        if (first) {
+          shown = tv.slice();
+          rows.forEach(function (r, i) { place(i, shown[i]); });
+          return;
+        }
+
+        var start = shown.slice();
+        var t0 = performance.now();
+        (function frame(now) {
+          var p = Math.min((now - t0) / MOVE, 1);
+          var e = ease(p);
+          rows.forEach(function (r, i) {
+            shown[i] = start[i] + (tv[i] - start[i]) * e;
+            place(i, shown[i]);
+          });
+          if (p < 1) raf = requestAnimationFrame(frame);
+        })(t0);
+      }
+
+      function parkSlide(el) {                                   // put a slide below, unseen
+        el.getAnimations().forEach(function (a) { a.cancel(); });
+        el.style.transform = BELOW;
+        el.classList.remove('is-active', 'is-leaving');
+      }
+
+      function goTo(index) {
+        if (index === current) return;
+
+        // dir = 1: the clicked heading is below the active one, so everything moves up
+        // dir = -1: the clicked heading is above it, so everything moves down
+        var dir = offsets[index] > 0 ? 1 : -1;
+
+        var prev = slides[current];
+        var next = slides[index];
+
+        // Park every other slide so fast clicking can't leave a stray image behind
+        slides.forEach(function (s, i) {
+          if (i !== current && i !== index) parkSlide(s);
+        });
+
+        prev.getAnimations().forEach(function (a) { a.cancel(); });
+        next.getAnimations().forEach(function (a) { a.cancel(); });
+
+        var opts = { duration: MOVE, easing: MOVE_EASE };
+        var nextStart = dir > 0 ? BELOW : ABOVE;     // where the new image comes from
+        var prevEnd = dir > 0 ? ABOVE : BELOW;     // where the old image goes
+
+        // New image glides in from below (clicked below) or from above (clicked above)
+        next.style.transform = SHOWN;
+        next.classList.add('is-active');
+        next.animate([{ transform: nextStart }, { transform: SHOWN }], opts);
+
+        // Old image glides out the opposite way
+        prev.style.transform = prevEnd;
+        prev.classList.remove('is-active');
+        prev.classList.add('is-leaving');
+        var out = prev.animate([{ transform: SHOWN }, { transform: prevEnd }], opts);
+        out.onfinish = function () {
+          if (prev !== slides[current]) parkSlide(prev);   // send it back out of view, unseen
+        };
+
+        current = index;
+        layout(index, false, dir);                                   // headings glide at the same moment
+      }
+
+      function startAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(function () {
+          goTo((current + 1) % n);
+        }, DELAY);
+      }
+
+      rows.forEach(function (row, i) {
+        row.style.setProperty('--i', i);                  // used for the staggered reveal
+        row.querySelector('button').addEventListener('click', function () {
+          goTo(i);
+          startAuto();                                    // restart the timer after a click
+        });
+      });
+
+      layout(0, true);                                    // first layout without movement
+
+      // Reveal when the section scrolls into view, then start autoplay
+      section.classList.add('js-anim');
+
+      function reveal() {
+        section.classList.add('is-visible');
+        setTimeout(startAuto, INTRO);
+      }
+
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          if (entries[0].isIntersecting) {
+            io.disconnect();
+            reveal();
+          }
+        }, { threshold: 0.25 });
+        io.observe(section);
+      } else {
+        reveal();
+      }
     });
   </script>
 
