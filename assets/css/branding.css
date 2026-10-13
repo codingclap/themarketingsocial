@@ -1315,7 +1315,7 @@
 
 .industry-showcase__nav-item {
     cursor: pointer;
-    font-family: 'Helventica-Bold', Helvetica;
+    font-family: 'Helventica-Bold';
     font-size: clamp(1.05rem, 0.9rem + 0.8vw, 1.8rem);
     font-weight: 500;
     color: var(--brand-red-muted);
