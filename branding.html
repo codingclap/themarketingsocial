@@ -457,6 +457,80 @@
 
 
 
+  <section class="industry-showcase" aria-labelledby="industry-showcase-title">
+    <!-- Section Header -->
+    <div class="industry-showcase__head">
+      <h2 class="industry-showcase__title" id="industry-showcase-title" data-fontfamily="Helventica-Regular"
+        data-color="black">
+        <span class="industry-showcase__accent" data-fontfamily="Playfair-MediumItalic"
+          data-color="red">Branding</span> FOR DUBAI BUSINESSES<br>
+        ACROSS DIFFERENT INDUSTRIES
+      </h2>
+    </div>
+
+    <!-- Showcase Box with Background Slider & Synced Titles -->
+    <div class="industry-showcase__stage">
+
+      <!-- Background Slider (Owl Carousel) -->
+      <div class="owl-carousel industry-showcase__bg-slider">
+        <!-- 1. Real Estate -->
+        <div class="industry-showcase__slide">
+          <img src="assets/images/branding/industries-real-estate.png"
+            alt="Real Estate Branding" draggable="false">
+        </div>
+        <!-- 2. Restaurants & Cafés -->
+        <div class="industry-showcase__slide">
+          <img src="assets/images/branding/industries-restaurants.png"
+            alt="Restaurants & Cafés Branding" draggable="false">
+        </div>
+        <!-- 3. Hospitality -->
+        <div class="industry-showcase__slide">
+          <img src="assets/images/branding/industries-hospitality.png"
+            alt="Hospitality Branding" draggable="false">
+        </div>
+        <!-- 4. Travel & Tourism -->
+        <div class="industry-showcase__slide">
+          <img src="assets/images/branding/industries-travel.png"
+            alt="Travel & Tourism Branding" draggable="false">
+        </div>
+        <!-- 5. Interior Design -->
+        <div class="industry-showcase__slide">
+          <img src="assets/images/branding/industries-interior.png"
+            alt="Interior Design Branding" draggable="false">
+        </div>
+        <!-- 6. E-commerce -->
+        <div class="industry-showcase__slide">
+          <img src="assets/images/branding/industries-ecommerce.png"
+            alt="E-commerce Branding" draggable="false">
+        </div>
+        <!-- 7. Startups & SMEs -->
+        <div class="industry-showcase__slide">
+          <img src="assets/images/branding/industries-startups.png"
+            alt="Startups & SMEs Branding" draggable="false">
+        </div>
+      </div>
+
+      <!-- Soft Overlay for High Readability -->
+      <div class="industry-showcase__overlay"></div>
+
+      <!-- Industry Headings (Clickable & Synced) -->
+      <div class="industry-showcase__content">
+        <ul class="industry-showcase__list" role="tablist">
+          <li class="industry-showcase__nav-item is-active" data-index="0">Real Estate</li>
+          <li class="industry-showcase__nav-item" data-index="1">Restaurants &amp; Cafés</li>
+          <li class="industry-showcase__nav-item" data-index="2">Hospitality</li>
+          <li class="industry-showcase__nav-item" data-index="3">Travel &amp; Tourism</li>
+          <li class="industry-showcase__nav-item" data-index="4">Interior Design</li>
+          <li class="industry-showcase__nav-item" data-index="5">E-commerce</li>
+          <li class="industry-showcase__nav-item" data-index="6">Startups &amp; SMEs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+
+
+
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/owl.carousel.js"></script>
 
@@ -691,7 +765,7 @@
           '<svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'],
         responsive: {
           0: { items: 1.09, margin: 10 },   // phones: one card + a quarter of the next
-          300: { items: 1.1, margin: 10 }, 
+          300: { items: 1.1, margin: 10 },
           425: { items: 1.4, margin: 10 },   // large phones
           576: { items: 1.7, margin: 13 },   // small tablets
           768: { items: 2.1, margin: 13 },   // tablets
@@ -707,7 +781,58 @@
     });
   </script>
 
-  <!-- Bootstrap JS (required for collapse and dropdowns) -->
+
+
+  <script>
+    jQuery(function ($) {
+      var $bgSlider = $('.industry-showcase__bg-slider');
+      var $navItems = $('.industry-showcase__nav-item');
+
+      if (!$bgSlider.length) return;
+
+      // Initialize Owl Carousel with smooth fade transitions
+      $bgSlider.owlCarousel({
+        items: 1,
+        loop: true,
+        margin: 0,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        smartSpeed: 900,
+        animateOut: 'fadeOut', // Requires owl.carousel animate css or fade effects
+        animateIn: 'fadeIn',
+        mouseDrag: false,
+        touchDrag: true
+      });
+
+      // Keep headings in sync whenever the slider transitions
+      $bgSlider.on('changed.owl.carousel', function (event) {
+        if (!event.item) return;
+
+        var count = event.item.count;
+        // Calculate the real index accounting for loop cloning
+        var realIndex = (event.item.index - event.relatedTarget._clones.length / 2) % count;
+        if (realIndex < 0) realIndex += count;
+
+        $navItems
+          .removeClass('is-active')
+          .eq(realIndex)
+          .addClass('is-active');
+      });
+
+      // Clicking an industry jumps directly to that slide
+      $navItems.on('click', function () {
+        var targetIndex = $(this).data('index');
+        $bgSlider.trigger('to.owl.carousel', [targetIndex, 600]);
+      });
+    });
+  </script>
+ 
+ 
+ 
+ <!-- Bootstrap JS (required for collapse and dropdowns) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
