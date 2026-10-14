@@ -1903,3 +1903,154 @@
 /* ======================================================================
    CSS: brand-deliverables 
    ====================================================================== */
+
+
+   
+/* ======================================================================
+   CSS: branding-partner
+   Desktop / tablet (768px and up): zig-zag rows, text and image side by side
+   Mobile (below 768px): image on top, text below
+   ====================================================================== */
+.branding-partner {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --row-gap: clamp(0.75rem, 0.4rem + 3vw, 3rem);
+    padding: clamp(3rem, 2rem + 10vw, 10rem) clamp(1.25rem, 5vw, 5rem);
+    background: #fff;
+    overflow: hidden;
+}
+ 
+.branding-partner__inner { 
+    margin-inline: auto; 
+}
+ 
+/* Heading: red italic lead-in, then black capitals */
+.branding-partner__heading {
+    max-width: 19em;                        /* breaks the heading after "THINKS" like the design */
+    margin: 0 0 clamp(2rem, 1rem + 4.5vw, 5.5rem);
+    font-size: clamp(1.75rem, 1rem + 2.6vw, 50px);
+    font-weight: 400;
+    line-height: 1.35;
+    text-transform: uppercase;
+    color: #000;
+}
+ 
+.branding-partner__accent {
+    font-size: 1.2em;
+    font-style: italic;
+    text-transform: none;
+    color: var(--brand-red);
+}
+ 
+/* Rows */
+.branding-partner__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--row-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ 
+.branding-partner__row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+}
+ 
+/* Image: one big rounded corner, cut with container units so the curve follows the image width */
+.branding-partner__media {
+    container-type: inline-size;
+    margin: 0;
+    aspect-ratio: 49 / 10;
+    overflow: hidden;
+}
+ 
+.branding-partner__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #fff;                      /* shows while the image loads */
+    transform: scale(1);
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+ 
+/* Which corner is curved (set per row in the HTML) */
+.branding-partner__media--bl img { border-bottom-left-radius: 20cqw; }
+.branding-partner__media--br img { border-bottom-right-radius: 20cqw; }
+.branding-partner__media--tl img { border-bottom-left-radius: 20cqw; }
+.branding-partner__media--tr img { border-top-right-radius: 20cqw; }
+ 
+@media (hover: hover) {
+    .branding-partner__row:hover .branding-partner__media img { transform: scale(1.04); }
+}
+ 
+/* Text */
+.branding-partner__body { min-width: 0; }
+ 
+.branding-partner__title {
+    margin: 0 0 0.45rem;
+    font-size: clamp(0.95rem, 0.8rem + 0.50vw, 1.5rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #000;
+}
+ 
+.branding-partner__text {
+    max-width: 30em;
+    margin: 0;
+    font-size: clamp(0.85rem, 0.75rem + 0.3vw, 1.05rem);
+    font-weight: 300;
+    line-height: 1.3;
+    color: #000;
+}
+ 
+/* Desktop: image on the right means text on the left, and the other way round */
+.branding-partner__row--media-right .branding-partner__media { order: 2; }
+.branding-partner__row--media-right .branding-partner__body { order: 1; padding-right: clamp(1.5rem, 4vw, 4rem); }
+.branding-partner__row--media-left .branding-partner__body { padding-left: clamp(1rem, 0.5rem + 1.8vw, 2rem); }
+ 
+/* Reveal: rows rise in one after another, the image rim opens with a soft wipe */
+.branding-partner.js-anim .branding-partner__heading,
+.branding-partner.js-anim .branding-partner__row {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+ 
+.branding-partner.js-anim .branding-partner__row { transition-delay: calc(0.15s + var(--i, 0) * 0.15s); }
+ 
+.branding-partner.js-anim.is-visible .branding-partner__heading,
+.branding-partner.js-anim.is-visible .branding-partner__row { opacity: 1; transform: none; }
+ 
+/* Mobile: stack each row, image first */
+@media (max-width: 767.98px) {
+    .branding-partner__list { gap: clamp(1.75rem, 1rem + 4vw, 2.5rem); }
+ 
+    .branding-partner__row { grid-template-columns: minmax(0, 1fr); row-gap: 1rem; }
+ 
+    .branding-partner__media { aspect-ratio: 16 / 7; }
+ 
+    .branding-partner__row--media-right .branding-partner__media,
+    .branding-partner__row--media-right .branding-partner__body { order: 0; }
+ 
+    .branding-partner__row--media-right .branding-partner__body,
+    .branding-partner__row--media-left .branding-partner__body { padding: 0; }
+ 
+    .branding-partner__media--bl img { border-bottom-left-radius: 32cqw; }
+    .branding-partner__media--br img { border-bottom-right-radius: 32cqw; }
+    .branding-partner__media--tl img { border-bottom-left-radius: 32cqw; }
+    .branding-partner__media--tr img { border-top-right-radius: 32cqw; }
+ 
+    .branding-partner.js-anim .branding-partner__row { transition-delay: 0.1s; }
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+    .branding-partner__media img { transition: none; }
+    .branding-partner__row:hover .branding-partner__media img { transform: none; }
+    .branding-partner.js-anim .branding-partner__heading,
+    .branding-partner.js-anim .branding-partner__row { opacity: 1; transform: none; transition: none; }
+}
