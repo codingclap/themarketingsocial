@@ -184,7 +184,7 @@
 
 .branding-recognised__title {
     font-size: clamp(1.75rem, 1rem + 2.5vw, 3rem);
-    line-height: 1.25;
+    line-height: 1.3;
     font-weight: 400;
 }
 
@@ -516,7 +516,7 @@
 /****************************** why-branding *****************************/
 .why-branding {
     --gutter: clamp(1.25rem, 5vw, 5rem);
-    --brand-red: #6b2535;
+    --brand-red: #6D2732;
     --pad-top: clamp(3rem, 2rem + 5vw, 6rem);
     --dots-h: 4.6rem;
     /* same value as in .case-slider-section */
@@ -537,7 +537,7 @@
     margin: 0 0 clamp(2.5rem, 1.5rem + 5vw, 5.5rem);
     font-size: clamp(1.75rem, 1rem + 2.6vw, 50px);
     font-weight: 400;
-    line-height: 1.25;
+    line-height: 1.3;
 }
 
 .why-branding__accent {
@@ -732,7 +732,7 @@
 /****************************** services-slider *****************************/
 .services-slider {
     --gutter: clamp(1.25rem, 5vw, 5rem);
-    --brand-red: #6b2535;
+    --brand-red: #6D2732;
     --ink: #3b3b3b;
     --row-h: clamp(4rem, 3rem + 3vw, 5.5rem);
     /* height of one heading row */
@@ -754,7 +754,7 @@
     margin: 0 0 clamp(1.5rem, 1rem + 2vw, 2.5rem);
     font-size: clamp(1.75rem, 1rem + 2.6vw, 50px);
     font-weight: 400;
-    line-height: 1.25;
+    line-height: 1.3;
     text-transform: uppercase;
 }
 
@@ -990,7 +990,7 @@
 
 .services-cards {
     --gutter: clamp(1.25rem, 5vw, 5rem);
-    --brand-red: #6b2535;
+    --brand-red: #6D2732;
     --ink: #1c1c1c;
     padding: clamp(3rem, 2rem + 8vw, 8rem) 0;
     padding-left: var(--gutter);
@@ -1402,9 +1402,9 @@
 /* Heading */
 .brand-process__heading {
     margin: 0 0 clamp(1.5rem, 1rem + 2.5vw, 3.25rem);
-    font-size: clamp(1.6rem, 1rem + 2.4vw, 3rem);
+    font-size: clamp(1.75rem, 1rem + 2.6vw, 50px);
     font-weight: 400;
-    line-height: 1.2;
+    line-height: 1.3;
     text-transform: uppercase;
     color: #000;
 }
@@ -1555,7 +1555,7 @@
     font-size: clamp(0.95rem, 0.8rem + 0.7vw, 1.2rem);
     font-style: italic;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.3;
     font-family: 'Helvetica-light';
 }
 
@@ -1628,7 +1628,7 @@
     .brand-process__tab {
         flex: 0 0 auto;
         scroll-snap-align: center;
-        border-radius: 18px;
+        border-radius: 18px!important;
         border-bottom: 1px solid var(--tab-line);
     }
 }
@@ -1694,7 +1694,7 @@
    ====================================================================== */
 .brand-deliverables {
     --gutter: clamp(1.25rem, 5vw, 5rem);
-    --brand-red: #6b2535;
+    --brand-red: #6D2732;
     --gap: clamp(0.8rem, 0.4rem + 1.6vw, 0.9rem);
     padding: clamp(3rem, 2rem + 10vw, 10rem) clamp(1.25rem, 5vw, 5rem);
     background: linear-gradient(180deg, #fdfcfb 0%, #f8f2ee 55%, #f1e6de 100%);
@@ -1710,7 +1710,7 @@
 .brand-deliverables__heading {
     max-width: 19em;
     margin: 0 0 clamp(1.75rem, 1rem + 3vw, 3.75rem);
-    font-size: clamp(1.6rem, 1rem + 2.4vw, 3rem);
+    font-size: clamp(1.75rem, 1rem + 2.6vw, 50px);
     font-weight: 400;
     line-height: 1.3;
     text-transform: uppercase;
@@ -1783,7 +1783,7 @@
     margin: 0 0 0.15rem;
     font-size: clamp(0.82rem, 0.7rem + 0.4vw, 1.05rem);
     font-weight: 400;
-    line-height: 1.25;
+    line-height: 1.3;
     letter-spacing: 0.01em;
     text-transform: uppercase;
     color: #000;
