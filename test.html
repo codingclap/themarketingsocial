@@ -1,253 +1,372 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Creative Design & Branding Services</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Brand deliverables</title>
+
+<!-- Owl Carousel 2 CSS & Default Theme -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
 <style>
-  :root{
-    --maroon:#7a2436;
-    --ink:#141312;
-    --muted:#a89a8d;
-    --teal:#1a8f8a;
-    --ease:cubic-bezier(.22,.9,.28,1);
-  }
+body { margin: 0; font-family: Helvetica, Arial, sans-serif; }
 
-  *{ box-sizing:border-box; }
+/* ======================================================================
+   CSS: brand-deliverables
+   Desktop (992px and up): 6 columns grid
+   Tablet (768px to 991px): 3 columns grid
+   Mobile (below 768px): Smooth Owl Carousel Slider with Dots
+   ====================================================================== */
+.brand-deliverables {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6b2535;
+    --gap: clamp(0.9rem, 0.4rem + 1.8vw, 1.75rem);
+    padding: clamp(2.5rem, 2rem + 3vw, 5rem) 0 clamp(2.5rem, 2rem + 3vw, 5rem);
+    background: linear-gradient(180deg, #fdfcfb 0%, #f8f2ee 55%, #f1e6de 100%);
+    overflow: hidden;
+}
 
-  html,body{
-    margin:0;
-    background:#ffffff;
-    font-family:'Inter',sans-serif;
-  }
+.brand-deliverables__inner {
+    max-width: 82rem;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+}
 
-  .wrap{
-    max-width:900px;
-    margin:0 auto;
-    padding:56px 24px 70px;
-  }
+/* Heading */
+.brand-deliverables__heading {
+    max-width: 19em;
+    margin: 0 0 clamp(1.75rem, 1rem + 3vw, 3.75rem);
+    font-size: clamp(1.6rem, 1rem + 2.4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.25;
+    text-transform: uppercase;
+    color: #000;
+}
 
-  .heading{
-    position:relative;
-    margin-bottom:44px;
-  }
+.brand-deliverables__accent {
+    font-size: 1.2em;
+    font-style: italic;
+    text-transform: none;
+    color: var(--brand-red);
+}
 
-  .heading .line1{
-    display:inline-block;
-    font-family:'Playfair Display',serif;
-    font-style:italic;
-    font-weight:600;
-    font-size:clamp(24px, 4vw, 34px);
-    color:var(--maroon);
-    text-decoration:underline;
-    text-decoration-color:rgba(122,36,54,.45);
-    text-underline-offset:8px;
-  }
+/* Desktop & Tablet Grid */
+.brand-deliverables__list {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: var(--gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
-  .badge{
-    position:absolute;
-    top:-6px;
-    right:0;
-    width:34px;
-    height:34px;
-    border-radius:50% 50% 50% 4px;
-    background:var(--teal);
-    color:#fff;
-    font-weight:700;
-    font-size:13px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    box-shadow:0 4px 10px rgba(0,0,0,.15);
-  }
+.brand-deliverables__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 
-  .heading .line2{
-    display:block;
-    margin-top:6px;
-    font-weight:700;
-    font-size:clamp(17px, 2.6vw, 22px);
-    letter-spacing:.4px;
-    color:var(--ink);
-    text-decoration:underline;
-    text-decoration-color:rgba(20,19,18,.2);
-    text-underline-offset:6px;
-  }
+/* Image tile */
+.brand-deliverables__media {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 176 / 207;
+    margin: 0 0 clamp(0.75rem, 0.5rem + 0.6vw, 1.1rem);
+    border-radius: clamp(14px, 1.2vw, 20px);
+    overflow: hidden;
+    background: #e8dcd5;
+    isolation: isolate;
+}
 
-  .content{
-    display:flex;
-    gap:44px;
-    align-items:flex-start;
-  }
+.brand-deliverables__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    -webkit-user-drag: none;
+}
 
-  .tabs{
-    list-style:none;
-    margin:0;
-    padding:0;
-    flex:0 0 230px;
-  }
+.brand-deliverables__media--light {
+    background: #fbf8f7;
+    box-shadow: inset 0 0 0 1px rgba(107, 37, 53, 0.35);
+}
 
-  .tabs li{
-    padding:9px 0 9px 18px;
-    margin-bottom:4px;
-    border-left:3px solid transparent;
-    font-size:14px;
-    letter-spacing:.3px;
-    color:var(--muted);
-    cursor:pointer;
-    transition:color .3s ease, border-color .3s ease, font-weight .1s;
-    -webkit-tap-highlight-color:transparent;
-  }
+.brand-deliverables__media--light img { padding: 0; }
 
-  .tabs li.active{
-    color:var(--ink);
-    font-weight:700;
-    border-left-color:var(--ink);
-    text-transform:uppercase;
-    font-size:16px;
-  }
+@media (hover: hover) {
+    .brand-deliverables__item:hover .brand-deliverables__media img { transform: scale(1.05); }
+}
 
-  .tabs li:not(.active){
-    text-transform:uppercase;
-  }
+/* Caption */
+.brand-deliverables__title {
+    margin: 0 0 0.35rem;
+    font-size: clamp(0.82rem, 0.7rem + 0.4vw, 1.05rem);
+    font-weight: 400;
+    line-height: 1.25;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: #111;
+}
 
-  .tabs li:not(.active):hover{
-    color:#7d7268;
-  }
+.brand-deliverables__text {
+    margin: 0;
+    font-size: clamp(0.76rem, 0.7rem + 0.22vw, 0.92rem);
+    line-height: 1.4;
+    color: #333;
+}
 
-  .display{
-    flex:1;
-    width:100%;
-    position:relative;
-    aspect-ratio:1 / 1;
-    max-width:380px;
-    border-radius:18px;
-    overflow:hidden;
-    box-shadow:0 16px 34px rgba(0,0,0,.18);
-    background:#e5e0da;
-  }
+/* Reveal: items rise in one after another */
+.brand-deliverables.js-anim .brand-deliverables__heading,
+.brand-deliverables.js-anim .brand-deliverables__item {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
-  .display .img{
-    position:absolute;
-    inset:0;
-    background-size:cover;
-    background-position:center;
-    transition:transform .55s var(--ease);
-    will-change:transform;
-  }
+.brand-deliverables.js-anim .brand-deliverables__item { 
+    transition-delay: calc(0.15s + var(--i, 0) * 0.1s); 
+}
 
-  @media (max-width:680px){
-    .content{
-      flex-direction:column;
+.brand-deliverables.js-anim.is-visible .brand-deliverables__heading,
+.brand-deliverables.js-anim.is-visible .brand-deliverables__item { 
+    opacity: 1; 
+    transform: none; 
+}
+
+/* Tablet: 3 columns */
+@media (max-width: 991.98px) {
+    .brand-deliverables__list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: clamp(1.75rem, 1rem + 3vw, 2.5rem);
     }
-    .tabs{
-      flex:none;
-      width:100%;
-      display:flex;
-      flex-wrap:wrap;
-      gap:2px 18px;
+}
+
+/* Mobile: Owl Carousel activated */
+@media (max-width: 767.98px) {
+    .brand-deliverables__inner { 
+        padding-inline: 0; 
     }
-    .tabs li{
-      padding:6px 0 6px 14px;
+
+    .brand-deliverables__heading { 
+        padding-inline: var(--gutter); 
     }
-    .display{
-      max-width:100%;
+
+    /* Unset grid when Owl takes control */
+    .brand-deliverables__list.owl-carousel {
+        display: block;
+        padding-left: var(--gutter);
+        box-sizing: border-box;
     }
-  }
+
+    .brand-deliverables__item {
+        width: 100%;
+    }
+
+    /* Owl Carousel Dots Styling */
+    .brand-deliverables .owl-dots {
+        display: flex !important;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 1.25rem;
+    }
+
+    .brand-deliverables .owl-dot {
+        border: 0;
+        padding: 0;
+        background: transparent;
+        outline: none;
+    }
+
+    .brand-deliverables .owl-dot span {
+        display: block;
+        width: 0.6rem;
+        height: 0.6rem;
+        margin: 0 !important;
+        border-radius: 50%;
+        background: rgba(107, 37, 53, 0.22) !important;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .brand-deliverables .owl-dot.active span {
+        background: var(--brand-red) !important;
+        transform: scale(1.25);
+    }
+
+    .brand-deliverables .owl-dot:focus-visible span {
+        outline: 2px solid var(--brand-red);
+        outline-offset: 3px;
+    }
+
+    .brand-deliverables.js-anim .brand-deliverables__item { 
+        transition-delay: 0.15s; 
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brand-deliverables__media img { transition: none; }
+    .brand-deliverables__item:hover .brand-deliverables__media img { transform: none; }
+    .brand-deliverables.js-anim .brand-deliverables__heading,
+    .brand-deliverables.js-anim .brand-deliverables__item { opacity: 1; transform: none; transition: none; }
+}
 </style>
 </head>
 <body>
 
-  <div class="wrap">
+<div style="height:200px;background:#fff"></div>
 
-    <div class="heading">
-      <span class="line1">Creative Design &amp; Branding Services</span>
-      <div class="badge">T</div>
-      <span class="line2">THAT STRENGTHENS YOUR MARKETING</span>
-    </div>
+<!------------------------------------ brand-deliverables ------------------------------->
+<section class="brand-deliverables">
+  <div class="brand-deliverables__inner">
 
-    <div class="content">
-      <ul class="tabs" id="tabs">
-        <li class="active" data-img="assets/images/test-7.png">Logo Design</li>
-        <li data-img="assets/images/test-7.png">Branding</li>
-        <li data-img="assets/images/test-7.png">PPT Design</li>
-        <li data-img="assets/images/test-7.png">Brochure Design</li>
-        <li data-img="assets/images/test-7.png">UI/UX Design</li>
-        <li data-img="assets/images/test-7.png">Web Design</li>
-        <li data-img="assets/images/test-7.png">Social Media Marketing</li>
-        <li data-img="assets/images/test-7.png">Media Production</li>
-      </ul>
+    <h2 class="brand-deliverables__heading" data-fontfamily='Helventica-Regular' data-color='black'>
+      WHAT YOU RECEIVE AT THE END OF YOUR
+      <span class="brand-deliverables__accent" data-fontfamily='Playfair-MediumItalic' data-color='red'>Branding Project</span>
+    </h2>
 
-      <div class="display" id="display">
-        <div class="img" id="displayImg" style="background-image:url('assets/images/test-7.png'); transform:translateY(0);"></div>
-      </div>
-    </div>
+    <!-- Converted to Owl target while maintaining list semantics -->
+    <ul class="brand-deliverables__list" aria-label="Branding project deliverables">
+
+      <li class="brand-deliverables__item">
+        <figure class="brand-deliverables__media brand-deliverables__media--light">
+          <img src="assets/images/branding/receive-1.jpg" alt="Logo system with a primary logo and variations" loading="lazy" draggable="false" />
+        </figure>
+        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Logo System</h3>
+        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Primary logo<br />Secondary logo variations</p>
+      </li>
+
+      <li class="brand-deliverables__item">
+        <figure class="brand-deliverables__media">
+          <img src="assets/images/branding/receive-2.jpg" alt="Set of brand symbols and icons" loading="lazy" draggable="false" />
+        </figure>
+        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Symbol</h3>
+        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Icon or symbol</p>
+      </li>
+
+      <li class="brand-deliverables__item">
+        <figure class="brand-deliverables__media">
+          <img src="assets/images/branding/receive-3.jpg" alt="Colour palette and typography samples" loading="lazy" draggable="false" />
+        </figure>
+        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Visual Identity</h3>
+        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Colour palette<br />Typography system</p>
+      </li>
+
+      <li class="brand-deliverables__item">
+        <figure class="brand-deliverables__media">
+          <img src="assets/images/branding/receive-4.jpg" alt="Brand pattern on a business card" loading="lazy" draggable="false" />
+        </figure>
+        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Brand Elements</h3>
+        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Brand patterns<br />Brand imagery direction</p>
+      </li>
+
+      <li class="brand-deliverables__item">
+        <figure class="brand-deliverables__media">
+          <img src="assets/images/branding/receive-5.jpg" alt="Business card and social media template" loading="lazy" draggable="false" />
+        </figure>
+        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Digital &amp; Print</h3>
+        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Social media templates<br />Business card design</p>
+      </li>
+
+      <li class="brand-deliverables__item">
+        <figure class="brand-deliverables__media">
+          <img src="assets/images/branding/receive-6.jpg" alt="Brand guidelines pages" loading="lazy" draggable="false" />
+        </figure>
+        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Guidelines &amp; Collateral</h3>
+        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Brand guidelines<br />Marketing collateral</p>
+      </li>
+
+    </ul>
 
   </div>
+</section>
+<!------------------------------------ brand-deliverables ------------------------------->
 
-  <script>
-    var tabs = document.querySelectorAll('#tabs li');
-    var display = document.getElementById('display');
-    var currentImg = document.getElementById('displayImg');
-    var currentIndex = 0;
-    var animating = false;
-    var imageCache = {};
+<div style="height:500px;background:#fff"></div>
 
-    function preload(src, cb){
-      if (imageCache[src]) { cb(); return; }
-      var loader = new Image();
-      loader.onload = function(){ imageCache[src] = true; cb(); };
-      loader.onerror = function(){ imageCache[src] = true; cb(); }; // don't block forever on a failed load
-      loader.src = src;
-    }
+<!-- jQuery and Owl Carousel 2 JS CDN Scripts -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
-    tabs.forEach(function(tab, i){
-      tab.addEventListener('click', function(){
-        if (tab.classList.contains('active') || animating) return;
-        animating = true;
+<script>
+jQuery(function ($) {
+  var $section = $('.brand-deliverables');
+  if (!$section.length) return;
 
-        var newSrc = tab.getAttribute('data-img');
+  var $list = $section.find('.brand-deliverables__list');
+  var $items = $section.find('.brand-deliverables__item');
 
-        // wait for the image bytes to actually be ready before we touch the DOM/animation,
-        // so the old image stays fully visible until the new one can paint immediately
-        preload(newSrc, function(){
-          tabs.forEach(function(t){ t.classList.remove('active'); });
-          tab.classList.add('active');
+  // Staggered reveal indexes
+  $items.each(function (i) {
+    this.style.setProperty('--i', i);
+  });
 
-          // slide bottom-to-top when moving down the list, top-to-bottom when moving up
-          var direction = i > currentIndex ? 1 : -1;
-          currentIndex = i;
+  // Reveal animation on scroll
+  $section.addClass('js-anim');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (entries[0].isIntersecting) {
+        $section.addClass('is-visible');
+        io.disconnect();
+      }
+    }, { threshold: 0.2 });
+    io.observe($section[0]);
+  } else {
+    $section.addClass('is-visible');
+  }
 
-          var incoming = document.createElement('div');
-          incoming.className = 'img';
-          incoming.style.backgroundImage = "url('" + newSrc + "')";
-          incoming.style.transform = 'translateY(' + (direction * 100) + '%)';
-          incoming.style.transition = 'none';
-          display.appendChild(incoming);
+  // Manage responsive Owl Carousel behavior
+  function handleCarousel() {
+    var isMobile = window.matchMedia('(max-width: 767.98px)').matches;
 
-          // force layout so the starting position is applied before animating
-          incoming.offsetWidth;
-
-          requestAnimationFrame(function(){
-            incoming.style.transition = '';
-            incoming.style.transform = 'translateY(0)';
-            currentImg.style.transform = 'translateY(' + (-direction * 100) + '%)';
-          });
-
-          var oldImg = currentImg;
-          currentImg = incoming;
-
-          setTimeout(function(){
-            if (oldImg.parentNode) oldImg.parentNode.removeChild(oldImg);
-            animating = false;
-          }, 600);
+    if (isMobile) {
+      if (!$list.hasClass('owl-loaded')) {
+        $list.addClass('owl-carousel').owlCarousel({
+          items: 1.4,             // Shows 1 full card and a peek of the next
+          margin: 15,
+          loop: false,
+          nav: false,
+          dots: true,
+          smartSpeed: 600,        // Smooth slide transition speed (ms)
+          dragEndSpeed: 500,      // Smooth inertia release speed
+          touchDrag: true,
+          mouseDrag: true,
+          responsive: {
+            0: {
+              items: 1.25,
+              margin: 12
+            },
+            480: {
+              items: 1.6,
+              margin: 14
+            },
+            600: {
+              items: 2.2,
+              margin: 16
+            }
+          }
         });
-      });
-    });
+      }
+    } else {
+      // Destroy Owl Carousel on tablets & desktop to restore CSS Grid
+      if ($list.hasClass('owl-loaded')) {
+        $list.trigger('destroy.owl.carousel');
+        $list.removeClass('owl-carousel');
+      }
+    }
+  }
 
-    // warm the cache for all tab images up front so the very first click is instant too
-    tabs.forEach(function(tab){ preload(tab.getAttribute('data-img'), function(){}); });
-  </script>
+  handleCarousel();
 
+  // Watch screen resize with debouncing
+  var resizeTimer;
+  $(window).on('resize', function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(handleCarousel, 50);
+  });
+});
+</script>
 </body>
 </html>
