@@ -495,9 +495,9 @@
     .case-slide {
         flex-direction: column;
         justify-content: flex-start;
-        min-height: 0;
+        min-height: 700px;
         padding-top: 4.5rem;
-        padding-bottom: 70vw;
+        /* padding-bottom: 70vw; */
         background-position: right bottom;
         background-size: cover;
     }
