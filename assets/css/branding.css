@@ -499,7 +499,7 @@
         padding-top: 4.5rem;
         padding-bottom: 70vw;
         background-position: right bottom;
-        background-size: auto 62%;
+        background-size: cover;
     }
 
     .case-card {
