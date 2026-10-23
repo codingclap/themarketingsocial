@@ -316,22 +316,21 @@
     position: relative;
     flex: 0 0 auto;
     width: clamp(19rem, 44vw, 34rem);
-    padding: clamp(4rem, 5rem + 7vw, 7rem) clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem) clamp(1.5rem, 1rem + 2vw, 2.5rem);
-    background-image: url('../images/branding/visual-card-bg.webp');
-    /* match your brand red */
+    padding: clamp(4rem, 5rem + 7vw, 7rem) clamp(1.25rem, 0.5rem + 2.5vw, 2.25rem) clamp(1.5rem, 1rem + 2vw, 2.5rem);  
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 20px;
     color: #fff;
+    backdrop-filter: blur(8.4px);
 }
 
 /* Owl sets img width:100%, so this is more specific to keep the logo size */
 .case-slider .owl-item .case-card__logo {
     position: absolute;
-    top: 2.7%;
+    top:var(--logo-top, 2.7%);
     left: 50%;
-    width: 140px;
-    height: 140px;
+    width: var(--logo-w, 140px);
+    height: var(--logo-h, var(--logo-w, 140px));
     object-fit: contain;
     transform: translate(-50%, -50%);
 }

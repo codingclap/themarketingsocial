@@ -1,372 +1,367 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Brand deliverables</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
 
-<!-- Owl Carousel 2 CSS & Default Theme -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    
+/* Main inquiry form */
+.inquiry-form-wrap {
+  --inquiry-bg: #f2f0e5;
+  --inquiry-text: #222222;
+  --inquiry-button: #707183;
 
-<style>
-body { margin: 0; font-family: Helvetica, Arial, sans-serif; }
-
-/* ======================================================================
-   CSS: brand-deliverables
-   Desktop (992px and up): 6 columns grid
-   Tablet (768px to 991px): 3 columns grid
-   Mobile (below 768px): Smooth Owl Carousel Slider with Dots
-   ====================================================================== */
-.brand-deliverables {
-    --gutter: clamp(1.25rem, 5vw, 5rem);
-    --brand-red: #6b2535;
-    --gap: clamp(0.9rem, 0.4rem + 1.8vw, 1.75rem);
-    padding: clamp(2.5rem, 2rem + 3vw, 5rem) 0 clamp(2.5rem, 2rem + 3vw, 5rem);
-    background: linear-gradient(180deg, #fdfcfb 0%, #f8f2ee 55%, #f1e6de 100%);
-    overflow: hidden;
+  max-width: 1070px;
+  margin: 0 auto;
+  padding: 28px 0 10px;
+  color: var(--inquiry-text);
+  font-family: inherit;
+  box-sizing: border-box;
 }
 
-.brand-deliverables__inner {
-    max-width: 82rem;
-    margin-inline: auto;
-    padding-inline: var(--gutter);
+.inquiry-form-wrap *,
+.inquiry-form-wrap *::before,
+.inquiry-form-wrap *::after {
+  box-sizing: border-box;
 }
 
 /* Heading */
-.brand-deliverables__heading {
-    max-width: 19em;
-    margin: 0 0 clamp(1.75rem, 1rem + 3vw, 3.75rem);
-    font-size: clamp(1.6rem, 1rem + 2.4vw, 3rem);
-    font-weight: 400;
-    line-height: 1.25;
-    text-transform: uppercase;
-    color: #000;
+.inquiry-form-wrap .inquiry-heading {
+  margin: 0 0 66px;
+  text-align: center;
+  font-size: clamp(28px, 4.5vw, 56px);
+  font-weight: 700;
+  line-height: 0.99;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
-.brand-deliverables__accent {
-    font-size: 1.2em;
-    font-style: italic;
-    text-transform: none;
-    color: var(--brand-red);
+/* Fields */
+.inquiry-form-wrap .inquiry-field {
+  min-width: 0;
 }
 
-/* Desktop & Tablet Grid */
-.brand-deliverables__list {
-    display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: var(--gap);
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.inquiry-form-wrap .inquiry-field label {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
 }
 
-.brand-deliverables__item {
-    display: flex;
+.inquiry-form-wrap .inquiry-field input:not([type="checkbox"]),
+.inquiry-form-wrap .inquiry-field textarea {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 7px 0;
+  border: 0;
+  border-bottom: 1px solid #373737;
+  border-radius: 0;
+  outline: none;
+  background: transparent;
+  color: #222;
+  font: inherit;
+  font-size: 15px;
+  box-shadow: none;
+}
+
+.inquiry-form-wrap .inquiry-field input:focus,
+.inquiry-form-wrap .inquiry-field textarea:focus {
+  border-bottom-color: #707183;
+  box-shadow: 0 1px 0 #707183;
+}
+
+/* Full-width name field */
+.inquiry-form-wrap .inquiry-full {
+  margin-bottom: 40px;
+}
+
+/* Email and company */
+.inquiry-form-wrap .inquiry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 40px;
+}
+
+/* Country code and phone */
+.inquiry-form-wrap .inquiry-phone-row {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 495px);
+  justify-content: center;
+  gap: 80px;
+  margin-bottom: 50px;
+}
+
+.inquiry-form-wrap .inquiry-country label {
+  text-align: center;
+}
+
+.inquiry-form-wrap .inquiry-country input {
+  text-align: center;
+}
+
+/* Requirements box */
+.inquiry-form-wrap .inquiry-requirements {
+  margin-bottom: 30px;
+}
+
+.inquiry-form-wrap .inquiry-requirements textarea {
+  min-height: 150px;
+  padding: 12px;
+  border: 1px solid #373737;
+  resize: vertical;
+}
+
+/* Consent and submit button */
+.inquiry-form-wrap .inquiry-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 75px;
+  margin-bottom: 32px;
+}
+
+.inquiry-form-wrap .inquiry-consents {
+  flex: 0 1 350px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.inquiry-form-wrap .inquiry-consent {
+  margin-bottom: 6px;
+}
+
+.inquiry-form-wrap .inquiry-consent .wpcf7-form-control-wrap {
+  display: inline;
+}
+
+.inquiry-form-wrap .inquiry-consent .wpcf7-list-item {
+  margin: 0;
+}
+
+.inquiry-form-wrap .inquiry-consent label {
+  display: inline;
+}
+
+.inquiry-form-wrap .inquiry-consent input[type="checkbox"] {
+  width: 11px;
+  height: 11px;
+  margin: 0 5px 0 0;
+  vertical-align: baseline;
+  accent-color: #707183;
+}
+
+.inquiry-form-wrap .inquiry-consent a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.inquiry-form-wrap .inquiry-submit {
+  flex: 0 0 217px;
+}
+
+.inquiry-form-wrap .inquiry-submit input[type="submit"] {
+  display: block;
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  padding: 14px 18px;
+  border: 0;
+  border-radius: 0;
+  background: var(--inquiry-button);
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.inquiry-form-wrap .inquiry-submit input[type="submit"]:hover {
+  background: #555768;
+}
+
+/* Disclaimer */
+.inquiry-form-wrap .inquiry-disclaimer {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: 0.015em;
+}
+
+/* CF7 validation */
+.inquiry-form-wrap .wpcf7-not-valid-tip {
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.inquiry-form-wrap .wpcf7-response-output {
+  margin: 20px 0 0;
+  padding: 12px;
+  font-size: 14px;
+}
+
+/* Tablet and mobile */
+@media (max-width: 767px) {
+  .inquiry-form-wrap {
+    padding: 20px 18px;
+  }
+
+  .inquiry-form-wrap .inquiry-heading {
+    margin-bottom: 40px;
+    font-size: clamp(27px, 6vw, 40px);
+    line-height: 1.05;
+  }
+
+  .inquiry-form-wrap .inquiry-row {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 28px;
+  }
+
+  .inquiry-form-wrap .inquiry-full {
+    margin-bottom: 28px;
+  }
+
+  .inquiry-form-wrap .inquiry-phone-row {
+    grid-template-columns: 110px minmax(0, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+
+  .inquiry-form-wrap .inquiry-requirements {
+    margin-bottom: 24px;
+  }
+
+  .inquiry-form-wrap .inquiry-requirements textarea {
+    min-height: 140px;
+  }
+
+  .inquiry-form-wrap .inquiry-bottom {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-/* Image tile */
-.brand-deliverables__media {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 176 / 207;
-    margin: 0 0 clamp(0.75rem, 0.5rem + 0.6vw, 1.1rem);
-    border-radius: clamp(14px, 1.2vw, 20px);
-    overflow: hidden;
-    background: #e8dcd5;
-    isolation: isolate;
-}
-
-.brand-deliverables__media img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1);
-    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
-    -webkit-user-drag: none;
-}
-
-.brand-deliverables__media--light {
-    background: #fbf8f7;
-    box-shadow: inset 0 0 0 1px rgba(107, 37, 53, 0.35);
-}
-
-.brand-deliverables__media--light img { padding: 0; }
-
-@media (hover: hover) {
-    .brand-deliverables__item:hover .brand-deliverables__media img { transform: scale(1.05); }
-}
-
-/* Caption */
-.brand-deliverables__title {
-    margin: 0 0 0.35rem;
-    font-size: clamp(0.82rem, 0.7rem + 0.4vw, 1.05rem);
-    font-weight: 400;
-    line-height: 1.25;
-    letter-spacing: 0.01em;
-    text-transform: uppercase;
-    color: #111;
-}
-
-.brand-deliverables__text {
-    margin: 0;
-    font-size: clamp(0.76rem, 0.7rem + 0.22vw, 0.92rem);
-    line-height: 1.4;
-    color: #333;
-}
-
-/* Reveal: items rise in one after another */
-.brand-deliverables.js-anim .brand-deliverables__heading,
-.brand-deliverables.js-anim .brand-deliverables__item {
-    opacity: 0;
-    transform: translateY(1.75rem);
-    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.brand-deliverables.js-anim .brand-deliverables__item { 
-    transition-delay: calc(0.15s + var(--i, 0) * 0.1s); 
-}
-
-.brand-deliverables.js-anim.is-visible .brand-deliverables__heading,
-.brand-deliverables.js-anim.is-visible .brand-deliverables__item { 
-    opacity: 1; 
-    transform: none; 
-}
-
-/* Tablet: 3 columns */
-@media (max-width: 991.98px) {
-    .brand-deliverables__list {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        row-gap: clamp(1.75rem, 1rem + 3vw, 2.5rem);
-    }
-}
-
-/* Mobile: Owl Carousel activated */
-@media (max-width: 767.98px) {
-    .brand-deliverables__inner { 
-        padding-inline: 0; 
-    }
-
-    .brand-deliverables__heading { 
-        padding-inline: var(--gutter); 
-    }
-
-    /* Unset grid when Owl takes control */
-    .brand-deliverables__list.owl-carousel {
-        display: block;
-        padding-left: var(--gutter);
-        box-sizing: border-box;
-    }
-
-    .brand-deliverables__item {
-        width: 100%;
-    }
-
-    /* Owl Carousel Dots Styling */
-    .brand-deliverables .owl-dots {
-        display: flex !important;
-        justify-content: center;
-        gap: 0.5rem;
-        margin-top: 1.25rem;
-    }
-
-    .brand-deliverables .owl-dot {
-        border: 0;
-        padding: 0;
-        background: transparent;
-        outline: none;
-    }
-
-    .brand-deliverables .owl-dot span {
-        display: block;
-        width: 0.6rem;
-        height: 0.6rem;
-        margin: 0 !important;
-        border-radius: 50%;
-        background: rgba(107, 37, 53, 0.22) !important;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .brand-deliverables .owl-dot.active span {
-        background: var(--brand-red) !important;
-        transform: scale(1.25);
-    }
-
-    .brand-deliverables .owl-dot:focus-visible span {
-        outline: 2px solid var(--brand-red);
-        outline-offset: 3px;
-    }
-
-    .brand-deliverables.js-anim .brand-deliverables__item { 
-        transition-delay: 0.15s; 
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .brand-deliverables__media img { transition: none; }
-    .brand-deliverables__item:hover .brand-deliverables__media img { transform: none; }
-    .brand-deliverables.js-anim .brand-deliverables__heading,
-    .brand-deliverables.js-anim .brand-deliverables__item { opacity: 1; transform: none; transition: none; }
-}
-</style>
-</head>
-<body>
-
-<div style="height:200px;background:#fff"></div>
-
-<!------------------------------------ brand-deliverables ------------------------------->
-<section class="brand-deliverables">
-  <div class="brand-deliverables__inner">
-
-    <h2 class="brand-deliverables__heading" data-fontfamily='Helventica-Regular' data-color='black'>
-      WHAT YOU RECEIVE AT THE END OF YOUR
-      <span class="brand-deliverables__accent" data-fontfamily='Playfair-MediumItalic' data-color='red'>Branding Project</span>
-    </h2>
-
-    <!-- Converted to Owl target while maintaining list semantics -->
-    <ul class="brand-deliverables__list" aria-label="Branding project deliverables">
-
-      <li class="brand-deliverables__item">
-        <figure class="brand-deliverables__media brand-deliverables__media--light">
-          <img src="assets/images/branding/receive-1.jpg" alt="Logo system with a primary logo and variations" loading="lazy" draggable="false" />
-        </figure>
-        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Logo System</h3>
-        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Primary logo<br />Secondary logo variations</p>
-      </li>
-
-      <li class="brand-deliverables__item">
-        <figure class="brand-deliverables__media">
-          <img src="assets/images/branding/receive-2.jpg" alt="Set of brand symbols and icons" loading="lazy" draggable="false" />
-        </figure>
-        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Symbol</h3>
-        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Icon or symbol</p>
-      </li>
-
-      <li class="brand-deliverables__item">
-        <figure class="brand-deliverables__media">
-          <img src="assets/images/branding/receive-3.jpg" alt="Colour palette and typography samples" loading="lazy" draggable="false" />
-        </figure>
-        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Visual Identity</h3>
-        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Colour palette<br />Typography system</p>
-      </li>
-
-      <li class="brand-deliverables__item">
-        <figure class="brand-deliverables__media">
-          <img src="assets/images/branding/receive-4.jpg" alt="Brand pattern on a business card" loading="lazy" draggable="false" />
-        </figure>
-        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Brand Elements</h3>
-        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Brand patterns<br />Brand imagery direction</p>
-      </li>
-
-      <li class="brand-deliverables__item">
-        <figure class="brand-deliverables__media">
-          <img src="assets/images/branding/receive-5.jpg" alt="Business card and social media template" loading="lazy" draggable="false" />
-        </figure>
-        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Digital &amp; Print</h3>
-        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Social media templates<br />Business card design</p>
-      </li>
-
-      <li class="brand-deliverables__item">
-        <figure class="brand-deliverables__media">
-          <img src="assets/images/branding/receive-6.jpg" alt="Brand guidelines pages" loading="lazy" draggable="false" />
-        </figure>
-        <h3 class="brand-deliverables__title" data-fontfamily='Helventica-Regular'>Guidelines &amp; Collateral</h3>
-        <p class="brand-deliverables__text" data-fontfamily='Helventica-Light'>Brand guidelines<br />Marketing collateral</p>
-      </li>
-
-    </ul>
-
-  </div>
-</section>
-<!------------------------------------ brand-deliverables ------------------------------->
-
-<div style="height:500px;background:#fff"></div>
-
-<!-- jQuery and Owl Carousel 2 JS CDN Scripts -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-<script>
-jQuery(function ($) {
-  var $section = $('.brand-deliverables');
-  if (!$section.length) return;
-
-  var $list = $section.find('.brand-deliverables__list');
-  var $items = $section.find('.brand-deliverables__item');
-
-  // Staggered reveal indexes
-  $items.each(function (i) {
-    this.style.setProperty('--i', i);
-  });
-
-  // Reveal animation on scroll
-  $section.addClass('js-anim');
-  if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      if (entries[0].isIntersecting) {
-        $section.addClass('is-visible');
-        io.disconnect();
-      }
-    }, { threshold: 0.2 });
-    io.observe($section[0]);
-  } else {
-    $section.addClass('is-visible');
+    align-items: stretch;
+    gap: 20px;
+    margin-bottom: 28px;
   }
 
-  // Manage responsive Owl Carousel behavior
-  function handleCarousel() {
-    var isMobile = window.matchMedia('(max-width: 767.98px)').matches;
-
-    if (isMobile) {
-      if (!$list.hasClass('owl-loaded')) {
-        $list.addClass('owl-carousel').owlCarousel({
-          items: 1.4,             // Shows 1 full card and a peek of the next
-          margin: 15,
-          loop: false,
-          nav: false,
-          dots: true,
-          smartSpeed: 600,        // Smooth slide transition speed (ms)
-          dragEndSpeed: 500,      // Smooth inertia release speed
-          touchDrag: true,
-          mouseDrag: true,
-          responsive: {
-            0: {
-              items: 1.25,
-              margin: 12
-            },
-            480: {
-              items: 1.6,
-              margin: 14
-            },
-            600: {
-              items: 2.2,
-              margin: 16
-            }
-          }
-        });
-      }
-    } else {
-      // Destroy Owl Carousel on tablets & desktop to restore CSS Grid
-      if ($list.hasClass('owl-loaded')) {
-        $list.trigger('destroy.owl.carousel');
-        $list.removeClass('owl-carousel');
-      }
-    }
+  .inquiry-form-wrap .inquiry-consents {
+    flex-basis: auto;
+    font-size: 12px;
   }
 
-  handleCarousel();
+  .inquiry-form-wrap .inquiry-submit {
+    flex-basis: auto;
+    width: 100%;
+  }
 
-  // Watch screen resize with debouncing
-  var resizeTimer;
-  $(window).on('resize', function () {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(handleCarousel, 50);
-  });
-});
-</script>
+  .inquiry-form-wrap .inquiry-disclaimer {
+    font-size: 12px;
+  }
+}
+
+  </style>
+  
+<div class="inquiry-form-wrap">
+
+  <h2 class="inquiry-heading">
+    FOR INQUIRIES,<br>
+    PLEASE COMPLETE THIS FORM
+  </h2>
+
+  <form class="inquiry-html-form" action="#" method="post">
+
+    <div class="inquiry-field inquiry-full">
+      <label for="your-name">NAME *</label>
+      <input type="text" id="your-name" name="your-name"
+             autocomplete="name" required>
+    </div>
+
+    <div class="inquiry-row">
+      <div class="inquiry-field">
+        <label for="your-email">EMAIL *</label>
+        <input type="email" id="your-email" name="your-email"
+               autocomplete="email" required>
+      </div>
+
+      <div class="inquiry-field">
+        <label for="company-name">COMPANY NAME *</label>
+        <input type="text" id="company-name" name="company-name"
+               required>
+      </div>
+    </div>
+
+    <div class="inquiry-phone-row">
+      <div class="inquiry-field inquiry-country">
+        <label for="country-code">COUNTRY CODE *</label>
+        <input type="text" id="country-code" name="country-code"
+               placeholder="+91" required>
+      </div>
+
+      <div class="inquiry-field inquiry-phone">
+        <label for="phone-number">PHONE NUMBER *</label>
+        <input type="tel" id="phone-number" name="phone-number"
+               autocomplete="tel-national" required>
+      </div>
+    </div>
+
+    <div class="inquiry-field inquiry-requirements">
+      <label for="your-requirements">YOUR REQUIREMENTS *</label>
+      <textarea id="your-requirements" name="your-requirements"
+                rows="6" required></textarea>
+    </div>
+
+    <div class="inquiry-bottom">
+      <div class="inquiry-consents">
+
+        <div class="inquiry-consent">
+          <label for="privacy-agreement">
+            <input type="checkbox" id="privacy-agreement"
+                   name="privacy-agreement" value="yes" required>
+            I have read and agree to the
+            <a href="/privacy-policy/" target="_blank">
+              Privacy Policy
+            </a>.
+          </label>
+        </div>
+
+        <div class="inquiry-consent">
+          <label for="marketing-consent">
+            <input type="checkbox" id="marketing-consent"
+                   name="marketing-consent" value="yes">
+            Yes, I would like to receive emails with exclusive specials and offers.
+          </label>
+        </div>
+
+      </div>
+
+      <div class="inquiry-submit">
+        <button type="submit">SUBMIT INQUIRY</button>
+      </div>
+    </div>
+
+    <p class="inquiry-disclaimer">
+      By submitting this online form, you agree to be contacted via
+      email, phone, or SMS by Signature Developers in relation to
+      its products and your inquiry. We do not share your personal
+      details with third parties.
+    </p>
+
+  </form>
+</div>
+
+
 </body>
 </html>
