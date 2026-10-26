@@ -210,6 +210,126 @@
 
 
 
+  <!------------------------------ Website-services-cards ----------------------------------->
+
+  <section class="website-services-cards" aria-labelledby="website-services-cards-title">
+    <div class="website-services-cards__head">
+      <h2 class="website-services-cards__title" id="website-services-cards-title" data-fontfamily="Helventica-Regular"
+        data-color="black">
+        Our <span class="website-services-cards__accent" data-fontfamily="Playfair-MediumItalic"
+          data-color="red">Website Development Service</span> in dubai
+      </h2>
+      <!-- Owl puts the prev / next buttons in here -->
+      <div class="website-services-cards__nav"></div>
+    </div>
+
+    <!-- was <ul>, now a div with the owl-carousel class -->
+    <div class="owl-carousel website-services-cards__track">
+
+      <div class="website-services-cards__item">
+        <a class="website-services-cards__card" href="#brand-strategy"
+          style="--bg: radial-gradient(circle at 50% 60%, #7a1d33 0%, #1a0a0f 70%)">
+          <div class="website-services-cards__media">
+            <img src="assets/images/branding/brand-strategy.webp" alt="" draggable="false">
+          </div>
+          <h3 class="website-services-cards__name">Brand Strategy</h3>
+          <p class="website-services-cards__text">Define your positioning, audience, personality and direction.</p>
+        </a>
+      </div>
+
+      <div class="website-services-cards__item">
+        <a class="website-services-cards__card" href="#brand-identity"
+          style="--bg: linear-gradient(160deg, #8a7a78 0%, #3b2f31 100%)">
+          <div class="website-services-cards__media">
+            <img src="assets/images/branding/brand-identity-design.webp" alt="" draggable="false">
+          </div>
+          <h3 class="website-services-cards__name">Brand Identity Design</h3>
+          <p class="website-services-cards__text">Create a visual system that makes your business recognisable.</p>
+        </a>
+      </div>
+
+      <div class="website-services-cards__item">
+        <a class="website-services-cards__card" href="#logo-design"
+          style="--bg: linear-gradient(160deg, #8f8f8c 0%, #4b4b49 100%)">
+          <div class="website-services-cards__media">
+            <img src="assets/images/branding/logo-design.webp" alt="" draggable="false">
+          </div>
+          <h3 class="website-services-cards__name">Logo Design</h3>
+          <p class="website-services-cards__text">Develop a distinctive logo that works across digital and physical
+            platforms.
+          </p>
+        </a>
+      </div>
+
+      <div class="website-services-cards__item">
+        <a class="website-services-cards__card" href="#brand-guidelines"
+          style="--bg: linear-gradient(160deg, #3d5f8a 0%, #172844 100%)">
+          <div class="website-services-cards__media">
+            <img src="assets/images/branding/brand-guidelines.webp" alt="" draggable="false">
+          </div>
+          <h3 class="website-services-cards__name">Brand Guidelines</h3>
+          <p class="website-services-cards__text">Create rules for using your logo, colours, fonts and visual elements
+            consistently.</p>
+        </a>
+      </div>
+
+      <div class="website-services-cards__item">
+        <a class="website-services-cards__card" href="#rebranding"
+          style="--bg: linear-gradient(160deg, #6b5a3d 0%, #2b2315 100%)">
+          <div class="website-services-cards__media">
+            <img src="assets/images/branding/rebranding.webp" alt="" draggable="false">
+          </div>
+          <h3 class="website-services-cards__name">Rebranding</h3>
+          <p class="website-services-cards__text">Refresh or reposition an existing brand that no longer reflects the
+            business.
+          </p>
+        </a>
+      </div>
+
+      <div class="website-services-cards__item">
+        <a class="website-services-cards__card" href="#corporate-branding"
+          style="--bg: linear-gradient(160deg, #4a6b5d 0%, #1b2b24 100%)">
+          <div class="website-services-cards__media">
+            <img src="assets/images/branding/corporate-branding.webp" alt="" draggable="false">
+          </div>
+          <h3 class="website-services-cards__name">Corporate Branding</h3>
+          <p class="website-services-cards__text">Build a professional identity for companies, institutions and growing
+            organisations.</p>
+        </a>
+      </div>
+
+      <div class="website-services-cards__item">
+        <a class="website-services-cards__card" href="#social-media-branding"
+          style="--bg: linear-gradient(160deg, #5d4a6b 0%, #231b2b 100%)">
+          <div class="website-services-cards__media">
+            <img src="assets/images/branding/social-media-branding.webp" alt="" draggable="false">
+          </div>
+          <h3 class="website-services-cards__name">Social Media Branding</h3>
+          <p class="website-services-cards__text">Create a consistent visual language for your social media presence.
+          </p>
+        </a>
+      </div>
+
+      <div class="website-services-cards__item">
+        <a class="website-services-cards__card" href="#marketing-collateral-design"
+          style="--bg: linear-gradient(160deg, #6b4a4a 0%, #2b1b1b 100%)">
+          <div class="website-services-cards__media">
+            <img src="assets/images/branding/marketing-collateral-design.webp" alt="" draggable="false">
+          </div>
+          <h3 class="website-services-cards__name">Marketing Collateral Design</h3>
+          <p class="website-services-cards__text">Extend your identity across brochures, presentations, business cards
+            and other
+            materials.</p>
+        </a>
+      </div>
+
+    </div>
+  </section>
+  <!------------------------------ Website-services-cards ----------------------------------->
+
+
+
+
   <!------------------------------------ case-explorer ------------------------------->
   <section class="case-explorer" aria-roledescription="carousel" aria-label="Case studies">
 
@@ -536,6 +656,55 @@
         $section.addClass('is-visible');
         restart();
       }
+    });
+  </script>
+
+
+
+
+  <script>
+    jQuery(function ($) {
+      var $slider = $('.website-services-cards__track');
+      if (!$slider.length) return;
+
+      // Label the arrows and keep cloned cards out of the tab order
+      $slider.on('initialized.owl.carousel', function () {
+        $('.services-cards__nav .owl-prev').attr('aria-label', 'Previous services');
+        $('.services-cards__nav .owl-next').attr('aria-label', 'Next services');
+        $slider.find('.owl-item.cloned a').attr({ tabindex: '-1', 'aria-hidden': 'true' });
+      });
+
+      $slider.owlCarousel({
+        loop: true,
+        margin: 18,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,        // wait between slides, in ms
+        autoplayHoverPause: true,
+        smartSpeed: 800,              // slide speed, in ms
+        dragEndSpeed: 700,
+        slideBy: 1,
+        navElement: 'button type="button"',
+        navContainer: '.services-cards__nav',
+        navClass: ['services-cards__btn owl-prev', 'services-cards__btn owl-next'],
+        navText: ['<svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+          '<svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'],
+        responsive: {
+          0: { items: 1.09, margin: 10 },   // phones: one card + a quarter of the next
+          300: { items: 1.1, margin: 10 },
+          425: { items: 1.4, margin: 10 },   // large phones
+          576: { items: 1.7, margin: 13 },   // small tablets
+          768: { items: 2.1, margin: 13 },   // tablets
+          992: { items: 2.2, margin: 14 },   // small laptops
+          1024: { items: 2.5, margin: 14 },
+          1200: { items: 3.4, margin: 14 },   // laptops and desktops
+          1440: { items: 3.7, margin: 15 },   // large desktops
+          1700: { items: 4.2, margin: 17 },   // wide monitors
+          1920: { items: 4.7, margin: 17 },   // full HD and up
+          2560: { items: 5, margin: 18 }    // 2K and 4K
+        }
+      });
     });
   </script>
 

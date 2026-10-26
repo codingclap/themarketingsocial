@@ -1,9 +1,4 @@
- /* ======================================================================
-   CSS: web-hero
-   Desktop / tablet (768px and up): text and buttons on the left, laptop on the right,
-   stats bottom left, claims bottom right.
-   Mobile (below 768px): the layout from the design, with the laptop beside the buttons and stats.
-   ====================================================================== */
+ /* ============================ Web-Hero  ======================= */
  .web-hero {
      --gutter: clamp(1.25rem, 5vw, 5rem);
      --brand-red: #6D2732;
@@ -309,16 +304,10 @@
          transition: none;
      }
  }
+/* ============================ Web-Hero  ======================= */
 
 
-
-
- /* ======================================================================
-   CSS: website-issues
-   Desktop / tablet (768px and up): left = heading, image, button (button at the bottom)
-                                    right = numbered list of 6 problems
-   Mobile (below 768px): heading, image, list, button
-   ====================================================================== */
+/* ============================ Website-issues  ======================= */
  .website-issues {
      --pad: clamp(1.25rem, 3.2vw, 4rem);
      --brand-red: #6D2732;
@@ -574,18 +563,238 @@
          transition: none;
      } */
  }
+/* ============================ Website-issues  ======================= */
+
+
+/****************************** Website-Services-cards *****************************/
+
+.website-services-cards {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --ink: #1c1c1c;
+    padding: clamp(3rem, 2rem + 8vw, 8rem) 0;
+    padding-left: var(--gutter);
+    /* no right padding: the slider runs off the right edge */
+    background-color: #fff;
+    overflow: hidden;
+    color: var(--ink);
+}
+
+/* Header: title left, arrows right */
+.website-services-cards__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-right: var(--gutter);
+    margin-bottom: clamp(1.5rem, 1rem + 4vw, 4rem);
+}
+
+.website-services-cards__title {
+    margin: 0;
+    font-size: clamp(1.75rem, 1rem + 2.6vw, 50px);
+    font-weight: 400;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.website-services-cards__accent {
+    font-size: 1.2em;
+    text-transform: none;
+    color: var(--brand-red);
+}
+ 
+.website-services-cards__nav {
+    display: flex;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.website-services-cards__btn {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.website-services-cards__btn svg {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.website-services-cards__btn:hover {
+    background-color: var(--brand-red);
+    border-color: var(--brand-red);
+    color: #fff;
+}
+
+.website-services-cards__btn:focus-visible,
+.website-services-cards__card:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 3px;
+}
+
+/* Owl container: the cursor shows it can be dragged */
+.website-services-cards .owl-carousel {
+    cursor: grab;
+}
+
+.website-services-cards .owl-carousel.owl-grab {
+    cursor: grabbing;
+}
+
+/* Card */
+.website-services-cards__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    aspect-ratio: 1 / 1.18;
+    padding: clamp(1rem, 0.7rem + 2vw, 2rem);
+    border-radius: 10px;
+    overflow: hidden;
+    color: #fff;
+    text-decoration: none;
+    background: var(--bg, #2a1a1e);
+    isolation: isolate;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* soft dark layer that fades in on hover */
+.website-services-cards__card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: rgba(0, 0, 0, 0);
+    transition: background-color 0.6s ease;
+}
+
+/* a thin line under the title that grows on hover */
+.website-services-cards__name::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 1px;
+    margin-top: 0.7rem;
+    background: #fff;
+    transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* description starts slightly low and faded */
+.website-services-cards__text {
+    opacity: 0.75;
+    transform: translateY(8px);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease;
+}
+
+/* hover only on devices that have a mouse, so touch screens don't get stuck states */
+@media (hover: hover) and (pointer: fine) {
+    .website-services-cards__card:hover::before {
+        background: rgba(0, 0, 0, 0.22);
+    }
+
+    .website-services-cards__card:hover .website-services-cards__name::after {
+        width: 2.75rem;
+    }
+
+    .website-services-cards__card:hover .website-services-cards__text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* keyboard users get the same effect */
+.website-services-cards__card:focus-visible .website-services-cards__text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.website-services-cards__card:focus-visible .website-services-cards__name::after {
+    width: 2.75rem;
+}
+
+/* Image sits behind the text */
+.website-services-cards__media {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+}
+
+.website-services-cards__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+    transform: scale(1);
+    transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.website-services-cards__card:hover .website-services-cards__media img {
+    transform: scale(1.05);
+    transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Dark fade so white text stays readable on any photo */
+.website-services-cards__card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 55%, rgba(0, 0, 0, 0.6) 100%);
+}
+
+.website-services-cards__name {
+    margin: 0;
+    font-family: 'Helventica-Bold', Helvetica;
+    max-width: 85%;
+    font-size: clamp(1rem, 1rem + 0.7vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.2;
+    color: #fff;
+    padding-top: 20px;
+}
+
+.website-services-cards__text {
+    font-family: 'Helvetica-light', Helvetica;
+    margin: 0;
+    max-width: 90%;
+    font-size: clamp(0.8rem, 0.65rem + 0.2vw, 1rem);
+    line-height: 1.35;
+    opacity: 1;
+    color: #fff;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 575.98px) {
+    .website-services-cards__btn {
+        width: 2.4rem;
+        height: 2.4rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* .website-services-cards__media img {
+        transition: none;
+    } */
+}
+
+/****************************** website-services-cards *****************************/
 
 
 
 
 
-
-
- /* ======================================================================
-   CSS: case-explorer
-   The active card is large on the left. The next cards sit beside it, smaller.
-   Click a small card (or use the arrows) and it grows into the active slot.
-   ====================================================================== */
+ /* =============================== Case-explorer ========================================== */
  .case-explorer {
      --gutter: clamp(1.25rem, 5vw, 5rem);
      --brand-red: #6b2535;
@@ -1123,3 +1332,4 @@
          transition: none;
      }
  }
+ /* =============================== Case-explorer ========================================== */
