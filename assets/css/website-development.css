@@ -16,7 +16,7 @@
 
  .web-hero__inner {
      display: grid;
-     grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr); 
+     grid-template-columns: minmax(0, 0.7fr) minmax(0, 1fr);
      grid-template-areas:
          "text    text"
          "actions media"
@@ -89,24 +89,27 @@
  }
 
  .web-hero__btn svg {
-     flex: none; 
+     flex: none;
      width: 1em;
      height: 1em;
      transition: transform 0.3s ease;
  }
-.web-hero__btn-arrow{
-    fill: #fff;
-}
+
+ .web-hero__btn-arrow {
+     fill: #fff;
+ }
+
  .web-hero__btn:hover,
  .web-hero__btn:focus-visible {
      background: transparent;
-     color: var(--brand-red); 
+     color: var(--brand-red);
  }
- .web-hero__btn:hover .web-hero__btn-arrow{
-     background: transparent; 
-     fill:var(--brand-red);
+
+ .web-hero__btn:hover .web-hero__btn-arrow {
+     background: transparent;
+     fill: var(--brand-red);
  }
-  
+
 
  /* ---------- Laptop ---------- */
  .web-hero__media {
@@ -229,13 +232,14 @@
  }
 
  /* ---------- Mobile: same arrangement as the design ---------- */
-  @media (max-width: 1700px) {
-     .web-hero__stats { 
+ @media (max-width: 1700px) {
+     .web-hero__stats {
          top: -100%;
      }
  }
+
  @media (max-width: 1600px) {
-     .web-hero__stats { 
+     .web-hero__stats {
          top: -90%;
      }
  }
@@ -317,7 +321,7 @@
    ====================================================================== */
  .website-issues {
      --pad: clamp(1.25rem, 3.2vw, 4rem);
-     --brand-red: #6d2732;
+     --brand-red: #6D2732;
      padding: clamp(2.5rem, 2rem + 3vw, 5rem) 0 clamp(2.5rem, 2rem + 3vw, 5rem);
      background: #fff;
      color: #000;
@@ -343,7 +347,7 @@
      grid-area: head;
      margin: 0 0 clamp(1.25rem, 0.8rem + 1.6vw, 2.25rem);
      max-width: 12.5em;
-     font-size: clamp(1.4rem, 0.8rem + 1.75vw, 2.6rem);
+     font-size: clamp(1.4rem, 0.8rem + 3vw, 3rem);
      font-weight: 400;
      line-height: 1.2;
      text-transform: uppercase;
@@ -369,6 +373,7 @@
 
  @media (hover: hover) {
      .website-issues__media:hover img {
+         transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
          transform: scale(1.04);
      }
  }
@@ -387,7 +392,7 @@
      border-radius: 999px;
      background: var(--brand-red);
      color: #fff;
-     font-size: clamp(0.68rem, 0.55rem + 0.5vw, 0.95rem);
+     font-size: clamp(0.68rem, 0.62rem + 0.36vw, 1.12rem);
      letter-spacing: 0.02em;
      text-transform: uppercase;
      text-decoration: none;
@@ -397,9 +402,13 @@
 
  .website-issues__cta svg {
      flex: none;
-     width: 0.95em;
-     height: 0.95em;
+     width: 1em;
+     height: 1em;
      transition: transform 0.3s ease;
+ }
+
+ .website-issues__btn-arrow {
+     fill: #fff;
  }
 
  .website-issues__cta:hover,
@@ -408,10 +417,11 @@
      color: var(--brand-red);
  }
 
- .website-issues__cta:hover svg,
- .website-issues__cta:focus-visible svg {
-     transform: translate(2px, -2px);
+ .website-issues__cta:hover .website-issues__btn-arrow {
+     background: transparent;
+     fill: var(--brand-red);
  }
+
 
  /* ---------- Right column: the list ---------- */
  .website-issues__list {
@@ -420,7 +430,7 @@
      flex-direction: column;
      gap: clamp(1.25rem, 0.5rem + 3vw, 3.25rem);
      margin: 0;
-     padding: 0;
+     padding: clamp(2.5rem, 0.625rem + 6vw, 5.625rem) 0 0 0;
      list-style: none;
      counter-reset: none;
  }
@@ -441,19 +451,19 @@
      right: 0;
      bottom: 0;
      height: 1px;
-     background: linear-gradient(to right, #000 0%, #000 55%, rgba(0, 0, 0, 0) 100%);
+     background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(102, 102, 102, 0) 100%);
      transform-origin: left center;
  }
 
  .website-issues__num {
-     font-size: clamp(1.1rem, 0.85rem + 0.9vw, 1.75rem);
+     font-size: clamp(1.1rem, 0.85rem + 1.5vw, 1.9rem);
      line-height: 1.2;
      color: #000;
  }
 
  .website-issues__title {
      margin: 0;
-     font-size: clamp(1.1rem, 0.85rem + 0.9vw, 1.75rem);
+     font-size: clamp(1.1rem, 0.85rem + 1.5vw, 1.9rem);
      font-weight: 400;
      line-height: 1.2;
      color: #000;
@@ -463,13 +473,17 @@
  .website-issues__text {
      grid-column: 2;
      margin: clamp(0.4rem, 0.3rem + 0.4vw, 0.7rem) 0 0;
-     font-size: clamp(0.78rem, 0.7rem + 0.3vw, 0.95rem);
+     font-size: clamp(0.78rem, 0.7rem + 0.6vw, 1.13rem);
      font-weight: 300;
      line-height: 1.4;
-     color: #222;
+     color: #000;
  }
 
  @media (hover: hover) {
+     .website-issues__item:hover .website-issues__num {
+         color: var(--brand-red);
+     }
+
      .website-issues__item:hover .website-issues__title {
          color: var(--brand-red);
      }
@@ -542,7 +556,7 @@
 
  @media (prefers-reduced-motion: reduce) {
 
-     .website-issues.js-anim .website-issues__heading,
+     /* .website-issues.js-anim .website-issues__heading,
      .website-issues.js-anim .website-issues__media,
      .website-issues.js-anim .website-issues__cta,
      .website-issues.js-anim .website-issues__item {
@@ -558,7 +572,7 @@
 
      .website-issues__media img {
          transition: none;
-     }
+     } */
  }
 
 
