@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Design Showcase</title>
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+  <style>
+    /* Reset & Base Setup */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #F1E8E0;
+    }
+
+    /* =====================  WEB DESIGN SHOWCASE  ===================== */
+    .wds {
+      --wds-bg: #F1E8E0;
+      --wds-panel: #6D2732;
+      --wds-text: #ffffff;
+      --wds-muted: #CEB9B9;
+      --wds-btn-bg: #F1E8E0;
+      --wds-btn-text: #000;
+      background: var(--wds-bg);
+      padding: clamp(2rem, 4vw, 5rem) 1rem;
+    }
+
+    .wds__wrap {
+      max-width: 1300px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Card Layout: Stacked on Mobile, 2 Columns on Desktop */
+    .wds__card {
+      display: grid;
+      grid-template-columns: 1fr;
+      background: var(--wds-panel);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    @media (min-width: 992px) {
+      .wds__card {
+        grid-template-columns: 1.1fr 0.9fr;
+        min-height: 650px;
+      }
+    }
+
+    /* ---- Left: Content ---- */
+    .wds__content {
+      color: var(--wds-text);
+      padding: clamp(1.5rem, 4vw, 4rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      order: 2; /* Shows below image on mobile */
+    }
+
+    @media (min-width: 992px) {
+      .wds__content {
+        order: 1; /* Shows on left on desktop */
+      }
+    }
+
+    .wds__title {
+      margin-bottom: 1.25rem;
+      font-size: clamp(1.6rem, 2.5vw, 2.75rem);
+      font-weight: 500;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+    }
+
+    .wds__title .wds__title__accent {
+      display: inline-block;
+      font-family: Georgia, serif;
+      font-style: italic;
+      font-weight: 400;
+      text-transform: none;
+    }
+
+    .wds__lead {
+      margin-bottom: 2rem;
+      max-width: 36em;
+      font-size: clamp(0.95rem, 1vw, 1.15rem);
+      line-height: 1.6;
+      color: var(--wds-muted);
+    }
+
+    /* ---- List ---- */
+    .wds__list {
+      list-style: none;
+      margin-bottom: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .wds__item { 
+      position: relative;
+      display: block;
+      width: 100%;
+      padding: 0.4rem 0 0.4rem 2.2rem;
+      border: 0;
+      background: none;
+      font-size: clamp(1rem, 1.2vw, 1.25rem);
+      line-height: 1.4;
+      text-align: left;
+      color: var(--wds-muted);
+      cursor: pointer;
+      transition: color 0.3s ease, transform 0.3s ease, padding 0.3s ease;
+    }
+
+    .wds__item::before {
+      content: "";
+      position: absolute;
+      left: 0.5rem;
+      top: 50%;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateY(-50%) scale(0);
+      transition: transform 0.3s ease;
+    }
+
+    .wds__item.is-active {
+      color: var(--wds-text);
+      padding-left: 2.8rem;
+    }
+
+    .wds__item.is-active::before {
+      transform: translateY(-50%) scale(1);
+    }
+
+    .wds__item:focus-visible {
+      outline: 2px solid var(--wds-text);
+      outline-offset: 2px;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .wds__item:hover {
+        color: var(--wds-text);
+        transform: translateX(4px);
+      }
+    }
+
+    /* ---- Button ---- */
+    .wds__btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      width: fit-content;
+      padding: 0.85rem 1.75rem;
+      border-radius: 999px;
+      background: var(--wds-btn-bg);
+      color: var(--wds-btn-text);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.3s ease; 
+    }
+
+    .wds__btn svg {
+      width: 1.1em;
+      height: 1.1em;
+      transition: transform 0.3s ease;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .wds__btn:hover {
+        background: #fff;
+      }
+      .wds__btn:hover svg {
+        transform: translate(2px, -2px);
+      }
+    }
+
+    /* ---- Right: Vertical Owl Slider ---- */
+    .wds__media {
+      position: relative;
+      background: #dfe3ea;
+      order: 1; /* Placed top on mobile */
+      height: 320px; /* Base height on mobile */
+      overflow: hidden;
+    }
+
+    @media (min-width: 576px) {
+      .wds__media {
+        height: 420px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .wds__media {
+        order: 2;
+        height: 100%;
+        min-height: 100%;
+      }
+    }
+
+    .wds__owl-carousel,
+    .wds__owl-carousel .owl-stage-outer,
+    .wds__owl-carousel .owl-stage,
+    .wds__owl-carousel .owl-item {
+      height: 100% !important;
+    }
+
+    .wds__slide {
+      width: 100%;
+      height: 100%;
+    }
+
+    .wds__slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Bottom-to-Top Animations */
+    .owl-carousel .animated {
+      animation-duration: 750ms;
+      animation-timing-function: cubic-bezier(.4, 0, .2, 1);
+      animation-fill-mode: both;
+    }
+
+    .owl-carousel .owl-animated-in {
+      z-index: 2;
+    }
+
+    .owl-carousel .owl-animated-out {
+      z-index: 1;
+    }
+
+    @keyframes slideInUp {
+      0% {
+        transform: translateY(100%);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slideOutUp {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(-100%);
+      }
+    }
+
+    .slideInUp {
+      animation-name: slideInUp;
+    }
+
+    .slideOutUp {
+      animation-name: slideOutUp;
+    }
+  </style>
+</head>
+<body>
+
+<section class="wds" id="webDesignShowcase" aria-labelledby="wdsTitle">
+  <div class="wds__wrap">
+    <div class="wds__card">
+
+      <!-- Content (Left on Desktop, Below Slider on Mobile) -->
+      <div class="wds__content">
+        <h2 class="wds__title" id="wdsTitle">
+          Where web design meets 
+          <span class="wds__title__accent">Development</span>
+        </h2>
+        <p class="wds__lead">
+          At The Marketing Socials, designers, developers, SEO specialists and marketers work
+          together to create websites that combine:
+        </p>
+
+        <ul class="wds__list" data-wds-list>
+          <li><button type="button" class="wds__item is-active" data-index="0" aria-current="true">Strategic UX</button></li>
+          <li><button type="button" class="wds__item" data-index="1">Strong visual design</button></li>
+          <li><button type="button" class="wds__item" data-index="2">Responsive development</button></li>
+          <li><button type="button" class="wds__item" data-index="3">Fast performance</button></li>
+          <li><button type="button" class="wds__item" data-index="4">SEO-friendly architecture</button></li>
+          <li><button type="button" class="wds__item" data-index="5">Clear conversion paths</button></li>
+          <li><button type="button" class="wds__item" data-index="6">Easy content management</button></li>
+        </ul>
+
+        <a class="wds__btn" href="#">
+          Explore our web design services
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 17L17 7M8 7h9v9" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Vertical Slider (Right on Desktop, Top on Mobile) -->
+      <div class="wds__media">
+        <div class="owl-carousel wds__owl-carousel">
+          <figure class="wds__slide">
+            <img src="assets/images/web-development/web-design-strategic.webp" alt="Strategic UX" width="900" height="900">
+          </figure>
+          <figure class="wds__slide">
+            <img src="assets/images/web-development/web-design-visualdesign.webp" alt="Strong visual design" width="900" height="900">
+          </figure>
+          <figure class="wds__slide">
+            <img src="assets/images/web-development/web-design-responsive.webp" alt="Responsive development" width="900" height="900">
+          </figure>
+          <figure class="wds__slide">
+            <img src="assets/images/web-development/web-design-performance.webp" alt="Fast performance" width="900" height="900">
+          </figure>
+          <figure class="wds__slide">
+            <img src="assets/images/web-development/web-design-seo.webp" alt="SEO-friendly architecture" width="900" height="900">
+          </figure>
+          <figure class="wds__slide">
+            <img src="assets/images/web-development/web-design-conversion.webp" alt="Clear conversion paths" width="900" height="900">
+          </figure>
+          <figure class="wds__slide">
+            <img src="assets/images/web-development/web-design-content-management.webp" alt="Easy content management" width="900" height="900">
+          </figure>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+  $(document).ready(function () {
+    var $owl = $('.wds__owl-carousel');
+    var $items = $('.wds__item');
+
+    $owl.owlCarousel({
+      items: 1,
+      loop: false,
+      mouseDrag: false,
+      touchDrag: true,
+      dots: false,
+      nav: false,
+      smartSpeed: 750,
+      animateIn: 'slideInUp',
+      animateOut: 'slideOutUp'
+    });
+
+    $items.on('click', function () {
+      var index = $(this).data('index');
+      $owl.trigger('to.owl.carousel', [index, 750]);
+      setActiveItem(index);
+    });
+
+    $owl.on('changed.owl.carousel', function (event) {
+      setActiveItem(event.item.index);
+    });
+
+    function setActiveItem(index) {
+      $items.removeClass('is-active').removeAttr('aria-current');
+      var $current = $items.filter('[data-index="' + index + '"]');
+      $current.addClass('is-active').attr('aria-current', 'true');
+    }
+  });
+</script>
+
+</body>
+</html>
