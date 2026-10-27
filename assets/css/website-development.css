@@ -293,9 +293,8 @@
          margin-top: 1rem;
      }
  }
-
- @media (prefers-reduced-motion: reduce) {
-
+ 
+ @media (prefers-reduced-motion: reduce) { 
      .web-hero.js-anim .web-hero__text,
      .web-hero.js-anim .web-hero__actions,
      .web-hero.js-anim .web-hero__stats,
