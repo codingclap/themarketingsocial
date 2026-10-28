@@ -108,7 +108,7 @@
       </div>
 
       <figure class="web-hero__media">
-        <img src="assets/images/web-development/web-laptop.png" alt="Website design shown on a laptop" width="1400"
+        <img src="assets/images/web-development/web-laptop.webp" alt="Website design shown on a laptop" width="1400"
           height="1100" fetchpriority="high" draggable="false" />
       </figure>
 
@@ -457,9 +457,8 @@
     <div class="brandingRecognised-button pt-4 pt-md-4 pt-lg-5 fade-animation">
       <a href="#contact" class="btn-branding-primary">
         <span class="btn-text">Combine Website Development With SEO</span>
-        <svg class="btn-arrow-icon" width="16" height="16" viewBox="0 0 20 20" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path class="btn-arrow-icon"
             d="M19.3848 1C19.3848 0.447719 18.937 3.85192e-06 18.3848 3.59904e-06L9.38476 4.39983e-06C8.83248 4.06266e-06 8.38476 0.44772 8.38476 1C8.38476 1.55229 8.83248 2 9.38476 2L17.3848 2L17.3848 10C17.3848 10.5523 17.8325 11 18.3848 11C18.937 11 19.3848 10.5523 19.3848 10L19.3848 1ZM0.707092 18.6777L1.4142 19.3848L19.0919 1.70711L18.3848 1L17.6777 0.292897L-1.44839e-05 17.9706L0.707092 18.6777Z"
             fill="white"></path>
         </svg>
@@ -542,7 +541,9 @@
     <div class="wds-process__container">
 
       <!-- Section Title -->
-      <h2 class="wds-process__title" id="processHeading" data-fontfamily='Helventica-Regular'> OUR <span class="wds-process__title-accent" data-fontfamily='Playfair-MediumItalic'>Website Development Services</span> PROCESS
+      <h2 class="wds-process__title" id="processHeading" data-fontfamily='Helventica-Regular'> OUR <span
+          class="wds-process__title-accent" data-fontfamily='Playfair-MediumItalic'>Website Development Services</span>
+        PROCESS
       </h2>
 
       <!-- Steps Timeline -->
@@ -590,7 +591,7 @@
         <!-- Step 4 -->
         <div class="wds-process__step">
           <div class="wds-process__badge-wrap">
-            <span class="wds-process__circle">4</span> 
+            <span class="wds-process__circle">4</span>
           </div>
           <div class="wds-process__content">
             <h3 class="wds-process__step-title">Development &<br> Testing</h3>
@@ -603,7 +604,7 @@
         <!-- Step 5 -->
         <div class="wds-process__step">
           <div class="wds-process__badge-wrap">
-            <span class="wds-process__circle">5</span> 
+            <span class="wds-process__circle">5</span>
           </div>
           <div class="wds-process__content">
             <h3 class="wds-process__step-title">Launch &<br> Optimisation</h3>
@@ -618,167 +619,104 @@
   </section>
   <!-- =====================  Process Section  ===================== -->
 
+<!-- =====================  Website Industries Section  ===================== -->
+<section class="website-industries-cards" aria-labelledby="website-industries-cards-title">
+  <div class="website-industries-cards__head">
+    <h2 class="website-industries-cards__title" id="website-industries-cards-title" data-fontfamily="Helventica-Regular" data-color="white">
+      <span class="website-industries-cards__accent" data-fontfamily="Playfair-MediumItalic" data-color="white">Websites </span> We Build for Different Industries
+    </h2>
+    <!-- Owl carousel puts the prev / next buttons here -->
+    <div class="website-industries-cards__nav"></div>
+  </div>
 
+  <div class="owl-carousel website-industries-cards__track">
 
-  <!-- ===================== Case Explorer - Section  ===================== -->
-  <section class="case-explorer" aria-roledescription="carousel" aria-label="Case studies">
-
-    <div class="case-explorer__head">
-      <a href="#all-work" class="case-explorer__pill" data-fontfamily='Helventica-Regular'>
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"
-          aria-hidden="true">
-          <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z" stroke-linejoin="round" />
-        </svg>
-        View all work
+    <div class="website-industries-cards__item">
+      <a class="website-industries-cards__card" href="#" style="--bg: radial-gradient(circle at 50% 60%, #7a1d33 0%, #1a0a0f 70%)">
+        <div class="website-industries-cards__media">
+          <img src="assets/images/web-development/website-industries-realestate.webp" alt="Custom Website Development" draggable="false">
+        </div>
+        <h3 class="website-industries-cards__name">Real Estate</h3> 
       </a>
-
-      <h2 class="case-explorer__heading" data-fontfamily='Helventica-Regular' data-color='black'>
-        Explore Our <span class="case-explorer__accent" data-fontfamily='Playfair-MediumItalic' data-color='red'>Case
-          Studies</span>
-      </h2>
     </div>
 
-    <div class="case-explorer__wrap">
-      <div class="case-explorer__stage">
-
-        <!-- Big active card (the JS fills it from the cards below) -->
-        <div class="case-explorer__big" aria-live="polite"></div>
-
-        <div class="case-explorer__controls">
-          <div class="case-explorer__arrows">
-            <button type="button" class="case-explorer__btn case-explorer__prev" aria-label="Previous case study">
-              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M14 8H2m0 0 5-5M2 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </button>
-            <button type="button" class="case-explorer__btn case-explorer__next" aria-label="Next case study">
-              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M2 8h12m0 0-5-5m5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
-            </button>
-          </div>
-          <div class="case-explorer__progress" aria-hidden="true"><span class="case-explorer__progress-bar"></span>
-          </div>
+    <div class="website-industries-cards__item">
+      <a class="website-industries-cards__card" href="#" style="--bg: linear-gradient(160deg, #8a7a78 0%, #3b2f31 100%)">
+        <div class="website-industries-cards__media">
+          <img src="assets/images/web-development/website-industries-ecommerce.webp" alt="WordPress Website Development" draggable="false">
         </div>
-
-        <div class="case-explorer__side">
-          <!-- Owl Carousel: the related cards. Add or remove cards here. -->
-          <div class="case-explorer__list owl-carousel">
-
-            <article class="case-explorer__card"
-              data-summary="Residence 22 needed to stand out in Dubai's loud property market without flashy, superlative-heavy marketing. We built a minimalist brand identity and strict visual guidelines anchored in quiet luxury and architectural restraint."
-              data-href="#residence-22" style="--bg:#5a2535">
-              <img class="case-explorer__img" src="assets/images/branding/explore-1.jpg" alt="" draggable="false"
-                loading="lazy" />
-              <div class="case-explorer__top">
-                <h3 class="case-explorer__title" data-fontfamily='Helventica-Bold'>Residence 22: Quiet Luxury in Dubai's
-                  Property Market</h3>
-                <p class="case-explorer__text" data-fontfamily='Helventica-Regular'>A minimalist identity and strict
-                  visual guidelines built on architectural restraint.</p>
-              </div>
-              <a class="case-explorer__go" href="#residence-22" aria-label="View the Residence 22 case study"><svg
-                  viewBox="0 0 17 17" fill="none" aria-hidden="true">
-                  <path d="M1 15.1 15.1 1m0 0H4.5m10.6 0v10.6" stroke="currentColor" stroke-width="1.6"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg></a>
-            </article>
-
-            <article class="case-explorer__card"
-              data-summary="WITHN wanted to turn solitary habits like fasting and journaling into an approachable, elevated lifestyle brand. We created a serene typography system and core assets that make daily wellness feel like a mindful ritual."
-              data-href="#withn" style="--bg:#2d4650">
-              <img class="case-explorer__img" src="assets/images/branding/explore-2.jpg" alt="" draggable="false"
-                loading="lazy" />
-              <div class="case-explorer__top">
-                <h3 class="case-explorer__title" data-fontfamily='Helventica-Bold'>WITHN Wellness: Daily Habits,
-                  Elevated</h3>
-                <p class="case-explorer__text" data-fontfamily='Helventica-Regular'>A serene identity that turns fasting
-                  and journaling into mindful rituals.</p>
-              </div>
-              <a class="case-explorer__go" href="#withn" aria-label="View the WITHN case study"><svg viewBox="0 0 17 17"
-                  fill="none" aria-hidden="true">
-                  <path d="M1 15.1 15.1 1m0 0H4.5m10.6 0v10.6" stroke="currentColor" stroke-width="1.6"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg></a>
-            </article>
-
-            <article class="case-explorer__card"
-              data-summary="Pink Cakes needed a brand as sweet as its products. We designed a playful identity, colour palette and packaging system that carries the same warmth from the shop counter to social media."
-              data-href="#pink-cakes" style="--bg:#7a4a5a">
-              <img class="case-explorer__img" src="assets/images/branding/explore-3.jpg" alt="" draggable="false"
-                loading="lazy" />
-              <div class="case-explorer__top">
-                <h3 class="case-explorer__title" data-fontfamily='Helventica-Bold'>Pink Cakes: A Sweeter Brand Story
-                </h3>
-                <p class="case-explorer__text" data-fontfamily='Helventica-Regular'>A playful identity and packaging
-                  system for a growing bakery brand.</p>
-              </div>
-              <a class="case-explorer__go" href="#pink-cakes" aria-label="View the Pink Cakes case study"><svg
-                  viewBox="0 0 17 17" fill="none" aria-hidden="true">
-                  <path d="M1 15.1 15.1 1m0 0H4.5m10.6 0v10.6" stroke="currentColor" stroke-width="1.6"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg></a>
-            </article>
-
-            <article class="case-explorer__card"
-              data-summary="Signature Developers needed a brand that matched the scale of its projects. We shaped a confident, refined identity and guidelines that work across sales galleries, signage and digital."
-              data-href="#signature" style="--bg:#4a3a2a">
-              <img class="case-explorer__img" src="assets/images/branding/explore-4.jpg" alt="" draggable="false"
-                loading="lazy" />
-              <div class="case-explorer__top">
-                <h3 class="case-explorer__title" data-fontfamily='Helventica-Bold'>Signature Developers: Built to Stand
-                  Apart</h3>
-                <p class="case-explorer__text" data-fontfamily='Helventica-Regular'>A confident brand system for a
-                  luxury real estate developer.</p>
-              </div>
-              <a class="case-explorer__go" href="#signature" aria-label="View the Signature Developers case study"><svg
-                  viewBox="0 0 17 17" fill="none" aria-hidden="true">
-                  <path d="M1 15.1 15.1 1m0 0H4.5m10.6 0v10.6" stroke="currentColor" stroke-width="1.6"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg></a>
-            </article>
-
-            <article class="case-explorer__card"
-              data-summary="To introduce HelperBot's delivery robots to the region, we developed their visual aesthetic, launch assets and tone of voice so a new technology felt friendly and trustworthy from day one."
-              data-href="#helperbot" style="--bg:#1e3a5f">
-              <img class="case-explorer__img" src="assets/images/branding/explore-5.jpg" alt="" draggable="false"
-                loading="lazy" />
-              <div class="case-explorer__top">
-                <h3 class="case-explorer__title" data-fontfamily='Helventica-Bold'>HelperBot: Introducing Robots to the
-                  Region</h3>
-                <p class="case-explorer__text" data-fontfamily='Helventica-Regular'>A visual language and launch assets
-                  for delivery robots entering the UAE.</p>
-              </div>
-              <a class="case-explorer__go" href="#helperbot" aria-label="View the HelperBot case study"><svg
-                  viewBox="0 0 17 17" fill="none" aria-hidden="true">
-                  <path d="M1 15.1 15.1 1m0 0H4.5m10.6 0v10.6" stroke="currentColor" stroke-width="1.6"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                </svg></a>
-            </article>
-          </div>
-
-          <div class="case-explorer__info">
-            <div class="case-explorer__info-body">
-              <p class="case-explorer__summary" data-fontfamily='Helventica-Regular'>Explore the brands we have shaped,
-                from first idea to a full visual identity. Each story shows the challenge, our thinking and the result.
-              </p>
-              <a href="#all-work" class="case-explorer__link" data-fontfamily='Helventica-Regular'>
-                Explore in details
-                <svg width="16" height="10" viewBox="0 0 16 10" fill="none" aria-hidden="true">
-                  <path d="M0 5h14m0 0L10 1m4 4-4 4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
+        <h3 class="website-industries-cards__name">Ecommerce</h3> 
+      </a>
     </div>
-  </section>
-  <!-- ===================== Case Explorer - Section  ===================== -->
 
+    <div class="website-industries-cards__item">
+      <a class="website-industries-cards__card" href="#" style="--bg: linear-gradient(160deg, #8f8f8c 0%, #4b4b49 100%)">
+        <div class="website-industries-cards__media">
+          <img src="assets/images/web-development/website-industries-architecture.webp" alt="E-Commerce Website Development" draggable="false">
+        </div>
+        <h3 class="website-industries-cards__name">Architecture & <br>Interior Design</h3> 
+      </a>
+    </div>
+
+    <div class="website-industries-cards__item">
+      <a class="website-industries-cards__card" href="#" style="--bg: linear-gradient(160deg, #3d5f8a 0%, #172844 100%)">
+        <div class="website-industries-cards__media">
+          <img src="assets/images/web-development/website-industries-corporate.webp" alt="Shopify Website Development" draggable="false">
+        </div>
+        <h3 class="website-industries-cards__name">Corporate Businesses</h3> 
+      </a>
+    </div>
+
+    <div class="website-industries-cards__item">
+      <a class="website-industries-cards__card" href="#" style="--bg: linear-gradient(160deg, #6b5a3d 0%, #2b2315 100%)">
+        <div class="website-industries-cards__media">
+          <img src="assets/images/web-development/website-industries-healthcare.webp" alt="CMS Development" draggable="false">
+        </div>
+        <h3 class="website-industries-cards__name">Healthcare</h3> 
+      </a>
+    </div>
+
+    <div class="website-industries-cards__item">
+      <a class="website-industries-cards__card" href="#" style="--bg: linear-gradient(160deg, #4a6b5d 0%, #1b2b24 100%)">
+        <div class="website-industries-cards__media">
+          <img src="assets/images/web-development/website-industries-hospitality.webp" alt="Web Application Development" draggable="false">
+        </div>
+        <h3 class="website-industries-cards__name">Hospitality</h3> 
+      </a>
+    </div>
+
+    <div class="website-industries-cards__item">
+      <a class="website-industries-cards__card" href="#" style="--bg: linear-gradient(160deg, #5d4a6b 0%, #231b2b 100%)">
+        <div class="website-industries-cards__media">
+          <img src="assets/images/web-development/website-industries-technology.webp" alt="Website Redesign & Development" draggable="false">
+        </div>
+        <h3 class="website-industries-cards__name">Technology<br> and SAAS</h3> 
+      </a>
+    </div>
+
+    <div class="website-industries-cards__item">
+      <a class="website-industries-cards__card" href="#" style="--bg: linear-gradient(160deg, #6b4a4a 0%, #2b1b1b 100%)">
+        <div class="website-industries-cards__media">
+          <img src="assets/images/web-development/website-industries-startups.webp" alt="Website Maintenance & Support" draggable="false">
+        </div>
+        <h3 class="website-industries-cards__name">Startups</h3> 
+      </a>
+    </div>
+
+     <div class="website-industries-cards__item">
+      <a class="website-industries-cards__card" href="#" style="--bg: linear-gradient(160deg, #6b4a4a 0%, #2b1b1b 100%)">
+        <div class="website-industries-cards__media">
+          <img src="assets/images/web-development/website-industries-education.webp" alt="Website Maintenance & Support" draggable="false">
+        </div>
+        <h3 class="website-industries-cards__name">Education</h3> 
+      </a>
+    </div>
+
+  </div>
+</section>
+<!-- =====================  Website Industries Section  ===================== -->
+
+   
 
   <!-- ======================================================================
      JS: case-explorer (Owl Carousel with loop + big active card)
@@ -786,171 +724,7 @@
      ====================================================================== -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/owl.carousel.js"></script>
-  <script>
-    jQuery(function ($) {
-      var $section = $('.case-explorer');
-      if (!$section.length) return;
-
-      var $list = $section.find('.case-explorer__list');
-      var $big = $section.find('.case-explorer__big');
-      var $bar = $section.find('.case-explorer__progress-bar');
-      var $cards = $list.children('.case-explorer__card');
-      var $info = $section.find('.case-explorer__info-body');
-      var $summary = $info.find('.case-explorer__summary');
-      var $infoLink = $info.find('.case-explorer__link');
-      var count = $cards.length;
-      var current = -1;
-      var SPEED = 800;                                        // Owl slide time in ms
-
-      /* 1. Build the big slides from the same cards (before Owl wraps them) */
-      $cards.each(function () {
-        $('<div class="case-explorer__slide" aria-hidden="true"></div>')
-          .append($(this).clone())
-          .appendTo($big);
-      });
-      var $slides = $big.children('.case-explorer__slide');
-      $slides.find('a').attr('tabindex', '-1');
-
-      /* The text under the cards follows the big card: it fades out, changes, then rises back in */
-      var infoTimer = null;
-      function updateInfo(index) {
-        var card = $cards.get(index);
-        var text = card.getAttribute('data-summary');
-        var href = card.getAttribute('data-href');
-        if (!text) return;
-
-        if (current === -1) {                                 // first paint: no animation
-          $summary.text(text);
-          $infoLink.attr('href', href);
-          return;
-        }
-
-        clearTimeout(infoTimer);
-        $info.addClass('is-changing');
-        infoTimer = setTimeout(function () {
-          $summary.text(text);
-          $infoLink.attr('href', href);
-          $info.removeClass('is-changing');
-        }, 350);
-      }
-
-      /* 2. Show one card in the big area. The old one slides away while the new one slides in. */
-      function setBig(index) {
-        if (isNaN(index) || index === current) return;      // Owl can report no index while it is still starting
-
-        var forward = true;
-        if (current > -1) {
-          var diff = (index - current + count) % count;
-          forward = diff <= count / 2;                        // shortest way round the loop
-        }
-        $big[0].style.setProperty('--dir', forward ? 1 : -1);
-
-        var $old = $slides.eq(current);
-        var $new = $slides.eq(index);
-
-        if (current > -1) {
-          $slides.not($old).not($new).removeClass('is-leaving');
-          $old.removeClass('is-active').addClass('is-leaving');
-          clearTimeout($big.data('t'));
-          $big.data('t', setTimeout(function () { $old.removeClass('is-leaving'); }, 1100));
-        }
-
-        $slides.attr('aria-hidden', 'true').find('a').attr('tabindex', '-1');
-        $new.removeClass('is-leaving').addClass('is-active').attr('aria-hidden', 'false').find('a').attr('tabindex', '0');
-        // restart the little rise animation on the text
-        $new.find('.case-explorer__title, .case-explorer__text, .case-explorer__go').each(function () { void this.offsetWidth; });
-
-        updateInfo(index);
-
-        current = index;
-        $bar.css('width', ((index + 1) / count * 100) + '%');
-      }
-
-      /* 3. Owl: the small cards. The first visible small card is the NEXT one, so big = first visible - 1. */
-      $list.on('initialized.owl.carousel changed.owl.carousel', function (e) {
-        if (!e.namespace) return;
-        var rel = e.relatedTarget.relative(e.item.index);
-        setBig(((rel - 1) % count + count) % count);
-      });
-
-      $list.owlCarousel({
-        loop: true,
-        startPosition: 1,
-        items: 2.6,
-        margin: 16,
-        slideBy: 1,
-        nav: false,
-        dots: false,
-        mouseDrag: false,
-        touchDrag: true,
-        smartSpeed: SPEED,
-        autoplay: false,                                      // own timer below (visible + not hovered)
-        responsive: {
-          0: { items: 1.6, margin: 12 },
-          576: { items: 2.2, margin: 12 },
-          768: { items: 1.7, margin: 14 },
-          992: { items: 2.3, margin: 16 },
-          1200: { items: 2.6, margin: 16 }
-        }
-      });
-
-      /* Click a small card: it becomes the big one */
-      $list.on('click', '.case-explorer__card', function (e) {
-        e.preventDefault();
-        var owl = $list.data('owl.carousel');
-        var abs = $list.find('.owl-item').index($(this).closest('.owl-item'));
-        var rel = owl.relative(abs);
-        $list.trigger('to.owl.carousel', [(rel + 1) % count, SPEED, true]);
-      });
-
-      /* Autoplay: every 5s, only while the section is on screen, the tab is active and the mouse is not over it */
-      var DELAY = 5000, timer = null, onScreen = false, hovering = false;
-
-      function next() { $list.trigger('next.owl.carousel', [SPEED]); }
-      function prev() { $list.trigger('prev.owl.carousel', [SPEED]); }
-
-      function restart() {
-        clearInterval(timer);
-        timer = setInterval(function () {
-          if (onScreen && !hovering && !document.hidden) next();
-        }, DELAY);
-      }
-
-      $section.find('.case-explorer__prev').on('click', function () { prev(); restart(); });
-      $section.find('.case-explorer__next').on('click', function () { next(); restart(); });
-      $list.on('click', '.case-explorer__card', restart);
-
-      $section.find('.case-explorer__wrap')
-        .on('mouseenter', function () { hovering = true; })
-        .on('mouseleave', function () { hovering = false; restart(); });
-
-      /* Keyboard arrows while focus is inside the slider */
-      $section.on('keydown', function (e) {
-        if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); restart(); }
-        if (e.key === 'ArrowRight') { e.preventDefault(); next(); restart(); }
-      });
-
-      /* Reveal on scroll */
-      $section.addClass('js-anim');
-
-      if ('IntersectionObserver' in window) {
-        var revealed = false;
-        var io = new IntersectionObserver(function (entries) {
-          onScreen = entries[0].isIntersecting;
-          if (onScreen && !revealed) { revealed = true; $section.addClass('is-visible'); restart(); }
-        }, { threshold: 0.2 });
-        io.observe($section[0]);
-      } else {
-        onScreen = true;
-        $section.addClass('is-visible');
-        restart();
-      }
-    });
-  </script>
-
-
-
-
+    
   <script>
     jQuery(function ($) {
       var $slider = $('.website-services-cards__track');
@@ -960,6 +734,52 @@
       $slider.on('initialized.owl.carousel', function () {
         $('.website-services-cards__nav .owl-prev').attr('aria-label', 'Previous services');
         $('.website-services-cards__nav .owl-next').attr('aria-label', 'Next services');
+        $slider.find('.owl-item.cloned a').attr({ tabindex: '-1', 'aria-hidden': 'true' });
+      });
+
+      $slider.owlCarousel({
+        loop: true,
+        margin: 18,
+        nav: false,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,        // wait between slides, in ms
+        autoplayHoverPause: true,
+        smartSpeed: 800,              // slide speed, in ms
+        dragEndSpeed: 700,
+        slideBy: 1,
+        // navElement: 'button type="button"',
+        // navContainer: '.website-services-cards__nav',
+        // navClass: ['website-services-cards owl-prev', 'website-services-cards owl-next'],
+        // navText: ['<svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>',
+        //   '<svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>'],
+        responsive: {
+          0: { items: 1.09, margin: 10 },   // phones: one card + a quarter of the next
+          300: { items: 1.1, margin: 10 },
+          425: { items: 1.4, margin: 10 },   // large phones
+          576: { items: 1.7, margin: 13 },   // small tablets
+          768: { items: 2.1, margin: 13 },   // tablets
+          992: { items: 2.2, margin: 14 },   // small laptops
+          1024: { items: 2.5, margin: 14 },
+          1200: { items: 3.4, margin: 14 },   // laptops and desktops
+          1440: { items: 3.7, margin: 15 },   // large desktops
+          1700: { items: 4.2, margin: 17 },   // wide monitors
+          1920: { items: 4.7, margin: 17 },   // full HD and up
+          2560: { items: 5, margin: 18 }    // 2K and 4K
+        }
+      });
+    });
+  </script>
+
+<script>
+    jQuery(function ($) {
+      var $slider = $('.website-industries-cards__track');
+      if (!$slider.length) return;
+
+      // Label the arrows and keep cloned cards out of the tab order
+      $slider.on('initialized.owl.carousel', function () {
+        $('.website-industries-cards__nav .owl-prev').attr('aria-label', 'Previous services');
+        $('.website-industries-cards__nav .owl-next').attr('aria-label', 'Next services');
         $slider.find('.owl-item.cloned a').attr({ tabindex: '-1', 'aria-hidden': 'true' });
       });
 
