@@ -738,121 +738,104 @@
 
 
   <!-- =====================  Brand Showcase Section  ===================== -->
-  <section class="brand-showcase" id="brandShowcase">
-    <header class="brand-showcase__header">
-      <h2 class="brand-showcase__title">WEBSITES WE'VE BUILT FOR GROWING BRANDS</h2>
-    </header>
+  <div class="brand-showcase-track" id="brandShowcaseTrack">
+    <section class="brand-showcase" id="brandShowcase" aria-labelledby="brandShowcaseTitle">
 
-    <div class="brand-showcase__body">
+      <header class="brand-showcase__header">
+        <h2 class="brand-showcase__title" id="brandShowcaseTitle">Websites we've built for growing brands</h2>
+      </header>
 
-      <!-- LEFT COLUMN: -->
-      <div class="brand-showcase__left">
-        <div class="brand-showcase__logo-stage">
+      <div class="brand-showcase__body">
 
-          <!-- Slide 1 Logo -->
-          <div class="brand-showcase__logo-box is-active">
-            <div class="logo-inner">
-              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor">
-                <path d="M20 5C14 12 14 18 20 20C26 22 26 28 20 35" stroke-width="2" stroke-linecap="round" />
-                <path d="M23 7C19 13 19 17 23 19C27 21 27 26 23 33" stroke-width="1.5" stroke-linecap="round"
-                  opacity="0.6" />
-              </svg>
-              <span class="logo-brand-name">SIGNATURE</span>
-              <span class="logo-brand-sub">DEVELOPERS</span>
+        <!-- LEFT COLUMN -->
+        <div class="brand-showcase__left">
+          <div class="brand-showcase__logo-stage">
+
+            <div class="brand-showcase__logo-box">
+              <div class="logo-inner">
+                <svg class="logo-icon" viewBox="0 0 40 60" fill="none" stroke="currentColor" stroke-linecap="round"
+                  aria-hidden="true">
+                  <path d="M24 4C14 14 14 26 22 32C30 38 28 48 16 56" stroke-width="2" />
+                  <path d="M27 6C19 16 19 25 26 31C33 37 31 46 21 54" stroke-width="1.2" opacity=".6" />
+                </svg>
+                <span class="logo-brand-name">SIGNATURE</span>
+                <span class="logo-brand-sub">DEVELOPERS</span>
+              </div>
             </div>
+
+            <div class="brand-showcase__logo-box">
+              <div class="logo-inner">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" aria-hidden="true">
+                  <polygon points="20 6, 34 32, 6 32" stroke-width="2" />
+                </svg>
+                <span class="logo-brand-name">VERTEX</span>
+                <span class="logo-brand-sub">ESTATES</span>
+              </div>
+            </div>
+
+            <div class="brand-showcase__logo-box">
+              <div class="logo-inner">
+                <svg class="logo-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" aria-hidden="true">
+                  <circle cx="20" cy="20" r="14" stroke-width="2" />
+                  <path d="M12 20h16M20 12v16" stroke-width="1.5" />
+                </svg>
+                <span class="logo-brand-name">LUMEN</span>
+                <span class="logo-brand-sub">STUDIOS</span>
+              </div>
+            </div>
+
           </div>
 
-          <!-- Slide 2 Logo -->
-          <div class="brand-showcase__logo-box">
-            <div class="logo-inner">
-              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor">
-                <polygon points="20 6, 34 32, 6 32" stroke-width="2" />
+          <div class="brand-showcase__btn-stage">
+            <a class="brand-showcase__btn" href="#signature-case-study">
+              <span>See what we've created</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
               </svg>
-              <span class="logo-brand-name">VERTEX</span>
-              <span class="logo-brand-sub">ESTATES</span>
-            </div>
-          </div>
-
-          <!-- Slide 3 Logo -->
-          <div class="brand-showcase__logo-box">
-            <div class="logo-inner">
-              <svg class="logo-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor">
-                <circle cx="20" cy="20" r="14" stroke-width="2" />
-                <path d="M12 20h16M20 12v16" stroke-width="1.5" />
+            </a>
+            <a class="brand-showcase__btn" href="#vertex-case-study">
+              <span>Explore residential villa</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
               </svg>
-              <span class="logo-brand-name">LUMEN</span>
-              <span class="logo-brand-sub">STUDIOS</span>
-            </div>
+            </a>
+            <a class="brand-showcase__btn" href="#lumen-case-study">
+              <span>View bespoke portfolio</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </a>
           </div>
-
         </div>
 
-        <!-- Separate Action Buttons Container -->
-        <div class="brand-showcase__btn-stage">
-
-          <!-- Button 1 (Active) -->
-          <a href="#signature-case-study" class="brand-showcase__btn is-active">
-            <span>SEE WHAT WE'VE CREATED</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-
-          <!-- Button 2 -->
-          <a href="#vertex-case-study" class="brand-showcase__btn">
-            <span>EXPLORE RESIDENTIAL VILLA</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-
-          <!-- Button 3 -->
-          <a href="#lumen-case-study" class="brand-showcase__btn">
-            <span>VIEW BESPOKE PORTFOLIO</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <line x1="7" y1="17" x2="17" y2="7"></line>
-              <polyline points="7 7 17 7 17 17"></polyline>
-            </svg>
-          </a>
-
+        <!-- RIGHT COLUMN -->
+        <div class="brand-showcase__right">
+          <div class="brand-showcase__slides-container">
+            <figure class="brand-showcase__slide">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+                alt="Signature Developers villa">
+            </figure>
+            <figure class="brand-showcase__slide">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80"
+                alt="Vertex Estates modern home">
+            </figure>
+            <figure class="brand-showcase__slide">
+              <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80"
+                alt="Lumen Studios architecture">
+            </figure>
+          </div>
         </div>
 
       </div>
-
-      <!-- RIGHT COLUMN: -->
-      <div class="brand-showcase__right">
-        <div class="brand-showcase__slides-container">
-
-          <!-- Project Slide 1 -->
-          <article class="brand-showcase__slide is-active">
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
-              alt="Signature Developers Villa">
-          </article>
-
-          <!-- Project Slide 2 -->
-          <article class="brand-showcase__slide">
-            <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1600&q=80"
-              alt="Vertex Estates Luxury Modern Home">
-          </article>
-
-          <!-- Project Slide 3 -->
-          <article class="brand-showcase__slide">
-            <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80"
-              alt="Lumen Studios Architecture">
-          </article>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
+    </section>
+  </div>
   <!-- =====================  Brand Showcase Section  ===================== -->
-
 
 
 
@@ -998,87 +981,91 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="assets/js/common-gsap.js"></script>
 
-
   <script>
-  gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ ignoreMobileResize: true });   // address bar hiding must not trigger a refresh
 
-  window.addEventListener('DOMContentLoaded', () => {
-    const section = document.querySelector('#brandShowcase');
-    if (!section) return;
+    window.addEventListener('DOMContentLoaded', () => {
+      const track = document.getElementById('brandShowcaseTrack');
+      const navbar = document.getElementById('navbar-shadow-fixed');   // your hide-on-scroll navbar
+      if (!track) return;
 
-    const slides  = gsap.utils.toArray('.brand-showcase__slide');
-    const logos   = gsap.utils.toArray('.brand-showcase__logo-box');
-    const buttons = gsap.utils.toArray('.brand-showcase__btn');
-    const total   = slides.length;
-    const navbar  = document.getElementById('navbar-shadow-fixed');
-    let currentIdx = 0;
+      const slides = gsap.utils.toArray('.brand-showcase__slide');
+      const logos = gsap.utils.toArray('.brand-showcase__logo-box');
+      const buttons = gsap.utils.toArray('.brand-showcase__btn');
+      const total = slides.length;
+      let current = 0;
 
-    const navH = () => (navbar ? navbar.offsetHeight : 0);
-    const setNavVar = () => section.style.setProperty('--nav-h', navH() + 'px');
-    setNavVar();
-
-    // Initial state set by JS
-    [slides, logos, buttons].forEach(group =>
-      group.forEach((el, i) => {
-        gsap.set(el, { autoAlpha: i === 0 ? 1 : 0, y: 0 });
-        el.classList.toggle('is-active', i === 0);
-      })
-    );
-
-    const perSlide = () => (window.innerHeight - navH()) * (window.innerWidth < 900 ? 0.7 : 1);
-
-    ScrollTrigger.create({
-      trigger: section,
-      start: () => 'top ' + navH(),          // pin right under the sticky navbar
-      end: () => '+=' + perSlide() * total,
-      pin: true,
-      pinSpacing: true,
-      anticipatePin: 1,
-      invalidateOnRefresh: true,
-      // markers: true,                      // uncomment to debug start/end lines
-      onRefreshInit: setNavVar,
-      onUpdate: self => {
-        const idx = Math.min(Math.floor(self.progress * total), total - 1);
-        if (idx !== currentIdx) switchProject(idx, idx > currentIdx ? 1 : -1);
-      }
-    });
-
-    function switchProject(newIdx, dir) {
-      const y = 20 * dir;
-      const swap = (group, outVars, inFrom, inTo) => {
-        const prev = group[currentIdx], next = group[newIdx];
-        gsap.to(prev, { autoAlpha: 0, ...outVars, overwrite: true });
-        gsap.fromTo(next, inFrom, { ...inTo, overwrite: true });
-        prev.classList.remove('is-active');
-        next.classList.add('is-active');
+      /* ---- layout variables the CSS uses ----
+         offsetHeight ignores transforms, so it stays correct while the navbar is hidden */
+      const setVars = () => {
+        document.documentElement.style.setProperty('--nav-h', (navbar ? navbar.offsetHeight : 0) + 'px');
+        track.style.setProperty('--slides', total);
       };
+      setVars();
+      ScrollTrigger.addEventListener('refreshInit', setVars);
 
-      swap(slides,  { duration: 0.5, ease: 'power2.inOut' },
-                    { autoAlpha: 0 },
-                    { autoAlpha: 1, duration: 0.6, ease: 'power2.out' });
-      swap(logos,   { y: -y, duration: 0.35, ease: 'power2.in' },
-                    { autoAlpha: 0, y },
-                    { autoAlpha: 1, y: 0, duration: 0.5, delay: 0.08, ease: 'power2.out' });
-      swap(buttons, { y: -y, duration: 0.3, ease: 'power2.in' },
-                    { autoAlpha: 0, y },
-                    { autoAlpha: 1, y: 0, duration: 0.45, delay: 0.12, ease: 'power2.out' });
+      // navbar height can change after its logo/fonts load
+      if (navbar) {
+        let t;
+        new ResizeObserver(() => {
+          clearTimeout(t);
+          t = setTimeout(() => { setVars(); ScrollTrigger.refresh(); }, 100);
+        }).observe(navbar);
+      }
 
-      gsap.fromTo(slides[newIdx].querySelector('img'),
-        { scale: 1.1 }, { scale: 1.04, duration: 1, ease: 'power2.out', overwrite: true });
+      /* ---- initial state: first item visible, the rest hidden ---- */
+      [slides, logos, buttons].forEach(group =>
+        group.forEach((el, i) => {
+          gsap.set(el, { autoAlpha: i === 0 ? 1 : 0, y: 0 });
+          el.classList.toggle('is-active', i === 0);
+        })
+      );
+      gsap.set(slides[0].querySelector('img'), { scale: 1.04 });
 
-      currentIdx = newIdx;
-    }
+      /* ---- change one group (images / logos / buttons) ---- */
+      function swap(items, next, prev, dir, o) {
+        items.forEach((el, i) => {
+          if (i !== next && i !== prev) gsap.set(el, { autoAlpha: 0 });   // clean up skipped items on fast scroll
+          el.classList.toggle('is-active', i === next);
+        });
+        gsap.to(items[prev], {
+          autoAlpha: 0, y: -o.shift * dir,
+          duration: o.out, ease: 'power2.in', overwrite: true
+        });
+        gsap.fromTo(items[next],
+          { autoAlpha: 0, y: o.shift * dir },
+          { autoAlpha: 1, y: 0, duration: o.in, delay: o.delay, ease: 'power2.out', overwrite: true }
+        );
+      }
 
-    // Re-measure whenever the page above changes height (Owl, images, fonts)
-    const refresh = () => ScrollTrigger.refresh();
-    window.addEventListener('load', () => { refresh(); setTimeout(refresh, 600); });
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+      function goTo(next) {
+        if (next === current) return;
+        const prev = current;
+        const dir = next > prev ? 1 : -1;     // scrolling down = 1, up = -1
+        current = next;
 
-    let t;
-    const ro = new ResizeObserver(() => { clearTimeout(t); t = setTimeout(refresh, 150); });
-    document.querySelectorAll('body > section').forEach(s => { if (s !== section) ro.observe(s); });
-  });
-</script>
+        swap(slides, next, prev, dir, { shift: 0, out: 0.5, in: 0.6, delay: 0 });
+        swap(logos, next, prev, dir, { shift: 24, out: 0.35, in: 0.5, delay: 0.08 });
+        swap(buttons, next, prev, dir, { shift: 24, out: 0.3, in: 0.45, delay: 0.12 });
+
+        gsap.fromTo(slides[next].querySelector('img'),
+          { scale: 1.1 }, { scale: 1.04, duration: 1.1, ease: 'power2.out', overwrite: true });
+      }
+
+      /* ---- scroll driver: sticky section at top 0 + progress through the track ---- */
+      ScrollTrigger.create({
+        trigger: track,
+        start: 'top top',                    // section locks at the very top of the screen
+        end: 'bottom bottom',                // section releases at the end of the track
+        invalidateOnRefresh: true,
+         markers: true,
+        onUpdate: self => goTo(Math.min(Math.floor(self.progress * total), total - 1))
+      });
+
+      window.addEventListener('load', () => ScrollTrigger.refresh());
+    });
+  </script>
 </body>
 
 </html>
