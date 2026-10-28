@@ -271,6 +271,559 @@
     .slideOutUp {
       animation-name: slideOutUp;
     }
+
+
+
+
+
+
+
+
+
+    
+
+
+ /* =============================== Case-explorer ========================================== */
+ .case-explorer {
+     --gutter: clamp(1.25rem, 5vw, 5rem);
+     --brand-red: #6b2535;
+     --gap: clamp(0.6rem, 0.3rem + 1vw, 1rem);
+     --ease: cubic-bezier(0.65, 0, 0.25, 1);
+     --speed: 0.8s;
+     padding: clamp(2.5rem, 2rem + 3vw, 5rem) 0 clamp(3rem, 2rem + 4vw, 6rem);
+     background: #fff;
+     overflow: hidden;
+ }
+
+ /* Top row: pill on the left, heading on the right */
+ .case-explorer__head {
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     gap: 1rem 2rem;
+     margin: 0 0 clamp(1.5rem, 1rem + 3vw, 3.5rem);
+     padding-inline: var(--gutter);
+ }
+
+ .case-explorer__pill {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.5rem;
+     padding: 0.55rem 1rem;
+     border-radius: 999px;
+     background: #f3ece8;
+     font-size: 0.85rem;
+     color: #222;
+     text-decoration: none;
+     transition: background-color 0.3s ease;
+ }
+
+ .case-explorer__pill:hover {
+     background: #ead9d2;
+ }
+
+ .case-explorer__heading {
+     margin: 0;
+     font-size: clamp(1.6rem, 1rem + 2.6vw, 3.25rem);
+     font-weight: 400;
+     line-height: 1.15;
+     color: #111;
+ }
+
+ .case-explorer__accent {
+     font-size: 1.15em;
+     font-weight: 400;
+     font-style: italic;
+     color: var(--brand-red);
+ }
+
+ /* Stage: starts at the left gutter and runs off the right edge of the screen */
+ .case-explorer__wrap {
+     margin-left: var(--gutter);
+     container-type: inline-size;
+ }
+
+ .case-explorer__stage {
+     --A: 44cqw;
+     /* big card width */
+     --H: clamp(18rem, 29cqw, 28rem);
+     /* big card height */
+     --h: calc(var(--H) * 0.56);
+     /* small card height */
+     display: grid;
+     grid-template-columns: var(--A) minmax(0, 1fr);
+     grid-template-areas:
+         "big      side"
+         "controls side";
+     column-gap: var(--gap);
+     align-items: start;
+ }
+
+ .case-explorer__big {
+     grid-area: big;
+ }
+
+ .case-explorer__controls {
+     grid-area: controls;
+ }
+
+ .case-explorer__side {
+     grid-area: side;
+     min-width: 0;
+ }
+
+ /* ---------- Big card: slides sit on top of each other and move with a transform ---------- */
+ .case-explorer__big {
+     --dir: 1;
+     /* 1 = next (moves left), -1 = previous */
+     position: relative;
+     height: var(--H);
+     border-radius: clamp(12px, 1.2vw, 20px);
+     overflow: hidden;
+     background: #3a2a2e;
+     isolation: isolate;
+ }
+
+ .case-explorer__slide {
+     position: absolute;
+     inset: 0;
+     z-index: 0;
+     opacity: 0;
+     transform: translateX(calc(var(--dir) * 3rem));
+     transition: opacity 0.9s ease, transform 1s var(--ease);
+     pointer-events: none;
+ }
+
+ .case-explorer__slide.is-active {
+     z-index: 2;
+     opacity: 1;
+     transform: none;
+     pointer-events: auto;
+ }
+
+ /* The old slide stays solid underneath and slides away, so there is never a dark flash */
+ .case-explorer__slide.is-leaving {
+     z-index: 1;
+     opacity: 1;
+     transform: translateX(calc(var(--dir) * -3rem));
+     transition: transform 1s var(--ease);
+ }
+
+ /* ---------- Card (used in both the big slide and the small Owl list) ---------- */
+ .case-explorer__card {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     box-sizing: border-box;
+     width: 100%;
+     height: 100%;
+     padding: clamp(0.8rem, 0.5rem + 1vw, 1.6rem);
+     overflow: hidden;
+     color: #fff;
+     background: var(--bg, #3a2a2e);
+     /* shows while the image loads */
+     isolation: isolate;
+     -webkit-tap-highlight-color: transparent;
+ }
+
+ .case-explorer__img {
+     position: absolute;
+     inset: 0;
+     z-index: -2;
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     pointer-events: none;
+     -webkit-user-drag: none;
+ }
+
+ .case-explorer__card::after {
+     content: "";
+     position: absolute;
+     inset: 0;
+     z-index: -1;
+     background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.6) 100%);
+ }
+
+ .case-explorer__title {
+     margin: 0;
+     max-width: 90%;
+     font-weight: 700;
+     line-height: 1.25;
+ }
+
+ .case-explorer__text {
+     max-width: 24em;
+     margin: 0.6rem 0 0;
+     font-size: clamp(0.8rem, 0.72rem + 0.25vw, 0.95rem);
+     line-height: 1.5;
+     opacity: 0.95;
+ }
+
+ .case-explorer__go {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     align-self: flex-start;
+     width: clamp(2rem, 1.6rem + 1vw, 2.75rem);
+     height: clamp(2rem, 1.6rem + 1vw, 2.75rem);
+     border-radius: 50%;
+     background: #fff;
+     color: #111;
+     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+ }
+
+ .case-explorer__go svg {
+     width: 40%;
+     height: 40%;
+ }
+
+ /* Big version */
+ .case-explorer__slide .case-explorer__card {
+     border-radius: 0;
+ }
+
+ .case-explorer__slide .case-explorer__title {
+     font-size: clamp(1.15rem, 0.9rem + 1vw, 1.9rem);
+ }
+
+ .case-explorer__slide.is-active .case-explorer__title,
+ .case-explorer__slide.is-active .case-explorer__text,
+ .case-explorer__slide.is-active .case-explorer__go {
+     animation: ce-rise 0.9s var(--ease) both;
+ }
+
+ .case-explorer__slide.is-active .case-explorer__text {
+     animation-delay: 0.12s;
+ }
+
+ .case-explorer__slide.is-active .case-explorer__go {
+     animation-delay: 0.2s;
+ }
+
+ @keyframes ce-rise {
+     from {
+         opacity: 0;
+         transform: translateY(0.9rem);
+     }
+
+     to {
+         opacity: 1;
+         transform: none;
+     }
+ }
+
+ .case-explorer__slide .case-explorer__go:hover {
+     background: var(--brand-red);
+     color: #fff;
+     transform: translateX(3px);
+ }
+
+ /* Small version (inside Owl) */
+ .case-explorer__list .case-explorer__card {
+     height: var(--h);
+     border-radius: clamp(12px, 1.2vw, 20px);
+     cursor: pointer;
+ }
+
+ .case-explorer__list .case-explorer__title {
+     font-size: clamp(0.85rem, 0.75rem + 0.35vw, 1.1rem);
+ }
+
+ .case-explorer__list .case-explorer__text {
+     display: none;
+ }
+
+ .case-explorer__list .case-explorer__go {
+     pointer-events: none;
+ }
+
+ .case-explorer__list .case-explorer__img {
+     transform: scale(1);
+     transition: transform 1s var(--ease);
+ }
+
+ @media (hover: hover) {
+     .case-explorer__list .case-explorer__card:hover .case-explorer__img {
+         transform: scale(1.06);
+     }
+ }
+
+ .case-explorer__card:focus-visible,
+ .case-explorer__go:focus-visible {
+     outline: 2px solid #fff;
+     outline-offset: -5px;
+ }
+
+ /* ---------- Owl Carousel base rules, scoped to this section ---------- */
+ .case-explorer .owl-carousel {
+     position: relative;
+     width: 100%;
+     z-index: 1;
+     -webkit-tap-highlight-color: transparent;
+ }
+
+ .case-explorer .owl-carousel .owl-stage-outer {
+     position: relative;
+     overflow: hidden;
+     transform: translate3d(0, 0, 0);
+ }
+
+ .case-explorer .owl-carousel .owl-stage {
+     position: relative;
+     touch-action: pan-y;
+     backface-visibility: hidden;
+ }
+
+ .case-explorer .owl-carousel .owl-stage::after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+ }
+
+ .case-explorer .owl-carousel .owl-item {
+     position: relative;
+     min-height: 1px;
+     float: left;
+     backface-visibility: hidden;
+     -webkit-touch-callout: none;
+ }
+
+ .case-explorer .owl-carousel .owl-item img {
+     display: block;
+     width: 100%;
+ }
+
+ .case-explorer .owl-carousel .owl-nav.disabled,
+ .case-explorer .owl-carousel .owl-dots.disabled {
+     display: none;
+ }
+
+ /* Smooth sliding: Owl sets the duration, this sets the curve */
+ .case-explorer .owl-carousel .owl-stage {
+     transition-timing-function: cubic-bezier(0.65, 0, 0.25, 1) !important;
+ }
+
+ /* Before Owl starts, the cards sit in a row so the page does not jump */
+ .case-explorer__list:not(.owl-loaded) {
+     display: flex;
+     gap: 1rem;
+     overflow: hidden;
+ }
+
+ .case-explorer__list:not(.owl-loaded)>.case-explorer__card {
+     flex: 0 0 44%;
+ }
+
+ /* Controls sit under the big card */
+ .case-explorer__controls {
+     display: flex;
+     align-items: center;
+     gap: clamp(0.75rem, 0.4rem + 1.2vw, 1.5rem);
+     margin-top: clamp(1rem, 0.6rem + 1.5vw, 1.75rem);
+ }
+
+ .case-explorer__arrows {
+     display: flex;
+     gap: 0.5rem;
+ }
+
+ .case-explorer__btn {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     width: 2.5rem;
+     height: 2.5rem;
+     padding: 0;
+     border: 0;
+     border-radius: 50%;
+     background: #f3ece8;
+     color: #111;
+     cursor: pointer;
+     transition: background-color 0.3s ease, color 0.3s ease;
+ }
+
+ .case-explorer__btn:hover {
+     background: var(--brand-red);
+     color: #fff;
+ }
+
+ .case-explorer__btn:focus-visible {
+     outline: 2px solid var(--brand-red);
+     outline-offset: 3px;
+ }
+
+ .case-explorer__btn svg {
+     width: 1rem;
+     height: 1rem;
+ }
+
+ .case-explorer__progress {
+     position: relative;
+     flex: 1 1 auto;
+     height: 2px;
+     background: rgba(0, 0, 0, 0.12);
+ }
+
+ .case-explorer__progress-bar {
+     position: absolute;
+     inset: 0 auto 0 0;
+     width: 20%;
+     background: #111;
+     transition: width var(--speed) var(--ease);
+ }
+
+ /* Info block under the small cards */
+ .case-explorer__info {
+     max-width: min(28rem, 36cqw);
+     margin-top: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+     padding-right: var(--gutter);
+ }
+
+ .case-explorer__info-body {
+     transition: opacity 0.35s ease, transform 0.5s var(--ease);
+ }
+
+ .case-explorer__info-body.is-changing {
+     opacity: 0;
+     transform: translateY(0.6rem);
+ }
+
+ .case-explorer__info p {
+     margin: 0 0 0.9rem;
+     font-size: clamp(0.8rem, 0.72rem + 0.25vw, 0.95rem);
+     line-height: 1.55;
+     color: #222;
+ }
+
+ .case-explorer__link {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.5rem;
+     font-size: 0.9rem;
+     color: #111;
+     text-decoration: none;
+     border-bottom: 1px solid currentColor;
+     padding-bottom: 2px;
+     transition: color 0.3s ease, gap 0.3s ease;
+ }
+
+ .case-explorer__link:hover {
+     color: var(--brand-red);
+     gap: 0.8rem;
+ }
+
+ .case-explorer__sr {
+     position: absolute;
+     width: 1px;
+     height: 1px;
+     overflow: hidden;
+     clip: rect(0 0 0 0);
+     white-space: nowrap;
+ }
+
+ /* Reveal on scroll */
+ .case-explorer.js-anim .case-explorer__head,
+ .case-explorer.js-anim .case-explorer__wrap {
+     opacity: 0;
+     transform: translateY(1.75rem);
+     transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+ }
+
+ .case-explorer.js-anim .case-explorer__wrap {
+     transition-delay: 0.15s;
+ }
+
+ .case-explorer.js-anim.is-visible .case-explorer__head,
+ .case-explorer.js-anim.is-visible .case-explorer__wrap {
+     opacity: 1;
+     transform: none;
+ }
+
+ /* Tablet */
+ @media (max-width: 991.98px) {
+     .case-explorer__stage {
+         --A: 50cqw;
+         --H: clamp(17rem, 36cqw, 24rem);
+     }
+
+     .case-explorer__info {
+         max-width: min(24rem, 40cqw);
+     }
+ }
+
+ /* Mobile: big card on top, small cards in a row below, text last */
+ @media (max-width: 767.98px) {
+     .case-explorer__head {
+         flex-direction: column-reverse;
+         align-items: flex-start;
+     }
+
+     .case-explorer__wrap {
+         margin-right: 0;
+     }
+
+     .case-explorer__stage {
+         --H: 21rem;
+         --h: 12rem;
+         grid-template-columns: minmax(0, 1fr);
+         grid-template-areas: "big" "controls" "side";
+         row-gap: 0;
+     }
+
+     .case-explorer__big {
+         margin-right: var(--gutter);
+     }
+
+     .case-explorer__controls {
+         margin-right: var(--gutter);
+     }
+
+     .case-explorer__side {
+         margin-top: 1.5rem;
+     }
+
+     .case-explorer__info {
+         max-width: none;
+         margin-top: 1.25rem;
+     }
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+     .case-explorer {
+         --speed: 0.01s;
+     }
+
+     .case-explorer__info-body {
+         transition: none;
+     }
+
+     .case-explorer__slide,
+     .case-explorer__slide.is-leaving {
+         transition: none;
+         transform: none;
+     }
+
+     .case-explorer__slide.is-active .case-explorer__title,
+     .case-explorer__slide.is-active .case-explorer__text,
+     .case-explorer__slide.is-active .case-explorer__go {
+         animation: none;
+     }
+
+     .case-explorer.js-anim .case-explorer__head,
+     .case-explorer.js-anim .case-explorer__wrap {
+         opacity: 1;
+         transform: none;
+         transition: none;
+     }
+ }
+
+ /* =============================== Case-explorer ========================================== */
   </style>
 </head>
 <body>
@@ -342,7 +895,7 @@
 
 
 <!-- ===================== Case Explorer - Section  ===================== -->
-  <!-- <section class="case-explorer" aria-roledescription="carousel" aria-label="Case studies">
+    <section class="case-explorer" aria-roledescription="carousel" aria-label="Case studies">
 
     <div class="case-explorer__head">
       <a href="#all-work" class="case-explorer__pill" data-fontfamily='Helventica-Regular'>
@@ -497,7 +1050,7 @@
 
   </div>
   </div>
-  </section> -->
+  </section>  
   <!-- ===================== Case Explorer - Section  ===================== -->
 
 <!-- Scripts -->
