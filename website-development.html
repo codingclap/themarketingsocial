@@ -114,11 +114,11 @@
 
       <ul class="web-hero__stats">
         <li>
-          <span class="web-hero__num" data-fontfamily='Helventica-Bold' data-count="7" data-suffix="+">7+</span>
+          <span class="web-hero__num" data-fontfamily='Helventica-Bold' data-count="7" data-suffix="+"><span id="counter1">7</span>+</span>
           <span class="web-hero__label" data-fontfamily='Helventica-Regular'>Years of Experience</span>
         </li>
         <li>
-          <span class="web-hero__num" data-fontfamily='Helventica-Bold' data-count="300" data-suffix="+">300+</span>
+          <span class="web-hero__num" data-fontfamily='Helventica-Bold' data-count="300" data-suffix="+"><span id="counter2">300</span>+</span>
           <span class="web-hero__label" data-fontfamily='Helventica-Regular'>Websites Delivered</span>
         </li>
       </ul>
@@ -854,10 +854,13 @@
 
         <p class="why-choose__text" data-fontfamily="Helventica-Regular">
           We combine marketing and development under one roof to create websites that support your wider business
-          strategy. With <strong>SEO-first thinking</strong> and a <strong>design-led approach</strong>, we balance
-          search visibility, functionality and visual identity. Every project is built around your <strong>business
-            objectives</strong>, with <strong>responsive design</strong> for desktop, tablet and mobile, alongside
-          <strong>ongoing support</strong> to keep your website performing beyond launch.
+          strategy. With <span data-fontfamily="Helventica-Bold">SEO-first thinking</span> and a <span
+            data-fontfamily="Helventica-Bold">design-led approach</span>, we balance
+          search visibility, functionality and visual identity. Every project is built around your <span
+            data-fontfamily="Helventica-Bold">business
+            objectives</span>, with <span data-fontfamily="Helventica-Bold">responsive design</span> for desktop, tablet
+          and mobile, alongside
+          <span data-fontfamily="Helventica-Bold">ongoing support</span> to keep your website performing beyond launch.
         </p>
       </div>
 
@@ -1018,78 +1021,159 @@
   <script src="assets/js/common-gsap.js"></script>
 
   <script>
-    gsap.registerPlugin(ScrollTrigger);
-    ScrollTrigger.config({ ignoreMobileResize: true });   // address bar moving must not trigger a refresh
+    /*
+   Brand Showcase: scroll-scrubbed version.
+   Same HTML, same classes, same images / text / design. Only the script changes.
+ 
+   - No GSAP / ScrollTrigger needed for this section.
+   - Images wipe in from the bottom edge as you scroll (clip-path).
+   - Logos and buttons slide + fade in step with the images.
+   - Everything is a direct function of the scroll position, so nothing
+     can get out of sync and a reload is never needed.
+ */
+    (() => {
+      const init = () => {
+        const track = document.getElementById('brandShowcaseTrack');
+        const section = document.getElementById('brandShowcase');
+        if (!track || !section) return;
 
-    window.addEventListener('DOMContentLoaded', () => {
-      const track = document.getElementById('brandShowcaseTrack');
-      const section = document.getElementById('brandShowcase');
-      if (!track || !section) return;
+        const slides = Array.from(section.querySelectorAll('.brand-showcase__slide'));
+        const logos = Array.from(section.querySelectorAll('.brand-showcase__logo-box'));
+        const buttons = Array.from(section.querySelectorAll('.brand-showcase__btn'));
+        const total = slides.length;
+        if (!total) return;
 
-      const slides = gsap.utils.toArray('.brand-showcase__slide');
-      const logos = gsap.utils.toArray('.brand-showcase__logo-box');
-      const buttons = gsap.utils.toArray('.brand-showcase__btn');
-      const total = slides.length;
-      let current = 0;
+        /* ---- tuning ---- */
+        const PER_SLIDE = 1;     // screens of scrolling per slide (higher = slower)
+        const END_HOLD = 0.3;   // extra screens to stay on the last slide before the page moves on
+        const SHIFT = 24;    // px that logos / buttons travel while changing
 
-      track.style.setProperty('--slides', total);   // the CSS uses this for the scroll length
+        const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 
-      /* ---- initial state: first item visible, the rest hidden ---- */
-      [slides, logos, buttons].forEach(group =>
-        group.forEach((el, i) => {
-          gsap.set(el, { autoAlpha: i === 0 ? 1 : 0, y: 0 });
-          el.classList.toggle('is-active', i === 0);
-        })
-      );
-      gsap.set(slides[0].querySelector('img'), { scale: 1.04 });
+        track.style.setProperty('--slides', total);
 
-      /* ---- change one group (images / logos / buttons) ---- */
-      function swap(items, next, prev, dir, o) {
-        items.forEach((el, i) => {
-          if (i !== next && i !== prev) gsap.set(el, { autoAlpha: 0 });   // clean up skipped items on fast scroll
-          el.classList.toggle('is-active', i === next);
-        });
-        gsap.to(items[prev], {
-          autoAlpha: 0, y: -o.shift * dir,
-          duration: o.out, ease: 'power2.in', overwrite: true
-        });
-        gsap.fromTo(items[next],
-          { autoAlpha: 0, y: o.shift * dir },
-          { autoAlpha: 1, y: 0, duration: o.in, delay: o.delay, ease: 'power2.out', overwrite: true }
-        );
-      }
+        let stuck = 1;      // scroll distance while the section is pinned
+        let ticking = false;
 
-      function goTo(next) {
-        if (next === current) return;
-        const prev = current;
-        const dir = next > prev ? 1 : -1;     // scrolling down = 1, up = -1
-        current = next;
-
-        swap(slides, next, prev, dir, { shift: 0, out: 0.5, in: 0.6, delay: 0 });
-        swap(logos, next, prev, dir, { shift: 24, out: 0.35, in: 0.5, delay: 0.08 });
-        swap(buttons, next, prev, dir, { shift: 24, out: 0.3, in: 0.45, delay: 0.12 });
-
-        gsap.fromTo(slides[next].querySelector('img'),
-          { scale: 1.1 }, { scale: 1.05, duration: 1, ease: 'power2.out', overwrite: true });
-      }
-
-      /* ---- scroll driver: progress is read live from the track position ---- */
-      const stuckDistance = () => Math.max(1, track.offsetHeight - section.offsetHeight);
-
-      ScrollTrigger.create({
-        trigger: track,
-        start: 'top top',
-        end: 'bottom bottom',
-        invalidateOnRefresh: true,
-        // markers: true,
-        onUpdate: () => {
-          const p = gsap.utils.clamp(0, 1, -track.getBoundingClientRect().top / stuckDistance());
-          goTo(Math.min(Math.floor(p * total), total - 1));
+        function size() {
+          const h = section.offsetHeight;
+          stuck = Math.max(1, (total - 1) * PER_SLIDE * h);
+          track.style.height = (h + stuck + END_HOLD * h) + 'px';
         }
-      });
 
-      window.addEventListener('load', () => ScrollTrigger.refresh());
+        /* logos / buttons: cross-fade + slide, driven by the scroll phase */
+        function drive(items, phase, active) {
+          items.forEach((el, i) => {
+            const d = phase - i;                              // -1 … 1 around this item
+            let o = clamp(1 - Math.abs(d) * 2, 0, 1);
+            let y = -clamp(d, -0.5, 0.5) * 2 * SHIFT;         // +24px coming in, -24px going out
+            if (reduced.matches) { o = i === active ? 1 : 0; y = 0; }
+
+            el.style.opacity = o.toFixed(3);
+            el.style.visibility = o > 0.01 ? 'visible' : 'hidden';
+            el.style.pointerEvents = i === active ? 'auto' : 'none';
+            el.style.translate = '0 ' + y.toFixed(2) + 'px';  // composes with any CSS transform
+            el.classList.toggle('is-active', i === active);
+          });
+        }
+
+        function update() {
+          ticking = false;
+
+          /* 0 → 1 across the pinned distance */
+          const progress = clamp(-track.getBoundingClientRect().top / stuck, 0, 1);
+
+          /* 0 … total-1, e.g. 1.4 = 40% of the way from slide 2 to slide 3 */
+          const phase = progress * (total - 1);
+          const active = Math.min(total - 1, Math.round(phase));
+
+          slides.forEach((slide, i) => {
+            let cover = i === 0 ? 1 : clamp(phase - (i - 1), 0, 1);
+            if (reduced.matches) cover = i <= active ? 1 : 0;
+
+            const clip = 'inset(' + ((1 - cover) * 100) + '% 0 0 0)';
+            slide.style.opacity = '1';
+            slide.style.visibility = cover > 0 ? 'visible' : 'hidden';
+            slide.style.zIndex = i;
+            slide.style.clipPath = clip;
+            slide.style.webkitClipPath = clip;
+            slide.classList.toggle('is-active', i === active);
+
+            /* image settles from a slight zoom as it is uncovered */
+            const img = slide.querySelector('img');
+            if (img) img.style.scale = (1.1 - 0.05 * cover).toFixed(4);
+          });
+
+          drive(logos, phase, active);
+          drive(buttons, phase, active);
+        }
+
+        function request() {
+          if (!ticking) { ticking = true; requestAnimationFrame(update); }
+        }
+
+        const refresh = () => { size(); request(); };
+
+        size();
+        update();
+
+        window.addEventListener('scroll', request, { passive: true });
+        window.addEventListener('resize', refresh);
+        window.addEventListener('load', refresh);
+        window.addEventListener('pageshow', refresh);
+        document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
+        if (document.fonts && document.fonts.ready) document.fonts.ready.then(refresh);
+        if (window.ResizeObserver) new ResizeObserver(refresh).observe(section);
+      };
+
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+      else init();
+    })();
+  </script>
+  <script>
+
+    //******************* Counter Animation **********************/
+    gsap.registerPlugin(ScrollTrigger);
+
+    const counter1 = { value: 0 };
+    const counter2 = { value: 0 };
+    const counter3 = { value: 0 };
+
+
+
+    gsap.to(counter1, {
+      value: 7,
+      duration: 3,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: "#web-hero__stats",
+        start: "top 90%", // start when top of #counter hits 90% of viewport
+        once: true        // run only once
+      },
+      onUpdate: () => {
+        document.getElementById("counter1").textContent = Math.floor(counter1.value);
+      }
     });
+
+    gsap.to(counter2, {
+      value: 300,
+      duration: 3,
+      ease: "power1.out",
+      scrollTrigger: {
+        trigger: "#web-hero__stats",
+        start: "top 90%", // start when top of #counter hits 90% of viewport
+        once: true        // run only once
+      },
+      onUpdate: () => {
+        document.getElementById("counter2").textContent = Math.floor(counter2.value);
+      }
+    });
+
+    
+    //******************* Counter Animation **********************/ 
+
+
   </script>
 </body>
 
