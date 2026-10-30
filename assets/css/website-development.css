@@ -2136,6 +2136,7 @@
      color: #fff;
      opacity: 0;
      visibility: hidden;
+     transition: all 0.5s ease-in-out;
  }
 
  .logo-inner {
@@ -2152,12 +2153,37 @@
      max-width: 100%;
      height: auto;
  }
-.brand-showcase__logo-box:nth-child(1){ --logo-w: clamp(110px, 12vw, 190px); } /* signature */
-.brand-showcase__logo-box:nth-child(2){ --logo-w: clamp(70px,  7vw,  110px); } /* 118 */
-.brand-showcase__logo-box:nth-child(3){ --logo-w: clamp(90px,  9vw,  150px); } /* r22 */
-.brand-showcase__logo-box:nth-child(4){ --logo-w: clamp(120px, 20vw, 240px); } /* the residences */
-.brand-showcase__logo-box:nth-child(5){ --logo-w: clamp(60px,  6vw,  100px); } /* a3 */
-.brand-showcase__logo-box:nth-child(6){ --logo-w: clamp(130px, 14vw, 190px); } /* signature mansions */
+
+ .brand-showcase__logo-box:nth-child(1) {
+     --logo-w: clamp(110px, 12vw, 190px);
+ }
+
+ /* signature */
+ .brand-showcase__logo-box:nth-child(2) {
+     --logo-w: clamp(70px, 7vw, 110px);
+ }
+
+ /* 118 */
+ .brand-showcase__logo-box:nth-child(3) {
+     --logo-w: clamp(90px, 9vw, 150px);
+ }
+
+ /* r22 */
+ .brand-showcase__logo-box:nth-child(4) {
+     --logo-w: clamp(120px, 20vw, 240px);
+ }
+
+ /* the residences */
+ .brand-showcase__logo-box:nth-child(5) {
+     --logo-w: clamp(60px, 6vw, 100px);
+ }
+
+ /* a3 */
+ .brand-showcase__logo-box:nth-child(6) {
+     --logo-w: clamp(130px, 14vw, 190px);
+ }
+
+ /* signature mansions */
  .logo-icon {
      width: clamp(34px, 3.4vw, 52px);
      height: auto;
@@ -2208,8 +2234,8 @@
      opacity: 0;
      visibility: hidden;
      pointer-events: none;
-     overflow: hidden;
-     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+     overflow: hidden; 
+     transition: 0.5s ease-in-out;
  }
 
  .brand-showcase__btn::before {
@@ -2283,6 +2309,7 @@
      opacity: 0;
      visibility: hidden;
      overflow: hidden;
+     transition: all 0.5s ease-in-out;
  }
 
  .brand-showcase__slide img {
