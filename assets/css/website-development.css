@@ -2058,10 +2058,10 @@
  }
 
  .brand-showcase-panel:nth-child(1) {
-     --logo-h: clamp(90px, 12vw, 120px);
+     --logo-h: clamp(100px, 12vw, 120px);
  }
 .brand-showcase-panel:nth-child(2) {
-     --logo-h: clamp(90px, 12vw, 90px);
+     --logo-h: clamp(80px, 12vw, 90px);
  }
  .brand-showcase-panel:nth-child(3) {
      --logo-h: clamp(90px, 12vw, 120px);
@@ -2070,7 +2070,7 @@
      --logo-h: clamp(90px, 12vw, 120px);
  }
  .brand-showcase-panel:nth-child(5) {
-     --logo-h: clamp(90px, 12vw, 100px);
+     --logo-h: clamp(80px, 12vw, 100px);
  }
  .brand-showcase-panel:nth-child(6) {
      --logo-h: clamp(90px, 12vw, 100px);
@@ -2277,10 +2277,10 @@
          margin-bottom: 6px;
      }
 
-     .brand-showcase-project-logo {
+     /* .brand-showcase-project-logo {
          max-height: 36px;
          margin-bottom: 6px;
-     }
+     } */
 
      /* Hide the desktop button located in the left copy */
      .brand-showcase-desktop-btn {
