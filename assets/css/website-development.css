@@ -368,8 +368,7 @@
      margin: 0;
      overflow: hidden;
      aspect-ratio: 365 / 167;
-     background: #e4e0df;
-     border: 1px solid black;
+     /* background: #e4e0df;  */
  }
 
  .website-issues__media img {
@@ -383,7 +382,7 @@
  @media (hover: hover) {
      .website-issues__media:hover img {
          transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
-         transform: scale(1.04);
+         transform: scale(1.02);
      }
  }
 
@@ -2136,7 +2135,7 @@
      color: #fff;
      opacity: 0;
      visibility: hidden;
-     transition: all 0.5s ease-in-out;
+     transition: all 0.2s ease-in-out;
  }
 
  .logo-inner {
@@ -2309,14 +2308,14 @@
      opacity: 0;
      visibility: hidden;
      overflow: hidden;
-     transition: all 0.5s ease-in-out;
+     transition: all 0.2s ease-in-out;
  }
 
  .brand-showcase__slide img {
      display: block;
      width: 100%;
      height: 100%;
-     object-fit: cover;
+     object-fit: contain;
      /* transform: scale(0); */
  }
 
