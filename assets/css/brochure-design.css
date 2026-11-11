@@ -448,7 +448,7 @@
 
 /* ==========================================================================
    Brochure portfolio
-   ========================================================================== */ 
+   ========================================================================== */
 
 .brochure-portfolio {
     --gutter: clamp(1.25rem, 5vw, 5rem);
@@ -670,3 +670,283 @@
 /* ==========================================================================
    Brochure portfolio
    ========================================================================== */
+
+/* ==========================================================================
+   Brochure industries
+    ========================================================================== */
+
+.brochure-industries {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    --card-radius: clamp(1rem, 0.7rem + 1vw, 1.5rem);
+    /* share of the (viewport - gutter) the Owl stage uses; the rest shows the next card peeking.
+       Keep in step with the Owl `responsive` breakpoints in the HTML script. */
+    --peek: 0.84;
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--bg);
+    color: #000;
+    overflow: hidden;
+}
+
+@media (min-width: 576px) {
+    .brochure-industries {
+        --peek: 0.9;
+    }
+}
+
+@media (min-width: 992px) {
+    .brochure-industries {
+        --peek: 0.945;
+    }
+}
+
+@media (min-width: 1400px) {
+    .brochure-industries {
+        --peek: 0.955;
+    }
+}
+
+/* ---------- Heading + paragraph ---------- */
+.brochure-industries__head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: center;
+    column-gap: clamp(1.5rem, 4vw, 5rem);
+    row-gap: 1.25rem;
+    padding: 0 var(--gutter);
+    margin-bottom: clamp(2rem, 1rem + 3vw, 3.5rem);
+}
+
+.brochure-industries__heading {
+    min-width: 0;
+    margin: 0;
+    font-size: clamp(1.6rem, 1rem + 2.4vw, 3.25rem);
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.brochure-industries__accent {
+    font-size: 1.05em;
+    font-style: italic;
+    font-weight: 500;
+    text-transform: none;
+    color: var(--brand-red);
+}
+
+.brochure-industries__lead {
+    min-width: 0;
+    max-width: 44em;
+    margin: 0;
+    font-size: clamp(0.85rem, 0.75rem + 0.3vw, 1rem);
+    line-height: 1.4;
+    color: #111;
+}
+
+/* ---------- Slider wrapper: starts at the gutter, bleeds off the right edge ---------- */
+.brochure-industries__slider-wrap {
+    margin-left: var(--gutter);
+    width: calc((100% - var(--gutter)) * var(--peek));
+}
+
+/* Let the next card peek out on the right, but hide cards that slid past the left edge */
+.brochure-industries .brochure-industries__slider .owl-stage-outer {
+    overflow: visible;
+    clip-path: inset(0 -100vw 0 0);
+}
+
+/* Equal-height cards */
+.brochure-industries .brochure-industries__slider .owl-stage {
+    display: flex;
+}
+
+.brochure-industries .brochure-industries__slider .owl-stage::after {
+    display: none;
+}
+
+.brochure-industries .brochure-industries__slider .owl-item {
+    display: flex;
+    flex-shrink: 0;
+}
+
+/* Before Owl initialises: show a simple row instead of nothing (avoids layout jump) */
+.brochure-industries__slider:not(.owl-loaded) {
+    display: flex;
+    gap: 14px;
+    overflow: hidden;
+}
+
+.brochure-industries__slider:not(.owl-loaded) .brochure-industries__card {
+    flex: 0 0 80%;
+}
+
+@media (min-width: 576px) {
+    .brochure-industries__slider:not(.owl-loaded) .brochure-industries__card {
+        flex-basis: 45%;
+    }
+}
+
+@media (min-width: 992px) {
+    .brochure-industries__slider:not(.owl-loaded) .brochure-industries__card {
+        flex-basis: 31%;
+    }
+}
+
+/* ---------- Cards ---------- */
+.brochure-industries__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: clamp(0.4rem, 0.3rem + 0.3vw, 0.5rem);
+    border-radius: var(--card-radius);
+    background: #fff;
+}
+
+.brochure-industries__img {
+    margin: 0;
+    overflow: hidden;
+    border-radius: calc(var(--card-radius) - 0.25rem);
+    aspect-ratio: 10 / 7;
+    background: #ddd;
+}
+
+.brochure-industries__img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    -webkit-user-drag: none;
+}
+
+.brochure-industries__card:hover .brochure-industries__img img {
+    transform: scale(1.05);
+}
+
+.brochure-industries__title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: clamp(0.9rem, 0.6rem + 1vw, 1.4rem) 0.75rem;
+    font-size: clamp(1rem, 0.85rem + 0.65vw, 1.5rem);
+    font-weight: 400;
+    line-height: 1.2;
+    text-align: center;
+    text-transform: uppercase;
+    text-wrap: balance;
+    color: #111;
+}
+
+/* ---------- Arrows (Owl navContainer) ---------- */
+.brochure-industries__nav {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 0.5rem + 2vw, 1.75rem);
+    margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    padding: 0 var(--gutter);
+}
+
+.brochure-industries__nav button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border: 0;
+    background: transparent;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+}
+
+.brochure-industries__nav button svg {
+    display: block;
+    width: clamp(2rem, 1.6rem + 1.2vw, 2.75rem);
+    height: auto;
+}
+
+.brochure-industries__nav .owl-prev:hover {
+    color: var(--brand-red);
+    transform: translateX(-3px);
+}
+
+.brochure-industries__nav .owl-next:hover {
+    color: var(--brand-red);
+    transform: translateX(3px);
+}
+
+.brochure-industries__nav button:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 2px;
+}
+
+.brochure-industries__nav button.disabled {
+    opacity: 0.3;
+    cursor: default;
+    pointer-events: none;
+}
+
+.brochure-industries .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.brochure-industries.js-anim .brochure-industries__head,
+.brochure-industries.js-anim .brochure-industries__slider-wrap,
+.brochure-industries.js-anim .brochure-industries__nav {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brochure-industries.js-anim .brochure-industries__slider-wrap {
+    transition-delay: 0.2s;
+}
+
+.brochure-industries.js-anim .brochure-industries__nav {
+    transition-delay: 0.4s;
+}
+
+.brochure-industries.js-anim.is-visible .brochure-industries__head,
+.brochure-industries.js-anim.is-visible .brochure-industries__slider-wrap,
+.brochure-industries.js-anim.is-visible .brochure-industries__nav {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- Tablet / mobile ---------- */
+@media (max-width: 991.98px) {
+    .brochure-industries__head {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* .brochure-industries.js-anim .brochure-industries__head,
+    .brochure-industries.js-anim .brochure-industries__slider-wrap,
+    .brochure-industries.js-anim .brochure-industries__nav {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .brochure-industries__img img {
+        transition: none;
+    } */
+}
+
+/* ==========================================================================
+   Brochure industries
+    ========================================================================== */

@@ -272,11 +272,166 @@
     <!------------------------------------ brochure-portfolio ------------------------------->
 
 
+    <!-- Owl Carousel 2 core CSS (skip if already loaded on the site) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+
+    <!------------------------------------ brochure-industries ------------------------------->
+    <section class="brochure-industries">
+
+        <div class="brochure-industries__head">
+            <h2 class="brochure-industries__heading" data-fontfamily='Helventica-Regular' data-color='black'>
+                <span class="brochure-industries__accent" data-fontfamily='Playfair-MediumItalic'
+                    data-color='red'>Brochure Design</span>
+                for businesses across Dubai
+            </h2>
+            <p class="brochure-industries__lead" data-fontfamily='Helventica-Regular'>
+                Every industry communicates differently. We customize the brochure's layout, visual style, content
+                hierarchy,
+                and messaging according to your business, target audience, and marketing objectives.
+            </p>
+        </div>
+
+        <div class="brochure-industries__slider-wrap">
+            <div class="brochure-industries__slider owl-carousel">
+
+                <article class="brochure-industries__card">
+                    <figure class="brochure-industries__img">
+                        <img src="assets/images/brochure-design/industry-real-estate.webp"
+                            alt="Real estate and property brochure design" width="640" height="448" loading="lazy"
+                            draggable="false" />
+                    </figure>
+                    <h3 class="brochure-industries__title" data-fontfamily='Playfair-Regular'>Real Estate &amp; Property
+                    </h3>
+                </article>
+
+                <article class="brochure-industries__card">
+                    <figure class="brochure-industries__img">
+                        <img src="assets/images/brochure-design/industry-interior.webp"
+                            alt="Interior design and architecture brochure design" width="640" height="448"
+                            loading="lazy" draggable="false" />
+                    </figure>
+                    <h3 class="brochure-industries__title" data-fontfamily='Playfair-Regular'>Interior Design &amp;
+                        Architecture
+                    </h3>
+                </article>
+
+                <article class="brochure-industries__card">
+                    <figure class="brochure-industries__img">
+                        <img src="assets/images/brochure-design/industry-hospitality.webp"
+                            alt="Hospitality and food and beverage brochure design" width="640" height="448"
+                            loading="lazy" draggable="false" />
+                    </figure>
+                    <h3 class="brochure-industries__title" data-fontfamily='Playfair-Regular'>Hospitality &amp; F&amp;B
+                    </h3>
+                </article>
+
+                <article class="brochure-industries__card">
+                    <figure class="brochure-industries__img">
+                        <img src="assets/images/brochure-design/industry-automotive.webp"
+                            alt="Automotive and luxury brochure design" width="640" height="448" loading="lazy"
+                            draggable="false" />
+                    </figure>
+                    <h3 class="brochure-industries__title" data-fontfamily='Playfair-Regular'>Automotive &amp; Luxury
+                    </h3>
+                </article>
+
+                <article class="brochure-industries__card">
+                    <figure class="brochure-industries__img">
+                        <img src="assets/images/brochure-design/industry-healthcare.webp"
+                            alt="Healthcare and wellness brochure design" width="640" height="448" loading="lazy"
+                            draggable="false" />
+                    </figure>
+                    <h3 class="brochure-industries__title" data-fontfamily='Playfair-Regular'>Healthcare &amp; Wellness
+                    </h3>
+                </article>
+
+                <article class="brochure-industries__card">
+                    <figure class="brochure-industries__img">
+                        <img src="assets/images/brochure-design/industry-education.webp"
+                            alt="Education and training brochure design" width="640" height="448" loading="lazy"
+                            draggable="false" />
+                    </figure>
+                    <h3 class="brochure-industries__title" data-fontfamily='Playfair-Regular'>Education &amp; Training
+                    </h3>
+                </article>
+
+                <article class="brochure-industries__card">
+                    <figure class="brochure-industries__img">
+                        <img src="assets/images/brochure-design/industry-corporate.webp"
+                            alt="Corporate and finance brochure design" width="640" height="448" loading="lazy"
+                            draggable="false" />
+                    </figure>
+                    <h3 class="brochure-industries__title" data-fontfamily='Playfair-Regular'>Corporate &amp; Finance
+                    </h3>
+                </article>
+
+            </div>
+        </div>
+
+        <!-- Owl puts the prev / next buttons in here (navContainer) -->
+        <div class="brochure-industries__nav"></div>
+
+    </section>
+    <!------------------------------------ brochure-industries ------------------------------->
+
+    <!-- jQuery + Owl Carousel 2 (skip any that are already loaded on the site) -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/owl.carousel.js"></script>
+    <script>
+        jQuery(function ($) {
+            var $sec = $('.brochure-industries');
+            if (!$sec.length) return;
+
+            var arrowPrev =
+                '<span class="visually-hidden">Previous</span>' +
+                '<svg width="40" height="16" viewBox="0 0 40 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M39 8H1M8 1L1 8l7 7"/></svg>';
+            var arrowNext =
+                '<span class="visually-hidden">Next</span>' +
+                '<svg width="40" height="16" viewBox="0 0 40 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 8h38M32 1l7 7-7 7"/></svg>';
+
+            $sec.find('.brochure-industries__slider').owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 3000,        // wait between slides, in ms
+                autoplayHoverPause: true, 
+                loop: true,
+                rewind: false,
+                dots: false,
+                nav: true,
+                navContainer: $sec.find('.brochure-industries__nav'),
+                navText: [arrowPrev, arrowNext],
+                slideBy: 1,
+                smartSpeed: 600,
+                dragEndSpeed: 600,
+                mouseDrag: true,
+                touchDrag: true,
+                items: 1,
+                margin: 14,
+                // keep these breakpoints in sync with the --peek values in the CSS
+                responsive: {
+                    0: { items: 1, margin: 14 },
+                    576: { items: 2, margin: 16 },
+                    992: { items: 3, margin: 24 },
+                    1400: { items: 4, margin: 24 }
+                }
+            });
+
+            // Reveal on scroll (same js-anim / is-visible pattern as the other sections)
+            var sec = $sec[0];
+            sec.classList.add('js-anim');
+            if (!('IntersectionObserver' in window)) { sec.classList.add('is-visible'); return; }
+            var io = new IntersectionObserver(function (entries) {
+                entries.forEach(function (e) {
+                    if (e.isIntersecting) { sec.classList.add('is-visible'); io.disconnect(); }
+                });
+            }, { threshold: 0.1 });
+            io.observe(sec);
+        });
+    </script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="assets/js/common-gsap.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/owl.carousel.js"></script>
+
 
 </body>
 
