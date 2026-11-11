@@ -1,0 +1,179 @@
+.brochure-hero {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0 clamp(2.5rem, 2rem + 4vw, 6rem);
+    background: var(--bg);
+    color: #000;
+    overflow: hidden;
+}
+
+.brochure-hero__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 1500px;
+    margin-inline: auto;
+    padding: clamp(5rem, 5vw, 5rem) clamp(1.25rem, 5vw, 5rem) clamp(2rem, 2vw, 2rem) clamp(1.25rem, 5vw, 5rem);
+}
+
+/* ---------- Heading + paragraph ---------- */
+.brochure-hero__heading {
+    margin: 0;
+    font-size: clamp(1.8rem, 1.1rem + 2.8vw, 60px);
+    font-weight: 400;
+    line-height: 1.3;
+    color: #000;
+}
+
+.brochure-hero__accent {
+    display: block;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--brand-red);
+}
+
+.brochure-hero__lead {
+    max-width: 62em;
+    margin: clamp(0.9rem, 0.6rem + 1vw, 1.5rem) auto 0;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    line-height:1.3;
+    color: #000;
+}
+
+/* ---------- Buttons ---------- */
+.brochure-hero__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+    margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
+
+.brochure-hero__btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: fit-content;
+    line-height: normal;
+    padding: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem) clamp(1.6rem, 0.9rem + 2.5vw, 3rem);
+    border: 1px solid var(--brand-red);
+    border-radius: 999px;
+    background: var(--brand-red);
+    color: #fff;
+    font-size: clamp(0.75rem, 1.1vw, 1.12rem);
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.4s ease;
+}
+
+.brochure-hero__btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transition: left 0.4s;
+}
+
+.brochure-hero__btn-arrow {
+    flex: none;
+    width: 1em;
+    height: 1em;
+    transition: transform 0.3s ease;
+}
+
+.brochure-hero__btn:hover,
+.brochure-hero__btn:focus-visible {
+    color: var(--brand-red);
+}
+
+.brochure-hero__btn:hover::before,
+.brochure-hero__btn:focus-visible::before {
+    left: 0;
+}
+
+.brochure-hero__btn:hover .brochure-hero__btn-arrow {
+    /* transform: translate(2px, -2px); */
+}
+
+/* ---------- Brochure image ---------- */
+.brochure-hero__media {
+    width: 100%;
+    max-width: 1300px;
+    margin: clamp(2rem, 1rem + 4vw, 4.5rem) 0 0;
+}
+
+.brochure-hero__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-user-drag: none;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.brochure-hero.js-anim .brochure-hero__text,
+.brochure-hero.js-anim .brochure-hero__actions,
+.brochure-hero.js-anim .brochure-hero__media {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brochure-hero.js-anim .brochure-hero__actions {
+    transition-delay: 0.2s;
+}
+
+.brochure-hero.js-anim .brochure-hero__media {
+    transform: translateY(3rem);
+    transition-delay: 0.35s;
+}
+
+.brochure-hero.js-anim.is-visible .brochure-hero__text,
+.brochure-hero.js-anim.is-visible .brochure-hero__actions,
+.brochure-hero.js-anim.is-visible .brochure-hero__media {
+    opacity: 1;
+    transform: none;
+}
+
+/* Keep the italic line on one row when there is room */
+@media (min-width: 480px) {
+    .brochure-hero__accent {
+        white-space: nowrap;
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767.98px) {
+    
+    .brochure-hero__actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Let the brochure bleed slightly past the gutters for presence */
+    .brochure-hero__media {
+        width: 120%;
+        max-width: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .brochure-hero.js-anim .brochure-hero__text,
+    .brochure-hero.js-anim .brochure-hero__actions,
+    .brochure-hero.js-anim .brochure-hero__media {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
