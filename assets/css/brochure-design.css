@@ -712,7 +712,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
     align-items: center;
-    column-gap: clamp(1.5rem, 4vw, 5rem);
+    column-gap: clamp(1.5rem, 3vw, 5rem);
     row-gap: 1.25rem;
     padding: 0 var(--gutter);
     margin-bottom: clamp(2rem, 1rem + 3vw, 3.5rem);
@@ -721,7 +721,7 @@
 .brochure-industries__heading {
     min-width: 0;
     margin: 0;
-    font-size: clamp(1.6rem, 1rem + 2.4vw, 3.25rem);
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);;
     font-weight: 400;
     line-height: 1.2;
     text-transform: uppercase;
@@ -729,9 +729,9 @@
 }
 
 .brochure-industries__accent {
-    font-size: 1.05em;
+    font-size: 1.2em;
     font-style: italic;
-    font-weight: 500;
+    font-weight: 400;
     text-transform: none;
     color: var(--brand-red);
 }
@@ -949,4 +949,254 @@
 
 /* ==========================================================================
    Brochure industries
+    ========================================================================== */
+
+/* ==========================================================================
+   Brochure approach
+    ========================================================================== */
+.brochure-approach {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    --card-radius: clamp(1rem, 0.7rem + 1vw, 1.5rem);
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--bg);
+    color: #000;
+    overflow: hidden;
+}
+
+.brochure-approach__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+    align-items: end;
+    column-gap: clamp(1rem, 0vw, 0rem);
+    padding-left: var(--gutter);
+    min-height: 40rem;
+}
+
+/* ---------- Heading + paragraph ---------- */
+.brochure-approach__text {
+    min-width: 0;
+}
+
+.brochure-approach__heading {
+    margin: 0;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-weight: 400;
+    width: 100rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.brochure-approach__accent {
+    font-size: 1.2em;
+    font-style: italic;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: none;
+    color: var(--brand-red);
+}
+
+.brochure-approach__lead {
+    max-width: 38em;
+    margin: clamp(0.9rem, 0.6rem + 1vw, 1.5rem) 0 0;
+    font-size: clamp(0.85rem, 0.75rem + 0.3vw, 1rem);
+    line-height: 1.4;
+    color: #111;
+}
+
+/* ---------- Slider: starts in column 2, bleeds off the right edge ---------- */
+.brochure-approach__slider-wrap {
+    position: relative;
+    min-width: 0;
+    width: calc(100% + var(--gutter));
+    /* soft fade where cards leave on the left */
+}
+
+.brochure-approach__slider-wrap::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    width: clamp(1.5rem, 5vw, 4.5rem);
+    background: linear-gradient(to right, var(--bg), rgba(241, 232, 224, 0));
+    pointer-events: none;
+}
+
+/* Next card peeks out on the right; cards that slid past the left edge are hidden */
+.brochure-approach .brochure-approach__slider .owl-stage-outer {
+    overflow: visible;
+    clip-path: inset(0 -100vw 0 0);
+}
+
+.brochure-approach .brochure-approach__slider .owl-stage {
+    display: flex;
+}
+
+.brochure-approach .brochure-approach__slider .owl-stage::after {
+    display: none;
+}
+
+.brochure-approach .brochure-approach__slider .owl-item {
+    display: flex;
+}
+
+/* Before Owl initialises: a plain row, so the layout doesn't jump */
+.brochure-approach__slider:not(.owl-loaded) {
+    display: flex;
+    gap: 14px;
+    overflow: hidden;
+}
+
+.brochure-approach__slider:not(.owl-loaded) .brochure-approach__card {
+    flex: 0 0 85%;
+}
+
+@media (min-width: 992px) {
+    .brochure-approach__slider:not(.owl-loaded) .brochure-approach__card {
+        flex-basis: 42%;
+    }
+}
+
+/* ---------- Cards ---------- */
+.brochure-approach__card {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    aspect-ratio: 11 / 10;
+    min-height: 25rem;
+    overflow: hidden;
+    border-radius: 20px; 
+    color: #fff;
+}
+
+.brochure-approach__img {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+    -webkit-user-drag: none;
+}
+
+.brochure-approach__card:hover .brochure-approach__img {
+    transform: scale(1.04);
+}
+
+/* Muted mauve wash, strongest behind the text */
+.brochure-approach__card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom,
+            rgba(241, 232, 224, 0) 0%,
+            rgba(241, 232, 224, 0) 11%,
+            rgba(241, 232, 224, 0) 11%);
+}
+ 
+.brochure-approach__body {
+    padding: clamp(1.1rem, 0.8rem + 1vw, 1.6rem);
+    text-align: right;
+}
+
+.brochure-approach__title {
+     margin-bottom: 10px;
+    font-size: clamp(0.95rem, 0.8rem + 0.55vw, 1.1rem);
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.brochure-approach__text {
+    margin: 0.5rem 0 0 auto;
+    max-width: 55em;
+    font-size: clamp(0.8rem, 0.74rem + 0.25vw, 0.95rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: #fff;
+    height: 100%;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.brochure-approach.js-anim .brochure-approach__text,
+.brochure-approach.js-anim .brochure-approach__slider-wrap {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brochure-approach.js-anim .brochure-approach__slider-wrap {
+    transform: translateX(3rem);
+    transition-delay: 0.2s;
+}
+
+.brochure-approach.js-anim.is-visible .brochure-approach__text,
+.brochure-approach.js-anim.is-visible .brochure-approach__slider-wrap {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- Tablet / mobile: text on top, slider below ---------- */
+@media (max-width: 1300px) {
+    .brochure-approach__inner{
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.2fr);
+    }
+}
+@media (max-width: 1200px) {
+    .brochure-approach__inner{
+        grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.4fr);
+    }
+}
+@media (max-width: 991.98px) {
+    .brochure-approach__text {
+        height: initial;
+    }
+    .brochure-approach__inner {
+        grid-template-columns: 1fr;
+        row-gap: clamp(1rem, 1rem + 1vw, 1rem);
+        padding-right: var(--gutter);
+        min-height: 43rem;
+    }
+
+    .brochure-approach__slider-wrap {
+        width: calc(100% + var(--gutter));
+    }
+
+    /* no left fade when the slider starts at the gutter */
+    .brochure-approach__slider-wrap::before {
+        display: none;
+    }
+
+    .brochure-approach__card {
+        aspect-ratio: auto;
+        min-height: clamp(20rem, 16rem + 18vw, 26rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* .brochure-approach.js-anim .brochure-approach__text,
+    .brochure-approach.js-anim .brochure-approach__slider-wrap {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .brochure-approach__img {
+        transition: none;
+    } */
+}
+
+/* ==========================================================================
+   Brochure approach
     ========================================================================== */
