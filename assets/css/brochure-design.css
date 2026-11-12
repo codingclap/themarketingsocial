@@ -26,7 +26,7 @@
     margin: 0;
     font-size: clamp(1.8rem, 1.1rem + 2.8vw, 60px);
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.2;
     color: #000;
 }
 
@@ -34,7 +34,7 @@
     display: block;
     font-style: italic;
     font-weight: 500;
-    line-height: 1.3;
+    line-height: 1.2;
     color: var(--brand-red);
 }
 
@@ -42,7 +42,7 @@
     max-width: 62em;
     margin: clamp(0.9rem, 0.6rem + 1vw, 1.5rem) auto 0;
     font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
-    line-height: 1.3;
+    line-height: 1.2;
     color: #000;
 }
 
@@ -216,7 +216,7 @@
     margin: 0;
     font-size: clamp(1.8rem, 1.1rem + 2.8vw, 3.1rem);
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.2;
     text-transform: uppercase;
     color: #000;
 }
@@ -227,7 +227,7 @@
     font-style: italic;
     font-weight: 400;
     text-transform: none;
-    line-height: 1.3;
+    line-height: 1.2;
     color: var(--brand-red);
 }
 
@@ -235,7 +235,7 @@
     max-width: 44em;
     margin: 0;
     font-size: clamp(0.85rem, 0.75rem + 0.3vw, 1rem);
-    line-height: 1.3;
+    line-height: 1.2;
     color: #111;
 }
 
@@ -311,7 +311,7 @@
     margin: 0;
     font-size: clamp(0.95rem, 0.8rem + 0.55vw, 1.3rem);
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.2;
     text-transform: uppercase;
     color: #fff;
 }
@@ -320,7 +320,7 @@
     margin: 0;
     font-size: clamp(0.85rem, 0.78rem + 0.3vw, 1rem);
     font-weight: 300;
-    line-height: 1.3;
+    line-height: 1.2;
     color: #fff;
 }
 
@@ -483,7 +483,7 @@
     margin: 0;
     font-size: clamp(1.6rem, 1rem + 2.2vw, 3rem);
     font-weight: 400;
-    line-height: 1.3;
+    line-height: 1.2;
     text-transform: uppercase;
     color: #fff;
 }
@@ -501,7 +501,7 @@
     margin: clamp(0.9rem, 0.6rem + 1vw, 1.5rem) 0 0;
     font-size: clamp(0.85rem, 0.75rem + 0.3vw, 1rem);
     font-weight: 300;
-    line-height: 1.3;
+    line-height: 1.2;
     color: rgba(255, 255, 255, 0.72);
 }
 
@@ -1233,7 +1233,6 @@
 }
 
 .brochure-process__inner {
-    max-width: 1500px;
     margin-inline: auto;
     padding: 0 var(--gutter);
 }
@@ -1408,4 +1407,409 @@
 
 /* ==========================================================================
    Brochure process
+    ========================================================================== */
+
+
+
+/* ==========================================================================
+   Brochure why
+    ========================================================================== */
+.brochure-why {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    position: relative;
+    isolation: isolate;
+    padding: clamp(3rem, 2rem + 5vw, 7rem) 0 0;
+    background-color: var(--brand-red);
+    color: #fff;
+    overflow: hidden;
+}
+
+
+
+/* Embossed tile pattern behind the text, fading out towards the brochure */
+.brochure-why__pattern {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: clamp(18rem, 55vw, 56rem);
+    height: auto;
+    max-width: none;
+    opacity: 1;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+.brochure-why__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+}
+
+/* ---------- Heading + paragraph ---------- */
+.brochure-why__text {
+    max-width: 100%;
+}
+
+.brochure-why__heading {
+    margin: 0;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.brochure-why__accent {
+    font-size: 1.2em;
+    font-style: italic;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: none;
+    color: #fff;
+}
+
+.brochure-why__lead {
+    max-width: 60em;
+    margin: clamp(1rem, 0.7rem + 1.2vw, 1.75rem) 0 0;
+    font-size: clamp(0.85rem, 0.75rem + 0.35vw, 1.05rem);
+    line-height: 1.2;
+    color: #F1E8E0;
+}
+
+.brochure-why__lead strong {
+    color: #F1E8E0;
+}
+
+/* ---------- Brochure image: bottom right, bleeding off the edges ---------- */
+.brochure-why__media {
+    align-self: flex-end;
+    width: min(90%, 1100px);
+    margin: clamp(-4rem, -2vw, 0rem) calc(var(--gutter) * -1 - 5vw) -1.7% 0;
+}
+
+.brochure-why__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    /* filter: drop-shadow(0 24px 30px rgba(0, 0, 0, 0.35)); */
+    -webkit-user-drag: none;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.brochure-why.js-anim .brochure-why__text,
+.brochure-why.js-anim .brochure-why__media {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.brochure-why.js-anim .brochure-why__media {
+    transform: translate(3rem, 2rem);
+    transition-delay: 0.25s;
+}
+
+.brochure-why.js-anim.is-visible .brochure-why__text,
+.brochure-why.js-anim.is-visible .brochure-why__media {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- Tablet / mobile ---------- */
+@media (max-width: 991.98px) {
+    .brochure-why__media {
+        /* starts at the gutter, runs a little past the right edge like the design */
+        align-self: flex-start;
+        width: calc(100% + var(--gutter) + 2vw);
+        margin: clamp(1rem, 0rem + 1vw, 2.5rem) 0 -4% 0;
+    }
+
+    .brochure-why__pattern {
+        width: 120%;
+        opacity: 0.5;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .brochure-why__media {
+        width: calc(100% + var(--gutter) + 12vw);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .brochure-why.js-anim .brochure-why__text,
+    .brochure-why.js-anim .brochure-why__media {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Brochure why
+    ========================================================================== */
+
+
+/*=======================================================================
+   Brochure work
+    ========================================================================== */
+.brochure-work {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    --img-radius: clamp(1rem, 0.7rem + 1vw, 1.75rem);
+    /* navbar height (~86px on desktop) + breathing room */
+    --showcase-top: 220px;
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--bg);
+    color: #000;
+    /* NOT overflow:hidden: that would stop the sticky stage from sticking */
+    overflow-x: clip;
+}
+
+/* ---------- Heading + paragraph ---------- */
+.brochure-work__head {
+    max-width: 1500px;
+    margin: 0 auto clamp(1.75rem, 1rem + 3vw, 3.5rem);
+    padding: 0 var(--gutter);
+}
+
+.brochure-work__heading {
+    margin: 0;
+    font-size: clamp(1.6rem, 1rem + 2.4vw, 3.25rem);
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.brochure-work__accent {
+    font-size: 1.05em;
+    font-style: italic;
+    font-weight: 500;
+    text-transform: none;
+    color: var(--brand-red);
+}
+
+.brochure-work__lead {
+    max-width: 46em;
+    margin: clamp(0.8rem, 0.5rem + 1vw, 1.25rem) 0 0;
+    font-size: clamp(0.85rem, 0.75rem + 0.3vw, 1rem);
+    line-height: 1.4;
+    color: #111;
+}
+
+/* ---------- Scroll-stacked showcase ---------- */
+/* height is set by the script: ((panels - 1) * 75 + 100) svh */
+.brand-showcase {
+    position: relative;
+}
+
+/* the stage sticks just below the fixed navbar. Set --showcase-top to your navbar height + a small gap.
+   (the script reads this value, so there is nothing to change in the JS) */
+.brand-showcase-stage {
+    position: sticky;
+    top: var(--showcase-top);
+    display: grid;
+    /* every panel sits in the same cell, so the stage is as tall as the tallest panel */
+    max-width: 1500px;
+    margin-inline: auto;
+}
+
+.brand-showcase-panel {
+    grid-area: 1 / 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+    align-items: center;
+    column-gap: clamp(1.5rem, 4vw, 4rem);
+    padding: clamp(0.5rem, 1vw, 1rem) var(--gutter);
+    background: var(--bg);
+    /* the script drives clip-path + z-index inline */
+}
+
+/* ---------- Left column ---------- */
+.brand-showcase-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    text-align: center;
+}
+
+.brand-showcase-logo {
+    display: block;
+    width: auto;
+    max-width: min(14rem, 70%);
+    height: clamp(4rem, 3rem + 4vw, 7.5rem);
+    object-fit: contain;
+    -webkit-user-drag: none;
+}
+
+.brand-showcase-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1rem, 0.7rem + 1.2vw, 1.75rem) clamp(1rem, 2vw, 2rem);
+    width: 100%;
+    margin: clamp(1.25rem, 0.8rem + 2vw, 2.5rem) 0 0;
+}
+
+.brand-showcase-meta__item {
+    min-width: 0;
+}
+
+.brand-showcase-meta__item--wide {
+    grid-column: 1 / -1;
+}
+
+.brand-showcase-meta dt {
+    margin: 0;
+    font-size: clamp(0.75rem, 0.68rem + 0.3vw, 0.95rem);
+    line-height: 1.3;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.brand-showcase-meta dd {
+    margin: 0.15rem 0 0;
+    font-size: clamp(0.85rem, 0.75rem + 0.4vw, 1.1rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: #000;
+}
+
+/* ---------- Button (same as the other sections) ---------- */
+.brand-showcase-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: fit-content;
+    margin-top: clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+    line-height: normal;
+    padding: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem) clamp(1.1rem, 0.8rem + 1.7vw, 2rem);
+    border: 1px solid var(--brand-red);
+    border-radius: 999px;
+    background: var(--brand-red);
+    color: #fff;
+    font-size: clamp(0.75rem, 0.7rem + 0.3vw, 1rem);
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.4s ease;
+}
+
+.brand-showcase-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transition: left 0.4s;
+}
+
+.brand-showcase-btn__arrow {
+    flex: none;
+    width: 1em;
+    height: 1em;
+    transition: transform 0.3s ease;
+}
+
+.brand-showcase-btn:hover,
+.brand-showcase-btn:focus-visible {
+    color: var(--brand-red);
+}
+
+.brand-showcase-btn:hover::before,
+.brand-showcase-btn:focus-visible::before {
+    left: 0;
+}
+
+.brand-showcase-btn:hover .brand-showcase-btn__arrow {
+    transform: translate(2px, -2px);
+}
+
+/* ---------- Project image ---------- */
+.brand-showcase-frame {
+    margin: 0;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: var(--img-radius);
+    aspect-ratio: 3 / 2;
+    background: #b09f98;
+}
+
+.brand-showcase-frame img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+
+/* ---------- Tablet / mobile: image on top, details below ---------- */
+@media (max-width: 991.98px) {
+    .brand-showcase-panel {
+        grid-template-columns: 1fr;
+        row-gap: clamp(1rem, 0.6rem + 2vw, 1.75rem);
+        align-content: start;
+    }
+
+    .brand-showcase-frame {
+        order: -1;
+        aspect-ratio: 16 / 9;
+    }
+
+    .brand-showcase-logo {
+        height: clamp(3rem, 2.5rem + 4vw, 4.5rem);
+    }
+
+    .brand-showcase-meta {
+        margin-top: 1rem;
+        max-width: 30rem;
+    }
+}
+
+/* phones: smaller offset so the whole panel fits under the navbar (set to your mobile navbar height + gap) */
+@media (max-width: 767.98px) {
+    .brochure-work {
+        --showcase-top: 140px;
+    }
+}
+
+/* very short phones/landscape: keep the stack inside the viewport */
+@media (max-width: 991.98px) and (max-height: 700px) {
+    .brand-showcase-frame {
+        aspect-ratio: 2 / 1;
+    }
+
+    .brand-showcase-btn {
+        margin-top: 0.9rem;
+    }
+}
+
+/* ---------- Without JS the panels simply list one after another ---------- */
+@media (scripting: none) {
+    .brand-showcase-stage {
+        display: block;
+        position: static;
+    }
+
+    .brand-showcase-panel {
+        clip-path: none !important;
+        padding-block: 2rem;
+    }
+}
+
+/*=======================================================================
+   Brochure work
     ========================================================================== */
