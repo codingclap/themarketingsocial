@@ -1,0 +1,1596 @@
+/* ==========================================================================
+   Social media design hero
+   ========================================================================== */
+.social-hero {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    padding: clamp(2.5rem, 2rem + 4vw, 4rem) 0;
+    background: var(--bg);
+    color: #000;
+    overflow: hidden;
+}
+
+.social-hero__inner {
+    display: grid;
+    max-width: 1920px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.8fr);
+    align-items: center;
+    /* gap: clamp(1.5rem, 1rem + 2vw, 3rem);  */
+    margin-inline: auto;
+    padding: clamp(5rem, 4vw, 3rem) clamp(1.25rem, 5vw, 5rem) clamp(2rem, 4vw, 3rem) clamp(1.25rem, 5vw, 5rem);
+}
+
+.social-hero__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* ---------- Heading + paragraph ---------- */
+.social-hero__heading {
+    margin: 0;
+    font-size: clamp(1.8rem, 1.1rem + 2.8vw, 60px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: #000;
+}
+
+.social-hero__accent {
+    display: block;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--brand-red);
+}
+
+.social-hero__lead {
+    max-width: 45em;
+    margin: clamp(0.9rem, 0.6rem + 1vw, 1.5rem) 0 0;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    line-height: 1.2;
+    color: #000;
+}
+
+/* ---------- Buttons (stacked, left aligned) ---------- */
+.social-hero__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+    margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+}
+
+.social-hero__btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    width: fit-content;
+    line-height: normal;
+    padding: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem) clamp(1.6rem, 0.9rem + 2.5vw, 3rem);
+    border: 1px solid var(--brand-red);
+    border-radius: 999px;
+    background: var(--brand-red);
+    color: #fff;
+    font-size: clamp(0.75rem, 0.7rem + 0.3vw, 1rem);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.4s ease;
+}
+
+.social-hero__btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transition: left 0.4s;
+}
+
+.social-hero__btn:hover,
+.social-hero__btn:focus-visible {
+    color: var(--brand-red);
+}
+
+.social-hero__btn:hover::before,
+.social-hero__btn:focus-visible::before {
+    left: 0;
+}
+
+/* ---------- Image ---------- */
+.social-hero__media {
+    margin: 0;
+    width: 100%;
+}
+
+.social-hero__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-user-drag: none;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.social-hero.js-anim .social-hero__text,
+.social-hero.js-anim .social-hero__actions,
+.social-hero.js-anim .social-hero__media {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-hero.js-anim .social-hero__actions {
+    transition-delay: 0.2s;
+}
+
+.social-hero.js-anim .social-hero__media {
+    transform: translateY(3rem);
+    transition-delay: 0.35s;
+}
+
+.social-hero.js-anim.is-visible .social-hero__text,
+.social-hero.js-anim.is-visible .social-hero__actions,
+.social-hero.js-anim.is-visible .social-hero__media {
+    opacity: 1;
+    transform: none;
+}
+
+/* Keep the italic line on one row when there is room */
+@media (min-width: 480px) {
+    .social-hero__accent {
+        white-space: nowrap;
+    }
+}
+
+/* ---------- Tablet / Mobile ---------- */
+@media (max-width: 1024px) {
+    .social-hero__inner {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .social-hero {
+        padding: clamp(2.5rem, 2rem + 5vw, 6rem) 0;
+    }
+
+    @media (max-width: 991.98px) {
+        .social-hero__inner {
+            grid-template-columns: 1fr;
+        }
+
+        .social-hero__content {
+            align-items: center;
+            text-align: center;
+        }
+
+        .social-hero__lead {
+            margin-inline: auto;
+        }
+
+        .social-hero__actions {
+            align-items: center;
+        }
+
+        .social-hero__media {
+            max-width: 700px;
+            margin-inline: auto;
+        }
+    }
+}
+
+@media (max-width: 767.98px) {
+    .social-hero__media {
+        width: 110%;
+        max-width: none;
+        margin-inline: -5%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-hero.js-anim .social-hero__text,
+    .social-hero.js-anim .social-hero__actions,
+    .social-hero.js-anim .social-hero__media {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Social media design hero
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Social media design intro
+   ========================================================================== */
+.social-intro {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--bg);
+    color: #000;
+    overflow: hidden;
+}
+
+.social-intro__inner {
+    max-width: 1920px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    align-items: self-start;
+    gap: clamp(2rem, 1rem + 4vw, 4rem);
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+}
+
+/* ---------- Image card ---------- */
+.social-intro__card {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    aspect-ratio: 1.3 / 1;
+}
+
+.social-intro__card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+
+/* dark fade so the caption stays readable */
+.social-intro__card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.55) 100%); */
+    pointer-events: none;
+}
+
+.social-intro__caption {
+    position: absolute;
+    right: clamp(1rem, 0.6rem + 1.5vw, 1.5rem);
+    bottom: clamp(2rem, 0.6rem + 1.5vw, 2.5rem);
+    left: 25%;
+    z-index: 1;
+    text-align: right;
+    color: #fff;
+}
+
+.social-intro__caption-title {
+    margin: 0;
+    font-size: clamp(1.06rem, 0.8rem + 0.55vw, 1.3rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.social-intro__caption-text {
+    margin: clamp(0.5rem, 0.4rem + 0.4vw, 0.8rem) 0 0;
+    font-size: clamp(0.65rem, 0.68rem + 0.3vw, 0.85rem);
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Heading + paragraph ---------- */
+.social-intro__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: right;
+}
+
+.social-intro__heading {
+    margin: 0;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.social-intro__accent {
+    display: block;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: none;
+    color: var(--brand-red);
+}
+
+.social-intro__lead {
+    max-width: 45em;
+    margin: clamp(2rem, 1rem + 4vw, 4.5rem) 0 0;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    line-height: 1.2;
+    color: #000;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.social-intro.js-anim .social-intro__card,
+.social-intro.js-anim .social-intro__content {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-intro.js-anim .social-intro__content {
+    transition-delay: 0.2s;
+}
+
+.social-intro.js-anim.is-visible .social-intro__card,
+.social-intro.js-anim.is-visible .social-intro__content {
+    opacity: 1;
+    transform: none;
+}
+
+/* Keep the italic line on one row when there is room */
+@media (min-width: 1200px) {
+    .social-intro__accent {
+        /* white-space: nowrap; */
+    }
+}
+
+/* ---------- Tablet / Mobile ---------- */
+@media (max-width: 991.98px) {
+    .social-intro__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .social-intro__content {
+        order: -1;
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-intro__lead {
+        margin-top: clamp(0.9rem, 0.6rem + 1vw, 1.5rem);
+    }
+
+    .social-intro__card {
+        max-width: 700px;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .social-intro__caption {
+        left: 1rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-intro.js-anim .social-intro__card,
+    .social-intro.js-anim .social-intro__content {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Social media design intro
+   ========================================================================== */
+
+
+
+/* ==========================================================================
+   Social media platforms
+   ========================================================================== */
+.social-platforms {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --gap: clamp(0.5rem, 0.3rem + 0.6vw, 0.6rem);
+    --bg-dark: #302C2A;
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--bg-dark);
+    color: #fff;
+    overflow: hidden;
+}
+
+.social-platforms__inner {
+    max-width: 1920px;
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+}
+
+/* ---------- Header ---------- */
+.social-platforms__head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: clamp(1.5rem, 1rem + 4vw, 5rem);
+}
+
+.social-platforms__heading {
+    margin: 0;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.social-platforms__accent {
+    display: block;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: none;
+    color: #fff;
+}
+
+.social-platforms__lead {
+    max-width: 32em;
+    margin: 0 0 0 auto;
+    text-align: right;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    line-height: 1.2;
+    color: #fff;
+}
+
+/* ---------- Cards ---------- */
+.social-platforms__grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: start;
+    gap: var(--gap);
+    margin-top: clamp(2.5rem, 1rem + 7vw, 7rem);
+    padding: 0;
+    list-style: none;
+}
+
+.social-platforms__item {
+    min-width: 0;
+}
+
+.social-platforms__img {
+    margin: 0;
+    overflow: hidden;
+    aspect-ratio: 0.7 / 1;
+    background: #e9e7e3;
+}
+
+/* shorter image on cards 2 and 4 */
+.social-platforms__item:nth-child(even) .social-platforms__img {
+    aspect-ratio: 0.86 / 1;
+}
+
+.social-platforms__img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+
+.social-platforms__title {
+    margin: clamp(0.8rem, 0.6rem + 0.6vw, 1.1rem) 0 0;
+    font-size: clamp(0.9rem, 0.8rem + 0.4vw, 1.15rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.social-platforms__text {
+    margin: clamp(0.4rem, 0.3rem + 0.4vw, 0.6rem) 0 0;
+    font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem);
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Reveal on scroll ---------- */
+.social-platforms.js-anim .social-platforms__head,
+.social-platforms.js-anim .social-platforms__item {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-platforms.js-anim .social-platforms__item:nth-child(1) {
+    transition-delay: 0.15s;
+}
+
+.social-platforms.js-anim .social-platforms__item:nth-child(2) {
+    transition-delay: 0.25s;
+}
+
+.social-platforms.js-anim .social-platforms__item:nth-child(3) {
+    transition-delay: 0.35s;
+}
+
+.social-platforms.js-anim .social-platforms__item:nth-child(4) {
+    transition-delay: 0.45s;
+}
+
+.social-platforms.js-anim .social-platforms__item:nth-child(5) {
+    transition-delay: 0.55s;
+}
+
+.social-platforms.js-anim.is-visible .social-platforms__head,
+.social-platforms.js-anim.is-visible .social-platforms__item {
+    opacity: 1;
+    transform: none;
+}
+
+/* Keep the italic line on one row only when there is plenty of room */
+@media (min-width: 1500px) {
+    .social-platforms__accent {
+        white-space: nowrap;
+    }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1199.98px) {
+    .social-platforms__grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: clamp(1.25rem, 1rem + 1.5vw, 2rem) clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+    }
+
+    .social-platforms__item {
+        flex: 0 1 calc((100% - 2 * clamp(0.75rem, 0.5rem + 1vw, 1.25rem)) / 3);
+    }
+
+    /* same image height for all cards when wrapped */
+    .social-platforms__img,
+    .social-platforms__item:nth-child(even) .social-platforms__img {
+        aspect-ratio: 0.8 / 1;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .social-platforms__head {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .social-platforms__lead {
+        margin-inline: auto;
+        text-align: center;
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767.98px) {
+    .social-platforms__item {
+        flex-basis: calc((100% - clamp(0.75rem, 0.5rem + 1vw, 1.25rem)) / 2);
+    }
+}
+
+@media (max-width: 479.98px) {
+    .social-platforms__item {
+        flex-basis: 100%;
+        max-width: 360px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-platforms.js-anim .social-platforms__head,
+    .social-platforms.js-anim .social-platforms__item {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Social media platforms
+   ========================================================================== */
+
+/* ==========================================================================
+   Social media portfolio
+   ========================================================================== */
+.social-portfolio {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    --card-bg: #17303A;
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--bg);
+    color: #000;
+    overflow: hidden;
+}
+
+.social-portfolio__inner {
+    max-width: 1920px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    align-items: stretch;
+    gap: clamp(2rem, 1rem + 4vw, 5rem);
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+}
+
+/* ---------- Left content ---------- */
+.social-portfolio__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.social-portfolio__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.social-portfolio__heading {
+    margin: 0;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.social-portfolio__accent {
+    display: block;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: none;
+    color: var(--brand-red);
+}
+
+.social-portfolio__lead {
+    max-width: 38em;
+    margin: clamp(1.25rem, 0.8rem + 1.5vw, 2rem) 0 0;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    line-height: 1.2;
+    color: #000;
+}
+
+/* ---------- Button ---------- */
+.social-portfolio__btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    padding: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem) clamp(1.6rem, 0.9rem + 2.5vw, 3rem);
+    border: 1px solid var(--brand-red);
+    border-radius: 999px;
+    background: var(--brand-red);
+    color: #fff;
+    font-size: clamp(0.75rem, 0.7rem + 0.3vw, 1rem);
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.4s ease;
+}
+
+.social-portfolio__btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transition: left 0.4s;
+}
+
+.social-portfolio__btn:hover,
+.social-portfolio__btn:focus-visible {
+    color: var(--brand-red);
+}
+
+.social-portfolio__btn:hover::before,
+.social-portfolio__btn:focus-visible::before {
+    left: 0;
+}
+
+/* ---------- Phones image ---------- */
+.social-portfolio__phones {
+    width: 88%;
+    margin: clamp(2rem, 1rem + 4vw, 4rem) 0 calc(clamp(2.5rem, 2rem + 4vw, 6rem) * -1) clamp(0rem, 4vw, 3.5rem);
+}
+
+.social-portfolio__phones img {
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-user-drag: none;
+}
+
+/* ---------- Right card ---------- */
+.social-portfolio__card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: clamp(1.25rem, 0.5rem + 3.5vw, 3.5rem);
+    border-radius: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
+    background: var(--card-bg);
+}
+
+.social-portfolio__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(0.5rem, 0.2rem + 1.3vw, 1.1rem);
+    width: 100%;
+}
+
+.social-portfolio__grid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 0.8 / 1;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.social-portfolio.js-anim .social-portfolio__text,
+.social-portfolio.js-anim .social-portfolio__phones,
+.social-portfolio.js-anim .social-portfolio__card {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-portfolio.js-anim .social-portfolio__phones {
+    transition-delay: 0.2s;
+}
+
+.social-portfolio.js-anim .social-portfolio__card {
+    transform: translateY(3rem);
+    transition-delay: 0.35s;
+}
+
+.social-portfolio.js-anim.is-visible .social-portfolio__text,
+.social-portfolio.js-anim.is-visible .social-portfolio__phones,
+.social-portfolio.js-anim.is-visible .social-portfolio__card {
+    opacity: 1;
+    transform: none;
+}
+
+/* Keep the italic line on one row only when there is plenty of room */
+@media (min-width: 1500px) {
+    .social-portfolio__accent {
+        white-space: nowrap;
+    }
+}
+
+/* ---------- Tablet / Mobile ---------- */
+@media (max-width: 991.98px) {
+    .social-portfolio__inner {
+        grid-template-columns: 1fr;
+    }
+
+    .social-portfolio__content {
+        align-items: center;
+    }
+
+    .social-portfolio__text {
+        align-items: center;
+        text-align: center;
+    }
+
+    .social-portfolio__lead {
+        margin-inline: auto;
+    }
+
+    .social-portfolio__phones {
+        width: 100%;
+        max-width: 520px;
+        margin: clamp(1.5rem, 1rem + 2vw, 2.5rem) auto 0;
+    }
+
+    .social-portfolio__card {
+        max-width: 700px;
+        margin-inline: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .social-portfolio__btn {
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-portfolio.js-anim .social-portfolio__text,
+    .social-portfolio.js-anim .social-portfolio__phones,
+    .social-portfolio.js-anim .social-portfolio__card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Social media portfolio
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Social media industries
+   ========================================================================== */
+.social-industries {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--bg);
+    color: #000;
+    overflow: hidden;
+}
+
+.social-industries__inner {
+    max-width: 1920px;
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+}
+
+/* ---------- Heading ---------- */
+.social-industries__heading {
+    margin: 0;
+    text-align: right;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.social-industries__accent {
+    display: block;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: none;
+    color: var(--brand-red);
+}
+
+/* ---------- Banner ---------- */
+.social-industries__banner {
+    position: relative;
+    margin: clamp(1.5rem, 1rem + 2vw, 2.5rem) 0 0;
+    overflow: hidden;
+    aspect-ratio: 3.35 / 1;
+    background: #2a1f26;
+}
+
+.social-industries__banner img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+
+.social-industries__caption {
+    position: absolute;
+    top: clamp(1rem, 0.5rem + 2vw, 1.9rem);
+    left: clamp(1rem, 0.5rem + 2.4vw, 2rem);
+    z-index: 1;
+    max-width: 45%;
+    text-align: left;
+    color: #fff;
+}
+
+.social-industries__caption-title {
+    margin: 0;
+    font-size: clamp(0.8rem, 0.7rem + 0.4vw, 1rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.social-industries__caption-text {
+    margin: clamp(0.4rem, 0.3rem + 0.4vw, 0.6rem) 0 0;
+    font-size: clamp(0.6rem, 0.55rem + 0.2vw, 0.75rem);
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Paragraph ---------- */
+.social-industries__lead {
+    max-width: 45em;
+    margin: clamp(1.5rem, 1rem + 2vw, 2.5rem) 0 0;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    line-height: 1.2;
+    color: #000;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.social-industries.js-anim .social-industries__heading,
+.social-industries.js-anim .social-industries__banner,
+.social-industries.js-anim .social-industries__lead {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-industries.js-anim .social-industries__banner {
+    transform: translateY(3rem);
+    transition-delay: 0.2s;
+}
+
+.social-industries.js-anim .social-industries__lead {
+    transition-delay: 0.35s;
+}
+
+.social-industries.js-anim.is-visible .social-industries__heading,
+.social-industries.js-anim.is-visible .social-industries__banner,
+.social-industries.js-anim.is-visible .social-industries__lead {
+    opacity: 1;
+    transform: none;
+}
+
+/* Keep the italic line on one row only when there is plenty of room */
+@media (min-width: 1500px) {
+    .social-industries__accent {
+        white-space: nowrap;
+    }
+}
+
+/* ---------- Tablet / Mobile ---------- */
+@media (max-width: 991.98px) {
+    .social-industries__heading {
+        text-align: center;
+    }
+
+    .social-industries__banner {
+        aspect-ratio: 2.2 / 1;
+    }
+
+    .social-industries__caption {
+        max-width: 60%;
+    }
+
+    .social-industries__lead {
+        margin-inline: auto;
+        text-align: center;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .social-industries__banner {
+        aspect-ratio: 1.3 / 1;
+    }
+
+    .social-industries__caption {
+        max-width: calc(100% - 2rem);
+    }
+
+    /* darken the top so the caption stays readable over the photo */
+    .social-industries__banner::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 60%);
+        pointer-events: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-industries.js-anim .social-industries__heading,
+    .social-industries.js-anim .social-industries__banner,
+    .social-industries.js-anim .social-industries__lead {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Social media industries
+   ========================================================================== */
+
+/* ==========================================================================
+   Social media consistency slider
+   ========================================================================== */
+.social-consistent {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    --nav-space: clamp(2.5rem, 2rem + 1.5vw, 3.25rem);
+    --radius: clamp(1rem, 0.7rem + 1vw, 1.5rem);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--bg);
+    color: #000;
+    overflow: hidden;
+}
+
+.social-consistent__inner {
+    max-width: 1920px;
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+}
+
+/* ---------- Heading ---------- */
+.social-consistent__heading {
+    margin: 0;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.social-consistent__accent {
+    display: block;
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: none;
+    color: var(--brand-red);
+}
+
+/* ---------- Stage (two independent columns) ---------- */
+.social-consistent__stage {
+    display: grid;
+    grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
+    column-gap: clamp(2rem, 1rem + 5vw, 6rem);
+    margin-top: clamp(0.5rem, 0.3rem + 0.8vw, 1rem);
+}
+
+.social-consistent__side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+    min-width: 0;
+    padding-top: var(--nav-space);
+}
+
+.social-consistent__main {
+    min-width: 0;
+}
+
+.social-consistent__lead {
+    max-width: 45em;
+    margin: clamp(0.75rem, 0.5rem + 1vw, 1.25rem) 0 0;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    line-height: 1.2;
+    color: #000;
+}
+
+/* ---------- Arrows ---------- */
+.social-consistent__nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(1.25rem, 1rem + 1.2vw, 2rem);
+    height: var(--nav-space);
+}
+
+.social-consistent__arrow {
+    padding: 0.25rem;
+    border: 0;
+    background: none;
+    color: #000;
+    cursor: pointer;
+    line-height: 0;
+    transition: color 0.3s ease, transform 0.4s var(--ease);
+}
+
+.social-consistent__arrow svg {
+    display: block;
+    width: clamp(2rem, 1.5rem + 1.5vw, 2.9rem);
+    height: auto;
+}
+
+.social-consistent__arrow:hover,
+.social-consistent__arrow:focus-visible {
+    color: var(--brand-red);
+}
+
+.social-consistent__prev:hover {
+    transform: translateX(-5px);
+}
+
+.social-consistent__next:hover {
+    transform: translateX(5px);
+}
+
+/* ---------- Shared fade animation (used by both carousels) ---------- */
+@keyframes sc-fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes sc-fade-out {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.social-consistent .owl-carousel .sc-in {
+    animation: sc-fade-in 0.9s ease both;
+}
+
+.social-consistent .owl-carousel .sc-out {
+    animation: sc-fade-out 0.9s ease both;
+}
+
+/* ---------- Active (large) box ---------- */
+.social-consistent__slide {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    aspect-ratio: 1.5 / 1;
+    border-radius: var(--radius);
+    background: #cfc6bd;
+    /* keeps rounded corners clipped during animation in Safari */
+    isolation: isolate;
+}
+
+.social-consistent__slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.08);
+    transition: transform 1.6s var(--ease);
+    -webkit-user-drag: none;
+}
+
+.social-consistent__slider .owl-item.active .social-consistent__slide img {
+    transform: scale(1);
+}
+
+/* soft dark fade behind the caption */
+.social-consistent__slide::after {
+    content: "";
+    position: absolute;
+    inset: 55% 0 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    pointer-events: none;
+}
+
+.social-consistent__caption {
+    position: absolute;
+    right: clamp(1rem, 0.6rem + 1.5vw, 1.5rem);
+    bottom: clamp(1rem, 0.6rem + 1.5vw, 1.5rem);
+    left: clamp(1rem, 0.6rem + 1.5vw, 1.5rem);
+    z-index: 1;
+    text-align: right;
+    font-size: clamp(0.85rem, 0.75rem + 0.5vw, 1.15rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(0.75rem);
+    transition: opacity 0.6s ease, transform 0.8s var(--ease);
+}
+
+.social-consistent__slider .owl-item.active .social-consistent__caption {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.35s;
+}
+
+/* ---------- Inactive (small blurred) box ---------- */
+.social-consistent__preview {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1.5 / 1;
+    border-radius: var(--radius);
+    background: #cfc6bd;
+    cursor: pointer;
+    isolation: isolate;
+    transition: transform 0.6s var(--ease);
+}
+
+.social-consistent__preview-slider {
+    position: absolute;
+    inset: 0;
+}
+
+.social-consistent__preview .owl-stage-outer,
+.social-consistent__preview .owl-stage,
+.social-consistent__preview .owl-item,
+.social-consistent__pslide {
+    height: 100%;
+}
+
+.social-consistent__pslide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(10px);
+    transform: scale(1.12);
+    /* hides the soft edges the blur creates */
+    transition: filter 0.6s ease;
+    -webkit-user-drag: none;
+}
+
+/* subtle veil so it reads as inactive */
+.social-consistent__preview::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(241, 232, 224, 0.18);
+    pointer-events: none;
+}
+
+.social-consistent__preview:hover img,
+.social-consistent__preview:focus-visible img {
+    filter: blur(6px);
+}
+
+.social-consistent__preview:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: 3px;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.social-consistent.js-anim .social-consistent__heading,
+.social-consistent.js-anim .social-consistent__side,
+.social-consistent.js-anim .social-consistent__main {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s var(--ease);
+}
+
+.social-consistent.js-anim .social-consistent__side {
+    transition-delay: 0.2s;
+}
+
+.social-consistent.js-anim .social-consistent__main {
+    transform: translateY(3rem);
+    transition-delay: 0.35s;
+}
+
+.social-consistent.js-anim.is-visible .social-consistent__heading,
+.social-consistent.js-anim.is-visible .social-consistent__side,
+.social-consistent.js-anim.is-visible .social-consistent__main {
+    opacity: 1;
+    transform: none;
+}
+
+/* Keep the italic line on one row only when there is plenty of room */
+@media (min-width: 1500px) {
+    .social-consistent__accent {
+        white-space: nowrap;
+    }
+}
+
+/* ---------- Tablet / Mobile: single box ---------- */
+@media (max-width: 991.98px) {
+    .social-consistent__stage {
+        grid-template-columns: 1fr;
+    }
+
+    .social-consistent__side {
+        padding-top: 0;
+    }
+
+    .social-consistent__preview {
+        display: none;
+    }
+
+    .social-consistent__heading {
+        text-align: center;
+    }
+
+    .social-consistent__lead {
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .social-consistent__nav {
+        justify-content: center;
+        margin-top: clamp(0.5rem, 0.3rem + 1vw, 1rem);
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-consistent .owl-carousel .sc-in,
+    .social-consistent .owl-carousel .sc-out {
+        animation-duration: 0.6s;
+    }
+
+    /* gentle image animation: small, slow zoom-out instead of the full 8% zoom */
+    .social-consistent__slide img {
+        transform: scale(1.03);
+        transition: transform 1.2s ease;
+    }
+
+    .social-consistent__slider .owl-item.active .social-consistent__slide img {
+        transform: scale(1);
+    }
+
+    /* caption: fade only, no slide-up */
+    .social-consistent__caption {
+        transform: none;
+        transition: opacity 0.6s ease;
+    }
+}
+
+
+/* 1) beat Owl's own `position: relative` with higher specificity */
+.social-consistent__preview .social-consistent__preview-slider {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 2) hard-clip both carousels */
+.social-consistent__main,
+.social-consistent__preview {
+    overflow: hidden;
+}
+
+.social-consistent .owl-stage-outer {
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+/* 3) hide every slide that isn't active (but let the outgoing one finish fading) */
+.social-consistent .owl-carousel .owl-item:not(.active):not(.owl-animated-out) {
+    visibility: hidden;
+}
+
+/* ==========================================================================
+   Social media consistency slider
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Social media process
+   ========================================================================== */
+.social-process {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --card-gap: clamp(0.6rem, 0.4rem + 0.6vw, 0.9rem);
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--bg);
+    color: var(--brand-red);
+    overflow: hidden;
+}
+
+.social-process__inner {
+    max-width: 1920px;
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+}
+
+/* ---------- Heading ---------- */
+.social-process__heading {
+    max-width: 15em;
+    margin: 0 auto;
+    text-align: center;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--brand-red);
+}
+
+/* ---------- Layout ---------- */
+.social-process__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    align-items: stretch;
+    gap: clamp(1.5rem, 1rem + 4vw, 5rem);
+    margin-top: clamp(2rem, 1rem + 5vw, 5rem);
+}
+
+/* ---------- Cards ---------- */
+.social-process__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: 1fr;
+    gap: var(--card-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.social-process__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    padding: clamp(4rem, 3rem + 3vw, 5.5rem) clamp(0.75rem, 0.5rem + 0.8vw, 1.1rem) clamp(0.9rem, 0.7rem + 0.6vw, 1.25rem);
+    border: 1px solid rgba(109, 39, 50, 0.55);
+    border-radius: clamp(0.6rem, 0.5rem + 0.4vw, 0.9rem);
+    text-align: center;
+    transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.5s var(--ease);
+}
+
+/* big faded step number */
+.social-process__card::before {
+    content: attr(data-step);
+    position: absolute;
+    top: clamp(0.5rem, 0.3rem + 0.6vw, 0.9rem);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(3.5rem, 2.2rem + 4vw, 6.5rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    background: linear-gradient(to bottom, rgba(109, 39, 50, 0.28) 20%, rgba(109, 39, 50, 0) 85%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    pointer-events: none;
+    user-select: none;
+}
+
+.social-process__card:hover {
+    transform: translateY(-4px);
+    border-color: var(--brand-red);
+    background-color: rgba(255, 255, 255, 0.35);
+}
+
+.social-process__title {
+    position: relative;
+    margin: 0;
+    font-size: clamp(0.9rem, 0.75rem + 0.55vw, 1.2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--brand-red);
+}
+
+.social-process__text {
+    position: relative;
+    margin: clamp(0.5rem, 0.3rem + 0.6vw, 0.8rem) 0 0;
+    font-size: clamp(0.72rem, 0.66rem + 0.25vw, 0.85rem);
+    line-height: 1.2;
+    color: var(--brand-red);
+}
+
+/* ---------- Image ---------- */
+.social-process__media {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #f6f2ed;
+}
+
+.social-process__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.social-process.js-anim .social-process__heading,
+.social-process.js-anim .social-process__card,
+.social-process.js-anim .social-process__media {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s var(--ease), background-color 0.4s ease, border-color 0.4s ease;
+}
+
+.social-process.js-anim .social-process__card:nth-child(1) {
+    transition-delay: 0.10s;
+}
+
+.social-process.js-anim .social-process__card:nth-child(2) {
+    transition-delay: 0.18s;
+}
+
+.social-process.js-anim .social-process__card:nth-child(3) {
+    transition-delay: 0.26s;
+}
+
+.social-process.js-anim .social-process__card:nth-child(4) {
+    transition-delay: 0.34s;
+}
+
+.social-process.js-anim .social-process__card:nth-child(5) {
+    transition-delay: 0.42s;
+}
+
+.social-process.js-anim .social-process__card:nth-child(6) {
+    transition-delay: 0.50s;
+}
+
+.social-process.js-anim .social-process__media {
+    transform: translateY(3rem);
+    transition-delay: 0.35s;
+}
+
+.social-process.js-anim.is-visible .social-process__heading,
+.social-process.js-anim.is-visible .social-process__card,
+.social-process.js-anim.is-visible .social-process__media {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1199.98px) {
+    .social-process__layout {
+        grid-template-columns: 1fr;
+    }
+
+    .social-process__media {
+        max-width: 700px;
+        margin-inline: auto;
+        aspect-ratio: 1.2 / 1;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .social-process__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 479.98px) {
+    .social-process__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* .social-process.js-anim .social-process__heading,
+    .social-process.js-anim .social-process__card,
+    .social-process.js-anim .social-process__media {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .social-process__card:hover {
+        transform: none;
+    } */
+}
+
+/* ==========================================================================
+   Social media process
+   ========================================================================== */
