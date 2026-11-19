@@ -1913,11 +1913,11 @@
    ====================================================================== */
 .design-services {
     --gutter: clamp(1.25rem, 5vw, 5rem);
-    --bg: #A89B8B;
+    --bg: #AA9D8E;
     --row-gap: clamp(0.75rem, 0.3rem + 2.6vw, 2.25rem);
     padding: clamp(2.5rem, 2rem + 3vw, 5rem) var(--gutter);
     background: var(--bg);
-    color: #fff;
+    color: #fff;AA9D8E
     overflow: hidden;
 }
 
