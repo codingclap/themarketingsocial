@@ -2108,7 +2108,7 @@
     }
 
     .social-campaign__item {
-        padding-block: 0.75rem;
+        padding-block: 0.60rem;
     }
 }
 
@@ -2566,7 +2566,7 @@
 
     .social-work__points li {
         padding-block: clamp(0.6rem, 1.2svh, 0.6rem);
-        font-size: clamp(0.92rem, 0.7rem + 0.5vw, 1.05rem);
+        font-size: clamp(0.98rem, 0.7rem + 0.5vw, 1.05rem);
     }
 
     .social-work__points li:first-child {
