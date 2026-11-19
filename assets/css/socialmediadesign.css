@@ -38,7 +38,6 @@
 }
 
 .social-hero__accent {
-    display: block;
     font-style: italic;
     font-weight: 500;
     line-height: 1.2;
@@ -71,11 +70,11 @@
     gap: 0.8rem;
     width: fit-content;
     line-height: normal;
-    padding: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem) clamp(1.6rem, 0.9rem + 2.5vw, 3rem);
+    padding: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem) clamp(1.6rem, 0.9rem + 2.5vw, 2rem);
     border: 1px solid var(--brand-red);
     border-radius: 999px;
     background: var(--brand-red);
-    color: #fff;
+    color: #D9D9D9;
     font-size: clamp(0.75rem, 0.7rem + 0.3vw, 1rem);
     text-decoration: none;
     white-space: nowrap;
@@ -145,7 +144,7 @@
 /* Keep the italic line on one row when there is room */
 @media (min-width: 480px) {
     .social-hero__accent {
-        white-space: nowrap;
+        /* white-space: nowrap; */
     }
 }
 
@@ -263,7 +262,7 @@
     position: absolute;
     right: clamp(1rem, 0.6rem + 1.5vw, 1.5rem);
     bottom: clamp(2rem, 0.6rem + 1.5vw, 2.5rem);
-    left: 25%;
+    left: 11%;
     z-index: 1;
     text-align: right;
     color: #fff;
@@ -295,7 +294,7 @@
 
 .social-intro__heading {
     margin: 0;
-    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 45px);
     font-weight: 400;
     line-height: 1.2;
     text-transform: uppercase;
@@ -303,7 +302,6 @@
 }
 
 .social-intro__accent {
-    display: block;
     font-size: 1.2em;
     font-style: italic;
     font-weight: 400;
@@ -412,13 +410,13 @@
 .social-platforms__head {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    align-items: center;
-    gap: clamp(1.5rem, 1rem + 4vw, 5rem);
+    align-items: flex-end;
+    gap: clamp(1.5rem, 1rem + 2vw, 3rem);
 }
 
 .social-platforms__heading {
     margin: 0;
-    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 45px);
     font-weight: 400;
     line-height: 1.2;
     text-transform: uppercase;
@@ -426,7 +424,6 @@
 }
 
 .social-platforms__accent {
-    display: block;
     font-size: 1.2em;
     font-style: italic;
     font-weight: 400;
@@ -436,10 +433,11 @@
 }
 
 .social-platforms__lead {
-    max-width: 32em;
+    max-width: 35em;
+    font-weight: 400;
     margin: 0 0 0 auto;
     text-align: right;
-    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.11rem);
     line-height: 1.2;
     color: #fff;
 }
@@ -485,14 +483,14 @@
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
-    color: #fff;
+    color: #F1E8E0;
 }
 
 .social-platforms__text {
     margin: clamp(0.4rem, 0.3rem + 0.4vw, 0.6rem) 0 0;
     font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem);
     line-height: 1.2;
-    color: rgba(255, 255, 255, 0.8);
+    color: #F1E8E0;
 }
 
 /* ---------- Reveal on scroll ---------- */
@@ -532,7 +530,7 @@
 /* Keep the italic line on one row only when there is plenty of room */
 @media (min-width: 1500px) {
     .social-platforms__accent {
-        white-space: nowrap;
+        /* white-space: nowrap; */
     }
 }
 
@@ -615,7 +613,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
     align-items: stretch;
-    gap: clamp(2rem, 1rem + 4vw, 5rem);
+    gap: clamp(2rem, 1rem + 3vw, 2rem);
     margin-inline: auto;
     padding: 0 var(--gutter);
 }
@@ -638,7 +636,7 @@
 
 .social-portfolio__heading {
     margin: 0;
-    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 45px);
     font-weight: 400;
     line-height: 1.2;
     text-transform: uppercase;
@@ -646,7 +644,6 @@
 }
 
 .social-portfolio__accent {
-    display: block;
     font-size: 1.2em;
     font-style: italic;
     font-weight: 400;
@@ -672,11 +669,11 @@
     align-items: center;
     width: fit-content;
     margin-top: clamp(1.5rem, 1rem + 2vw, 2.5rem);
-    padding: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem) clamp(1.6rem, 0.9rem + 2.5vw, 3rem);
+    padding: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem) clamp(1.6rem, 0.9rem + 2.5vw, 2rem);
     border: 1px solid var(--brand-red);
     border-radius: 999px;
     background: var(--brand-red);
-    color: #fff;
+    color: #D9D9D9;
     font-size: clamp(0.75rem, 0.7rem + 0.3vw, 1rem);
     line-height: normal;
     text-decoration: none;
@@ -709,7 +706,8 @@
 /* ---------- Phones image ---------- */
 .social-portfolio__phones {
     width: 88%;
-    margin: clamp(2rem, 1rem + 4vw, 4rem) 0 calc(clamp(2.5rem, 2rem + 4vw, 6rem) * -1) clamp(0rem, 4vw, 3.5rem);
+    margin-bottom: 0;
+    /* margin: clamp(2rem, 1rem + 4vw, 4rem) 0 calc(clamp(2.5rem, 2rem + 4vw, 6rem) * -1) clamp(0rem, 4vw, 3.5rem); */
 }
 
 .social-portfolio__phones img {
@@ -725,9 +723,12 @@
     align-items: center;
     justify-content: center;
     min-width: 0;
-    padding: clamp(1.25rem, 0.5rem + 3.5vw, 3.5rem);
-    border-radius: clamp(0.75rem, 0.5rem + 0.6vw, 1rem);
-    background: var(--card-bg);
+    padding: clamp(1.25rem, 0.5rem + 3.5vw, 3.5rem) clamp(1.25rem, 0.5rem + 3.5vw, 2rem) clamp(1.25rem, 0.5rem + 3.5vw, 2.5rem) clamp(1.25rem, 0.5rem + 3.5vw, 2rem);
+    border-radius: 10px;
+    background-image: url("../images/socialmediadesign/consistent-2.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .social-portfolio__grid {
@@ -773,7 +774,7 @@
 /* Keep the italic line on one row only when there is plenty of room */
 @media (min-width: 1500px) {
     .social-portfolio__accent {
-        white-space: nowrap;
+        /* white-space: nowrap; */
     }
 }
 
@@ -856,7 +857,7 @@
 .social-industries__heading {
     margin: 0;
     text-align: right;
-    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 45px);
     font-weight: 400;
     line-height: 1.2;
     text-transform: uppercase;
@@ -864,7 +865,6 @@
 }
 
 .social-industries__accent {
-    display: block;
     font-size: 1.2em;
     font-style: italic;
     font-weight: 400;
@@ -902,7 +902,7 @@
 
 .social-industries__caption-title {
     margin: 0;
-    font-size: clamp(0.8rem, 0.7rem + 0.4vw, 1rem);
+    font-size: clamp(0.9rem, 0.8rem + 0.4vw, 1.15rem);
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
@@ -911,9 +911,9 @@
 
 .social-industries__caption-text {
     margin: clamp(0.4rem, 0.3rem + 0.4vw, 0.6rem) 0 0;
-    font-size: clamp(0.6rem, 0.55rem + 0.2vw, 0.75rem);
+    font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem);
     line-height: 1.2;
-    color: rgba(255, 255, 255, 0.8);
+    color: #fff;
 }
 
 /* ---------- Paragraph ---------- */
@@ -953,7 +953,7 @@
 /* Keep the italic line on one row only when there is plenty of room */
 @media (min-width: 1500px) {
     .social-industries__accent {
-        white-space: nowrap;
+        /* white-space: nowrap; */
     }
 }
 
@@ -1036,7 +1036,7 @@
 /* ---------- Heading ---------- */
 .social-consistent__heading {
     margin: 0;
-    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 45px);
     font-weight: 400;
     line-height: 1.2;
     text-transform: uppercase;
@@ -1044,7 +1044,6 @@
 }
 
 .social-consistent__accent {
-    display: block;
     font-size: 1.2em;
     font-style: italic;
     font-weight: 400;
@@ -1057,7 +1056,7 @@
 .social-consistent__stage {
     display: grid;
     grid-template-columns: minmax(0, 0.4fr) minmax(0, 0.6fr);
-    column-gap: clamp(2rem, 1rem + 5vw, 6rem);
+    column-gap: clamp(2rem, 1rem + 4vw, 4rem);
     margin-top: clamp(0.5rem, 0.3rem + 0.8vw, 1rem);
 }
 
@@ -1088,7 +1087,7 @@
     align-items: center;
     justify-content: flex-end;
     gap: clamp(1.25rem, 1rem + 1.2vw, 2rem);
-    height: var(--nav-space);
+    padding-bottom: clamp(1rem, 0.5rem + 1.5vw, 2rem);
 }
 
 .social-consistent__arrow {
@@ -1155,7 +1154,7 @@
     margin: 0;
     overflow: hidden;
     aspect-ratio: 1.5 / 1;
-    border-radius: var(--radius);
+    border-radius: 20px;
     background: #cfc6bd;
     /* keeps rounded corners clipped during animation in Safari */
     isolation: isolate;
@@ -1212,7 +1211,7 @@
     position: relative;
     overflow: hidden;
     aspect-ratio: 1.5 / 1;
-    border-radius: var(--radius);
+    border-radius: 20px;
     background: #cfc6bd;
     cursor: pointer;
     isolation: isolate;
@@ -1236,8 +1235,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: blur(10px);
-    transform: scale(1.12);
+    filter: blur(6.8px);
+    transform: scale(1.1);
     /* hides the soft edges the blur creates */
     transition: filter 0.6s ease;
     -webkit-user-drag: none;
@@ -1290,7 +1289,7 @@
 /* Keep the italic line on one row only when there is plenty of room */
 @media (min-width: 1500px) {
     .social-consistent__accent {
-        white-space: nowrap;
+        /* white-space: nowrap; */
     }
 }
 
@@ -1319,7 +1318,7 @@
 
     .social-consistent__nav {
         justify-content: center;
-        margin-top: clamp(0.5rem, 0.3rem + 1vw, 1rem);
+        margin-top: clamp(1.5rem, 0.3rem + 1vw, 1rem);
     }
 }
 
@@ -1365,7 +1364,7 @@
 
 .social-consistent .owl-stage-outer {
     overflow: hidden;
-    border-radius: var(--radius);
+    border-radius: 20px;
 }
 
 /* 3) hide every slide that isn't active (but let the outgoing one finish fading) */
@@ -1404,7 +1403,7 @@
     max-width: 15em;
     margin: 0 auto;
     text-align: center;
-    font-size: clamp(1.75rem, 1rem + 2.5vw, 50px);
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 45px);
     font-style: italic;
     font-weight: 400;
     line-height: 1.2;
@@ -1416,7 +1415,7 @@
     display: grid;
     grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
     align-items: stretch;
-    gap: clamp(1.5rem, 1rem + 4vw, 5rem);
+    gap: clamp(1.5rem, 1rem + 3vw, 3rem);
     margin-top: clamp(2rem, 1rem + 5vw, 5rem);
 }
 
@@ -1438,7 +1437,7 @@
     align-items: center;
     min-width: 0;
     padding: clamp(4rem, 3rem + 3vw, 5.5rem) clamp(0.75rem, 0.5rem + 0.8vw, 1.1rem) clamp(0.9rem, 0.7rem + 0.6vw, 1.25rem);
-    border: 1px solid rgba(109, 39, 50, 0.55);
+    border: 1px solid #6D2732;
     border-radius: clamp(0.6rem, 0.5rem + 0.4vw, 0.9rem);
     text-align: center;
     transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.5s var(--ease);
@@ -1452,11 +1451,13 @@
     left: 50%;
     transform: translateX(-50%);
     font-family: Helvetica, Arial, sans-serif;
-    font-size: clamp(3.5rem, 2.2rem + 4vw, 6.5rem);
+    font-size: clamp(5.5rem, 2.5rem + 6vw, 9rem);
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.02em;
-    background: linear-gradient(to bottom, rgba(109, 39, 50, 0.28) 20%, rgba(109, 39, 50, 0) 85%);
+    background: linear-gradient(to bottom,
+            rgba(109, 39, 50, 0.28) 5%,
+            rgba(109, 39, 50, 0) 62%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1474,7 +1475,7 @@
 .social-process__title {
     position: relative;
     margin: 0;
-    font-size: clamp(0.9rem, 0.75rem + 0.55vw, 1.2rem);
+    font-size: clamp(1.1rem, 0.85rem + 0.55vw, 1.5rem);
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
@@ -1484,7 +1485,7 @@
 .social-process__text {
     position: relative;
     margin: clamp(0.5rem, 0.3rem + 0.6vw, 0.8rem) 0 0;
-    font-size: clamp(0.72rem, 0.66rem + 0.25vw, 0.85rem);
+    font-size: clamp(0.75rem, 0.66rem + 0.25vw, 0.95rem);
     line-height: 1.2;
     color: var(--brand-red);
 }
@@ -1594,3 +1595,685 @@
 /* ==========================================================================
    Social media process
    ========================================================================== */
+
+
+/* ==========================================================================
+   Social media ad creatives
+   ========================================================================== */
+.social-ads {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    position: relative;
+    isolation: isolate;
+    padding: clamp(3.5rem, 2rem + 6vw, 8rem) 0;
+    color: #fff;
+    overflow: hidden;
+}
+
+/* ---------- Background + dark overlay ---------- */
+/* Export the image already blurred (about 1600px wide, WebP) for the best performance. */
+.social-ads__bg {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateZ(0);
+    -webkit-user-drag: none;
+    /* only if the image is NOT pre-blurred:
+    filter: blur(22px);
+    transform: translateZ(0) scale(1.1); */
+}
+
+.social-ads::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url('../images/socialmediadesign/social-media-ads-creatives.png');
+    pointer-events: none;
+    background-size: cover;
+    background-position: bottom;
+}
+
+.social-ads__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1500px;
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+    text-align: center;
+}
+
+/* ---------- Heading + paragraph ---------- */
+.social-ads__heading {
+    max-width: 80em;
+    margin: 0 auto;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 45px);
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.social-ads__lead {
+    max-width: 80em;
+    margin: clamp(1.25rem, 0.8rem + 2vw, 2.5rem) auto 0;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    line-height: 1.2;
+    color: #AA9D8E;
+}
+
+.social-ads__lead span {
+    display: block;
+}
+
+/* ---------- Marquee ---------- */
+.social-ads__ticker {
+    width: 100vw;
+    margin: clamp(1.75rem, 1rem + 3vw, 3rem) calc(50% - 50vw) 0;
+    overflow: hidden;
+    background: rgba(217, 217, 217, 0.2);
+    box-shadow: 0px 0px 10.3px #6D2732;
+    backdrop-filter: blur(20.3px);
+}
+
+.social-ads__track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+    backface-visibility: hidden;
+    animation: social-ads-scroll var(--sa-duration, 30s) linear infinite !important;
+}
+
+.social-ads__ticker:hover .social-ads__track {
+    /* animation-play-state: paused; */
+}
+
+.social-ads__group {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.social-ads__item {
+    padding-block: clamp(0.9rem, 0.7rem + 0.7vw, 1.3rem);
+    font-size: clamp(0.9rem, 0.75rem + 0.6vw, 1.28rem);
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    line-height: 1.2;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: #fff;
+}
+
+.social-ads__star {
+    flex: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 clamp(1.5rem, 1rem + 2.4vw, 3.5rem);
+    background: #fff;
+    /* 8-point star / asterisk shape */
+    clip-path: polygon(100% 50%, 99.8% 50.6%, 99.1% 51%, 64.1% 54.3%, 62.9% 54.7%, 62.5% 55.1%, 62.7% 56.4%, 85.4% 83.8%, 85.6% 84.6%, 85.4% 85.3%, 84.7% 85.5%, 83.9% 85.3%, 56.5% 62.6%, 55.2% 62.4%, 54.8% 62.8%, 54.4% 64%, 51.1% 98.9%, 50.7% 99.7%, 50.1% 99.9%, 49.4% 99.7%, 49% 98.9%, 45.7% 64%, 45.3% 62.8%, 45% 62.4%, 43.6% 62.6%, 16.2% 85.3%, 15.4% 85.5%, 14.7% 85.3%, 14.5% 84.6%, 14.7% 83.8%, 37.4% 56.4%, 37.6% 55.1%, 37.2% 54.7%, 36% 54.3%, 1.1% 51%, 0.4% 50.6%, 0.1% 50%, 0.4% 49.3%, 1.1% 48.9%, 36% 45.6%, 37.2% 45.2%, 37.6% 44.9%, 37.4% 43.5%, 14.7% 16.1%, 14.5% 15.3%, 14.7% 14.6%, 15.4% 14.4%, 16.2% 14.6%, 43.6% 37.3%, 45% 37.5%, 45.3% 37.1%, 45.7% 35.9%, 49% 1%, 49.4% 0.3%, 50.1% 0%, 50.7% 0.3%, 51.1% 1%, 54.4% 35.9%, 54.8% 37.1%, 55.2% 37.5%, 56.5% 37.3%, 83.9% 14.6%, 84.7% 14.4%, 85.4% 14.6%, 85.6% 15.3%, 85.4% 16.1%, 62.7% 43.5%, 62.5% 44.9%, 62.9% 45.2%, 64.1% 45.6%, 99.1% 48.9%, 99.8% 49.3%);
+}
+
+@keyframes social-ads-scroll {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+
+/* ---------- Button ---------- */
+.social-ads__btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    margin-top: clamp(1.75rem, 1rem + 3vw, 3.5rem);
+    padding: clamp(0.85rem, 0.6rem + 0.6vw, 1.2rem) clamp(1.6rem, 0.9rem + 2.5vw, 2rem);
+    border: 1px solid var(--brand-red);
+    border-radius: 999px;
+    background: var(--brand-red);
+    color: #D9D9D9;
+    font-size: clamp(0.75rem, 0.7rem + 0.3vw, 1rem);
+    line-height: normal;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.4s ease;
+}
+
+.social-ads__btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: -1;
+    transition: left 0.4s;
+}
+
+.social-ads__btn:hover,
+.social-ads__btn:focus-visible {
+    color: var(--brand-red);
+}
+
+.social-ads__btn:hover::before,
+.social-ads__btn:focus-visible::before {
+    left: 0;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.social-ads.js-anim .social-ads__text,
+.social-ads.js-anim .social-ads__ticker,
+.social-ads.js-anim .social-ads__btn {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s var(--ease), color 0.4s ease;
+}
+
+.social-ads.js-anim .social-ads__ticker {
+    transition-delay: 0.2s;
+}
+
+.social-ads.js-anim .social-ads__btn {
+    transition-delay: 0.35s;
+}
+
+.social-ads.js-anim.is-visible .social-ads__text,
+.social-ads.js-anim.is-visible .social-ads__ticker,
+.social-ads.js-anim.is-visible .social-ads__btn {
+    opacity: 1;
+    transform: none;
+}
+
+/* ---------- Tablet / Mobile ---------- */
+@media (max-width: 767.98px) {
+
+    /* let the two paragraph lines flow naturally on small screens */
+    .social-ads__lead span {
+        display: inline;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .social-ads__btn {
+        white-space: normal;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* the marquee keeps moving (the JS slows it down); only the reveal is switched off */
+@media (prefers-reduced-motion: reduce) {
+
+    .social-ads.js-anim .social-ads__text,
+    .social-ads.js-anim .social-ads__ticker,
+    .social-ads.js-anim .social-ads__btn {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Social media ad creatives
+   ==========================================================================*/
+
+
+/* ==========================================================================
+   Social media campaign design (list + vertical slider)
+   ========================================================================== */
+.social-campaign {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732;
+    --bg: #F1E8E0;
+    --max: 1500px;
+    --indent: clamp(1.75rem, 0.5rem + 6vw, 6.75rem);
+    --radius: 20px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    /* distance from the screen's left edge to the content, so the bar can bleed out to the edge */
+    --edge: calc(max(0px, (100vw - var(--max)) / 2) + var(--gutter));
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--bg);
+    color: #000;
+    overflow: hidden;
+}
+
+.social-campaign__inner {
+    max-width: 1920px;
+    margin-inline: auto;
+    padding: 0 var(--gutter);
+}
+
+/* ---------- Header ---------- */
+.social-campaign__head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: end;
+    gap: clamp(1.5rem, 1rem + 4vw, 5rem);
+}
+
+.social-campaign__title {
+    margin: 0;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 45px);
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.social-campaign__accent {
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: none;
+    color: var(--brand-red);
+}
+
+.social-campaign__lead {
+    max-width: 34em;
+    margin: 0 0 0.35em auto;
+    text-align: right;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    line-height: 1.2;
+    color: #000;
+}
+
+/* ---------- Stage: list LEFT, slider RIGHT ---------- */
+.social-campaign__stage {
+    display: grid;
+    grid-template-columns: minmax(0, 0.84fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+    margin-top: clamp(1.75rem, 1rem + 3vw, 3.5rem);
+}
+
+/* ---------- List ---------- */
+.social-campaign__list {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.social-campaign__item {
+    position: relative;
+    isolation: isolate;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: clamp(0.6rem, 0.4rem + 0.6vw, 0.95rem) 0 clamp(0.6rem, 0.4rem + 0.6vw, 0.95rem) var(--indent);
+    border: 0;
+    background: none;
+    color: #000;
+    font: inherit;
+    font-size: clamp(1rem, 0.8rem + 0.9vw, 1.65rem);
+    line-height: 1.2;
+    text-align: left;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.4s ease;
+}
+
+/* bullet */
+.social-campaign__item::after {
+    content: "\2022";
+    position: absolute;
+    top: 50%;
+    left: calc(var(--indent) - 1.3em);
+    transform: translateY(-50%);
+}
+
+/* gradient bar: starts at the screen's left edge, fades out at the end of the list column */
+.social-campaign__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: calc(var(--edge) * -1);
+    z-index: -1;
+    background: linear-gradient(to right, var(--brand-red) 0%, rgba(109, 39, 50, 0.55) 55%, rgba(109, 39, 50, 0) 100%);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.7s var(--ease);
+}
+
+.social-campaign__item:hover,
+.social-campaign__item:focus-visible {
+    color: var(--brand-red);
+}
+
+.social-campaign__item.is-active {
+    color: #fff;
+    font-family: 'Helventica-Bold', sans-serif;
+    font-weight: 700;
+}
+
+.social-campaign__item.is-active::before {
+    transform: scaleX(1);
+}
+
+.social-campaign__item:focus-visible {
+    outline: 2px solid var(--brand-red);
+    outline-offset: -2px;
+}
+
+/* ---------- Slider ---------- */
+.social-campaign__media {
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    isolation: isolate;
+    border-radius: 20px; 
+}
+
+.social-campaign__slide {
+    margin: 0;
+    aspect-ratio: 1.4 / 1;
+}
+
+.social-campaign__slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+
+/* vertical slide (replaces animate.css slideInUp / slideOutUp) */
+@keyframes scp-in-up {
+    from {
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes scp-out-up {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, -100%, 0);
+    }
+}
+
+.social-campaign .owl-carousel .scp-in {
+    animation: scp-in-up 0.75s var(--ease) both;
+}
+
+.social-campaign .owl-carousel .scp-out {
+    animation: scp-out-up 0.75s var(--ease) both;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.social-campaign.js-anim .social-campaign__head,
+.social-campaign.js-anim .social-campaign__list,
+.social-campaign.js-anim .social-campaign__media {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s var(--ease);
+}
+
+.social-campaign.js-anim .social-campaign__list {
+    transition-delay: 0.2s;
+}
+
+.social-campaign.js-anim .social-campaign__media {
+    transform: translateY(3rem);
+    transition-delay: 0.35s;
+}
+
+.social-campaign.js-anim.is-visible .social-campaign__head,
+.social-campaign.js-anim.is-visible .social-campaign__list,
+.social-campaign.js-anim.is-visible .social-campaign__media {
+    opacity: 1;
+    transform: none;
+}
+
+/* Keep the italic line on one row only when there is plenty of room */
+
+
+/* ---------- Tablet / Mobile: heading, slider, then list ---------- */
+@media (max-width: 991.98px) {
+    .social-campaign {
+        --indent: clamp(2rem, 1rem + 4vw, 3.5rem);
+    }
+
+    .social-campaign__head {
+        grid-template-columns: 1fr;
+        gap: clamp(0.9rem, 0.6rem + 1vw, 1.5rem);
+        text-align: center;
+    }
+
+    .social-campaign__lead {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .social-campaign__stage {
+        grid-template-columns: 1fr;
+        gap: clamp(1.25rem, 1rem + 1.5vw, 2rem);
+    }
+
+    /* reset the desktop column placement */
+    .social-campaign__list,
+    .social-campaign__media {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .social-campaign__media {
+        order: -1;
+        max-width: 700px;
+        margin-inline: auto;
+    }
+
+    .social-campaign__slide {
+        aspect-ratio: 1.2 / 1;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .social-campaign {
+        --indent: 2.25rem;
+    }
+
+    .social-campaign__item {
+        padding-block: 0.75rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-campaign .owl-carousel .scp-in,
+    .social-campaign .owl-carousel .scp-out {
+        animation-duration: 0.4s;
+    }
+
+    .social-campaign__item::before {
+        transition-duration: 0.3s;
+    }
+
+    .social-campaign.js-anim .social-campaign__head,
+    .social-campaign.js-anim .social-campaign__list,
+    .social-campaign.js-anim .social-campaign__media {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* ==========================================================================
+   Social media campaign design (list + vertical slider)
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Social media - why choose us
+   ========================================================================== */
+.social-why {
+    --gutter: clamp(1.25rem, 5vw, 5rem);
+    --brand-red: #6D2732; 
+    --radius: clamp(1rem, 0.7rem + 1vw, 1.5rem);
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
+    background: var(--brand-red);
+    color: #fff;
+    overflow: hidden;
+}
+
+/* left padding follows the page container, right side is open so the image bleeds to the screen edge */
+.social-why__inner {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: stretch;
+    gap: clamp(2rem, 1rem + 5vw, 6rem);
+    padding-left: clamp(1.25rem, 5vw, 5rem);
+    padding-right: 0;
+}
+
+/* ---------- Text ---------- */
+.social-why__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: clamp(2rem, 1rem + 5vw, 5rem);
+    min-width: 0;
+}
+
+.social-why__heading {
+    margin: 0;
+    font-size: clamp(1.75rem, 1rem + 2.5vw, 45px);
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.social-why__accent { 
+    font-size: 1.2em;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.2;
+    text-transform: none;
+    color: #fff;
+}
+
+.social-why__text {
+    max-width: 40em;
+    margin: 0;
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.12rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.social-why__text strong {
+    font-weight: 700;
+    font-style: italic;
+    font-family: 'Helventica-Bold', sans-serif;
+}
+
+/* ---------- Image (bleeds off the right edge) ---------- */
+.social-why__media {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    aspect-ratio: 1.3 / 1;
+    border-radius: var(--radius) 0 0 var(--radius); 
+}
+
+.social-why__media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-user-drag: none;
+}
+
+/* ---------- Reveal on scroll ---------- */
+.social-why.js-anim .social-why__content,
+.social-why.js-anim .social-why__media {
+    opacity: 0;
+    transform: translateY(1.75rem);
+    transition: opacity 0.9s ease, transform 1s var(--ease);
+}
+
+.social-why.js-anim .social-why__media {
+    transform: translateX(3rem);
+    transition-delay: 0.25s;
+}
+
+.social-why.js-anim.is-visible .social-why__content,
+.social-why.js-anim.is-visible .social-why__media {
+    opacity: 1;
+    transform: none;
+}
+
+/* Keep the italic line on one row only when there is plenty of room */
+ 
+
+/* ---------- Tablet / Mobile ---------- */
+@media (max-width: 991.98px) {
+    .social-why__inner {
+        grid-template-columns: 1fr;
+        padding-inline: var(--gutter);
+    }
+
+    .social-why__content {
+        gap: clamp(1rem, 0.6rem + 1.5vw, 1.75rem);
+    }
+
+    .social-why__text {
+        max-width: none;
+    }
+
+    /* full rounded corners once the image is no longer touching the screen edge */
+    .social-why__media {
+        aspect-ratio: 1.2 / 1;
+        border-radius: var(--radius);
+    }
+
+    .social-why.js-anim .social-why__media {
+        transform: translateY(3rem);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-why.js-anim .social-why__content,
+    .social-why.js-anim .social-why__media {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+/* ==========================================================================
+   Social media - why choose us
+   ========================================================================== */
+ 

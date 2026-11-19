@@ -13,10 +13,10 @@
 
 .brochure-hero__inner {
     display: flex;
+    max-width: 1920px;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 1500px;
     margin-inline: auto;
     padding: clamp(5rem, 5vw, 5rem) clamp(1.25rem, 5vw, 5rem) clamp(2rem, 2vw, 2rem) clamp(1.25rem, 5vw, 5rem);
 }
@@ -204,6 +204,8 @@
 /* ---------- Heading + paragraph ---------- */
 .brochure-services__head {
     display: grid;
+    max-width: 1920px;
+    margin: 0 auto;
     grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
     align-items: end;
     column-gap: clamp(1rem, 3vw, 5rem);
@@ -241,6 +243,8 @@
 
 /* ---------- Image band ---------- */
 .brochure-services__band {
+    max-width: 1920px;
+    margin: 0 auto;
     position: relative;
     isolation: isolate;
     padding: clamp(2rem, 1rem + 4vw, 5rem) var(--gutter);
@@ -272,7 +276,6 @@
     display: grid;
     grid-template-columns: repeat(12, minmax(0, 1fr));
     gap: clamp(0.75rem, 0.4rem + 1.2vw, 1.25rem);
-    max-width: 1500px;
     margin: 0 auto;
     padding: 0;
     list-style: none;
@@ -463,10 +466,10 @@
 
 .brochure-portfolio__inner {
     display: grid;
+    max-width: 1920px;
     grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.8fr);
     column-gap: clamp(1rem, 4vw, 5rem);
     align-items: start;
-    max-width: 1600px;
     margin-inline: auto;
     padding: 0 var(--gutter);
 }
@@ -677,6 +680,8 @@
     ========================================================================== */
 
 .brochure-industries {
+    max-width: 1920px;
+    margin: 0 auto;
     --gutter: clamp(1.25rem, 5vw, 5rem);
     --brand-red: #6D2732;
     --bg: #F1E8E0;
@@ -1043,6 +1048,8 @@
     background: var(--bg);
     color: #000;
     overflow: hidden;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .brochure-approach__inner {
@@ -1316,6 +1323,7 @@
 }
 
 .brochure-process__inner {
+    max-width: 1920px;
     margin-inline: auto;
     padding: 0 var(--gutter);
 }
@@ -1506,6 +1514,8 @@
     background-color: var(--brand-red);
     color: #fff;
     overflow: hidden;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 
@@ -1653,13 +1663,14 @@
     color: #000;
     /* NOT overflow:hidden: that would stop the sticky stage from sticking */
     overflow-x: clip;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 /* ---------- Heading + paragraph ---------- */
 .brochure-work__head {
-    max-width: 1500px;
-    margin: 0 auto clamp(1.75rem, 1rem + 3vw, 3.5rem);
-    padding: 0 var(--gutter);
+    margin: 0 0 clamp(1.75rem, 1rem + 3vw, 3.5rem);
+    padding: 0 clamp(1.25rem, 5vw, 5rem);
 }
 
 .brochure-work__heading {
@@ -1911,7 +1922,7 @@
 }
 
 .design-services__inner {
-    max-width: 1500px;
+    max-width: 1920px;
     margin-inline: auto;
 }
 
