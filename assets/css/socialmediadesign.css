@@ -462,6 +462,7 @@
         width: 100%;
         max-width: 700px;
         margin-inline: auto;
+        aspect-ratio: 1/1;
     }
 }
 
@@ -1184,7 +1185,7 @@
     isolation: isolate;
     margin: clamp(1.5rem, 1rem + 2vw, 2.5rem) 0 0;
     overflow: hidden;
-    aspect-ratio: 3.35 / 1;
+    aspect-ratio: 3 / 1;
     background: #2a1f26;
 }
 
