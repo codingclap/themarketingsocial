@@ -234,16 +234,45 @@
     padding: 0 var(--gutter);
 }
 
-/* ---------- Image card ---------- */
+/* ---------- Image card (frame of the Owl slider) ---------- */
 .social-intro__card {
     position: relative;
+    isolation: isolate;
+    /* keeps the rounded corners clean while Owl moves the stage (Safari) */
     margin: 0;
     overflow: hidden;
     border-radius: 20px;
     aspect-ratio: 1.3 / 1;
 }
 
-.social-intro__card img {
+/* make Owl fill the card's height so the images can cover it */
+.social-intro__card .owl-carousel,
+.social-intro__card .owl-stage-outer,
+.social-intro__card .owl-stage,
+.social-intro__card .owl-item {
+    height: 100%;
+}
+
+/* before Owl initialises, show the first slide only (no layout jump / stacked images) */
+.social-intro__slider:not(.owl-loaded) {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+}
+
+.social-intro__slider:not(.owl-loaded) .social-intro__slide:not(:first-child) {
+    display: none;
+}
+
+.social-intro__slide {
+    position: relative;
+    height: 100%;
+    margin: 0;
+}
+
+/* Owl sets img{display:block;width:100%}; we only add the cover fit */
+.social-intro__card .owl-carousel .owl-item img.social-intro__img,
+.social-intro__slide img {
     display: block;
     width: 100%;
     height: 100%;
@@ -252,7 +281,7 @@
 }
 
 /* dark fade so the caption stays readable */
-.social-intro__card::after {
+.social-intro__slide::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -284,6 +313,74 @@
     font-size: clamp(0.75rem, 0.85rem + 0.3vw, 0.85rem);
     line-height: 1.2;
     color: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- Owl arrows (top-right, clear of the bottom caption) ----------
+   The long selectors beat Owl's own button reset (owl.carousel.css) */
+.social-intro .owl-carousel .owl-nav.social-intro__nav {
+    position: absolute;
+    top: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+    right: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+    z-index: 3;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.social-intro .owl-carousel .owl-nav.social-intro__nav.disabled {
+    display: none;
+}
+
+.social-intro .owl-carousel .owl-nav button.social-intro__arrow {
+    display: grid;
+    place-items: center;
+    width: clamp(3.25rem, 3rem + 1vw, 3.75rem);
+    height: clamp(2.25rem, 2rem + 0.8vw, 2.6rem);
+    margin: 0;
+    padding: 0 !important;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #000;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.35s ease, color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* arrow colour follows the button (works with your original fill="black" markup) */
+.social-intro__arrow path {
+    fill: currentColor;
+}
+
+.social-intro__arrow svg {
+    display: block;
+    width: clamp(1.9rem, 1.7rem + 0.6vw, 2.2rem);
+    height: auto;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-intro .owl-carousel .owl-nav button.social-intro__arrow:active {
+    transform: scale(0.95);
+}
+
+.social-intro .owl-carousel .owl-nav button.social-intro__arrow:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .social-intro .owl-carousel .owl-nav button.social-intro__arrow:hover {
+        background: var(--brand-red);
+        color: #fff;
+    }
+
+    .social-intro__arrow--next:hover svg {
+        transform: translateX(3px);
+    }
+
+    .social-intro__arrow--prev:hover svg {
+        transform: translateX(-3px);
+    }
 }
 
 /* ---------- Heading + paragraph ---------- */
@@ -362,6 +459,7 @@
     }
 
     .social-intro__card {
+        width: 100%;
         max-width: 700px;
         margin-inline: auto;
     }
@@ -381,8 +479,12 @@
         transform: none;
         transition: none;
     }
-}
 
+    .social-intro__arrow,
+    .social-intro__arrow svg {
+        transition: none;
+    }
+}
 /* ==========================================================================
    Social media design intro
    ========================================================================== */
@@ -1076,16 +1178,42 @@
     color: var(--brand-red);
 }
 
-/* ---------- Banner ---------- */
+/* ---------- Banner (frame of the Owl slider) ---------- */
 .social-industries__banner {
     position: relative;
+    isolation: isolate;
     margin: clamp(1.5rem, 1rem + 2vw, 2.5rem) 0 0;
     overflow: hidden;
     aspect-ratio: 3.35 / 1;
     background: #2a1f26;
 }
 
-.social-industries__banner img {
+/* make Owl fill the banner's height so the images can cover it */
+.social-industries__banner .owl-carousel,
+.social-industries__banner .owl-stage-outer,
+.social-industries__banner .owl-stage,
+.social-industries__banner .owl-item {
+    height: 100%;
+}
+
+/* before Owl initialises, show the first slide only (no layout jump / stacked images) */
+.social-industries__slider:not(.owl-loaded) {
+    display: block;
+    overflow: hidden;
+    height: 100%;
+}
+
+.social-industries__slider:not(.owl-loaded) .social-industries__slide:not(:first-child) {
+    display: none;
+}
+
+.social-industries__slide {
+    position: relative;
+    height: 100%;
+    margin: 0;
+}
+
+.social-industries__slide img {
     display: block;
     width: 100%;
     height: 100%;
@@ -1117,6 +1245,74 @@
     font-size: clamp(0.75rem, 0.85rem + 0.3vw, 0.85rem);
     line-height: 1.2;
     color: #fff;
+}
+
+/* ---------- Owl arrows (bottom-right, clear of the top-left caption) ----------
+   The long selectors beat Owl's own button reset (owl.carousel.css) */
+.social-industries .owl-carousel .owl-nav.social-industries__nav {
+    position: absolute;
+    right: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
+    bottom: clamp(0.75rem, 0.5rem + 1vw, 1.5rem);
+    z-index: 3;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.social-industries .owl-carousel .owl-nav.social-industries__nav.disabled {
+    display: none;
+}
+
+.social-industries .owl-carousel .owl-nav button.social-industries__arrow {
+    display: grid;
+    place-items: center;
+    width: clamp(3.25rem, 3rem + 1vw, 3.75rem);
+    height: clamp(2.25rem, 2rem + 0.8vw, 2.6rem);
+    margin: 0;
+    padding: 0 !important;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #000;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.35s ease, color 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* arrow colour follows the button (works with your original fill="black" markup) */
+.social-industries__arrow path {
+    fill: currentColor;
+}
+
+.social-industries__arrow svg {
+    display: block;
+    width: clamp(1.9rem, 1.7rem + 0.6vw, 2.2rem);
+    height: auto;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.social-industries .owl-carousel .owl-nav button.social-industries__arrow:active {
+    transform: scale(0.95);
+}
+
+.social-industries .owl-carousel .owl-nav button.social-industries__arrow:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .social-industries .owl-carousel .owl-nav button.social-industries__arrow:hover {
+        background: var(--brand-red);
+        color: #fff;
+    }
+
+    .social-industries__arrow--next:hover svg {
+        transform: translateX(3px);
+    }
+
+    .social-industries__arrow--prev:hover svg {
+        transform: translateX(-3px);
+    }
 }
 
 /* ---------- Paragraph ---------- */
@@ -1189,8 +1385,9 @@
         max-width: calc(100% - 2rem);
     }
 
-    /* darken the top so the caption stays readable over the photo */
-    .social-industries__banner::after {
+    /* darken the top of every slide so the caption stays readable over the photo
+       (on the slide, not the banner, so it sits under the caption and the arrows) */
+    .social-industries__slide::after {
         content: "";
         position: absolute;
         inset: 0;
@@ -1208,8 +1405,12 @@
         transform: none;
         transition: none;
     }
-}
 
+    .social-industries__arrow,
+    .social-industries__arrow svg {
+        transition: none;
+    }
+}
 /* ==========================================================================
    Social media industries
    ========================================================================== */
