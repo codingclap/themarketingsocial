@@ -1223,41 +1223,47 @@
             const total = panels.length;
             if (!total) return;
 
-            // Pre-decode all images up front to eliminate first-scroll hitches
             panels.forEach(p => {
                 p.querySelectorAll('img').forEach(img => {
                     if (img.decode) img.decode().catch(() => { });
                 });
             });
 
-            // Track height calculation
-            showcase.style.height = ((total - 1) * 75 + 100) + 'svh';
+            const mqMobile = window.matchMedia('(max-width: 991.98px)');
+            const mqReduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
+            // ---- TUNE THESE ----
+            const SEGMENT_SVH = { desktop: 75, mobile: 50 }; // scroll distance per panel (smaller = faster)
+            const SPEED = { desktop: 1, mobile: 1.8 }; // >1 = reveal finishes sooner, then holds
+            // --------------------
+
+            let stickyTop = 0;
             let isTicking = false;
+
+            function setup() {
+                const key = mqMobile.matches ? 'mobile' : 'desktop';
+                showcase.style.height = ((total - 1) * SEGMENT_SVH[key] + 100) + 'svh';
+                stickyTop = parseFloat(getComputedStyle(stage).top) || 0;
+            }
 
             function updateStack() {
                 isTicking = false;
 
                 const rect = showcase.getBoundingClientRect();
-                const stageHeight = stage.offsetHeight;
-                const totalDistance = Math.max(1, showcase.offsetHeight - stageHeight);
-
-                // sticky top position, read from the CSS (--top)
-                const stickyTop = parseFloat(getComputedStyle(stage).top) || 0;
+                const totalDistance = Math.max(1, showcase.offsetHeight - stage.offsetHeight);
                 const progress = Math.max(0, Math.min(1, (stickyTop - rect.top) / totalDistance));
                 const phase = progress * (total - 1);
 
-                const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                const speed = mqMobile.matches ? SPEED.mobile : SPEED.desktop;
+                const reduced = mqReduced.matches;
                 const active = Math.min(total - 1, Math.floor(phase + 0.5));
 
                 panels.forEach((panel, i) => {
-                    let cover = i === 0 ? 1 : Math.max(0, Math.min(1, phase - (i - 1)));
+                    let cover = i === 0 ? 1 : Math.max(0, Math.min(1, (phase - (i - 1)) * speed));
                     if (reduced) cover = i <= active ? 1 : 0;
 
-                    // Reveals image, logo and text in identical unison
-                    const hidden = ((1 - cover) * 100).toFixed(2);
                     panel.style.zIndex = String(i);
-                    panel.style.clipPath = `inset(${hidden}% 0px 0px 0px)`;
+                    panel.style.clipPath = `inset(${((1 - cover) * 100).toFixed(2)}% 0px 0px 0px)`;
                     panel.inert = i !== active;
                 });
             }
@@ -1269,10 +1275,19 @@
                 }
             }
 
-            window.addEventListener('scroll', onScroll, { passive: true });
-            window.addEventListener('resize', onScroll);
+            // recalc only when the width changes (ignores mobile address-bar resizes)
+            let lastW = window.innerWidth;
+            window.addEventListener('resize', () => {
+                if (window.innerWidth !== lastW) {
+                    lastW = window.innerWidth;
+                    setup();
+                }
+                onScroll();
+            });
 
-            // Initial execution
+            window.addEventListener('scroll', onScroll, { passive: true });
+
+            setup();
             updateStack();
         })();
     </script>
