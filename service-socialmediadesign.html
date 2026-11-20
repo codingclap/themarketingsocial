@@ -224,6 +224,26 @@
                 </article>
 
             </div>
+
+            <!-- Mobile slider controls (hidden on desktop via CSS) -->
+            <div class="social-platforms__nav" aria-label="Slider controls">
+                <div class="social-platforms__dots" role="tablist"></div>
+                <div class="social-platforms__arrows">
+                    <button type="button" class="social-platforms__arrow" data-dir="-1" aria-label="Previous slide">
+                        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M19 12H5M11 6l-6 6 6 6"></path>
+                        </svg>
+                    </button>
+                    <button type="button" class="social-platforms__arrow" data-dir="1" aria-label="Next slide">
+                        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M5 12h14M13 6l6 6-6 6"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
         </div>
     </section>
     <!------------------------------------ social-platforms ------------------------------->
@@ -663,7 +683,7 @@
                             <img class="social-work__logo"
                                 src="assets/images/socialmediadesign/brochure-design-signature-logo.webp"
                                 alt="Signature Developers logo" width="250" height="120" draggable="false" />
-                            <ul class="social-work__points" data-fontfamily='Helventica-Light'>
+                            <ul class="social-work__points" data-fontfamily='Helventica-Regular'>
                                 <li>Add industry</li>
                                 <li>Explain what the client wanted to achieve</li>
                                 <li>Explain the visual approach and campaign idea.</li>
@@ -682,7 +702,7 @@
                             <img class="social-work__logo"
                                 src="assets/images/socialmediadesign/brochure-design-residence-22.webp"
                                 alt="Client 2 logo" width="250" height="120" draggable="false" />
-                            <ul class="social-work__points" data-fontfamily='Helventica-Light'>
+                            <ul class="social-work__points" data-fontfamily='Helventica-Regular'>
                                 <li>Add industry</li>
                                 <li>Explain what the client wanted to achieve</li>
                                 <li>Explain the visual approach and campaign idea.</li>
@@ -700,7 +720,7 @@
                             <img class="social-work__logo"
                                 src="assets/images/socialmediadesign/brochure-design-pinkcake.webp" alt="Client 3 logo"
                                 width="250" height="100" draggable="false" />
-                            <ul class="social-work__points" data-fontfamily='Helventica-Light'>
+                            <ul class="social-work__points" data-fontfamily='Helventica-Regular'>
                                 <li>Add industry</li>
                                 <li>Explain what the client wanted to achieve</li>
                                 <li>Explain the visual approach and campaign idea.</li>
@@ -759,7 +779,7 @@
                     creative production, and ongoing social media strategy.
                 </p>
                 <a href="#" class="social-compare__btn" data-fontfamily='Helventica-Regular'>
-                    Explore Our Social Media Management Services
+                    Explore Social Media Services
                 </a>
             </div>
 
@@ -926,6 +946,161 @@
             document.querySelectorAll('.social-ads__ticker').forEach(initMarquee);
         })();
     </script>
+
+
+    <script>
+
+        (function () {
+            'use strict';
+
+            var AUTOPLAY_DELAY = 3000;   // ms between slides
+            var RESUME_DELAY = 1000;     // ms to wait after the user touches/hovers before autoplay resumes
+
+            var section = document.querySelector('.social-platforms');
+            if (!section) return;
+
+            var grid = section.querySelector('.social-platforms__grid');
+            var items = Array.prototype.slice.call(section.querySelectorAll('.social-platforms__item'));
+            var dotsWrap = section.querySelector('.social-platforms__dots');
+            var arrows = section.querySelectorAll('.social-platforms__arrow');
+            var mq = window.matchMedia('(max-width: 767.98px)');
+            var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            var current = 0;
+            var ticking = false;
+            var timer = null;
+            var resumeTimer = null;
+            var inView = false;
+            var userHolding = false;
+
+            // build dots
+            var dots = items.map(function (_, i) {
+                var b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'social-platforms__dot';
+                b.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                b.addEventListener('click', function () { goTo(i); restartAutoplay(); });
+                dotsWrap.appendChild(b);
+                return b;
+            });
+
+            function setActive(i) {
+                current = i;
+                items.forEach(function (el, idx) { el.classList.toggle('is-active', idx === i); });
+                dots.forEach(function (d, idx) { d.classList.toggle('is-active', idx === i); });
+            }
+
+            // loops: past the last slide -> first, before the first -> last
+            function goTo(i) {
+                if (i >= items.length) i = 0;
+                if (i < 0) i = items.length - 1;
+                grid.scrollTo({
+                    left: items[i].offsetLeft - items[0].offsetLeft,
+                    behavior: reduceMotion.matches ? 'auto' : 'smooth'
+                });
+            }
+
+            // find the slide closest to the centre position
+            function onScroll() {
+                if (ticking) return;
+                ticking = true;
+                requestAnimationFrame(function () {
+                    ticking = false;
+                    var left = grid.scrollLeft;
+                    var best = 0, min = Infinity;
+                    items.forEach(function (el, idx) {
+                        var d = Math.abs(el.offsetLeft - items[0].offsetLeft - left);
+                        if (d < min) { min = d; best = idx; }
+                    });
+                    if (best !== current) setActive(best);
+                });
+            }
+
+            /* ---------- Autoplay ---------- */
+            function canAutoplay() {
+                return mq.matches && inView && !userHolding && !document.hidden && !reduceMotion.matches;
+            }
+
+            function stopAutoplay() {
+                clearInterval(timer);
+                timer = null;
+            }
+
+            function startAutoplay() {
+                stopAutoplay();
+                if (!canAutoplay()) return;
+                timer = setInterval(function () { goTo(current + 1); }, AUTOPLAY_DELAY);
+            }
+
+            function restartAutoplay() {
+                clearTimeout(resumeTimer);
+                startAutoplay();
+            }
+
+            // user is interacting: pause now, resume a bit after they let go
+            function hold() {
+                userHolding = true;
+                clearTimeout(resumeTimer);
+                stopAutoplay();
+            }
+
+            function release() {
+                clearTimeout(resumeTimer);
+                resumeTimer = setTimeout(function () {
+                    userHolding = false;
+                    startAutoplay();
+                }, RESUME_DELAY);
+            }
+
+            grid.addEventListener('touchstart', hold, { passive: true });
+            grid.addEventListener('touchend', release, { passive: true });
+            grid.addEventListener('touchcancel', release, { passive: true });
+            grid.addEventListener('pointerdown', function (e) { if (e.pointerType === 'mouse') hold(); });
+            grid.addEventListener('pointerup', function (e) { if (e.pointerType === 'mouse') release(); });
+            section.addEventListener('focusin', hold);
+            section.addEventListener('focusout', release);
+
+            arrows.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    goTo(current + parseInt(btn.getAttribute('data-dir'), 10));
+                    restartAutoplay();
+                });
+            });
+
+            grid.addEventListener('scroll', onScroll, { passive: true });
+
+            // only run while the section is on screen and the tab is visible
+            if ('IntersectionObserver' in window) {
+                new IntersectionObserver(function (entries) {
+                    inView = entries[0].isIntersecting;
+                    inView ? startAutoplay() : stopAutoplay();
+                }, { threshold: 0.35 }).observe(section);
+            } else {
+                inView = true;
+            }
+
+            document.addEventListener('visibilitychange', function () {
+                document.hidden ? stopAutoplay() : startAutoplay();
+            });
+
+            // reset position when switching between mobile and desktop
+            function onBreakpoint() {
+                if (!mq.matches) {
+                    stopAutoplay();
+                    grid.scrollLeft = 0;
+                    items.forEach(function (el) { el.classList.remove('is-active'); });
+                } else {
+                    setActive(current);
+                    startAutoplay();
+                }
+            }
+            if (mq.addEventListener) mq.addEventListener('change', onBreakpoint);
+            else mq.addListener(onBreakpoint);
+
+            setActive(0);
+            onBreakpoint();
+        })();
+    </script>
+
     <script>
         jQuery(function ($) {
             var $main = $('.social-consistent__slider');

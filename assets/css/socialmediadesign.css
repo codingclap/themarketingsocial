@@ -263,8 +263,8 @@
 .social-intro__caption {
     position: absolute;
     right: clamp(1rem, 0.6rem + 1.5vw, 1.5rem);
-    bottom: clamp(2rem, 0.6rem + 1.5vw, 2.5rem);
-    left: 11%;
+    bottom: clamp(1rem, 0.6rem + 1.5vw, 2.5rem);
+    left: 10%;
     z-index: 1;
     text-align: right;
     color: #fff;
@@ -272,7 +272,7 @@
 
 .social-intro__caption-title {
     margin: 0;
-    font-size: clamp(1.06rem, 0.8rem + 0.55vw, 1.3rem);
+    font-size: clamp(1.12rem, 0.8rem + 0.55vw, 1.3rem);
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
@@ -281,7 +281,7 @@
 
 .social-intro__caption-text {
     margin: clamp(0.5rem, 0.4rem + 0.4vw, 0.8rem) 0 0;
-    font-size: clamp(0.65rem, 0.68rem + 0.3vw, 0.85rem);
+    font-size: clamp(0.75rem, 0.85rem + 0.3vw, 0.85rem);
     line-height: 1.2;
     color: rgba(255, 255, 255, 0.8);
 }
@@ -304,7 +304,7 @@
 }
 
 .social-intro__accent {
-    font-size: 1.2em; 
+    font-size: 1.2em;
     font-style: italic;
     font-weight: 400;
     line-height: 1;
@@ -396,6 +396,8 @@
     --gutter: clamp(1.25rem, 5vw, 5rem);
     --gap: clamp(0.5rem, 0.3rem + 0.6vw, 0.6rem);
     --bg-dark: #302C2A;
+    --accent: #F1E8E0;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
     background: var(--bg-dark);
     color: #fff;
@@ -450,16 +452,18 @@
     grid-template-columns: repeat(5, minmax(0, 1fr));
     align-items: start;
     gap: var(--gap);
-    margin-top: clamp(2.5rem, 1rem + 7vw, 7rem);
+    margin-top: clamp(1rem, 0.5rem + 7vw, 7rem);
     padding: 0;
     list-style: none;
 }
 
 .social-platforms__item {
     min-width: 0;
+    position: relative;
 }
 
 .social-platforms__img {
+    position: relative;
     margin: 0;
     overflow: hidden;
     aspect-ratio: 0.7 / 1;
@@ -477,22 +481,125 @@
     height: 100%;
     object-fit: cover;
     -webkit-user-drag: none;
+    transform: scale(1);
+    transition: transform 0.9s var(--ease-out), filter 0.6s ease;
+    will-change: transform;
+}
+
+/* dark gradient + sliding arrow badge (hover only) */
+.social-platforms__img::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to top, rgba(48, 44, 42, 0.55), rgba(48, 44, 42, 0) 55%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.social-platforms__img::after {
+    /* content: "\2197"; 
+    position: absolute;
+    right: clamp(0.6rem, 0.4rem + 0.6vw, 1rem);
+    bottom: clamp(0.6rem, 0.4rem + 0.6vw, 1rem);
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-dark);
+    font-size: 1.15rem;
+    line-height: 1;
+    opacity: 0;
+    transform: translate(0.75rem, 0.75rem) scale(0.6);
+    transition: opacity 0.45s ease, transform 0.6s var(--ease-out);
+    pointer-events: none; */
 }
 
 .social-platforms__title {
+    position: relative;
+    display: inline-block;
     margin: clamp(0.8rem, 0.6rem + 0.6vw, 1.1rem) 0 0;
-    font-size: clamp(0.9rem, 0.8rem + 0.4vw, 1.15rem);
+    font-size: clamp(1.1rem, 1rem + 0.4vw, 1.15rem);
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
-    color: #F1E8E0;
+    color: var(--accent);
+    transition: transform 0.5s var(--ease-out), color 0.3s ease;
+}
+
+/* underline that draws in on hover */
+.social-platforms__title::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.25em;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 0.55s var(--ease-out);
 }
 
 .social-platforms__text {
     margin: clamp(0.4rem, 0.3rem + 0.4vw, 0.6rem) 0 0;
-    font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem);
+    font-size: clamp(0.80rem, 0.8rem + 0.2vw, 0.85rem);
     line-height: 1.2;
-    color: #F1E8E0;
+    color: var(--accent);
+    opacity: 0.8;
+    transition: opacity 0.4s ease, transform 0.5s var(--ease-out);
+}
+
+/* ---------- Hover (mouse devices only) ---------- */
+@media (hover: hover) and (pointer: fine) {
+    .social-platforms__item {
+        transition: transform 0.6s var(--ease-out);
+    }
+
+    .social-platforms__item:hover {
+        transform: translateY(-0.6rem);
+    }
+
+    .social-platforms__item:hover .social-platforms__img img {
+        transform: scale(1.08);
+    }
+
+    .social-platforms__item:hover .social-platforms__img::before {
+        opacity: 1;
+    }
+
+    .social-platforms__item:hover .social-platforms__img::after {
+        opacity: 1;
+        transform: none;
+    }
+
+    .social-platforms__item:hover .social-platforms__title::after {
+        transform: scaleX(1);
+    }
+
+    .social-platforms__item:hover .social-platforms__text {
+        opacity: 1;
+        transform: translateY(0.15rem);
+    }
+
+    /* dim siblings so the hovered card pops */
+    .social-platforms__grid:hover .social-platforms__item:not(:hover) .social-platforms__img img {
+        filter: brightness(0.7) saturate(0.85);
+    }
+}
+
+/* keyboard users get the same feedback */
+.social-platforms__item:focus-within .social-platforms__img::before {
+    opacity: 1;
+}
+
+/* ---------- Slider controls (hidden on desktop) ---------- */
+.social-platforms__nav {
+    display: none;
 }
 
 /* ---------- Reveal on scroll ---------- */
@@ -500,7 +607,7 @@
 .social-platforms.js-anim .social-platforms__item {
     opacity: 0;
     transform: translateY(1.75rem);
-    transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+    transition: opacity 0.9s ease, transform 1s var(--ease-out);
 }
 
 .social-platforms.js-anim .social-platforms__item:nth-child(1) {
@@ -527,13 +634,6 @@
 .social-platforms.js-anim.is-visible .social-platforms__item {
     opacity: 1;
     transform: none;
-}
-
-/* Keep the italic line on one row only when there is plenty of room */
-@media (min-width: 1500px) {
-    .social-platforms__accent {
-        /* white-space: nowrap; */
-    }
 }
 
 /* ---------- Tablet ---------- */
@@ -568,27 +668,126 @@
     }
 }
 
-/* ---------- Mobile ---------- */
+/* ---------- Mobile: slider ---------- */
 @media (max-width: 767.98px) {
-    .social-platforms__item {
-        flex-basis: calc((100% - clamp(0.75rem, 0.5rem + 1vw, 1.25rem)) / 2);
+    .social-platforms__grid {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        --slide-w: min(78vw, 320px);
+        gap: 0.9rem;
+        /* bleed to screen edges; side padding lets first/last slide sit in the centre */
+        margin-inline: calc(var(--gutter) * -1);
+        padding-inline: calc((100vw - var(--slide-w)) / 2);
+        scroll-padding-inline: calc((100vw - var(--slide-w)) / 2);
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
     }
-}
 
-@media (max-width: 479.98px) {
+    .social-platforms__grid::-webkit-scrollbar {
+        display: none;
+    }
+
     .social-platforms__item {
-        flex-basis: 100%;
-        max-width: 360px;
+        flex: 0 0 var(--slide-w);
+        max-width: none;
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+    .social-platforms__img,
+    .social-platforms__item:nth-child(even) .social-platforms__img {
+        aspect-ratio: 0.8 / 1;
+    }
+
+    /* subtle emphasis on the active slide */
+    .social-platforms__item {
+        opacity: 0.55;
+        transition: opacity 0.5s ease;
+    }
+
+    .social-platforms__item.is-active {
+        opacity: 1;
+    }
+
+    /* the reveal rules set opacity on items; keep them working */
+    .social-platforms.js-anim:not(.is-visible) .social-platforms__item {
+        opacity: 0;
+    }
+
+    .social-platforms__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 1.5rem;
+    }
+
+    .social-platforms__dots {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .social-platforms__dot {
+        width: 0.5rem;
+        height: 0.5rem;
+        padding: 0;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(241, 232, 224, 0.35);
+        transition: width 0.4s var(--ease-out), background 0.3s ease;
+        cursor: pointer;
+    }
+
+    .social-platforms__dot.is-active {
+        width: 1.5rem;
+        background: var(--accent);
+    }
+
+    .social-platforms__arrows {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .social-platforms__arrow {
+        display: grid;
+        place-items: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        padding: 0;
+        border: 1px solid rgba(241, 232, 224, 0.4);
+        border-radius: 50%;
+        background: transparent;
+        color: var(--accent);
+        font-size: 1.1rem;
+        line-height: 1;
+        cursor: pointer;
+        transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+    }
+
+    .social-platforms__arrow:active {
+        background: var(--accent);
+        color: var(--bg-dark);
+    }
+
+    .social-platforms__arrow:disabled {
+        opacity: 0.3;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
 
-    .social-platforms.js-anim .social-platforms__head,
-    .social-platforms.js-anim .social-platforms__item {
-        opacity: 1;
-        transform: none;
-        transition: none;
+    .social-platforms *,
+    .social-platforms *::before,
+    .social-platforms *::after {
+        /* transition-duration: 0.01ms !important;
+        transition-delay: 0s !important; */
+    }
+
+    .social-platforms__grid {
+        scroll-behavior: auto;
     }
 }
 
@@ -810,6 +1009,7 @@
         max-width: 700px;
         margin-inline: auto;
         width: 100%;
+        min-height: 350px;
     }
 }
 
@@ -895,26 +1095,26 @@
 
 .social-industries__caption {
     position: absolute;
-    top: clamp(1rem, 0.5rem + 2vw, 1.9rem);
+    top: clamp(1.3rem, 0.5rem + 2vw, 1.9rem);
     left: clamp(1rem, 0.5rem + 2.4vw, 2rem);
     z-index: 1;
-    max-width: 45%;
+    max-width: 48%;
     text-align: left;
     color: #fff;
 }
 
 .social-industries__caption-title {
     margin: 0;
-    font-size: clamp(0.9rem, 0.8rem + 0.4vw, 1.15rem);
+    font-size: clamp(1.12rem, 0.8rem + 0.55vw, 1.3rem);
     font-weight: 700;
     line-height: 1.2;
     text-transform: uppercase;
     color: #fff;
 }
 
-.social-industries__caption-text {
+.social-industries__caption-text { 
     margin: clamp(0.4rem, 0.3rem + 0.4vw, 0.6rem) 0 0;
-    font-size: clamp(0.75rem, 0.7rem + 0.2vw, 0.85rem);
+    font-size: clamp(0.75rem, 0.85rem + 0.3vw, 0.85rem);
     line-height: 1.2;
     color: #fff;
 }
@@ -1105,7 +1305,7 @@
 
 .social-consistent__arrow svg {
     display: block;
-    width: clamp(2rem, 1.5rem + 1.5vw, 2.9rem);
+    width: clamp(2.5rem, 1.5rem + 1.5vw, 2.9rem);
     height: auto;
 }
 
@@ -2567,7 +2767,8 @@
 
     .social-work__points li {
         padding-block: clamp(0.6rem, 1.2svh, 0.6rem);
-        font-size: clamp(0.98rem, 0.7rem + 0.5vw, 1.05rem);
+        font-size: clamp(1rem, 0.8rem + 0.5vw, 1.05rem);
+        color:#000;
     }
 
     .social-work__points li:first-child {
@@ -2658,10 +2859,10 @@
 
 .social-compare__text {
     margin: 0;
-    font-size: clamp(0.95rem, 0.8rem + 0.5vw, 1.2rem);
+    font-size: clamp(1rem, 0.8rem + 0.5vw, 1.2rem);
     font-weight: 300;
     line-height: 1.2;
-    color: #1a1a1a;
+    color: #000;
 }
 
 /* ---------- Image (wide, square corners, near full width) ---------- */
@@ -2698,7 +2899,7 @@
     border-radius: 999px;
     background: var(--brand-red);
     color: #fff;
-    font-size:clamp(0.75rem, 0.7rem + 0.3vw, 1rem);
+    font-size: clamp(0.75rem, 0.7rem + 0.3vw, 1rem);
     line-height: normal;
     text-decoration: none;
     white-space: nowrap;
