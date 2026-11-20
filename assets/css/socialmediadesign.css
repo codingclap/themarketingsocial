@@ -315,7 +315,7 @@
 .social-intro__lead {
     max-width: 45em;
     margin: clamp(2rem, 1rem + 4vw, 4.5rem) 0 0;
-    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.11rem);
     line-height: 1.2;
     color: #000;
 }
@@ -856,7 +856,7 @@
 .social-portfolio__lead {
     max-width: 38em;
     margin: clamp(1.25rem, 0.8rem + 1.5vw, 2rem) 0 0;
-    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.11rem);
     line-height: 1.2;
     color: #000;
 }
@@ -925,12 +925,12 @@
     align-items: center;
     justify-content: center;
     min-width: 0;
-    padding: clamp(1.25rem, 0.5rem + 3.5vw, 3.5rem) clamp(1.25rem, 0.5rem + 3.5vw, 2rem) clamp(1.25rem, 0.5rem + 3.5vw, 2.5rem) clamp(1.25rem, 0.5rem + 3.5vw, 2rem);
+    /* padding: clamp(1.25rem, 0.5rem + 3.5vw, 3.5rem) clamp(1.25rem, 0.5rem + 3.5vw, 2rem) clamp(1.25rem, 0.5rem + 3.5vw, 2.5rem) clamp(1.25rem, 0.5rem + 3.5vw, 2rem); */
     border-radius: 10px;
-    background-image: url("../images/socialmediadesign/consistent-2.webp");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+}
+
+.social-portfolio__card img {
+    border-radius: 10px;
 }
 
 .social-portfolio__grid {
@@ -1112,7 +1112,7 @@
     color: #fff;
 }
 
-.social-industries__caption-text { 
+.social-industries__caption-text {
     margin: clamp(0.4rem, 0.3rem + 0.4vw, 0.6rem) 0 0;
     font-size: clamp(0.75rem, 0.85rem + 0.3vw, 0.85rem);
     line-height: 1.2;
@@ -1123,7 +1123,7 @@
 .social-industries__lead {
     max-width: 45em;
     margin: clamp(1.5rem, 1rem + 2vw, 2.5rem) 0 0;
-    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.11rem);
     line-height: 1.2;
     color: #000;
 }
@@ -1279,7 +1279,7 @@
 .social-consistent__lead {
     max-width: 45em;
     margin: clamp(0.75rem, 0.5rem + 1vw, 1.25rem) 0 0;
-    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.11rem);
     line-height: 1.2;
     color: #000;
 }
@@ -2096,7 +2096,7 @@
     max-width: 34em;
     margin: 0 0 0.35em auto;
     text-align: right;
-    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.15rem);
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.11rem);
     line-height: 1.2;
     color: #000;
 }
@@ -2394,7 +2394,7 @@
 .social-why__text {
     max-width: 40em;
     margin: 0;
-    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.12rem);
+    font-size: clamp(0.95rem, 0.85rem + 0.4vw, 1.11rem);
     font-weight: 300;
     line-height: 1.2;
     color: #fff;
@@ -2632,15 +2632,15 @@
 .social-work__frame {
     position: absolute;
     left: 40%;
-    right: 6%;
-    top: 6%;
+    right: 0%;
+    top: 10%;
     bottom: 17%;
     margin: 0;
     background: transparent;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .social-work__frame img {
@@ -2703,7 +2703,17 @@
 }
 
 /* ---------- Tablet / Mobile: image on top, text below, button last ---------- */
+@media (max-width:1200px) {
+    .social-work__frame {
+        left: 32%;
+    }
+}
+
 @media (max-width: 991.98px) {
+    .social-work__frame img { 
+        max-width: 100%;
+    }
+
     .social-work {
         --top: 35px;
         --bottom: 20px;
@@ -2722,6 +2732,7 @@
 
     .social-work__stage {
         min-height: 560px;
+        top:40px;
     }
 
     /* panels switch from absolute layout to a simple column */
@@ -2768,7 +2779,7 @@
     .social-work__points li {
         padding-block: clamp(0.6rem, 1.2svh, 0.6rem);
         font-size: clamp(1rem, 0.8rem + 0.5vw, 1.05rem);
-        color:#000;
+        color: #000;
     }
 
     .social-work__points li:first-child {
