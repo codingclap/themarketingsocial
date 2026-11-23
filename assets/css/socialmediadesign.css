@@ -486,6 +486,7 @@
         transition: none;
     }
 }
+
 /* ==========================================================================
    Social media design intro
    ========================================================================== */
@@ -495,10 +496,10 @@
 /* ==========================================================================
    Social media platforms
    ========================================================================== */
-.social-platforms {
+ .social-platforms {
     --gutter: clamp(1.25rem, 5vw, 5rem);
     --gap: clamp(0.5rem, 0.3rem + 0.6vw, 0.6rem);
-    --bg-dark: #302C2A;
+    --bg-dark: #322D2A;
     --accent: #F1E8E0;
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
     padding: clamp(2.5rem, 2rem + 4vw, 6rem) 0;
@@ -555,7 +556,7 @@
     grid-template-columns: repeat(5, minmax(0, 1fr));
     align-items: start;
     gap: var(--gap);
-    margin-top: clamp(1rem, 0.5rem + 7vw, 7rem);
+    margin-top: clamp(2.5rem, 1rem + 7vw, 7rem);
     padding: 0;
     list-style: none;
 }
@@ -642,7 +643,7 @@
     bottom: -0.25em;
     width: 100%;
     height: 1px;
-    background: currentColor;
+    background: #F1E8E0;
     transform: scaleX(0);
     transform-origin: left center;
     transition: transform 0.55s var(--ease-out);
@@ -691,18 +692,13 @@
 
     /* dim siblings so the hovered card pops */
     .social-platforms__grid:hover .social-platforms__item:not(:hover) .social-platforms__img img {
-        filter: brightness(0.7) saturate(0.85);
+        /* filter: brightness(0.7) saturate(0.85); */
     }
 }
 
 /* keyboard users get the same feedback */
 .social-platforms__item:focus-within .social-platforms__img::before {
     opacity: 1;
-}
-
-/* ---------- Slider controls (hidden on desktop) ---------- */
-.social-platforms__nav {
-    display: none;
 }
 
 /* ---------- Reveal on scroll ---------- */
@@ -713,25 +709,11 @@
     transition: opacity 0.9s ease, transform 1s var(--ease-out);
 }
 
-.social-platforms.js-anim .social-platforms__item:nth-child(1) {
-    transition-delay: 0.15s;
-}
-
-.social-platforms.js-anim .social-platforms__item:nth-child(2) {
-    transition-delay: 0.25s;
-}
-
-.social-platforms.js-anim .social-platforms__item:nth-child(3) {
-    transition-delay: 0.35s;
-}
-
-.social-platforms.js-anim .social-platforms__item:nth-child(4) {
-    transition-delay: 0.45s;
-}
-
-.social-platforms.js-anim .social-platforms__item:nth-child(5) {
-    transition-delay: 0.55s;
-}
+.social-platforms.js-anim .social-platforms__item:nth-child(1) { transition-delay: 0.15s; }
+.social-platforms.js-anim .social-platforms__item:nth-child(2) { transition-delay: 0.25s; }
+.social-platforms.js-anim .social-platforms__item:nth-child(3) { transition-delay: 0.35s; }
+.social-platforms.js-anim .social-platforms__item:nth-child(4) { transition-delay: 0.45s; }
+.social-platforms.js-anim .social-platforms__item:nth-child(5) { transition-delay: 0.55s; }
 
 .social-platforms.js-anim.is-visible .social-platforms__head,
 .social-platforms.js-anim.is-visible .social-platforms__item {
@@ -771,34 +753,35 @@
     }
 }
 
-/* ---------- Mobile: slider ---------- */
+/* ---------- Mobile: Owl slider ---------- */
 @media (max-width: 767.98px) {
+
     .social-platforms__grid {
+        --slide-w: min(78vw, 320px);
+        /* bleed to the screen edges so the neighbouring slides peek in */
+        margin-inline: calc(var(--gutter) * -1);
+    }
+
+    /* no-JS / before-Owl fallback: a swipeable scroll-snap row (replaced the moment Owl starts) */
+    .social-platforms__grid:not(.is-owl) {
         display: flex;
         flex-wrap: nowrap;
         justify-content: flex-start;
-        --slide-w: min(78vw, 320px);
         gap: 0.9rem;
-        /* bleed to screen edges; side padding lets first/last slide sit in the centre */
-        margin-inline: calc(var(--gutter) * -1);
         padding-inline: calc((100vw - var(--slide-w)) / 2);
-        scroll-padding-inline: calc((100vw - var(--slide-w)) / 2);
         overflow-x: auto;
         overscroll-behavior-x: contain;
         scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
     }
 
-    .social-platforms__grid::-webkit-scrollbar {
+    .social-platforms__grid:not(.is-owl)::-webkit-scrollbar {
         display: none;
     }
 
-    .social-platforms__item {
+    .social-platforms__grid:not(.is-owl) .social-platforms__item {
         flex: 0 0 var(--slide-w);
-        max-width: none;
         scroll-snap-align: center;
-        scroll-snap-stop: always;
     }
 
     .social-platforms__img,
@@ -806,60 +789,85 @@
         aspect-ratio: 0.8 / 1;
     }
 
-    /* subtle emphasis on the active slide */
-    .social-platforms__item {
+    /* Owl is running (the script adds .is-owl). width:auto beats Owl's width:100%,
+       so the negative side margins still stretch the slider edge to edge */
+    .social-platforms__grid.is-owl {
+        display: block;
+        width: auto;
+        padding: 0 0 3.75rem;
+        /* room for the dots + arrows row */
+    }
+
+    .social-platforms__grid.is-owl .social-platforms__item {
+        width: var(--slide-w);
+        max-width: none;
+    }
+
+    /* subtle emphasis on the centered slide (on .owl-item, so it never fights the reveal animation) */
+    .social-platforms__grid.is-owl .owl-item {
         opacity: 0.55;
         transition: opacity 0.5s ease;
     }
 
-    .social-platforms__item.is-active {
+    .social-platforms__grid.is-owl .owl-item.center {
         opacity: 1;
     }
 
-    /* the reveal rules set opacity on items; keep them working */
-    .social-platforms.js-anim:not(.is-visible) .social-platforms__item {
-        opacity: 0;
-    }
-
-    .social-platforms__nav {
+    /* ----- dots (bottom-left) ----- */
+    .social-platforms .owl-carousel .owl-dots.social-platforms__dots {
+        position: absolute;
+        left: var(--gutter);
+        bottom: 0;
         display: flex;
         align-items: center;
-        justify-content: space-between;
-        margin-top: 1.5rem;
-    }
-
-    .social-platforms__dots {
-        display: flex;
         gap: 0.5rem;
+        height: 2.5rem;
+        margin: 0;
     }
 
-    .social-platforms__dot {
-        width: 0.5rem;
-        height: 0.5rem;
-        padding: 0;
-        border: 0;
-        border-radius: 999px;
-        background: rgba(241, 232, 224, 0.35);
-        transition: width 0.4s var(--ease-out), background 0.3s ease;
+    .social-platforms .owl-carousel .owl-dots .social-platforms__dot {
+        display: block;
+        margin: 0;
         cursor: pointer;
     }
 
-    .social-platforms__dot.is-active {
+    .social-platforms .owl-carousel .owl-dots .social-platforms__dot span {
+        display: block;
+        width: 0.5rem;
+        height: 0.5rem;
+        margin: 0;
+        border-radius: 999px;
+        background: rgba(241, 232, 224, 0.35);
+        transition: width 0.4s var(--ease-out), background 0.3s ease;
+    }
+
+    .social-platforms .owl-carousel .owl-dots .social-platforms__dot.active span {
         width: 1.5rem;
         background: var(--accent);
     }
 
-    .social-platforms__arrows {
-        display: flex;
-        gap: 0.5rem;
+    .social-platforms .owl-carousel .owl-dots .social-platforms__dot:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 4px;
     }
 
-    .social-platforms__arrow {
+    /* ----- arrows (bottom-right) ----- */
+    .social-platforms .owl-carousel .owl-nav.social-platforms__arrows {
+        position: absolute;
+        right: var(--gutter);
+        bottom: 0;
+        display: flex;
+        gap: 0.5rem;
+        margin: 0;
+    }
+
+    .social-platforms .owl-carousel .owl-nav button.social-platforms__arrow {
         display: grid;
         place-items: center;
         width: 2.5rem;
         height: 2.5rem;
-        padding: 0;
+        margin: 0;
+        padding: 0 !important;
         border: 1px solid rgba(241, 232, 224, 0.4);
         border-radius: 50%;
         background: transparent;
@@ -867,30 +875,26 @@
         font-size: 1.1rem;
         line-height: 1;
         cursor: pointer;
-        transition: background 0.3s ease, color 0.3s ease, opacity 0.3s ease;
+        transition: background 0.3s ease, color 0.3s ease;
     }
 
-    .social-platforms__arrow:active {
+    .social-platforms .owl-carousel .owl-nav button.social-platforms__arrow:active {
         background: var(--accent);
         color: var(--bg-dark);
     }
 
-    .social-platforms__arrow:disabled {
-        opacity: 0.3;
+    .social-platforms .owl-carousel .owl-nav button.social-platforms__arrow:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-
     .social-platforms *,
     .social-platforms *::before,
     .social-platforms *::after {
         /* transition-duration: 0.01ms !important;
         transition-delay: 0s !important; */
-    }
-
-    .social-platforms__grid {
-        scroll-behavior: auto;
     }
 }
 
@@ -1412,6 +1416,7 @@
         transition: none;
     }
 }
+
 /* ==========================================================================
    Social media industries
    ========================================================================== */
@@ -1895,20 +1900,121 @@
     color: var(--brand-red);
 }
 
-/* ---------- Image ---------- */
+/* ---------- Image (frame of the Owl slider) ----------
+   The slider is absolutely positioned inside the frame, so the frame's size comes from the
+   grid (desktop: same height as the cards) or aspect-ratio (tablet/mobile), exactly as before. */
 .social-process__media {
+    position: relative;
+    isolation: isolate;
+    /* keeps the rounded corners clean while Owl moves the stage (Safari) */
     margin: 0;
     overflow: hidden;
     border-radius: 20px;
     background: #f6f2ed;
+    min-height: 20rem;
 }
 
-.social-process__media img {
+.social-process__media .owl-carousel,
+.social-process__media .owl-stage-outer,
+.social-process__media .owl-stage,
+.social-process__media .owl-item {
+    height: 100%;
+}
+
+.social-process__media .owl-carousel {
+    position: absolute;
+    inset: 0;
+}
+
+/* before Owl initialises, show the first slide only (no layout jump / stacked images) */
+.social-process__slider:not(.owl-loaded) {
+    display: block;
+    overflow: hidden;
+}
+
+.social-process__slider:not(.owl-loaded) .social-process__slide:not(:first-child) {
+    display: none;
+}
+
+.social-process__slide {
+    height: 100%;
+    margin: 0;
+}
+
+.social-process__slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
     -webkit-user-drag: none;
+}
+
+/* ---------- Owl arrows (bottom-right) ----------
+   The long selectors beat Owl's own button reset (owl.carousel.css) */
+.social-process .owl-carousel .owl-nav.social-process__nav {
+    position: absolute;
+    right: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+    bottom: clamp(0.75rem, 0.5rem + 1vw, 1.25rem);
+    z-index: 3;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.social-process .owl-carousel .owl-nav.social-process__nav.disabled {
+    display: none;
+}
+
+.social-process .owl-carousel .owl-nav button.social-process__arrow {
+    display: grid;
+    place-items: center;
+    width: clamp(3.25rem, 3rem + 1vw, 3.75rem);
+    height: clamp(2.25rem, 2rem + 0.8vw, 2.6rem);
+    margin: 0;
+    padding: 0 !important;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.92);
+    color: #000;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color 0.35s ease, color 0.35s ease, transform 0.35s var(--ease);
+}
+
+/* arrow colour follows the button (works with your original fill="black" markup) */
+.social-process__arrow path {
+    fill: currentColor;
+}
+
+.social-process__arrow svg {
+    display: block;
+    width: clamp(1.9rem, 1.7rem + 0.6vw, 2.2rem);
+    height: auto;
+    transition: transform 0.35s var(--ease);
+}
+
+.social-process .owl-carousel .owl-nav button.social-process__arrow:active {
+    transform: scale(0.95);
+}
+
+.social-process .owl-carousel .owl-nav button.social-process__arrow:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .social-process .owl-carousel .owl-nav button.social-process__arrow:hover {
+        background: var(--brand-red);
+        color: #fff;
+    }
+
+    .social-process__arrow--next:hover svg {
+        transform: translateX(3px);
+    }
+
+    .social-process__arrow--prev:hover svg {
+        transform: translateX(-3px);
+    }
 }
 
 /* ---------- Reveal on scroll ---------- */
@@ -1963,7 +2069,9 @@
     }
 
     .social-process__media {
+        width: 100%;
         max-width: 700px;
+        min-height: 0;
         margin-inline: auto;
         aspect-ratio: 1.2 / 1;
     }
@@ -1995,6 +2103,11 @@
     .social-process__card:hover {
         transform: none;
     } */
+
+    .social-process__arrow,
+    .social-process__arrow svg {
+        transition: none;
+    }
 }
 
 /* ==========================================================================
@@ -2912,7 +3025,7 @@
 }
 
 @media (max-width: 991.98px) {
-    .social-work__frame img { 
+    .social-work__frame img {
         max-width: 100%;
     }
 
@@ -2934,7 +3047,7 @@
 
     .social-work__stage {
         min-height: 560px;
-        top:40px;
+        top: 40px;
     }
 
     /* panels switch from absolute layout to a simple column */
